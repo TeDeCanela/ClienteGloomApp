@@ -132,6 +132,27 @@
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="inicioBtnBuscarPartida" xml:space="preserve">
+    <value>Buscar partida</value>
+  </data>
+  <data name="inicioBtnCerrarSesion" xml:space="preserve">
+    <value>Cerra sesión</value>
+  </data>
+  <data name="inicioBtnCrearPartida" xml:space="preserve">
+    <value>Crear partida</value>
+  </data>
+  <data name="inicioBtnHitorialDePartidas" xml:space="preserve">
+    <value>Historial partidas</value>
+  </data>
+  <data name="inicioBtnListaDeAmigos" xml:space="preserve">
+    <value>Lista de amigos</value>
+  </data>
+  <data name="inicioBtnMinihistoria" xml:space="preserve">
+    <value>Mini historia</value>
+  </data>
+  <data name="inicioBtnVerPersonajes" xml:space="preserve">
+    <value>Ver personajes</value>
+  </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Guardar cambios</value>
   </data>
@@ -143,5 +164,14 @@
   </data>
   <data name="registroInstrucciónIcono" xml:space="preserve">
     <value>Selecciona ícono de perfil</value>
+  </data>
+  <data name="TituloInicio" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="TituloPerfilJugador" xml:space="preserve">
+    <value>Perfil jugador</value>
+  </data>
+  <data name="TituloRegistroJugador" xml:space="preserve">
+    <value>Registro jugador</value>
   </data>
 </root>

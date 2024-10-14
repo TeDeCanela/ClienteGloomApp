@@ -106,6 +106,69 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Buscar partida.
+        /// </summary>
+        public static string inicioBtnBuscarPartida {
+            get {
+                return ResourceManager.GetString("inicioBtnBuscarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cerra sesión.
+        /// </summary>
+        public static string inicioBtnCerrarSesion {
+            get {
+                return ResourceManager.GetString("inicioBtnCerrarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crear partida.
+        /// </summary>
+        public static string inicioBtnCrearPartida {
+            get {
+                return ResourceManager.GetString("inicioBtnCrearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial partidas.
+        /// </summary>
+        public static string inicioBtnHitorialDePartidas {
+            get {
+                return ResourceManager.GetString("inicioBtnHitorialDePartidas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lista de amigos.
+        /// </summary>
+        public static string inicioBtnListaDeAmigos {
+            get {
+                return ResourceManager.GetString("inicioBtnListaDeAmigos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mini historia.
+        /// </summary>
+        public static string inicioBtnMinihistoria {
+            get {
+                return ResourceManager.GetString("inicioBtnMinihistoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver personajes.
+        /// </summary>
+        public static string inicioBtnVerPersonajes {
+            get {
+                return ResourceManager.GetString("inicioBtnVerPersonajes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Guardar cambios.
         /// </summary>
         public static string perfilBtnCambiarDatos {
@@ -138,6 +201,33 @@ namespace ClienteGloomApp.Properties {
         public static string registroInstrucciónIcono {
             get {
                 return ResourceManager.GetString("registroInstrucciónIcono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inicio.
+        /// </summary>
+        public static string TituloInicio {
+            get {
+                return ResourceManager.GetString("TituloInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Perfil jugador.
+        /// </summary>
+        public static string TituloPerfilJugador {
+            get {
+                return ResourceManager.GetString("TituloPerfilJugador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registro jugador.
+        /// </summary>
+        public static string TituloRegistroJugador {
+            get {
+                return ResourceManager.GetString("TituloRegistroJugador", resourceCulture);
             }
         }
     }

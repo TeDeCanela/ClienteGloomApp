@@ -144,4 +144,34 @@
   <data name="perfilFoto" xml:space="preserve">
     <value>Photo</value>
   </data>
+  <data name="TituloRegistroJugador" xml:space="preserve">
+    <value>Player register</value>
+  </data>
+  <data name="TituloPerfilJugador" xml:space="preserve">
+    <value>Player profile</value>
+  </data>
+  <data name="inicioBtnBuscarPartida" xml:space="preserve">
+    <value>Search game</value>
+  </data>
+  <data name="inicioBtnCerrarSesion" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="inicioBtnCrearPartida" xml:space="preserve">
+    <value>Create game</value>
+  </data>
+  <data name="inicioBtnHitorialDePartidas" xml:space="preserve">
+    <value>Game history</value>
+  </data>
+  <data name="inicioBtnListaDeAmigos" xml:space="preserve">
+    <value>Friends list</value>
+  </data>
+  <data name="inicioBtnMinihistoria" xml:space="preserve">
+    <value>Mini story</value>
+  </data>
+  <data name="inicioBtnVerPersonajes" xml:space="preserve">
+    <value>View characters</value>
+  </data>
+  <data name="TituloInicio" xml:space="preserve">
+    <value>Start</value>
+  </data>
 </root>

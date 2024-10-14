@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ClienteGloomApp
 {
     /// <summary>
-    /// Lógica de interacción para RegistroUsuario.xaml
+    /// Lógica de interacción para Inicio.xaml
     /// </summary>
-    public partial class RegistroUsuario : Window
+    public partial class Inicio : Window
     {
-        public RegistroUsuario()
+        public Inicio()
         {
             InitializeComponent();
         }

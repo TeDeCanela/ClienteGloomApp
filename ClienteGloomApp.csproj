@@ -57,9 +57,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="RegistroUsuario.xaml.cs">
-      <DependentUpon>RegistroUsuario.xaml</DependentUpon>
+    <Compile Include="Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PerfilJugador.xaml.cs">
+      <DependentUpon>PerfilJugador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroJugador.xaml.cs">
+      <DependentUpon>RegistroJugador.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,7 +87,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RegistroUsuario.xaml">
+    <Page Include="PerfilJugador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistroJugador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,6 +151,24 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Registro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PerfilDiamante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PerfilCorona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PerfilCorazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PerfilCastillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PerfilCalavera.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
