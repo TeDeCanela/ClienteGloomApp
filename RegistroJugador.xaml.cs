@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteGloomApp.ServicioGloom;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,21 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class RegistroUsuario : Window
+    public partial class RegistroJugador : Window, ServicioGloom.IServicioAdministradorCallback
     {
-        public RegistroUsuario()
+        public RegistroJugador()
         {
             InitializeComponent();
         }
 
-        private void InitializeComponent()
+        void IServicioAdministradorCallback.Response(int result)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

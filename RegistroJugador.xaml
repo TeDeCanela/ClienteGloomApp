@@ -21,7 +21,7 @@
         <Label x:Name="lblContraseña" Content="{x:Static p:Recursos.globalContraseña}" HorizontalAlignment="Left" Margin="950,442,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="16"/>
 
         <Label x:Name="lblregistroInstrucciónIcono" Content="{x:Static p:Recursos.registroInstrucciónIcono}" HorizontalAlignment="Left" Margin="597,114,0,0" VerticalAlignment="Top" Width="328" Height="50" Foreground="White" FontSize="16"/>
-        <Button x:Name="btnRegistrar" Content="{x:Static p:Recursos.registrarseBtnRegistrar}" HorizontalAlignment="Left" Margin="1352,543,0,0" VerticalAlignment="Top" Width="88" Height="31">
+        <Button x:Name="btnRegistrar" Content="{x:Static p:Recursos.registrarseBtnRegistrar}" HorizontalAlignment="Left" Margin="1352,543,0,0" VerticalAlignment="Top" Width="88" Height="31" Click="btnRegistrar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -35,7 +35,7 @@
             </Button.Template>
         </Button>
 
-
+        
         <Image Source="Registro.png" Width="793" Height="704" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" RenderTransformOrigin="0.522,0.508"/>
         <Image Source="PerfilCalavera.png" Width="70" Height="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="632,176,0,0" RenderTransformOrigin="0.522,0.508"/>
         <Image Source="PerfilCastillo.png" Width="70" Height="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="632,488,0,0" RenderTransformOrigin="0.522,0.508"/>
@@ -43,7 +43,6 @@
         <Image Source="PerfilDiamante.png" Width="70" Height="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="632,382,0,0" RenderTransformOrigin="0.522,0.508"/>
         <Image Source="PerfilCorazon.png" Width="70" Height="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="632,279,0,0" RenderTransformOrigin="0.522,0.508"/>
 
-    
 
     </Grid>
 </Window>
