@@ -23,5 +23,10 @@ namespace ClienteGloomApp
         {
             InitializeComponent();
         }
+
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

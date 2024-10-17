@@ -19,14 +19,14 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class RegistroJugador : Window, ServicioGloom.IServicioAdministradorCallback
+    public partial class RegistroJugador : Window //, ServicioGloom.IServicioAdministradorCallback
     {
         public RegistroJugador()
         {
             InitializeComponent();
         }
 
-        void IServicioAdministradorCallback.Response(int result)
+        /*void IServicioAdministradorCallback.Response(int result)
         {
             throw new NotImplementedException();
         }
@@ -39,20 +39,15 @@ namespace ClienteGloomApp
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
-            //se obtienen los datos de los txt
-
             jugador.nombreUsuario = txtBoxNombreUsuario.Text;
             jugador.nombre = txtBoxNombre.Text;
             jugador.apellidos = txtBoxApellidos.Text;
             jugador.correo = txtBoxCorreo.Text;
-            jugador.contraseña = passwordBox;
+            jugador.contraseña = pwdContrasena.Password;
             jugador.tipo = "Jugador";
-            jugador.icono = 1;
+            jugador.icono = 1; 
 
-
-
-
-            //proxy.AgregarJugador(jugador);
-        }
+            proxy.AgregarJugador(jugador);
+        }*/
     }
 }

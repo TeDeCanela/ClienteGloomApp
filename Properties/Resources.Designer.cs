@@ -22,14 +22,14 @@ namespace ClienteGloomApp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Recursos {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Recursos() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ClienteGloomApp.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ClienteGloomApp.Properties.Recursos", typeof(Recursos).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ClienteGloomApp.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -115,7 +115,7 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cerra sesión.
+        ///   Busca una cadena traducida similar a Cerrar sesión.
         /// </summary>
         public static string inicioBtnCerrarSesion {
             get {
@@ -135,9 +135,9 @@ namespace ClienteGloomApp.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Historial partidas.
         /// </summary>
-        public static string inicioBtnHitorialDePartidas {
+        public static string inicioBtnHistorialDePartidas {
             get {
-                return ResourceManager.GetString("inicioBtnHitorialDePartidas", resourceCulture);
+                return ResourceManager.GetString("inicioBtnHistorialDePartidas", resourceCulture);
             }
         }
         
@@ -153,9 +153,9 @@ namespace ClienteGloomApp.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Mini historia.
         /// </summary>
-        public static string inicioBtnMinihistoria {
+        public static string inicioBtnMiniHistoria {
             get {
-                return ResourceManager.GetString("inicioBtnMinihistoria", resourceCulture);
+                return ResourceManager.GetString("inicioBtnMiniHistoria", resourceCulture);
             }
         }
         
@@ -165,6 +165,33 @@ namespace ClienteGloomApp.Properties {
         public static string inicioBtnVerPersonajes {
             get {
                 return ResourceManager.GetString("inicioBtnVerPersonajes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Iniciar sesión.
+        /// </summary>
+        public static string inicioSesionBtnIniciarSesion {
+            get {
+                return ResourceManager.GetString("inicioSesionBtnIniciarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugar como invitado.
+        /// </summary>
+        public static string inicioSesionBtnJugarComoInvitado {
+            get {
+                return ResourceManager.GetString("inicioSesionBtnJugarComoInvitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrarse.
+        /// </summary>
+        public static string inicioSesionBtnRegistrarse {
+            get {
+                return ResourceManager.GetString("inicioSesionBtnRegistrarse", resourceCulture);
             }
         }
         
@@ -198,9 +225,9 @@ namespace ClienteGloomApp.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Selecciona ícono de perfil.
         /// </summary>
-        public static string registroInstrucciónIcono {
+        public static string registroInstruccionIcono {
             get {
-                return ResourceManager.GetString("registroInstrucciónIcono", resourceCulture);
+                return ResourceManager.GetString("registroInstruccionIcono", resourceCulture);
             }
         }
         
@@ -210,6 +237,15 @@ namespace ClienteGloomApp.Properties {
         public static string TituloInicio {
             get {
                 return ResourceManager.GetString("TituloInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inicio sesión.
+        /// </summary>
+        public static string TituloInicioSesion {
+            get {
+                return ResourceManager.GetString("TituloInicioSesion", resourceCulture);
             }
         }
         

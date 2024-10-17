@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="{x:Static p:Recursos.TituloInicio}" Height="800" Width="1900">
+        Title="{x:Static p:Resources.TituloInicio}" Height="800" Width="1900">
     <Grid>
-        
-        <Button x:Name="btnCrearPartida" Content="{x:Static p:Recursos.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="130,262,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+
+        <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="130,262,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -19,7 +19,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnBuscarPartida" Content="{x:Static p:Recursos.inicioBtnBuscarPartida}" HorizontalAlignment="Left" Margin="130,334,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnBuscarPartida" Content="{x:Static p:Resources.inicioBtnBuscarPartida}" HorizontalAlignment="Left" Margin="130,334,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -33,7 +33,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnMiniHistoria" Content="{x:Static p:Recursos.inicioBtnMinihistoria}" HorizontalAlignment="Left" Margin="130,414,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnMiniHistoria" Content="{x:Static p:Resources.inicioBtnMiniHistoria}" HorizontalAlignment="Left" Margin="130,414,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -46,7 +46,7 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnHistorialDePartidas" Content="{x:Static p:Recursos.inicioBtnHitorialDePartidas}" HorizontalAlignment="Left" Margin="130,499,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnHistorialDePartidas" Content="{x:Static p:Resources.inicioBtnHistorialDePartidas}" HorizontalAlignment="Left" Margin="130,499,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -60,7 +60,7 @@ CornerRadius="15">
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnListaDeAmigos" Content="{x:Static p:Recursos.inicioBtnListaDeAmigos}" HorizontalAlignment="Left" Margin="1292,334,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnListaDeAmigos" Content="{x:Static p:Resources.inicioBtnListaDeAmigos}" HorizontalAlignment="Left" Margin="1292,334,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -73,7 +73,7 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnVerPersonajes" Content="{x:Static p:Recursos.inicioBtnVerPersonajes}" HorizontalAlignment="Left" Margin="1292,414,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnVerPersonajes" Content="{x:Static p:Resources.inicioBtnVerPersonajes}" HorizontalAlignment="Left" Margin="1292,414,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -87,7 +87,7 @@ CornerRadius="15">
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnCerrarSesion" Content="{x:Static p:Recursos.inicioBtnCerrarSesion}" HorizontalAlignment="Left" Margin="1410,687,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnCerrarSesion" Content="{x:Static p:Resources.inicioBtnCerrarSesion}" HorizontalAlignment="Left" Margin="1410,687,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 

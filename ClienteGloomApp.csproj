@@ -66,6 +66,11 @@
     <Compile Include="PerfilJugador.xaml.cs">
       <DependentUpon>PerfilJugador.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistroJugador.xaml.cs">
       <DependentUpon>RegistroJugador.xaml</DependentUpon>
     </Compile>
@@ -107,21 +112,16 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Recursos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Recursos.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Recursos.en.resx" />
-    <EmbeddedResource Include="Properties\Recursos.esp.resx" />
-    <EmbeddedResource Include="Properties\Recursos.resx">
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <EmbeddedResource Include="Properties\Resources.esp.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Connected Services\ServicioGloom\ImplementacionDeServicio.wsdl" />
     <None Include="Connected Services\ServicioGloom\item.xsd">
@@ -160,22 +160,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Registro.png" />
+    <Resource Include="Imagenes\Registro.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PerfilDiamante.png" />
+    <Resource Include="Imagenes\PerfilDiamante.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PerfilCorona.png" />
+    <Resource Include="Imagenes\PerfilCorona.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PerfilCorazon.png" />
+    <Resource Include="Imagenes\PerfilCorazon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PerfilCastillo.png" />
+    <Resource Include="Imagenes\PerfilCastillo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PerfilCalavera.png" />
+    <Resource Include="Imagenes\PerfilCalavera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\InicioSesion.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

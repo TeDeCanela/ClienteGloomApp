@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace ClienteGloomApp
 {
     /// <summary>
@@ -13,5 +14,6 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class App : Application
     {
+        //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
     }
 }

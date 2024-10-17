@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="globalNombreUsuario" xml:space="preserve">
-    <value>Nombre de usuario</value>
-  </data>
   <data name="globalApellidos" xml:space="preserve">
     <value>Apellidos</value>
   </data>
@@ -132,23 +129,8 @@
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
-  <data name="registrarseBtnRegistrar" xml:space="preserve">
-    <value>Registrar</value>
-  </data>
-  <data name="registroInstrucciónIcono" xml:space="preserve">
-    <value>Selecciona ícono de perfil</value>
-  </data>
-  <data name="perfilBtnCambiarDatos" xml:space="preserve">
-    <value>Guardar cambios</value>
-  </data>
-  <data name="perfilFoto" xml:space="preserve">
-    <value>Foto</value>
-  </data>
-  <data name="TituloRegistroJugador" xml:space="preserve">
-    <value>Registro jugador</value>
-  </data>
-  <data name="TituloPerfilJugador" xml:space="preserve">
-    <value>Perfil jugador</value>
+  <data name="globalNombreUsuario" xml:space="preserve">
+    <value>Nombre usuario</value>
   </data>
   <data name="inicioBtnBuscarPartida" xml:space="preserve">
     <value>Buscar partida</value>
@@ -159,19 +141,49 @@
   <data name="inicioBtnCrearPartida" xml:space="preserve">
     <value>Crear partida</value>
   </data>
-  <data name="inicioBtnHitorialDePartidas" xml:space="preserve">
-    <value>Historial de partidas</value>
+  <data name="inicioBtnHistorialDePartidas" xml:space="preserve">
+    <value>Historial partidas</value>
   </data>
   <data name="inicioBtnListaDeAmigos" xml:space="preserve">
     <value>Lista de amigos</value>
   </data>
-  <data name="inicioBtnMinihistoria" xml:space="preserve">
+  <data name="inicioBtnMiniHistoria" xml:space="preserve">
     <value>Mini historia</value>
   </data>
   <data name="inicioBtnVerPersonajes" xml:space="preserve">
     <value>Ver personajes</value>
   </data>
+  <data name="inicioSesionBtnIniciarSesion" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="inicioSesionBtnJugarComoInvitado" xml:space="preserve">
+    <value>Jugar como invitado</value>
+  </data>
+  <data name="inicioSesionBtnRegistrarse" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="perfilBtnCambiarDatos" xml:space="preserve">
+    <value>Guardar cambios</value>
+  </data>
+  <data name="perfilFoto" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="registrarseBtnRegistrar" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="registroInstruccionIcono" xml:space="preserve">
+    <value>Selecciona ícono de perfil</value>
+  </data>
   <data name="TituloInicio" xml:space="preserve">
     <value>Inicio</value>
+  </data>
+  <data name="TituloInicioSesion" xml:space="preserve">
+    <value>Inicio sesión</value>
+  </data>
+  <data name="TituloPerfilJugador" xml:space="preserve">
+    <value>Perfil jugador</value>
+  </data>
+  <data name="TituloRegistroJugador" xml:space="preserve">
+    <value>Registro jugador</value>
   </data>
 </root>
