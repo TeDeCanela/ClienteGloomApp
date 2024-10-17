@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace ClienteGloomApp
 {
     /// <summary>
-    /// Lógica de interacción para PerfilJugador.xaml
+    /// Lógica de interacción para InicioSesion.xaml
     /// </summary>
-    public partial class PerfilJugador : Window
+    public partial class InicioSesion : Window
     {
-        public PerfilJugador()
+        public InicioSesion()
         {
             InitializeComponent();
-        }
-
-        private void btnCambiarDatos_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

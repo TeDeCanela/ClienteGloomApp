@@ -17,7 +17,7 @@
         <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Margin="167,559,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
         <TextBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="857,559,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
 
-        <Button x:Name="btnCambiarDatos" Content="{x:Static p:Recursos.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1387,642,0,0" VerticalAlignment="Top" Width="104" Height="33">
+        <Button x:Name="btnCambiarDatos" Content="{x:Static p:Recursos.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1387,642,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="btnCambiarDatos_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 

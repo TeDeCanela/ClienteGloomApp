@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,7 +33,26 @@ namespace ClienteGloomApp
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
+            InstanceContext contextoJugador = new InstanceContext(this);
 
+            ServicioGloom.ServicioAdministradorClient proxy = new ServicioGloom.ServicioAdministradorClient(contextoJugador);
+
+            ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
+
+            //se obtienen los datos de los txt
+
+            jugador.nombreUsuario = txtBoxNombreUsuario.Text;
+            jugador.nombre = txtBoxNombre.Text;
+            jugador.apellidos = txtBoxApellidos.Text;
+            jugador.correo = txtBoxCorreo.Text;
+            jugador.contraseña = passwordBox;
+            jugador.tipo = "Jugador";
+            jugador.icono = 1;
+
+
+
+
+            //proxy.AgregarJugador(jugador);
         }
     }
 }
