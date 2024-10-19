@@ -5,7 +5,7 @@
         xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         Title="{x:Static p:Resources.TituloInicioSesion}" Height="800" Width="1900">
     <Grid Background="#122124">
-        <Image Source="InicioSesion.jpg" Width="804" Height="775" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,-3,0,0" RenderTransformOrigin="0.522,0.508">
+        <Image Source="Imagenes/InicioSesion.jpg" Width="833" Height="795" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,-10,0,0" RenderTransformOrigin="0.522,0.508">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -15,11 +15,11 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBox x:Name="txtBoxNombre"  HorizontalAlignment="Left" Height="37" Margin="950,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490"/>
-        <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="950,231,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="16"/>
-        <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="950,345,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="txtBoxNombre"  HorizontalAlignment="Left" Height="37" Margin="950,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
+        <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="950,231,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="24"/>
+        <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="950,345,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="24"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="950,392,0,0" VerticalAlignment="Top" Width="490" Height="36"/>
-        <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.inicioSesionBtnIniciarSesion}" HorizontalAlignment="Left" Margin="1325,521,0,0" VerticalAlignment="Top" Width="115" Height="31" Click="btnRegistrar_Click">
+        <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.inicioSesionBtnIniciarSesion}" HorizontalAlignment="Left" Margin="1292,521,0,0" VerticalAlignment="Top" Width="148" Height="55" Click="btnRegistrar_Click" FontSize="24" BorderBrush="#FFA49A9A" Background="#FF94A08B">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -32,7 +32,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnJugarComoInvitado" Content="{x:Static p:Resources.inicioSesionBtnJugarComoInvitado}" HorizontalAlignment="Left" Margin="930,698,0,0" VerticalAlignment="Top" Width="145" Height="31" Click="btnRegistrar_Click">
+        <Button x:Name="btnJugarComoInvitado" Content="{x:Static p:Resources.inicioSesionBtnJugarComoInvitado}" HorizontalAlignment="Left" Margin="956,702,0,0" VerticalAlignment="Top" Width="239" Height="55" Click="btnRegistrar_Click" FontSize="24">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -45,7 +45,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnRegistrarse" Content="{x:Static p:Resources.inicioSesionBtnRegistrarse}" HorizontalAlignment="Left" Margin="1110,698,0,0" VerticalAlignment="Top" Width="115" Height="31" Click="btnRegistrar_Click">
+        <Button x:Name="btnRegistrarse" Content="{x:Static p:Resources.inicioSesionBtnRegistrarse}" HorizontalAlignment="Left" Margin="1258,702,0,0" VerticalAlignment="Top" Width="182" Height="55" Click="btnRegistrar_Click" FontSize="24">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -58,6 +58,16 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
+        <Label x:Name="lblGloom" Content="Gloom" HorizontalAlignment="Left" Margin="1070,54,0,0" VerticalAlignment="Top" Width="250" Height="109" Foreground="White" FontSize="72" FontFamily="Sitka Small"/>
+        <Button x:Name="btnCambiarIidomaEspañol" Content="" HorizontalAlignment="Left" Margin="1349,10,0,0" VerticalAlignment="Top" Click="btnCambiarIdiomaEspañol_Click" Width="45" Height="29">
+            <Button.Background>
+                <ImageBrush ImageSource="/BanderaMexico.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCambiarIdiomaIngles" Content="" HorizontalAlignment="Left" Margin="1417,10,0,0" VerticalAlignment="Top" Height="29" Width="45" Click="btnCambiarIdiomaIngles_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/BanderaEU.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

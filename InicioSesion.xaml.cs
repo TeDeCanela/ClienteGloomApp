@@ -17,16 +17,27 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para InicioSesion.xaml
     /// </summary>
-    public partial class InicioSesion : Window
+    public partial class InicioSesion : Application
     {
         public InicioSesion()
         {
             InitializeComponent();
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
+        }
+
+        private void btnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
         }
     }
 }

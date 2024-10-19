@@ -196,6 +196,96 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Usuario registrado.
+        /// </summary>
+        public static string mensajeExp01 {
+            get {
+                return ResourceManager.GetString("mensajeExp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Correo registrado.
+        /// </summary>
+        public static string mensajeExp02 {
+            get {
+                return ResourceManager.GetString("mensajeExp02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Excepción 10054.
+        /// </summary>
+        public static string mensajeExp10054 {
+            get {
+                return ResourceManager.GetString("mensajeExp10054", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Excpecón 100060.
+        /// </summary>
+        public static string mensajeExp10060 {
+            get {
+                return ResourceManager.GetString("mensajeExp10060", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Excepción 11001.
+        /// </summary>
+        public static string mensajeExp11001 {
+            get {
+                return ResourceManager.GetString("mensajeExp11001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Excepción 18456.
+        /// </summary>
+        public static string mensajeExp18456 {
+            get {
+                return ResourceManager.GetString("mensajeExp18456", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Excpeción 53.
+        /// </summary>
+        public static string mensajeExp53 {
+            get {
+                return ResourceManager.GetString("mensajeExp53", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Excepción 54060.
+        /// </summary>
+        public static string mensajeExp54060 {
+            get {
+                return ResourceManager.GetString("mensajeExp54060", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mensaje de Exito para el Registro.
+        /// </summary>
+        public static string mensajeRegistroJugadorExito {
+            get {
+                return ResourceManager.GetString("mensajeRegistroJugadorExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mensaje de falla para el registro.
+        /// </summary>
+        public static string mensajeRegistroJugadorFallido {
+            get {
+                return ResourceManager.GetString("mensajeRegistroJugadorFallido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Guardar cambios.
         /// </summary>
         public static string perfilBtnCambiarDatos {
@@ -228,6 +318,15 @@ namespace ClienteGloomApp.Properties {
         public static string registroInstruccionIcono {
             get {
                 return ResourceManager.GetString("registroInstruccionIcono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crear partida.
+        /// </summary>
+        public static string TituloCrearPartida {
+            get {
+                return ResourceManager.GetString("TituloCrearPartida", resourceCulture);
             }
         }
         

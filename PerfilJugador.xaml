@@ -3,33 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="{x:Static p:Resources.TituloPerfilJugador}" Height="800" Width="1900">
+        Title="" Height="800" Width="1900">
     <Grid>
-        <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="167,238,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.705,1.792"/>
-        <Label x:Name="lblNombre" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,361,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblApellidos" Content="{x:Static p:Resources.globalApellidos}" HorizontalAlignment="Left" Margin="167,502,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblCorreo" Content="{x:Static p:Resources.globalCorreo}" HorizontalAlignment="Left" Margin="892,361,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="892,502,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblFoto" Content="{x:Static p:Resources.perfilFoto}" HorizontalAlignment="Left" Margin="1248,198,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="-2.449,1.587"/>
-        <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="167,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="167,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
-        <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Margin="167,559,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
+         <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,238,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.705,1.792"/>
+         <Label x:Name="lblNombre" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,361,0,0" VerticalAlignment="Top" FontSize="16"/>
+         <Label x:Name="lblApellidos" Content="{x:Static p:Resources.globalApellidos}" HorizontalAlignment="Left" Margin="167,502,0,0" VerticalAlignment="Top" FontSize="16"/>
+         <Label x:Name="lblCorreo" Content="{x:Static p:Resources.globalCorreo}" HorizontalAlignment="Left" Margin="892,361,0,0" VerticalAlignment="Top" FontSize="16"/>
+         <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="892,502,0,0" VerticalAlignment="Top" FontSize="16"/>
+         <Label x:Name="lblFoto" Content="{x:Static p:Resources.perfilFoto}" HorizontalAlignment="Left" Margin="1248,198,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="-2.449,1.587"/>
+         <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="167,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
+         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="167,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
+         <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Margin="167,559,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
 
-        <Button x:Name="btnCambiarDatos" Content="{x:Static p:Resources.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1387,642,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="btnCambiarDatos_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" 
-    BorderBrush="{TemplateBinding BorderBrush}" 
-    BorderThickness="{TemplateBinding BorderThickness}" 
-    CornerRadius="15">
+         <Button x:Name="btnCambiarDatos" Content="{x:Static p:Resources.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1387,642,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="btnCambiarDatos_Click">
+                 <Button.Template>
+                     <ControlTemplate TargetType="Button">
+                         <Border Background="{TemplateBinding Background}" 
+     BorderBrush="{TemplateBinding BorderBrush}" 
+     BorderThickness="{TemplateBinding BorderThickness}" 
+     CornerRadius="15">
 
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
+                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                         </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="857,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
-        <PasswordBox x:Name="pwdContrasena" HorizontalAlignment="Left" Margin="857,559,0,0" VerticalAlignment="Top" Width="326" Height="29"/>
-
+           <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="857,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
+         <PasswordBox x:Name="pwdContrasena" HorizontalAlignment="Left" Margin="857,559,0,0" VerticalAlignment="Top" Width="326" Height="29"/>
+        
     </Grid>
 </Window>

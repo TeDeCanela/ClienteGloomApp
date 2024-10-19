@@ -162,6 +162,36 @@
   <data name="inicioSesionBtnRegistrarse" xml:space="preserve">
     <value>Registrarse</value>
   </data>
+  <data name="mensajeExp01" xml:space="preserve">
+    <value>Usuario registrado</value>
+  </data>
+  <data name="mensajeExp02" xml:space="preserve">
+    <value>Correo registrado</value>
+  </data>
+  <data name="mensajeExp10054" xml:space="preserve">
+    <value>Excepción 10054</value>
+  </data>
+  <data name="mensajeExp10060" xml:space="preserve">
+    <value>Excpecón 100060</value>
+  </data>
+  <data name="mensajeExp11001" xml:space="preserve">
+    <value>Excepción 11001</value>
+  </data>
+  <data name="mensajeExp18456" xml:space="preserve">
+    <value>Excepción 18456</value>
+  </data>
+  <data name="mensajeExp53" xml:space="preserve">
+    <value>Excpeción 53</value>
+  </data>
+  <data name="mensajeExp54060" xml:space="preserve">
+    <value>Excepción 54060</value>
+  </data>
+  <data name="mensajeRegistroJugadorExito" xml:space="preserve">
+    <value>Mensaje de Exito para el Registro</value>
+  </data>
+  <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
+    <value>Mensaje de falla para el registro</value>
+  </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Guardar cambios</value>
   </data>
@@ -173,6 +203,9 @@
   </data>
   <data name="registroInstruccionIcono" xml:space="preserve">
     <value>Selecciona ícono de perfil</value>
+  </data>
+  <data name="TituloCrearPartida" xml:space="preserve">
+    <value>Crear partida</value>
   </data>
   <data name="TituloInicio" xml:space="preserve">
     <value>Inicio</value>

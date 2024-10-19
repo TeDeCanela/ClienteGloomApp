@@ -174,6 +174,9 @@
   <data name="registroInstruccionIcono" xml:space="preserve">
     <value>Select profile icon</value>
   </data>
+  <data name="TituloCrearPartida" xml:space="preserve">
+    <value>Crear partida</value>
+  </data>
   <data name="TituloInicio" xml:space="preserve">
     <value>Start</value>
   </data>
@@ -185,5 +188,35 @@
   </data>
   <data name="TituloRegistroJugador" xml:space="preserve">
     <value>Player register</value>
+  </data>
+  <data name="mensajeRegistroJugadorExito" xml:space="preserve">
+    <value>¡Se ha registrado con éxito!</value>
+  </data>
+  <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
+    <value>Ha ocurrido un error al registrarse, inténtelo de nuevo</value>
+  </data>
+  <data name="mensajeExp01" xml:space="preserve">
+    <value>Este nombre de usuario ya se ha registrado, seleccione otro</value>
+  </data>
+  <data name="mensajeExp02" xml:space="preserve">
+    <value>Este correo ya está registrado, intente con otro</value>
+  </data>
+  <data name="mensajeExp10054" xml:space="preserve">
+    <value>Se interrumpió la conexión de red, contacte con un administrador del sistema e inténtelo más tarde</value>
+  </data>
+  <data name="mensajeExp10060" xml:space="preserve">
+    <value>Tiempo de espera agotado al conectar, contacte con un administrador del sistema e inténtelo más tarde</value>
+  </data>
+  <data name="mensajeExp11001" xml:space="preserve">
+    <value>Nombre del servidor SQL incorrecto, contacte con un administrador del sistema e inténtelo más tarde</value>
+  </data>
+  <data name="mensajeExp18456" xml:space="preserve">
+    <value>Error de autenticación en la base de datos, contacte con un administrador del sistema e inténtelo más tarde</value>
+  </data>
+  <data name="mensajeExp53" xml:space="preserve">
+    <value>No se puede encontrar el servidor SQL, contacte con un administrador del sistema e inténtelo más tarde</value>
+  </data>
+  <data name="mensajeExp54060" xml:space="preserve">
+    <value>No se pudo abrir la base de datos, contacte con un administrador del sistema e inténtelo más tarde</value>
   </data>
 </root>

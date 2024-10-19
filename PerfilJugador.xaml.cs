@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteGloomApp.ServicioGloom;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -18,14 +19,14 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para PerfilJugador.xaml
     /// </summary>
-    public partial class PerfilJugador : Window //, ServicioGloom.IServicioAdministradorCallback
+    public partial class PerfilJugador : Window , ServicioGloom.IServicioAdministradorCallback
     {
         public PerfilJugador()
         {
             InitializeComponent();
         }
         //se agrega un metodo de la interfaz, el response
-        /*private void btnCambiarDatos_Click(object sender, RoutedEventArgs e)
+        private void btnCambiarDatos_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
 
@@ -43,7 +44,10 @@ namespace ClienteGloomApp
 
             proxy.ActualizarJugador(jugador);
         }
-        */
-       
+
+        void IServicioAdministradorCallback.Response(int result)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
