@@ -11,23 +11,31 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ServiceModel;
+using ClienteGloomApp.ServicioGloom;
 
 namespace ClienteGloomApp
 {
     /// <summary>
     /// Lógica de interacción para InicioSesion.xaml
     /// </summary>
-    public partial class InicioSesion : Application
+    public partial class InicioSesion : Window, ServicioGloom.IServicioAdministradorCallback
     {
         public InicioSesion()
         {
             InitializeComponent();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
         }
+        void IServicioAdministradorCallback.Response(int result)
+        {
+            throw new NotImplementedException();
+        }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistroJugador nuevaVentanada = new RegistroJugador();
+            nuevaVentanada.Show();
+            this.Close();
         }
 
         private void btnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
@@ -38,6 +46,33 @@ namespace ClienteGloomApp
         private void btnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+        }
+
+        private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            InstanceContext contextoJugador = new InstanceContext(this);
+
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+
+            ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
+
+            jugador.nombreUsuario = txtBoxNombre.Text;
+            jugador.contraseña = passwordBox.Password;
+
+            try
+            {
+                int resultado = proxy.AutenticarJugador(jugador);
+                if (resultado == 1)
+                {
+                    Inicio nuevaVentana = new Inicio(jugador.nombreUsuario);
+                    nuevaVentana.Show();
+                    this.Close();
+                }
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
         }
     }
 }

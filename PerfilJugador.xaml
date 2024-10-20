@@ -4,32 +4,108 @@
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
         Title="" Height="800" Width="1900">
-    <Grid>
-         <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,238,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.705,1.792"/>
-         <Label x:Name="lblNombre" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,361,0,0" VerticalAlignment="Top" FontSize="16"/>
-         <Label x:Name="lblApellidos" Content="{x:Static p:Resources.globalApellidos}" HorizontalAlignment="Left" Margin="167,502,0,0" VerticalAlignment="Top" FontSize="16"/>
-         <Label x:Name="lblCorreo" Content="{x:Static p:Resources.globalCorreo}" HorizontalAlignment="Left" Margin="892,361,0,0" VerticalAlignment="Top" FontSize="16"/>
-         <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="892,502,0,0" VerticalAlignment="Top" FontSize="16"/>
-         <Label x:Name="lblFoto" Content="{x:Static p:Resources.perfilFoto}" HorizontalAlignment="Left" Margin="1248,198,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="-2.449,1.587"/>
-         <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Margin="167,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
-         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="167,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
-         <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Margin="167,559,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
+    <Grid Background="#FFC38E79">
+        <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,332,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.705,1.792" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lblNombre" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="128,67,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lblApellidos" Content="{x:Static p:Resources.globalApellidos}" HorizontalAlignment="Left" Margin="167,557,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lblCorreo" Content="{x:Static p:Resources.globalCorreo}" HorizontalAlignment="Left" Margin="624,321,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="624,557,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="lblFoto" Content="{x:Static p:Resources.perfilFoto}" HorizontalAlignment="Left" Margin="624,91,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="-2.449,1.587" Foreground="White" FontWeight="Bold"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="167,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29" />
+        <Label x:Name="lblNombreUsuarioRegistrado" HorizontalAlignment="Left" Margin="128,121,0,0"  VerticalAlignment="Top" Width="326" Height="29" />
+        <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Margin="167,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
 
-         <Button x:Name="btnCambiarDatos" Content="{x:Static p:Resources.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1387,642,0,0" VerticalAlignment="Top" Width="104" Height="33" Click="btnCambiarDatos_Click">
-                 <Button.Template>
-                     <ControlTemplate TargetType="Button">
-                         <Border Background="{TemplateBinding Background}" 
+        <Button x:Name="btnCambiarDatos" Content="{x:Static p:Resources.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1203,689,0,0" VerticalAlignment="Top" Width="203" Height="59" Click="btnCambiarDatos_Click" FontWeight="Bold" FontSize="24" Foreground="White" Background="#FF574C42">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
      BorderBrush="{TemplateBinding BorderBrush}" 
      BorderThickness="{TemplateBinding BorderThickness}" 
      CornerRadius="15">
 
-                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                         </Border>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-           <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="857,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
-         <PasswordBox x:Name="pwdContrasena" HorizontalAlignment="Left" Margin="857,559,0,0" VerticalAlignment="Top" Width="326" Height="29"/>
-        
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="624,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="28"/>
+        <PasswordBox x:Name="pwdContrasena" HorizontalAlignment="Left" Margin="624,614,0,0" VerticalAlignment="Top" Width="326" Height="29"/>
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1361,15,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.5,0.5" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.553"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+            </Button.Background>
+        </Button>
+        <GroupBox x:Name="grupoBotones" HorizontalAlignment="Left" Margin="1112,147,0,229" BorderThickness="0">
+            <UniformGrid x:Name="panelbotones" Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <Button x:Name="btnPerfilCalavera" Content="" Height="63" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCalavera_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCalavera.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilCorazon" Content="" Height="61" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCorazon_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCorazon.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilDiamante" Content="" Height="70" Width="70" BorderBrush="{x:Null}" Click="btnPerfilDiamante_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilDiamante.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilCastillo" Content="" Height="70" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCastillo_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCastillo.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilCorona" Content="" Height="65" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCorona_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCorona.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilCastillo2" Content="" Height="63" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCastillo2_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCastillo2.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilUnicornio" Content="" Height="68" Width="70" BorderBrush="{x:Null}" Click="btnPerfilUnicornio_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilUnicornio.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilVela" Content="" Height="64" Width="70" BorderBrush="{x:Null}" Click="btnPerfilVela_Click" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0.318"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.194"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilVela.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilEspada" Content="" Height="58" Width="70" BorderBrush="{x:Null}" Click="btnPerfilEspada_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilEspada.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPerfilEscudo" Content="" Height="58" Width="70" BorderBrush="{x:Null}" Click="btnPerfilEscudo_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilEscudo.png"/>
+                    </Button.Background>
+                </Button>
+            </UniformGrid>
+        </GroupBox>
+        <Label x:Name="lblFoto_Instruccion" Content="{x:Static p:Resources.instruccionSeleccionarFoto}" HorizontalAlignment="Left" Margin="1112,100,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="-2.449,1.587" Foreground="White" FontWeight="Bold"/>
+        <Image x:Name="imgFotoPerfil" Source="Imagenes/PerfilCalavera.png" Stretch="Uniform" Margin="729,112,1055,567" />
     </Grid>
 </Window>

@@ -21,7 +21,7 @@
         <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="950,442,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
 
         <Label x:Name="lblregistroInstrucciónIcono" Content="{x:Static p:Resources.registroInstruccionIcono}" HorizontalAlignment="Left" Margin="597,114,0,0" VerticalAlignment="Top" Width="328" Height="50" Foreground="White" FontSize="24"/>
-        <Button x:Name="btnRegistrar" Content="{x:Static p:Resources.registrarseBtnRegistrar}" HorizontalAlignment="Left" Margin="1328,543,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="btnRegistrar_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
+        <Button x:Name="btnRegistrar" Content="{x:Static p:Resources.registrarseBtnRegistrar}" HorizontalAlignment="Left" Margin="1328,581,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="btnRegistrar_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" 
@@ -98,6 +98,19 @@
                 </Button>
             </UniformGrid>
         </GroupBox>
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1384,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.5,0.5" Click="btnFlecha_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.553"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+            </Button.Background>
+        </Button>
 
 
 

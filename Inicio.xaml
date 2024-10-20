@@ -3,12 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="" Height="800" Width="1900">
-    <!--<Grid>
+        Title="" Height="794" Width="1900">
+    <Grid Background="#FFAB9D95">
 
-        <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="130,262,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
+
+        <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="46,238,0,0" VerticalAlignment="Top" Width="202" Height="77" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FFB25979" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
@@ -19,9 +21,9 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnBuscarPartida" Content="{x:Static p:Resources.inicioBtnBuscarPartida}" HorizontalAlignment="Left" Margin="130,334,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnBuscarPartida" Content="{x:Static p:Resources.inicioBtnBuscarPartida}" HorizontalAlignment="Left" Margin="46,392,0,0" VerticalAlignment="Top" Width="202" Height="75" Foreground="White" RenderTransformOrigin="0.657,0.687" FontSize="20" Background="#FFB25979" FontWeight="Bold" BorderThickness="2,2,2,2" BorderBrush="#FF4E1B1B">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
@@ -33,9 +35,9 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnMiniHistoria" Content="{x:Static p:Resources.inicioBtnMiniHistoria}" HorizontalAlignment="Left" Margin="130,414,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnMiniHistoria" Content="{x:Static p:Resources.inicioBtnMiniHistoria}" HorizontalAlignment="Left" Margin="46,542,0,0" VerticalAlignment="Top" Width="202" Height="75" Background="#FFB25979" Foreground="White" FontSize="22" FontWeight="Bold" BorderThickness="2,2,2,2" BorderBrush="#FF4E1B1B">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
 BorderBrush="{TemplateBinding BorderBrush}" 
 BorderThickness="{TemplateBinding BorderThickness}" 
@@ -46,9 +48,9 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnHistorialDePartidas" Content="{x:Static p:Resources.inicioBtnHistorialDePartidas}" HorizontalAlignment="Left" Margin="130,499,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnHistorialDePartidas" Content="{x:Static p:Resources.inicioBtnHistorialDePartidas}" HorizontalAlignment="Left" Margin="1194,542,0,0" VerticalAlignment="Top" Width="202" Height="75" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
 BorderBrush="{TemplateBinding BorderBrush}" 
 BorderThickness="{TemplateBinding BorderThickness}" 
@@ -60,9 +62,9 @@ CornerRadius="15">
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnListaDeAmigos" Content="{x:Static p:Resources.inicioBtnListaDeAmigos}" HorizontalAlignment="Left" Margin="1292,334,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnListaDeAmigos" Content="{x:Static p:Resources.inicioBtnListaDeAmigos}" HorizontalAlignment="Left" Margin="1194,238,0,0" VerticalAlignment="Top" Width="202" Height="76" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF6A3535" BorderThickness="2,2,2,2">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
     BorderBrush="{TemplateBinding BorderBrush}" 
     BorderThickness="{TemplateBinding BorderThickness}" 
@@ -73,9 +75,9 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnVerPersonajes" Content="{x:Static p:Resources.inicioBtnVerPersonajes}" HorizontalAlignment="Left" Margin="1292,414,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnVerPersonajes" Content="{x:Static p:Resources.inicioBtnVerPersonajes}" HorizontalAlignment="Left" Margin="1194,390,0,0" VerticalAlignment="Top" Width="202" Height="80" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderThickness="2,2,2,2" BorderBrush="#FF6A3535">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
 BorderBrush="{TemplateBinding BorderBrush}" 
 BorderThickness="{TemplateBinding BorderThickness}" 
@@ -87,9 +89,9 @@ CornerRadius="15">
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnCerrarSesion" Content="{x:Static p:Resources.inicioBtnCerrarSesion}" HorizontalAlignment="Left" Margin="1410,687,0,0" VerticalAlignment="Top" Width="138" Height="42" Background="#b25979" Foreground="White">
+        <Button x:Name="btnCerrarSesion" Content="{x:Static p:Resources.inicioBtnCerrarSesion}" HorizontalAlignment="Left" Margin="595,707,0,0" VerticalAlignment="Top" Width="332" Height="71" Background="#b25979" Foreground="White" FontSize="22" FontWeight="Bold" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
 BorderBrush="{TemplateBinding BorderBrush}" 
 BorderThickness="{TemplateBinding BorderThickness}" 
@@ -100,5 +102,19 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-    </Grid> -->
+        <Label x:Name="lblNombreUsuario" HorizontalAlignment="Left" Margin="1140,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.495,-2.032" FontSize="22" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btnPerfil" Content="{x:Static p:Resources.TituloPerfilJugador}" HorizontalAlignment="Left" Margin="1246,58,0,0" VerticalAlignment="Top" Width="202" Height="50" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF6A3535" BorderThickness="2,2,2,2" Click="btnPerfil_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="15">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
 </Window> 

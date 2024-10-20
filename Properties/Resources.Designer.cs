@@ -196,6 +196,24 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionar foto.
+        /// </summary>
+        public static string instruccionSeleccionarFoto {
+            get {
+                return ResourceManager.GetString("instruccionSeleccionarFoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actualizado exitosamente.
+        /// </summary>
+        public static string mensajeActualizacionExitosa {
+            get {
+                return ResourceManager.GetString("mensajeActualizacionExitosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario registrado.
         /// </summary>
         public static string mensajeExp01 {
@@ -210,6 +228,15 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeExp02 {
             get {
                 return ResourceManager.GetString("mensajeExp02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario no encontrado.
+        /// </summary>
+        public static string mensajeExp03 {
+            get {
+                return ResourceManager.GetString("mensajeExp03", resourceCulture);
             }
         }
         

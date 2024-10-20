@@ -65,12 +65,6 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServicioAdministrador_ActualizarJugador_InputMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarJugador" />
-  </wsdl:message>
-  <wsdl:message name="IServicioAdministrador_AutenticarJugador_InputMessage">
-    <wsdl:part name="parameters" element="tns:AutenticarJugador" />
-  </wsdl:message>
   <wsdl:message name="IServicioAdministrador_Response_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:Response" />
   </wsdl:message>
@@ -86,13 +80,34 @@
   <wsdl:message name="IJugador_AgregarJugador_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q1:ManejadorExcepciones" />
   </wsdl:message>
+  <wsdl:message name="IJugador_ActualizarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_ActualizarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_ActualizarJugador_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q2:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_AutenticarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_AutenticarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_AutenticarJugador_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q3:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_ObtenerJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerJugador" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_ObtenerJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_ObtenerJugador_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q4:ManejadorExcepciones" />
+  </wsdl:message>
   <wsdl:portType name="IServicioAdministrador">
-    <wsdl:operation name="ActualizarJugador">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministrador/ActualizarJugador" message="tns:IServicioAdministrador_ActualizarJugador_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="AutenticarJugador">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministrador/AutenticarJugador" message="tns:IServicioAdministrador_AutenticarJugador_InputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Response">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministrador/Response" message="tns:IServicioAdministrador_Response_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministrador/ResponseResponse" message="tns:IServicioAdministrador_Response_InputCallbackMessage" />
@@ -104,22 +119,25 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IJugador/AgregarJugadorResponse" message="tns:IJugador_AgregarJugador_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/AgregarJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_AgregarJugador_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ActualizarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugador/ActualizarJugador" message="tns:IJugador_ActualizarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugador/ActualizarJugadorResponse" message="tns:IJugador_ActualizarJugador_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/ActualizarJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_ActualizarJugador_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugador/AutenticarJugador" message="tns:IJugador_AutenticarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugador/AutenticarJugadorResponse" message="tns:IJugador_AutenticarJugador_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/AutenticarJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_AutenticarJugador_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugador/ObtenerJugador" message="tns:IJugador_ObtenerJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugador/ObtenerJugadorResponse" message="tns:IJugador_ObtenerJugador_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/ObtenerJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_ObtenerJugador_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IServicioAdministrador" type="tns:IServicioAdministrador">
     <wsp:PolicyReference URI="#NetTcpBinding_IServicioAdministrador_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="ActualizarJugador">
-      <soap12:operation soapAction="http://tempuri.org/IServicioAdministrador/ActualizarJugador" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="AutenticarJugador">
-      <soap12:operation soapAction="http://tempuri.org/IServicioAdministrador/AutenticarJugador" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="Response">
       <soap12:operation soapAction="http://tempuri.org/IServicioAdministrador/Response" style="document" />
       <wsdl:input>
@@ -135,6 +153,42 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="AgregarJugador">
       <soap12:operation soapAction="http://tempuri.org/IJugador/AgregarJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugador/ActualizarJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugador/AutenticarJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugador/ObtenerJugador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

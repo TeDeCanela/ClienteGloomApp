@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -139,6 +139,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Jugador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServicioGloom\ImplementacionServicio.wsdl" />
     <None Include="Connected Services\ServicioGloom\item.xsd">
       <SubType>Designer</SubType>
@@ -237,6 +240,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="BanderaEU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\castilloInicioFondo.png" />
+    <Resource Include="madera.jpg" />
+    <Resource Include="Imagenes\madera.jpg" />
+    <Resource Include="Imagenes\armas.jpg" />
+    <Resource Include="Imagenes\FondoCastillo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

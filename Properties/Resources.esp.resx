@@ -162,6 +162,42 @@
   <data name="inicioSesionBtnRegistrarse" xml:space="preserve">
     <value>Registrarse</value>
   </data>
+  <data name="instruccionSeleccionarFoto" xml:space="preserve">
+    <value>Seleccione la foto que a la que desee cambiar</value>
+  </data>
+  <data name="mensajeExp01" xml:space="preserve">
+    <value>Este nombre de usuario ya se ha registrado, seleccione otro.</value>
+  </data>
+  <data name="mensajeExp02" xml:space="preserve">
+    <value>Este correo ya está registrado, intente con otro.</value>
+  </data>
+  <data name="mensajeExp03" xml:space="preserve">
+    <value>No pudimos encontrar ningún usuario con ese correo o contraseña. Verifique que esté bien escrito o cree una cuenta en “Registrarse”.</value>
+  </data>
+  <data name="mensajeExp10054" xml:space="preserve">
+    <value>Se interrumpió la conexión de red, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeExp10060" xml:space="preserve">
+    <value>Tiempo de espera agotado al conectar, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeExp11001" xml:space="preserve">
+    <value>Nombre del servidor SQL incorrecto, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeExp18456" xml:space="preserve">
+    <value>Error de autenticación en la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeExp53" xml:space="preserve">
+    <value>No se puede encontrar el servidor SQL, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeExp54060" xml:space="preserve">
+    <value>No se pudo abrir la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeRegistroJugadorExito" xml:space="preserve">
+    <value>¡Se ha registrado con éxito!</value>
+  </data>
+  <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
+    <value>Ha ocurrido un error al registrarse, inténtelo de nuevo</value>
+  </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Guardar cambios</value>
   </data>
@@ -189,34 +225,7 @@
   <data name="TituloRegistroJugador" xml:space="preserve">
     <value>Registro jugador</value>
   </data>
-  <data name="mensajeRegistroJugadorExito" xml:space="preserve">
-    <value>You have registered successfully!</value>
-  </data>
-  <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
-    <value>An error occurred while registering, please try again</value>
-  </data>
-  <data name="mensajeExp01" xml:space="preserve">
-    <value>This username has already been registered, please choose another.</value>
-  </data>
-  <data name="mensajeExp02" xml:space="preserve">
-    <value>This email is already registered, please try another.</value>
-  </data>
-  <data name="mensajeExp10054" xml:space="preserve">
-    <value>The network connection was interrupted, please contact a system administrator and try again later.</value>
-  </data>
-  <data name="mensajeExp10060" xml:space="preserve">
-    <value>Connection timeout, please contact a system administrator and try again later.</value>
-  </data>
-  <data name="mensajeExp11001" xml:space="preserve">
-    <value>Incorrect SQL server name, please contact a system administrator and try again later.</value>
-  </data>
-  <data name="mensajeExp18456" xml:space="preserve">
-    <value>Authentication error in the database, please contact a system administrator and try again later.</value>
-  </data>
-  <data name="mensajeExp53" xml:space="preserve">
-    <value>Cannot find the SQL server, please contact a system administrator and try again later.</value>
-  </data>
-  <data name="mensajeExp54060" xml:space="preserve">
-    <value>Unable to open the database, please contact a system administrator and try again later.</value>
+  <data name="mensajeActualizacionExitosa" xml:space="preserve">
+    <value>Se ha actualizado exitosamente</value>
   </data>
 </root>

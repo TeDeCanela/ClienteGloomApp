@@ -25,6 +25,7 @@ namespace ClienteGloomApp
         public RegistroJugador()
         {
             InitializeComponent();
+
         }
 
         void IServicioAdministradorCallback.Response(int result)
@@ -61,10 +62,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
-            catch (FaultException ex)
-            {
-                Console.WriteLine("Error en el servicio: " + ex.Message);
-            }
+            
         }
         private void LimpiarCampos()
         {
@@ -78,61 +76,61 @@ namespace ClienteGloomApp
         private void btnPerfilCalavera_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilCalavera.png";
+            iconoSeleccionado = "/Imagenes/PerfilCalavera.png";
         }
 
         private void btnPerfilCorazon_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilCorazon.png";
+            iconoSeleccionado = "/Imagenes/PerfilCorazon.png";
         }
 
         private void btnPerfilDiamante_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilDiamante.png";
+            iconoSeleccionado = "/Imagenes/PerfilDiamante.png";
         }
 
         private void btnPerfilCastillo_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilCastillo.png";
+            iconoSeleccionado = "/Imagenes/PerfilCastillo.png";
         }
 
         private void btnPerfilCorona_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilCorona.png";
+            iconoSeleccionado = "/Imagenes/PerfilCorona.png";
         }
 
         private void btnPerfilCastillo2_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilCastillo2.png";
+            iconoSeleccionado = "/Imagenes/PerfilCastillo2.png";
         }
 
         private void btnPerfilUnicornio_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilUnicornio.png";
+            iconoSeleccionado = "/Imagenes/PerfilUnicornio.png";
         }
 
         private void btnPerfilVela_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilVela.png";
+            iconoSeleccionado = "/Imagenes/PerfilVela.png";
         }
 
         private void btnPerfilEspada_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilEspada.png";
+            iconoSeleccionado = "/Imagenes/PerfilEspada.png";
         }
 
         private void btnPerfilEscudo_Click(object sender, RoutedEventArgs e)
         {
             cambiarEstiloBotones(sender);
-            iconoSeleccionado = "Imagen/¨PerfilEscudo.png";
+            iconoSeleccionado = "/Imagenes/PerfilEscudo.png";
         }
 
         private void cambiarEstiloBotones(object sender)
@@ -149,6 +147,13 @@ namespace ClienteGloomApp
                     botonesDeContendero.BorderBrush = null;
                 }
             }
+        }
+
+        private void btnFlecha_Click(object sender, RoutedEventArgs e)
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 

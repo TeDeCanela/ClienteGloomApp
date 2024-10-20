@@ -19,7 +19,7 @@
         <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="950,231,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="24"/>
         <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="950,345,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="24"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="950,392,0,0" VerticalAlignment="Top" Width="490" Height="36"/>
-        <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.inicioSesionBtnIniciarSesion}" HorizontalAlignment="Left" Margin="1292,521,0,0" VerticalAlignment="Top" Width="148" Height="55" Click="btnRegistrar_Click" FontSize="24" BorderBrush="#FFA49A9A" Background="#FF94A08B">
+        <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.inicioSesionBtnIniciarSesion}" HorizontalAlignment="Left" Margin="1292,521,0,0" VerticalAlignment="Top" Width="148" Height="55" Click="btnIniciarSesion_Click" FontSize="24" BorderBrush="#FFA49A9A" Background="#FF94A08B">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 

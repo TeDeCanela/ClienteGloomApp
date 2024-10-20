@@ -162,11 +162,20 @@
   <data name="inicioSesionBtnRegistrarse" xml:space="preserve">
     <value>Registrarse</value>
   </data>
+  <data name="instruccionSeleccionarFoto" xml:space="preserve">
+    <value>Seleccionar foto</value>
+  </data>
+  <data name="mensajeActualizacionExitosa" xml:space="preserve">
+    <value>Actualizado exitosamente</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Usuario registrado</value>
   </data>
   <data name="mensajeExp02" xml:space="preserve">
     <value>Correo registrado</value>
+  </data>
+  <data name="mensajeExp03" xml:space="preserve">
+    <value>Usuario no encontrado</value>
   </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Excepción 10054</value>

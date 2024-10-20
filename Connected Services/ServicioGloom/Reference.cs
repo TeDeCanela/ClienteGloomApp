@@ -202,18 +202,6 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.IServicioAdministrador", CallbackContract=typeof(ClienteGloomApp.ServicioGloom.IServicioAdministradorCallback))]
     public interface IServicioAdministrador {
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioAdministrador/ActualizarJugador")]
-        void ActualizarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioAdministrador/ActualizarJugador")]
-        System.Threading.Tasks.Task ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioAdministrador/AutenticarJugador")]
-        void AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioAdministrador/AutenticarJugador")]
-        System.Threading.Tasks.Task AutenticarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -250,22 +238,6 @@ namespace ClienteGloomApp.ServicioGloom {
         public ServicioAdministradorClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, binding, remoteAddress) {
         }
-        
-        public void ActualizarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
-            base.Channel.ActualizarJugador(jugador);
-        }
-        
-        public System.Threading.Tasks.Task ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
-            return base.Channel.ActualizarJugadorAsync(jugador);
-        }
-        
-        public void AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
-            base.Channel.AutenticarJugador(jugador);
-        }
-        
-        public System.Threading.Tasks.Task AutenticarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
-            return base.Channel.AutenticarJugadorAsync(jugador);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -278,6 +250,27 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AgregarJugador", ReplyAction="http://tempuri.org/IJugador/AgregarJugadorResponse")]
         System.Threading.Tasks.Task<int> AgregarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugador", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ActualizarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        int ActualizarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugador", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorResponse")]
+        System.Threading.Tasks.Task<int> ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AutenticarJugador", ReplyAction="http://tempuri.org/IJugador/AutenticarJugadorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/AutenticarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        int AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AutenticarJugador", ReplyAction="http://tempuri.org/IJugador/AutenticarJugadorResponse")]
+        System.Threading.Tasks.Task<int> AutenticarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ObtenerJugador", ReplyAction="http://tempuri.org/IJugador/ObtenerJugadorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ObtenerJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        ClienteGloomApp.ServicioGloom.Jugador ObtenerJugador(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ObtenerJugador", ReplyAction="http://tempuri.org/IJugador/ObtenerJugadorResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Jugador> ObtenerJugadorAsync(string nombreUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -313,6 +306,30 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<int> AgregarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
             return base.Channel.AgregarJugadorAsync(jugador);
+        }
+        
+        public int ActualizarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
+            return base.Channel.ActualizarJugador(jugador);
+        }
+        
+        public System.Threading.Tasks.Task<int> ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
+            return base.Channel.ActualizarJugadorAsync(jugador);
+        }
+        
+        public int AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
+            return base.Channel.AutenticarJugador(jugador);
+        }
+        
+        public System.Threading.Tasks.Task<int> AutenticarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
+            return base.Channel.AutenticarJugadorAsync(jugador);
+        }
+        
+        public ClienteGloomApp.ServicioGloom.Jugador ObtenerJugador(string nombreUsuario) {
+            return base.Channel.ObtenerJugador(nombreUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Jugador> ObtenerJugadorAsync(string nombreUsuario) {
+            return base.Channel.ObtenerJugadorAsync(nombreUsuario);
         }
     }
 }
