@@ -40,12 +40,18 @@ namespace ClienteGloomApp
 
         private void btnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
+            App app = (App)Application.Current;
+            app.cambiarIdioma("esp");
+
+            actualizarElementos();
         }
 
         private void btnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+            App app = (App)Application.Current;
+            app.cambiarIdioma("en");
+
+            actualizarElementos();
         }
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
@@ -56,8 +62,8 @@ namespace ClienteGloomApp
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
-            jugador.nombreUsuario = txtBoxNombre.Text;
-            jugador.contraseña = passwordBox.Password;
+            //jugador.nombreUsuario = txtBoxNombre.Text;
+            //jugador.contraseña = passwordBox.Password;
 
             try
             {
@@ -73,6 +79,17 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
+        }
+
+        private void actualizarElementos()
+        {
+            /*lblNombreUsuario.Content = Properties.Resources.globalNombreUsuario;
+            lblContraseña.Content = Properties.Resources.globalContraseña;
+            btnIniciarSesion.Content = Properties.Resources.inicioSesionBtnIniciarSesion;
+            btnJugarComoInvitado.Content = Properties.Resources.inicioSesionBtnJugarComoInvitado;
+            btnRegistrarse.Content = Properties.Resources.inicioSesionBtnRegistrarse;*/
+
+
         }
     }
 }

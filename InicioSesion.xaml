@@ -5,7 +5,7 @@
         xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         Title="{x:Static p:Resources.TituloInicioSesion}" Height="800" Width="1900">
     <Grid Background="#122124">
-        <Image Source="Imagenes/InicioSesion.jpg" Width="833" Height="795" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,-10,0,0" RenderTransformOrigin="0.522,0.508">
+        <!--<Image Source="Imagenes/InicioSesion.jpg" Width="833" Height="795" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,-10,0,0" RenderTransformOrigin="0.522,0.508">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -69,5 +69,6 @@
                 <ImageBrush ImageSource="/BanderaEU.png"/>
             </Button.Background>
         </Button>
+        -->
     </Grid>
 </Window>

@@ -77,6 +77,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="CrearPartida.xaml.cs">
+      <DependentUpon>CrearPartida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
     <Compile Include="RegistroJugador.xaml.cs">
       <DependentUpon>RegistroJugador.xaml</DependentUpon>
     </Compile>
+    <Page Include="CrearPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inicio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

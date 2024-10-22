@@ -1,0 +1,12 @@
+﻿<Window x:Class="ClienteGloomApp.CrearPartida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteGloomApp"
+        xmlns:p="clr-namespace:ClienteGloomApp.Properties"
+        Title="{x:Static p:Resources.TituloCrearPartida}" Height="800" Width="1900">
+    <Grid Background="#1a1e1d">
+        <Label x:Name="lblCrearPartida" Content="Label"  Foreground="White"  HorizontalAlignment="Left" Margin="155,84,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

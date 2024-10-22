@@ -117,6 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buscarPartidaBtnUnirse" xml:space="preserve">
+    <value>Unirse a partida</value>
+  </data>
+  <data name="buscarPartidaInstruccion" xml:space="preserve">
+    <value>Buscar partida</value>
+  </data>
+  <data name="buscarPartidaPartida" xml:space="preserve">
+    <value>Partida</value>
+  </data>
+  <data name="crearPartidaBtnCrearSala" xml:space="preserve">
+    <value>Crear sala</value>
+  </data>
+  <data name="crearPartidaInstruccion" xml:space="preserve">
+    <value>Crear partida</value>
+  </data>
+  <data name="crearPartidaNombreSala" xml:space="preserve">
+    <value>Nombre de la sala</value>
+  </data>
+  <data name="crearPartidaNumeroJugadores" xml:space="preserve">
+    <value>Número de jugadores</value>
+  </data>
+  <data name="crearPartidaTipoPartida" xml:space="preserve">
+    <value>Tipo de partida</value>
+  </data>
+  <data name="crearPartidaTipoSala" xml:space="preserve">
+    <value>Tipo de sala</value>
+  </data>
+  <data name="entradaPrivadaPartidaInstruccion" xml:space="preserve">
+    <value>Escriba el código de sala</value>
+  </data>
+  <data name="escribirMensajeInstrucción" xml:space="preserve">
+    <value>Escribir mensaje</value>
+  </data>
+  <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
+    <value>Felicitaciones al jugador que con astucia y crueldad ha llevado a todos los demás al borde de la desesperación ¡La victoria es tuya!</value>
+  </data>
+  <data name="finPartidaMiniLeyenda" xml:space="preserve">
+    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
+  </data>
   <data name="globalApellidos" xml:space="preserve">
     <value>Apellidos</value>
   </data>
@@ -131,6 +170,78 @@
   </data>
   <data name="globalNombreUsuario" xml:space="preserve">
     <value>Nombre usuario</value>
+  </data>
+  <data name="globalPartidaPrivada" xml:space="preserve">
+    <value>Privada</value>
+  </data>
+  <data name="globalPartidaPublica" xml:space="preserve">
+    <value>Pública</value>
+  </data>
+  <data name="historiaAbelith" xml:space="preserve">
+    <value>Abelith</value>
+  </data>
+  <data name="historiaAngelus" xml:space="preserve">
+    <value>Angelus</value>
+  </data>
+  <data name="historiaArialyn" xml:space="preserve">
+    <value>Arialyn</value>
+  </data>
+  <data name="historiaAris" xml:space="preserve">
+    <value>Aris</value>
+  </data>
+  <data name="historiaDidorian" xml:space="preserve">
+    <value>Didorian</value>
+  </data>
+  <data name="historiaGaia" xml:space="preserve">
+    <value>Gaia</value>
+  </data>
+  <data name="historialGanador" xml:space="preserve">
+    <value>Ganador</value>
+  </data>
+  <data name="historialHa" xml:space="preserve">
+    <value>La partida a sido</value>
+  </data>
+  <data name="historialInstruccion" xml:space="preserve">
+    <value>Historial de partidas</value>
+  </data>
+  <data name="historialJugoCon" xml:space="preserve">
+    <value>Jugó con</value>
+  </data>
+  <data name="historiaLorenzeo" xml:space="preserve">
+    <value>Lorenzeo</value>
+  </data>
+  <data name="historialTipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="historiaLuan" xml:space="preserve">
+    <value>Luan</value>
+  </data>
+  <data name="historiaLusiel" xml:space="preserve">
+    <value>Lusiel</value>
+  </data>
+  <data name="historiaMerit" xml:space="preserve">
+    <value>Merit</value>
+  </data>
+  <data name="historiaNeferu" xml:space="preserve">
+    <value>Neferu</value>
+  </data>
+  <data name="historiaPablian" xml:space="preserve">
+    <value>Pablian</value>
+  </data>
+  <data name="historiaPersonajeInstruccion" xml:space="preserve">
+    <value>Descripción del personaje</value>
+  </data>
+  <data name="historiaSeti" xml:space="preserve">
+    <value>Seti</value>
+  </data>
+  <data name="historiaSobek" xml:space="preserve">
+    <value>Sobek</value>
+  </data>
+  <data name="historiaTucani" xml:space="preserve">
+    <value>Tucani</value>
+  </data>
+  <data name="historiaZael" xml:space="preserve">
+    <value>Zael</value>
   </data>
   <data name="inicioBtnBuscarPartida" xml:space="preserve">
     <value>Buscar partida</value>
@@ -164,6 +275,15 @@
   </data>
   <data name="instruccionSeleccionarFoto" xml:space="preserve">
     <value>Seleccionar foto</value>
+  </data>
+  <data name="invitarAmistadesEnviarCorreo" xml:space="preserve">
+    <value>Enviar una invitación por correo</value>
+  </data>
+  <data name="listaAmigosbtnVerSolicitud" xml:space="preserve">
+    <value>Ver solicitudes de amistad</value>
+  </data>
+  <data name="listaAmigosInstruccion" xml:space="preserve">
+    <value>Buscar jugador</value>
   </data>
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Actualizado exitosamente</value>
@@ -201,6 +321,24 @@
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>Mensaje de falla para el registro</value>
   </data>
+  <data name="miniHistoriaEncabezado" xml:space="preserve">
+    <value>Sala mini-historia</value>
+  </data>
+  <data name="miniHistoriaInstruccionFamiliar" xml:space="preserve">
+    <value>Seleccionar familiar</value>
+  </data>
+  <data name="miniHistoriaNumeroSala" xml:space="preserve">
+    <value>Número de sala</value>
+  </data>
+  <data name="partidaBtnDescartar" xml:space="preserve">
+    <value>Descartar</value>
+  </data>
+  <data name="partidaBtnExpulsar" xml:space="preserve">
+    <value>Expulsar</value>
+  </data>
+  <data name="partidaBtnUsar" xml:space="preserve">
+    <value>Usar</value>
+  </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Guardar cambios</value>
   </data>
@@ -213,8 +351,41 @@
   <data name="registroInstruccionIcono" xml:space="preserve">
     <value>Selecciona ícono de perfil</value>
   </data>
+  <data name="resultadoAmistad" xml:space="preserve">
+    <value>Los jugadores que coinciden con la búsqueda son</value>
+  </data>
+  <data name="salaDescripcionCorbat" xml:space="preserve">
+    <value>Descripción Corbat</value>
+  </data>
+  <data name="salaDescripcionGarlo" xml:space="preserve">
+    <value>Descripción Garlo</value>
+  </data>
+  <data name="salaDescripcionOres" xml:space="preserve">
+    <value>Descripción Ores</value>
+  </data>
+  <data name="salaDescripcionRamfez" xml:space="preserve">
+    <value>Descripción Ramfez</value>
+  </data>
+  <data name="salaInstruccion" xml:space="preserve">
+    <value>Sala</value>
+  </data>
+  <data name="salaSeleccionarFamilia" xml:space="preserve">
+    <value>Seleccionar una familia</value>
+  </data>
+  <data name="solicitudAmistadInstruccion" xml:space="preserve">
+    <value>De clic en el botón de “más” para para aceptar la solcitud</value>
+  </data>
+  <data name="TituloBuscarPartida" xml:space="preserve">
+    <value>Buscar partida</value>
+  </data>
   <data name="TituloCrearPartida" xml:space="preserve">
     <value>Crear partida</value>
+  </data>
+  <data name="TituloFinPartida" xml:space="preserve">
+    <value>Fin partida</value>
+  </data>
+  <data name="TituloHistorialDePartidas" xml:space="preserve">
+    <value>Historial de partidas</value>
   </data>
   <data name="TituloInicio" xml:space="preserve">
     <value>Inicio</value>
@@ -222,10 +393,25 @@
   <data name="TituloInicioSesion" xml:space="preserve">
     <value>Inicio sesión</value>
   </data>
+  <data name="TituloListaDeAmigos" xml:space="preserve">
+    <value>Lista de amigos</value>
+  </data>
+  <data name="TituloPartida" xml:space="preserve">
+    <value>Partida</value>
+  </data>
   <data name="TituloPerfilJugador" xml:space="preserve">
     <value>Perfil jugador</value>
   </data>
+  <data name="TituloPersonajes" xml:space="preserve">
+    <value>Personajes</value>
+  </data>
   <data name="TituloRegistroJugador" xml:space="preserve">
     <value>Registro jugador</value>
+  </data>
+  <data name="TituloSala" xml:space="preserve">
+    <value>Sala</value>
+  </data>
+  <data name="votacionInstruccion" xml:space="preserve">
+    <value>Seleccione que desea hacer, vote para sacar a</value>
   </data>
 </root>

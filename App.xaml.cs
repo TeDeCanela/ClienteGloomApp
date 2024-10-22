@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -14,6 +16,18 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class App : Application
     {
-        //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+        public void cambiarIdioma(string idioma)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+
+            foreach (Window window in Current.Windows)
+            {
+                window.Language = System.Windows.Markup.XmlLanguage.GetLanguage(Thread.CurrentThread.CurrentUICulture.IetfLanguageTag);
+            }
+        }
+
+        
+
+
     }
 }

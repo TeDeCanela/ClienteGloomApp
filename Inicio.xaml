@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="" Height="794" Width="1900">
+        Title="{x:Static p:Resources.TituloInicio}" Height="794" Width="1900">
     <Grid Background="#FFAB9D95">
 
-        <Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
+        <!--<Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
 
         <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="46,238,0,0" VerticalAlignment="Top" Width="202" Height="77" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FFB25979" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
             <Button.Template>
@@ -116,5 +116,6 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        -->
     </Grid>
 </Window> 

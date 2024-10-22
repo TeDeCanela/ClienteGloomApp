@@ -24,7 +24,7 @@ namespace ClienteGloomApp
         public Inicio(String nombreDelUsuario)
         {
             InitializeComponent();
-            lblNombreUsuario.Content = nombreDelUsuario;
+           // lblNombreUsuario.Content = nombreDelUsuario;
   
         }
 
@@ -35,8 +35,8 @@ namespace ClienteGloomApp
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
-            nuevaVentana.Show();
+            //PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
+            //nuevaVentana.Show();
             this.Close();
         }
     }

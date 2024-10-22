@@ -61,6 +61,123 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Unirse a partida.
+        /// </summary>
+        public static string buscarPartidaBtnUnirse {
+            get {
+                return ResourceManager.GetString("buscarPartidaBtnUnirse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Buscar partida.
+        /// </summary>
+        public static string buscarPartidaInstruccion {
+            get {
+                return ResourceManager.GetString("buscarPartidaInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partida.
+        /// </summary>
+        public static string buscarPartidaPartida {
+            get {
+                return ResourceManager.GetString("buscarPartidaPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crear sala.
+        /// </summary>
+        public static string crearPartidaBtnCrearSala {
+            get {
+                return ResourceManager.GetString("crearPartidaBtnCrearSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crear partida.
+        /// </summary>
+        public static string crearPartidaInstruccion {
+            get {
+                return ResourceManager.GetString("crearPartidaInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de la sala.
+        /// </summary>
+        public static string crearPartidaNombreSala {
+            get {
+                return ResourceManager.GetString("crearPartidaNombreSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de jugadores.
+        /// </summary>
+        public static string crearPartidaNumeroJugadores {
+            get {
+                return ResourceManager.GetString("crearPartidaNumeroJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo de partida.
+        /// </summary>
+        public static string crearPartidaTipoPartida {
+            get {
+                return ResourceManager.GetString("crearPartidaTipoPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo de sala.
+        /// </summary>
+        public static string crearPartidaTipoSala {
+            get {
+                return ResourceManager.GetString("crearPartidaTipoSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Escriba el código de sala.
+        /// </summary>
+        public static string entradaPrivadaPartidaInstruccion {
+            get {
+                return ResourceManager.GetString("entradaPrivadaPartidaInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Escribir mensaje.
+        /// </summary>
+        public static string escribirMensajeInstrucción {
+            get {
+                return ResourceManager.GetString("escribirMensajeInstrucción", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Felicitaciones al jugador que con astucia y crueldad ha llevado a todos los demás al borde de la desesperación ¡La victoria es tuya!.
+        /// </summary>
+        public static string finPartidaFelicitacionLeyenda {
+            get {
+                return ResourceManager.GetString("finPartidaFelicitacionLeyenda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La voz del destino ha hablado y yo he respondido, he ganado.
+        /// </summary>
+        public static string finPartidaMiniLeyenda {
+            get {
+                return ResourceManager.GetString("finPartidaMiniLeyenda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Apellidos.
         /// </summary>
         public static string globalApellidos {
@@ -102,6 +219,222 @@ namespace ClienteGloomApp.Properties {
         public static string globalNombreUsuario {
             get {
                 return ResourceManager.GetString("globalNombreUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Privada.
+        /// </summary>
+        public static string globalPartidaPrivada {
+            get {
+                return ResourceManager.GetString("globalPartidaPrivada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pública.
+        /// </summary>
+        public static string globalPartidaPublica {
+            get {
+                return ResourceManager.GetString("globalPartidaPublica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Abelith.
+        /// </summary>
+        public static string historiaAbelith {
+            get {
+                return ResourceManager.GetString("historiaAbelith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Angelus.
+        /// </summary>
+        public static string historiaAngelus {
+            get {
+                return ResourceManager.GetString("historiaAngelus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Arialyn.
+        /// </summary>
+        public static string historiaArialyn {
+            get {
+                return ResourceManager.GetString("historiaArialyn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aris.
+        /// </summary>
+        public static string historiaAris {
+            get {
+                return ResourceManager.GetString("historiaAris", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Didorian.
+        /// </summary>
+        public static string historiaDidorian {
+            get {
+                return ResourceManager.GetString("historiaDidorian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gaia.
+        /// </summary>
+        public static string historiaGaia {
+            get {
+                return ResourceManager.GetString("historiaGaia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ganador.
+        /// </summary>
+        public static string historialGanador {
+            get {
+                return ResourceManager.GetString("historialGanador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La partida a sido.
+        /// </summary>
+        public static string historialHa {
+            get {
+                return ResourceManager.GetString("historialHa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial de partidas.
+        /// </summary>
+        public static string historialInstruccion {
+            get {
+                return ResourceManager.GetString("historialInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugó con.
+        /// </summary>
+        public static string historialJugoCon {
+            get {
+                return ResourceManager.GetString("historialJugoCon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lorenzeo.
+        /// </summary>
+        public static string historiaLorenzeo {
+            get {
+                return ResourceManager.GetString("historiaLorenzeo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo.
+        /// </summary>
+        public static string historialTipo {
+            get {
+                return ResourceManager.GetString("historialTipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Luan.
+        /// </summary>
+        public static string historiaLuan {
+            get {
+                return ResourceManager.GetString("historiaLuan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lusiel.
+        /// </summary>
+        public static string historiaLusiel {
+            get {
+                return ResourceManager.GetString("historiaLusiel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Merit.
+        /// </summary>
+        public static string historiaMerit {
+            get {
+                return ResourceManager.GetString("historiaMerit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Neferu.
+        /// </summary>
+        public static string historiaNeferu {
+            get {
+                return ResourceManager.GetString("historiaNeferu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pablian.
+        /// </summary>
+        public static string historiaPablian {
+            get {
+                return ResourceManager.GetString("historiaPablian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción del personaje.
+        /// </summary>
+        public static string historiaPersonajeInstruccion {
+            get {
+                return ResourceManager.GetString("historiaPersonajeInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seti.
+        /// </summary>
+        public static string historiaSeti {
+            get {
+                return ResourceManager.GetString("historiaSeti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sobek.
+        /// </summary>
+        public static string historiaSobek {
+            get {
+                return ResourceManager.GetString("historiaSobek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tucani.
+        /// </summary>
+        public static string historiaTucani {
+            get {
+                return ResourceManager.GetString("historiaTucani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Zael.
+        /// </summary>
+        public static string historiaZael {
+            get {
+                return ResourceManager.GetString("historiaZael", resourceCulture);
             }
         }
         
@@ -201,6 +534,33 @@ namespace ClienteGloomApp.Properties {
         public static string instruccionSeleccionarFoto {
             get {
                 return ResourceManager.GetString("instruccionSeleccionarFoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar una invitación por correo.
+        /// </summary>
+        public static string invitarAmistadesEnviarCorreo {
+            get {
+                return ResourceManager.GetString("invitarAmistadesEnviarCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver solicitudes de amistad.
+        /// </summary>
+        public static string listaAmigosbtnVerSolicitud {
+            get {
+                return ResourceManager.GetString("listaAmigosbtnVerSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Buscar jugador.
+        /// </summary>
+        public static string listaAmigosInstruccion {
+            get {
+                return ResourceManager.GetString("listaAmigosInstruccion", resourceCulture);
             }
         }
         
@@ -313,6 +673,60 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sala mini-historia.
+        /// </summary>
+        public static string miniHistoriaEncabezado {
+            get {
+                return ResourceManager.GetString("miniHistoriaEncabezado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionar familiar.
+        /// </summary>
+        public static string miniHistoriaInstruccionFamiliar {
+            get {
+                return ResourceManager.GetString("miniHistoriaInstruccionFamiliar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de sala.
+        /// </summary>
+        public static string miniHistoriaNumeroSala {
+            get {
+                return ResourceManager.GetString("miniHistoriaNumeroSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descartar.
+        /// </summary>
+        public static string partidaBtnDescartar {
+            get {
+                return ResourceManager.GetString("partidaBtnDescartar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Expulsar.
+        /// </summary>
+        public static string partidaBtnExpulsar {
+            get {
+                return ResourceManager.GetString("partidaBtnExpulsar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usar.
+        /// </summary>
+        public static string partidaBtnUsar {
+            get {
+                return ResourceManager.GetString("partidaBtnUsar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Guardar cambios.
         /// </summary>
         public static string perfilBtnCambiarDatos {
@@ -349,11 +763,110 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Los jugadores que coinciden con la búsqueda son.
+        /// </summary>
+        public static string resultadoAmistad {
+            get {
+                return ResourceManager.GetString("resultadoAmistad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción Corbat.
+        /// </summary>
+        public static string salaDescripcionCorbat {
+            get {
+                return ResourceManager.GetString("salaDescripcionCorbat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción Garlo.
+        /// </summary>
+        public static string salaDescripcionGarlo {
+            get {
+                return ResourceManager.GetString("salaDescripcionGarlo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción Ores.
+        /// </summary>
+        public static string salaDescripcionOres {
+            get {
+                return ResourceManager.GetString("salaDescripcionOres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción Ramfez.
+        /// </summary>
+        public static string salaDescripcionRamfez {
+            get {
+                return ResourceManager.GetString("salaDescripcionRamfez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sala.
+        /// </summary>
+        public static string salaInstruccion {
+            get {
+                return ResourceManager.GetString("salaInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionar una familia.
+        /// </summary>
+        public static string salaSeleccionarFamilia {
+            get {
+                return ResourceManager.GetString("salaSeleccionarFamilia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a De clic en el botón de “más” para para aceptar la solcitud.
+        /// </summary>
+        public static string solicitudAmistadInstruccion {
+            get {
+                return ResourceManager.GetString("solicitudAmistadInstruccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Buscar partida.
+        /// </summary>
+        public static string TituloBuscarPartida {
+            get {
+                return ResourceManager.GetString("TituloBuscarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear partida.
         /// </summary>
         public static string TituloCrearPartida {
             get {
                 return ResourceManager.GetString("TituloCrearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fin partida.
+        /// </summary>
+        public static string TituloFinPartida {
+            get {
+                return ResourceManager.GetString("TituloFinPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial de partidas.
+        /// </summary>
+        public static string TituloHistorialDePartidas {
+            get {
+                return ResourceManager.GetString("TituloHistorialDePartidas", resourceCulture);
             }
         }
         
@@ -376,6 +889,24 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lista de amigos.
+        /// </summary>
+        public static string TituloListaDeAmigos {
+            get {
+                return ResourceManager.GetString("TituloListaDeAmigos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partida.
+        /// </summary>
+        public static string TituloPartida {
+            get {
+                return ResourceManager.GetString("TituloPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Perfil jugador.
         /// </summary>
         public static string TituloPerfilJugador {
@@ -385,11 +916,38 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Personajes.
+        /// </summary>
+        public static string TituloPersonajes {
+            get {
+                return ResourceManager.GetString("TituloPersonajes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Registro jugador.
         /// </summary>
         public static string TituloRegistroJugador {
             get {
                 return ResourceManager.GetString("TituloRegistroJugador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sala.
+        /// </summary>
+        public static string TituloSala {
+            get {
+                return ResourceManager.GetString("TituloSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccione que desea hacer, vote para sacar a.
+        /// </summary>
+        public static string votacionInstruccion {
+            get {
+                return ResourceManager.GetString("votacionInstruccion", resourceCulture);
             }
         }
     }
