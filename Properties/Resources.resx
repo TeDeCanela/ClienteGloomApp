@@ -165,6 +165,18 @@
   <data name="globalCorreo" xml:space="preserve">
     <value>Correo</value>
   </data>
+  <data name="globalEmpezar" xml:space="preserve">
+    <value>Empezar</value>
+  </data>
+  <data name="globalInvitarJugadores" xml:space="preserve">
+    <value>Invitar Jugadores</value>
+  </data>
+  <data name="globalJugadores" xml:space="preserve">
+    <value>Jugadores</value>
+  </data>
+  <data name="globalListo" xml:space="preserve">
+    <value>Listo</value>
+  </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
@@ -297,6 +309,12 @@
   <data name="mensajeExp03" xml:space="preserve">
     <value>Usuario no encontrado</value>
   </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>Este código ya existe.</value>
+  </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Excepción 10054</value>
   </data>
@@ -314,6 +332,12 @@
   </data>
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Excepción 54060</value>
+  </data>
+  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
+    <value>¡Partida creada con éxito!</value>
+  </data>
+  <data name="mensajePartidaCreadaFallido" xml:space="preserve">
+    <value>La partida no pudo crearse. Por favor, inténtelo nuevamente.</value>
   </data>
   <data name="mensajeRegistroJugadorExito" xml:space="preserve">
     <value>Mensaje de Exito para el Registro</value>

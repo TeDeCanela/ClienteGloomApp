@@ -33,7 +33,7 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        /*private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
 
@@ -154,7 +154,7 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
-        }*/
+        }
     }
 
 }

@@ -1,0 +1,82 @@
+﻿<Window x:Class="ClienteGloomApp.Sala"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ClienteGloomApp"
+        xmlns:p="clr-namespace:ClienteGloomApp.Properties"
+        Title="" Height="800" Width="1900">
+    <Grid Background="#FFC38E79">
+
+        <Label x:Name="lblSala" Content="{x:Static p:Resources.salaInstruccion}" HorizontalAlignment="Left" Margin="56,24,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
+        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.globalInvitarJugadores}" HorizontalAlignment="Left" Margin="83,109,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="15">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="lblJugadores" Content="{x:Static p:Resources.globalJugadores}" HorizontalAlignment="Left" Margin="56,237,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
+        <Label x:Name="lblSeleccionarFamilia" Content="{x:Static p:Resources.salaSeleccionarFamilia}" HorizontalAlignment="Left" Margin="1105,78,0,0" VerticalAlignment="Top" Width="265" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
+        <Label x:Name="lblOres" Content="Ores" HorizontalAlignment="Left" Margin="815,133,0,0" VerticalAlignment="Top" Width="70" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
+        <Label x:Name="lblCorbat" Content="Corbat" HorizontalAlignment="Left" Margin="1032,133,0,0" VerticalAlignment="Top" Width="96" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
+        <Label x:Name="lblGarlo" Content="Garlo" HorizontalAlignment="Left" Margin="1267,133,0,0" VerticalAlignment="Top" Width="95" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
+        <Label x:Name="lblRamfez" Content="Ramfez" HorizontalAlignment="Left" Margin="1499,133,0,0" VerticalAlignment="Top" Width="96" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
+
+        <StackPanel Margin="735,205,279,473">
+            <StackPanel Orientation="Horizontal" Width="904">
+                <Button x:Name="btnOres" Height="80" Width="90" BorderBrush="{x:Null}" Margin="70,0" Click="btnOres_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCorazon.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnCorbat" Height="80" Width="90" BorderBrush="{x:Null}" Margin="70,0" Click="btnCorbat_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilDiamante.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnGarlo" Height="80" Width="90" BorderBrush="{x:Null}" Margin="70,0" Click="btnGarlo_Click"  >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCastillo.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnRamfez" Height="80" Width="90" BorderBrush="{x:Null}" Margin="70,0" Click="btnRamfez_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagenes/PerfilCalavera.png"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <TextBox x:Name="txtDescripcionFamilia" Margin="775,392,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1015" Height="157" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="btnListo" Content="{x:Static p:Resources.globalListo}" HorizontalAlignment="Left" Margin="1578,594,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="15">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.globalEmpezar}" HorizontalAlignment="Left" Margin="1578,679,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnListo_Copiar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="15">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

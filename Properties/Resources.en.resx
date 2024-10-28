@@ -120,6 +120,12 @@
   <data name="buscarPartidaBtnUnirse" xml:space="preserve">
     <value>Join game</value>
   </data>
+  <data name="buscarPartidaInstruccion" xml:space="preserve">
+    <value>Search game</value>
+  </data>
+  <data name="buscarPartidaPartida" xml:space="preserve">
+    <value>Game</value>
+  </data>
   <data name="crearPartidaBtnCrearSala" xml:space="preserve">
     <value>Create room</value>
   </data>
@@ -138,6 +144,18 @@
   <data name="crearPartidaTipoSala" xml:space="preserve">
     <value>Room type</value>
   </data>
+  <data name="entradaPrivadaPartidaInstruccion" xml:space="preserve">
+    <value>Write the room code</value>
+  </data>
+  <data name="escribirMensajeInstrucción" xml:space="preserve">
+    <value>Write a message</value>
+  </data>
+  <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
+    <value>Congratulations to the player who has cunningly and cruelly driven everyone else to the brink of despair. Victory is yours!</value>
+  </data>
+  <data name="finPartidaMiniLeyenda" xml:space="preserve">
+    <value>The voice of destiny has spoken and I have answered, I have won</value>
+  </data>
   <data name="globalApellidos" xml:space="preserve">
     <value>Last name</value>
   </data>
@@ -146,6 +164,9 @@
   </data>
   <data name="globalCorreo" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="globalInvitarJugadores" xml:space="preserve">
+    <value>Invite players</value>
   </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Name</value>
@@ -158,6 +179,72 @@
   </data>
   <data name="globalPartidaPublica" xml:space="preserve">
     <value>Public</value>
+  </data>
+  <data name="historiaAbelith" xml:space="preserve">
+    <value>A conjurer skilled in summoning and controlling spirits uses his knowledge to negotiate with supernatural entities, often at a high cost to the living.</value>
+  </data>
+  <data name="historiaAngelus" xml:space="preserve">
+    <value>The queen, cunning and manipulative, uses her charm to conceal her true cruel nature and control the nobles.</value>
+  </data>
+  <data name="historiaArialyn" xml:space="preserve">
+    <value>An enigmatic lady who controls the shadows manipulates darkness for her own ends, creating confusion and fear in those who cross her path.</value>
+  </data>
+  <data name="historiaAris" xml:space="preserve">
+    <value>A lone warrior of great skill seeks vengeance for a past betrayal, traveling the world in search of justice with his imposing sword.</value>
+  </data>
+  <data name="historiaDidorian" xml:space="preserve">
+    <value>An ancient alchemist, consumed by his quest for immortality, now conducts dark experiments in his isolated tower, surrounded by monsters of his own creation.</value>
+  </data>
+  <data name="historiaGaia" xml:space="preserve">
+    <value>A powerful sorceress connected to nature uses her abilities to protect the ancient forests, though her power can become lethal against those who threaten her home.</value>
+  </data>
+  <data name="historialGanador" xml:space="preserve">
+    <value>Winner</value>
+  </data>
+  <data name="historialHa" xml:space="preserve">
+    <value>The game has been</value>
+  </data>
+  <data name="historialInstruccion" xml:space="preserve">
+    <value>Game History</value>
+  </data>
+  <data name="historialJugoCon" xml:space="preserve">
+    <value>Played with</value>
+  </data>
+  <data name="historiaLorenzeo" xml:space="preserve">
+    <value>A military leader with demonic strength ravages cities and collects souls to feed his dark power while seeking to conquer everything in his path.</value>
+  </data>
+  <data name="historialTipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="historiaLuan" xml:space="preserve">
+    <value>The king, known for his tyranny and cruelty, rules through fear and oppression.</value>
+  </data>
+  <data name="historiaLusiel" xml:space="preserve">
+    <value>The crown prince, arrogant and contemptuous, enjoys abusing his power and causing chaos.</value>
+  </data>
+  <data name="historiaMerit" xml:space="preserve">
+    <value>The matriarch, known for her sarcasm and lack of patience, handles internal affairs with a firm hand and manipulates others to maintain control.</value>
+  </data>
+  <data name="historiaNeferu" xml:space="preserve">
+    <value> The eldest daughter, a ruthless warrior who enjoys causing pain in battle. Her rude attitude and lack of respect make her a feared figure on the battlefield.</value>
+  </data>
+  <data name="historiaPablian" xml:space="preserve">
+    <value>A bard corrupted by dark powers uses his music to sow discord and destruction across the realms while concealing his true intentions.</value>
+  </data>
+  <data name="historiaPersonajeInstruccion" xml:space="preserve">
+    <value>Character description</value>
+  </data>
+  <data name="historiaSeti" xml:space="preserve">
+    <value>The patriarch of the family, Seti is a man of iron will and a cold heart. His ability to manipulate and his excessive ambition have earned him the respect of his followers, but also the hatred of his enemies.</value>
+  </data>
+  <data name="historiaSobek" xml:space="preserve">
+    <value>The youngest son, clumsy but unpredictable. His erratic behavior makes him an unexpected and dangerous threat at court, using chaos to his advantage.</value>
+  </data>
+  <data name="historiaTucani" xml:space="preserve">
+    <value>The princess, unpredictable and vengeful, creates unrest with her erratic behavior and lack of compassion.</value>
+  </data>
+  <data name="historiaZael" xml:space="preserve">
+    <value>A lethal and treacherous assassin uses his ability to move through the shadows and his dark artifact to bring chaos and death without leaving a trace.</value>
   </data>
   <data name="inicioBtnBuscarPartida" xml:space="preserve">
     <value>Search game</value>
@@ -191,6 +278,15 @@
   </data>
   <data name="instruccionSeleccionarFoto" xml:space="preserve">
     <value>Select the picture if you want to change it</value>
+  </data>
+  <data name="invitarAmistadesEnviarCorreo" xml:space="preserve">
+    <value>Send a invitation on email</value>
+  </data>
+  <data name="listaAmigosbtnVerSolicitud" xml:space="preserve">
+    <value>See friends request</value>
+  </data>
+  <data name="listaAmigosInstruccion" xml:space="preserve">
+    <value>Search for player</value>
   </data>
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Update succefully!</value>
@@ -228,6 +324,24 @@
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>An error occurred while registering, please try again</value>
   </data>
+  <data name="miniHistoriaEncabezado" xml:space="preserve">
+    <value>Mini-story room.</value>
+  </data>
+  <data name="miniHistoriaInstruccionFamiliar" xml:space="preserve">
+    <value>Select familiar</value>
+  </data>
+  <data name="miniHistoriaNumeroSala" xml:space="preserve">
+    <value>Room number</value>
+  </data>
+  <data name="partidaBtnDescartar" xml:space="preserve">
+    <value>Discard</value>
+  </data>
+  <data name="partidaBtnExpulsar" xml:space="preserve">
+    <value>Kick out</value>
+  </data>
+  <data name="partidaBtnUsar" xml:space="preserve">
+    <value>Use</value>
+  </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Save changes</value>
   </data>
@@ -240,11 +354,20 @@
   <data name="registroInstruccionIcono" xml:space="preserve">
     <value>Select profile icon</value>
   </data>
+  <data name="resultadoAmistad" xml:space="preserve">
+    <value>The players that match the search are</value>
+  </data>
   <data name="salaDescripcionCorbat" xml:space="preserve">
     <value>They are a feared and powerful family, each member mastering a dark aspect of magic and war. United by their boundless ambition and thirst for power, the Corbat family has become an unstoppable force, leaving destruction in their wake.</value>
   </data>
+  <data name="salaDescripcionGarlo" xml:space="preserve">
+    <value>The Garlo family is known in Garloth for their oppressive rule and their feared reputation throughout the realm.</value>
+  </data>
   <data name="salaDescripcionOres" xml:space="preserve">
     <value>They are a powerful and feared family, each member wielding their own mastery over the dark arts. United by their ambition and a legacy of shadows, the Nocturnis family has woven a web of terror across the realms, seeking to expand their malignant influence.</value>
+  </data>
+  <data name="salaDescripcionRamfez" xml:space="preserve">
+    <value>The Ramfez family is known in Eldoria for their feared and despised reputation, wielding power through intrigue and cruelty.</value>
   </data>
   <data name="salaInstruccion" xml:space="preserve">
     <value>Room</value>
@@ -252,8 +375,20 @@
   <data name="salaSeleccionarFamilia" xml:space="preserve">
     <value>Select a family</value>
   </data>
+  <data name="solicitudAmistadInstruccion" xml:space="preserve">
+    <value>Click the ‘more’ button to accept the request.</value>
+  </data>
+  <data name="TituloBuscarPartida" xml:space="preserve">
+    <value>Search game</value>
+  </data>
   <data name="TituloCrearPartida" xml:space="preserve">
     <value>Crear partida</value>
+  </data>
+  <data name="TituloFinPartida" xml:space="preserve">
+    <value>End of game</value>
+  </data>
+  <data name="TituloHistorialDePartidas" xml:space="preserve">
+    <value>Game History</value>
   </data>
   <data name="TituloInicio" xml:space="preserve">
     <value>Start</value>
@@ -261,8 +396,17 @@
   <data name="TituloInicioSesion" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="TituloListaDeAmigos" xml:space="preserve">
+    <value>Friends list</value>
+  </data>
+  <data name="TituloPartida" xml:space="preserve">
+    <value>Game</value>
+  </data>
   <data name="TituloPerfilJugador" xml:space="preserve">
     <value>Player profile</value>
+  </data>
+  <data name="TituloPersonajes" xml:space="preserve">
+    <value>Characters</value>
   </data>
   <data name="TituloRegistroJugador" xml:space="preserve">
     <value>Player register</value>
@@ -270,148 +414,28 @@
   <data name="TituloSala" xml:space="preserve">
     <value>Room</value>
   </data>
-  <data name="salaDescripcionGarlo" xml:space="preserve">
-    <value>The Garlo family is known in Garloth for their oppressive rule and their feared reputation throughout the realm.</value>
-  </data>
-  <data name="salaDescripcionRamfez" xml:space="preserve">
-    <value>The Ramfez family is known in Eldoria for their feared and despised reputation, wielding power through intrigue and cruelty.</value>
-  </data>
-  <data name="TituloHistorialDePartidas" xml:space="preserve">
-    <value>Game History</value>
-  </data>
-  <data name="buscarPartidaInstruccion" xml:space="preserve">
-    <value>Search game</value>
-  </data>
-  <data name="buscarPartidaPartida" xml:space="preserve">
-    <value>Game</value>
-  </data>
-  <data name="historialGanador" xml:space="preserve">
-    <value>Winner</value>
-  </data>
-  <data name="historialHa" xml:space="preserve">
-    <value>The game has been</value>
-  </data>
-  <data name="historialInstruccion" xml:space="preserve">
-    <value>Game History</value>
-  </data>
-  <data name="historialJugoCon" xml:space="preserve">
-    <value>Played with</value>
-  </data>
-  <data name="historialTipo" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="TituloBuscarPartida" xml:space="preserve">
-    <value>Search game</value>
-  </data>
-  <data name="escribirMensajeInstrucción" xml:space="preserve">
-    <value>Write a message</value>
-  </data>
-  <data name="invitarAmistadesEnviarCorreo" xml:space="preserve">
-    <value>Send a invitation on email</value>
-  </data>
-  <data name="partidaBtnDescartar" xml:space="preserve">
-    <value>Discard</value>
-  </data>
-  <data name="partidaBtnExpulsar" xml:space="preserve">
-    <value>Kick out</value>
-  </data>
-  <data name="partidaBtnUsar" xml:space="preserve">
-    <value>Use</value>
-  </data>
-  <data name="resultadoAmistad" xml:space="preserve">
-    <value>The players that match the search are</value>
-  </data>
-  <data name="TituloPartida" xml:space="preserve">
-    <value>Game</value>
-  </data>
-  <data name="entradaPrivadaPartidaInstruccion" xml:space="preserve">
-    <value>Write the room code</value>
-  </data>
-  <data name="historiaAbelith" xml:space="preserve">
-    <value>A conjurer skilled in summoning and controlling spirits uses his knowledge to negotiate with supernatural entities, often at a high cost to the living.</value>
-  </data>
-  <data name="historiaAngelus" xml:space="preserve">
-    <value>The queen, cunning and manipulative, uses her charm to conceal her true cruel nature and control the nobles.</value>
-  </data>
-  <data name="historiaArialyn" xml:space="preserve">
-    <value>An enigmatic lady who controls the shadows manipulates darkness for her own ends, creating confusion and fear in those who cross her path.</value>
-  </data>
-  <data name="historiaAris" xml:space="preserve">
-    <value>A lone warrior of great skill seeks vengeance for a past betrayal, traveling the world in search of justice with his imposing sword.</value>
-  </data>
-  <data name="historiaDidorian" xml:space="preserve">
-    <value>An ancient alchemist, consumed by his quest for immortality, now conducts dark experiments in his isolated tower, surrounded by monsters of his own creation.</value>
-  </data>
-  <data name="historiaGaia" xml:space="preserve">
-    <value>A powerful sorceress connected to nature uses her abilities to protect the ancient forests, though her power can become lethal against those who threaten her home.</value>
-  </data>
-  <data name="historiaLorenzeo" xml:space="preserve">
-    <value>A military leader with demonic strength ravages cities and collects souls to feed his dark power while seeking to conquer everything in his path.</value>
-  </data>
-  <data name="historiaLuan" xml:space="preserve">
-    <value>The king, known for his tyranny and cruelty, rules through fear and oppression.</value>
-  </data>
-  <data name="historiaLusiel" xml:space="preserve">
-    <value>The crown prince, arrogant and contemptuous, enjoys abusing his power and causing chaos.</value>
-  </data>
-  <data name="historiaMerit" xml:space="preserve">
-    <value>The matriarch, known for her sarcasm and lack of patience, handles internal affairs with a firm hand and manipulates others to maintain control.</value>
-  </data>
-  <data name="historiaNeferu" xml:space="preserve">
-    <value> The eldest daughter, a ruthless warrior who enjoys causing pain in battle. Her rude attitude and lack of respect make her a feared figure on the battlefield.</value>
-  </data>
-  <data name="historiaPablian" xml:space="preserve">
-    <value>A bard corrupted by dark powers uses his music to sow discord and destruction across the realms while concealing his true intentions.</value>
-  </data>
-  <data name="historiaPersonajeInstruccion" xml:space="preserve">
-    <value>Character description</value>
-  </data>
-  <data name="historiaSeti" xml:space="preserve">
-    <value>The patriarch of the family, Seti is a man of iron will and a cold heart. His ability to manipulate and his excessive ambition have earned him the respect of his followers, but also the hatred of his enemies.</value>
-  </data>
-  <data name="historiaSobek" xml:space="preserve">
-    <value>The youngest son, clumsy but unpredictable. His erratic behavior makes him an unexpected and dangerous threat at court, using chaos to his advantage.</value>
-  </data>
-  <data name="historiaTucani" xml:space="preserve">
-    <value>The princess, unpredictable and vengeful, creates unrest with her erratic behavior and lack of compassion.</value>
-  </data>
-  <data name="historiaZael" xml:space="preserve">
-    <value>A lethal and treacherous assassin uses his ability to move through the shadows and his dark artifact to bring chaos and death without leaving a trace.</value>
-  </data>
-  <data name="listaAmigosbtnVerSolicitud" xml:space="preserve">
-    <value>See friends request</value>
-  </data>
-  <data name="listaAmigosInstruccion" xml:space="preserve">
-    <value>Search for player</value>
-  </data>
-  <data name="miniHistoriaEncabezado" xml:space="preserve">
-    <value>Mini-story room.</value>
-  </data>
-  <data name="miniHistoriaInstruccionFamiliar" xml:space="preserve">
-    <value>Select familiar</value>
-  </data>
-  <data name="miniHistoriaNumeroSala" xml:space="preserve">
-    <value>Room number</value>
-  </data>
-  <data name="solicitudAmistadInstruccion" xml:space="preserve">
-    <value>Click the ‘more’ button to accept the request.</value>
-  </data>
-  <data name="TituloListaDeAmigos" xml:space="preserve">
-    <value>Friends list</value>
-  </data>
-  <data name="TituloPersonajes" xml:space="preserve">
-    <value>Characters</value>
-  </data>
-  <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
-    <value>Congratulations to the player who has cunningly and cruelly driven everyone else to the brink of despair. Victory is yours!</value>
-  </data>
-  <data name="finPartidaMiniLeyenda" xml:space="preserve">
-    <value>The voice of destiny has spoken and I have answered, I have won</value>
-  </data>
-  <data name="TituloFinPartida" xml:space="preserve">
-    <value>End of game</value>
-  </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
+  </data>
+  <data name="globalJugadores" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="globalListo" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="globalEmpezar" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
+    <value>Game created successfully!</value>
+  </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>This room name is already taken, please try entering a different name.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>This code already exists.</value>
+  </data>
+  <data name="mensajePartidaCreadaFallido" xml:space="preserve">
+    <value>The game could not be created. Please try again.</value>
   </data>
 </root>

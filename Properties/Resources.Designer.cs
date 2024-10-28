@@ -205,6 +205,42 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Empezar.
+        /// </summary>
+        public static string globalEmpezar {
+            get {
+                return ResourceManager.GetString("globalEmpezar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invitar Jugadores.
+        /// </summary>
+        public static string globalInvitarJugadores {
+            get {
+                return ResourceManager.GetString("globalInvitarJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugadores.
+        /// </summary>
+        public static string globalJugadores {
+            get {
+                return ResourceManager.GetString("globalJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Listo.
+        /// </summary>
+        public static string globalListo {
+            get {
+                return ResourceManager.GetString("globalListo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombre.
         /// </summary>
         public static string globalNombre {
@@ -601,6 +637,24 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente..
+        /// </summary>
+        public static string mensajeExp08 {
+            get {
+                return ResourceManager.GetString("mensajeExp08", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Este código ya existe..
+        /// </summary>
+        public static string mensajeExp09 {
+            get {
+                return ResourceManager.GetString("mensajeExp09", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Excepción 10054.
         /// </summary>
         public static string mensajeExp10054 {
@@ -651,6 +705,24 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeExp54060 {
             get {
                 return ResourceManager.GetString("mensajeExp54060", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Partida creada con éxito!.
+        /// </summary>
+        public static string mensajePartidaCreadaExitosa {
+            get {
+                return ResourceManager.GetString("mensajePartidaCreadaExitosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La partida no pudo crearse. Por favor, inténtelo nuevamente..
+        /// </summary>
+        public static string mensajePartidaCreadaFallido {
+            get {
+                return ResourceManager.GetString("mensajePartidaCreadaFallido", resourceCulture);
             }
         }
         

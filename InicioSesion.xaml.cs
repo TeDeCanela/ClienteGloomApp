@@ -62,8 +62,8 @@ namespace ClienteGloomApp
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
-            //jugador.nombreUsuario = txtBoxNombre.Text;
-            //jugador.contraseña = passwordBox.Password;
+            /*jugador.nombreUsuario = txtBoxNombre.Text;
+            jugador.contraseña = passwordBox.Password;
 
             try
             {
@@ -78,7 +78,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
+            }*/
         }
 
         private void actualizarElementos()

@@ -24,8 +24,8 @@ namespace ClienteGloomApp
         public PerfilJugador(String nombreUsuario)
         {
             InitializeComponent();
-            //Loaded += MainWindow_Loaded;
-            //identificadorUsuario = nombreUsuario;   
+            Loaded += MainWindow_Loaded;
+            identificadorUsuario = nombreUsuario;   
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -35,7 +35,7 @@ namespace ClienteGloomApp
 
         public void RellenarCamposDesdeJugador()
         {
-            /*InstanceContext contextoJugador = new InstanceContext(this);
+            InstanceContext contextoJugador = new InstanceContext(this);
 
             ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
 
@@ -56,14 +56,14 @@ namespace ClienteGloomApp
             txtNombre.Text = jugador.nombre;
             txtApellidos.Text = jugador.apellidos;
             txtCorreo.Text = jugador.correo;
-            pwdContrasena.Password = jugador.contraseña;*/
+            pwdContrasena.Password = jugador.contraseña;
             
         }
         private void btnCambiarDatos_Click(object sender, RoutedEventArgs e)
         {
 
 
-            /*InstanceContext contextoJugador = new InstanceContext(this);
+            InstanceContext contextoJugador = new InstanceContext(this);
 
             ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
 
@@ -88,7 +88,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }*/
+            }
 
         }
 
@@ -99,9 +99,9 @@ namespace ClienteGloomApp
 
        private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
-           /* Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
         private void btnPerfilCalavera_Click(object sender, RoutedEventArgs e)
         {
@@ -169,14 +169,14 @@ namespace ClienteGloomApp
             botonSeleccionada.BorderBrush = new SolidColorBrush(Colors.Magenta);
             botonSeleccionada.BorderThickness = new Thickness(4);
 
-            /*foreach (var child in panelbotones.Children)
+            foreach (var child in panelbotones.Children)
             {
                 if (child is Button botonesDeContendero && botonesDeContendero != botonSeleccionada)
                 {
 
                     botonesDeContendero.BorderBrush = null;
                 }
-            }*/
+            }
         }
     }
 }
