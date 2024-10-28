@@ -24,7 +24,7 @@ namespace ClienteGloomApp
         public Inicio(String nombreDelUsuario)
         {
             InitializeComponent();
-           // lblNombreUsuario.Content = nombreDelUsuario;
+            lblNombreUsuario.Content = nombreDelUsuario;
   
         }
 
@@ -35,8 +35,36 @@ namespace ClienteGloomApp
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            //PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
-            //nuevaVentana.Show();
+            PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        private void btnVerPersonajes_Click(object sender, RoutedEventArgs e)
+        {
+            HistoriaPersonajes nuevaVentana = new HistoriaPersonajes(lblNombreUsuario.Content.ToString());
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        private void btnListaDeAmigos_Click(object sender, RoutedEventArgs e)
+        {
+            ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        private void btnHistorialDePartidas_Click(object sender, RoutedEventArgs e)
+        {
+            HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
+            nuevavenatana.Show();
             this.Close();
         }
     }

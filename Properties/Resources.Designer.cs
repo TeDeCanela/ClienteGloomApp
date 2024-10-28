@@ -295,7 +295,7 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ganador.
+        ///   Busca una cadena traducida similar a Ganó.
         /// </summary>
         public static string historialGanador {
             get {
@@ -340,6 +340,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Perdió.
+        /// </summary>
+        public static string historialPerdedor {
+            get {
+                return ResourceManager.GetString("historialPerdedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Tipo.
         /// </summary>
         public static string historialTipo {
@@ -363,6 +372,15 @@ namespace ClienteGloomApp.Properties {
         public static string historiaLusiel {
             get {
                 return ResourceManager.GetString("historiaLusiel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ganador.
+        /// </summary>
+        public static string historialVictoria {
+            get {
+                return ResourceManager.GetString("historialVictoria", resourceCulture);
             }
         }
         
@@ -547,6 +565,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Mis amigos.
+        /// </summary>
+        public static string listaAmigosBtnMisAmigos {
+            get {
+                return ResourceManager.GetString("listaAmigosBtnMisAmigos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ver solicitudes de amistad.
         /// </summary>
         public static string listaAmigosbtnVerSolicitud {
@@ -597,6 +624,42 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeExp03 {
             get {
                 return ResourceManager.GetString("mensajeExp03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Este usuario ya es amigo suyo.
+        /// </summary>
+        public static string mensajeExp04 {
+            get {
+                return ResourceManager.GetString("mensajeExp04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ya se ha enviado una solicitud a este jugador, espere a su respuesta.
+        /// </summary>
+        public static string mensajeExp05 {
+            get {
+                return ResourceManager.GetString("mensajeExp05", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Para agregar un amigo, debes seleccionar el perfil de otra persona, asegúrate de enviar la solicitud a alguien más..
+        /// </summary>
+        public static string mensajeExp06 {
+            get {
+                return ResourceManager.GetString("mensajeExp06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ha seleccionado a un jugador para enviar solicitud.
+        /// </summary>
+        public static string mensajeExp07 {
+            get {
+                return ResourceManager.GetString("mensajeExp07", resourceCulture);
             }
         }
         
@@ -669,6 +732,42 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeRegistroJugadorFallido {
             get {
                 return ResourceManager.GetString("mensajeRegistroJugadorFallido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu solicitud de amistad se ha enviado exitosamente.
+        /// </summary>
+        public static string mensajeSolcitudEnviadaExito {
+            get {
+                return ResourceManager.GetString("mensajeSolcitudEnviadaExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Advertencia.
+        /// </summary>
+        public static string mensajeTituloAdvertencia {
+            get {
+                return ResourceManager.GetString("mensajeTituloAdvertencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Exito.
+        /// </summary>
+        public static string mensajeTituloExito {
+            get {
+                return ResourceManager.GetString("mensajeTituloExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Informacion.
+        /// </summary>
+        public static string mensajeTituloInformacion {
+            get {
+                return ResourceManager.GetString("mensajeTituloInformacion", resourceCulture);
             }
         }
         

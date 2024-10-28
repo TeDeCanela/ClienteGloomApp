@@ -19,16 +19,12 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para InicioSesion.xaml
     /// </summary>
-    public partial class InicioSesion : Window, ServicioGloom.IServicioAdministradorCallback
+    public partial class InicioSesion : Window
     {
         public InicioSesion()
         {
             InitializeComponent();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
-        }
-        void IServicioAdministradorCallback.Response(int result)
-        {
-            throw new NotImplementedException();
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -62,8 +58,8 @@ namespace ClienteGloomApp
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
-            //jugador.nombreUsuario = txtBoxNombre.Text;
-            //jugador.contraseña = passwordBox.Password;
+            jugador.nombreUsuario = txtBoxNombre.Text;
+            jugador.contraseña = passwordBox.Password;
 
             try
             {
@@ -83,11 +79,11 @@ namespace ClienteGloomApp
 
         private void actualizarElementos()
         {
-            /*lblNombreUsuario.Content = Properties.Resources.globalNombreUsuario;
+            lblNombreUsuario.Content = Properties.Resources.globalNombreUsuario;
             lblContraseña.Content = Properties.Resources.globalContraseña;
             btnIniciarSesion.Content = Properties.Resources.inicioSesionBtnIniciarSesion;
             btnJugarComoInvitado.Content = Properties.Resources.inicioSesionBtnJugarComoInvitado;
-            btnRegistrarse.Content = Properties.Resources.inicioSesionBtnRegistrarse;*/
+            btnRegistrarse.Content = Properties.Resources.inicioSesionBtnRegistrarse;
 
 
         }

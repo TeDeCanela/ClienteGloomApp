@@ -196,7 +196,7 @@
     <value>Gaia</value>
   </data>
   <data name="historialGanador" xml:space="preserve">
-    <value>Ganador</value>
+    <value>Ganó</value>
   </data>
   <data name="historialHa" xml:space="preserve">
     <value>La partida a sido</value>
@@ -210,6 +210,9 @@
   <data name="historiaLorenzeo" xml:space="preserve">
     <value>Lorenzeo</value>
   </data>
+  <data name="historialPerdedor" xml:space="preserve">
+    <value>Perdió</value>
+  </data>
   <data name="historialTipo" xml:space="preserve">
     <value>Tipo</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="historiaLusiel" xml:space="preserve">
     <value>Lusiel</value>
+  </data>
+  <data name="historialVictoria" xml:space="preserve">
+    <value>Ganador</value>
   </data>
   <data name="historiaMerit" xml:space="preserve">
     <value>Merit</value>
@@ -279,6 +285,9 @@
   <data name="invitarAmistadesEnviarCorreo" xml:space="preserve">
     <value>Enviar una invitación por correo</value>
   </data>
+  <data name="listaAmigosBtnMisAmigos" xml:space="preserve">
+    <value>Mis amigos</value>
+  </data>
   <data name="listaAmigosbtnVerSolicitud" xml:space="preserve">
     <value>Ver solicitudes de amistad</value>
   </data>
@@ -296,6 +305,18 @@
   </data>
   <data name="mensajeExp03" xml:space="preserve">
     <value>Usuario no encontrado</value>
+  </data>
+  <data name="mensajeExp04" xml:space="preserve">
+    <value>Este usuario ya es amigo suyo</value>
+  </data>
+  <data name="mensajeExp05" xml:space="preserve">
+    <value>Ya se ha enviado una solicitud a este jugador, espere a su respuesta</value>
+  </data>
+  <data name="mensajeExp06" xml:space="preserve">
+    <value>Para agregar un amigo, debes seleccionar el perfil de otra persona, asegúrate de enviar la solicitud a alguien más.</value>
+  </data>
+  <data name="mensajeExp07" xml:space="preserve">
+    <value>No ha seleccionado a un jugador para enviar solicitud</value>
   </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Excepción 10054</value>
@@ -320,6 +341,18 @@
   </data>
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>Mensaje de falla para el registro</value>
+  </data>
+  <data name="mensajeSolcitudEnviadaExito" xml:space="preserve">
+    <value>Tu solicitud de amistad se ha enviado exitosamente</value>
+  </data>
+  <data name="mensajeTituloAdvertencia" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="mensajeTituloExito" xml:space="preserve">
+    <value>Exito</value>
+  </data>
+  <data name="mensajeTituloInformacion" xml:space="preserve">
+    <value>Informacion</value>
   </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Sala mini-historia</value>

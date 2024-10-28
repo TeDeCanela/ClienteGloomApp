@@ -15,7 +15,7 @@ namespace ClienteGloomApp.ServicioGloom {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
     [System.SerializableAttribute()]
     public partial class Jugador : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -156,7 +156,7 @@ namespace ClienteGloomApp.ServicioGloom {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
     [System.SerializableAttribute()]
     public partial class ManejadorExcepciones : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -199,44 +199,269 @@ namespace ClienteGloomApp.ServicioGloom {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.IServicioAdministrador", CallbackContract=typeof(ClienteGloomApp.ServicioGloom.IServicioAdministradorCallback))]
-    public interface IServicioAdministrador {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServicioAdministradorCallback {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Amistad", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+    [System.SerializableAttribute()]
+    public partial class Amistad : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioAdministrador/Response", ReplyAction="http://tempuri.org/IServicioAdministrador/ResponseResponse")]
-        void Response(int result);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServicioAdministradorChannel : ClienteGloomApp.ServicioGloom.IServicioAdministrador, System.ServiceModel.IClientChannel {
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string estadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClienteGloomApp.ServicioGloom.Jugador jugadorAmigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClienteGloomApp.ServicioGloom.Jugador nombreUsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.estadoField, value) != true)) {
+                    this.estadoField = value;
+                    this.RaisePropertyChanged("estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClienteGloomApp.ServicioGloom.Jugador jugadorAmigo {
+            get {
+                return this.jugadorAmigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.jugadorAmigoField, value) != true)) {
+                    this.jugadorAmigoField = value;
+                    this.RaisePropertyChanged("jugadorAmigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClienteGloomApp.ServicioGloom.Jugador nombreUsuario {
+            get {
+                return this.nombreUsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nombreUsuarioField, value) != true)) {
+                    this.nombreUsuarioField = value;
+                    this.RaisePropertyChanged("nombreUsuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServicioAdministradorClient : System.ServiceModel.DuplexClientBase<ClienteGloomApp.ServicioGloom.IServicioAdministrador>, ClienteGloomApp.ServicioGloom.IServicioAdministrador {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sala", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+    [System.SerializableAttribute()]
+    public partial class Sala : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        public ServicioAdministradorClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ganadorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string idAdministradorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string idSalaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string jugadorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int noJugadoresField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nombreSalaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tipoPartidaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tipoSalaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
         }
         
-        public ServicioAdministradorClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codigoField, value) != true)) {
+                    this.codigoField = value;
+                    this.RaisePropertyChanged("codigo");
+                }
+            }
         }
         
-        public ServicioAdministradorClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fecha {
+            get {
+                return this.fechaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fechaField, value) != true)) {
+                    this.fechaField = value;
+                    this.RaisePropertyChanged("fecha");
+                }
+            }
         }
         
-        public ServicioAdministradorClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ganador {
+            get {
+                return this.ganadorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ganadorField, value) != true)) {
+                    this.ganadorField = value;
+                    this.RaisePropertyChanged("ganador");
+                }
+            }
         }
         
-        public ServicioAdministradorClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string idAdministrador {
+            get {
+                return this.idAdministradorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.idAdministradorField, value) != true)) {
+                    this.idAdministradorField = value;
+                    this.RaisePropertyChanged("idAdministrador");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string idSala {
+            get {
+                return this.idSalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.idSalaField, value) != true)) {
+                    this.idSalaField = value;
+                    this.RaisePropertyChanged("idSala");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string jugador {
+            get {
+                return this.jugadorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.jugadorField, value) != true)) {
+                    this.jugadorField = value;
+                    this.RaisePropertyChanged("jugador");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int noJugadores {
+            get {
+                return this.noJugadoresField;
+            }
+            set {
+                if ((this.noJugadoresField.Equals(value) != true)) {
+                    this.noJugadoresField = value;
+                    this.RaisePropertyChanged("noJugadores");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombreSala {
+            get {
+                return this.nombreSalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nombreSalaField, value) != true)) {
+                    this.nombreSalaField = value;
+                    this.RaisePropertyChanged("nombreSala");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tipoPartida {
+            get {
+                return this.tipoPartidaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tipoPartidaField, value) != true)) {
+                    this.tipoPartidaField = value;
+                    this.RaisePropertyChanged("tipoPartida");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tipoSala {
+            get {
+                return this.tipoSalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tipoSalaField, value) != true)) {
+                    this.tipoSalaField = value;
+                    this.RaisePropertyChanged("tipoSala");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -245,32 +470,40 @@ namespace ClienteGloomApp.ServicioGloom {
     public interface IJugador {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AgregarJugador", ReplyAction="http://tempuri.org/IJugador/AgregarJugadorResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/AgregarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/AgregarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         int AgregarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AgregarJugador", ReplyAction="http://tempuri.org/IJugador/AgregarJugadorResponse")]
         System.Threading.Tasks.Task<int> AgregarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugador", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ActualizarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ActualizarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         int ActualizarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugador", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorResponse")]
         System.Threading.Tasks.Task<int> ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AutenticarJugador", ReplyAction="http://tempuri.org/IJugador/AutenticarJugadorResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/AutenticarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/AutenticarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         int AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AutenticarJugador", ReplyAction="http://tempuri.org/IJugador/AutenticarJugadorResponse")]
         System.Threading.Tasks.Task<int> AutenticarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ObtenerJugador", ReplyAction="http://tempuri.org/IJugador/ObtenerJugadorResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ObtenerJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ObtenerJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         ClienteGloomApp.ServicioGloom.Jugador ObtenerJugador(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ObtenerJugador", ReplyAction="http://tempuri.org/IJugador/ObtenerJugadorResponse")]
         System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Jugador> ObtenerJugadorAsync(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuario", ReplyAction="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuarioResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuarioManejadorExcepcionesFa" +
+            "ult", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        ClienteGloomApp.ServicioGloom.Jugador[] BuscarJugadoresPorNombreUsuario(string nombreUsuarioParcial);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuario", ReplyAction="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuarioResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Jugador[]> BuscarJugadoresPorNombreUsuarioAsync(string nombreUsuarioParcial);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -330,6 +563,216 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Jugador> ObtenerJugadorAsync(string nombreUsuario) {
             return base.Channel.ObtenerJugadorAsync(nombreUsuario);
+        }
+        
+        public ClienteGloomApp.ServicioGloom.Jugador[] BuscarJugadoresPorNombreUsuario(string nombreUsuarioParcial) {
+            return base.Channel.BuscarJugadoresPorNombreUsuario(nombreUsuarioParcial);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Jugador[]> BuscarJugadoresPorNombreUsuarioAsync(string nombreUsuarioParcial) {
+            return base.Channel.BuscarJugadoresPorNombreUsuarioAsync(nombreUsuarioParcial);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.IAmigos")]
+    public interface IAmigos {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/EnviarSolcitudAmistad", ReplyAction="http://tempuri.org/IAmigos/EnviarSolcitudAmistadResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IAmigos/EnviarSolcitudAmistadManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int EnviarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/EnviarSolcitudAmistad", ReplyAction="http://tempuri.org/IAmigos/EnviarSolcitudAmistadResponse")]
+        System.Threading.Tasks.Task<int> EnviarSolcitudAmistadAsync(ClienteGloomApp.ServicioGloom.Amistad solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ValidarSolcitudAmistad", ReplyAction="http://tempuri.org/IAmigos/ValidarSolcitudAmistadResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IAmigos/ValidarSolcitudAmistadManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int ValidarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ValidarSolcitudAmistad", ReplyAction="http://tempuri.org/IAmigos/ValidarSolcitudAmistadResponse")]
+        System.Threading.Tasks.Task<int> ValidarSolcitudAmistadAsync(ClienteGloomApp.ServicioGloom.Amistad solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ArchivarAmistad", ReplyAction="http://tempuri.org/IAmigos/ArchivarAmistadResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IAmigos/ArchivarAmistadManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int ArchivarAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ArchivarAmistad", ReplyAction="http://tempuri.org/IAmigos/ArchivarAmistadResponse")]
+        System.Threading.Tasks.Task<int> ArchivarAmistadAsync(ClienteGloomApp.ServicioGloom.Amistad solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ObtenerListaAmigos", ReplyAction="http://tempuri.org/IAmigos/ObtenerListaAmigosResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IAmigos/ObtenerListaAmigosManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        ClienteGloomApp.ServicioGloom.Amistad[] ObtenerListaAmigos(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ObtenerListaAmigos", ReplyAction="http://tempuri.org/IAmigos/ObtenerListaAmigosResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Amistad[]> ObtenerListaAmigosAsync(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugador", ReplyAction="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugadorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugadorManejadorExcepcio" +
+            "nesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        ClienteGloomApp.ServicioGloom.Amistad[] ObtenerSolicitudesDeAmistadPorJugador(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugador", ReplyAction="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugadorResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Amistad[]> ObtenerSolicitudesDeAmistadPorJugadorAsync(string nombreUsuario);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAmigosChannel : ClienteGloomApp.ServicioGloom.IAmigos, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AmigosClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IAmigos>, ClienteGloomApp.ServicioGloom.IAmigos {
+        
+        public AmigosClient(System.ServiceModel.InstanceContext contextoAmistad) {
+        }
+        
+        public AmigosClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public AmigosClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AmigosClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AmigosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int EnviarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
+            return base.Channel.EnviarSolcitudAmistad(solicitud);
+        }
+        
+        public System.Threading.Tasks.Task<int> EnviarSolcitudAmistadAsync(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
+            return base.Channel.EnviarSolcitudAmistadAsync(solicitud);
+        }
+        
+        public int ValidarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
+            return base.Channel.ValidarSolcitudAmistad(solicitud);
+        }
+        
+        public System.Threading.Tasks.Task<int> ValidarSolcitudAmistadAsync(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
+            return base.Channel.ValidarSolcitudAmistadAsync(solicitud);
+        }
+        
+        public int ArchivarAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
+            return base.Channel.ArchivarAmistad(solicitud);
+        }
+        
+        public System.Threading.Tasks.Task<int> ArchivarAmistadAsync(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
+            return base.Channel.ArchivarAmistadAsync(solicitud);
+        }
+        
+        public ClienteGloomApp.ServicioGloom.Amistad[] ObtenerListaAmigos(string nombreUsuario) {
+            return base.Channel.ObtenerListaAmigos(nombreUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Amistad[]> ObtenerListaAmigosAsync(string nombreUsuario) {
+            return base.Channel.ObtenerListaAmigosAsync(nombreUsuario);
+        }
+        
+        public ClienteGloomApp.ServicioGloom.Amistad[] ObtenerSolicitudesDeAmistadPorJugador(string nombreUsuario) {
+            return base.Channel.ObtenerSolicitudesDeAmistadPorJugador(nombreUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Amistad[]> ObtenerSolicitudesDeAmistadPorJugadorAsync(string nombreUsuario) {
+            return base.Channel.ObtenerSolicitudesDeAmistadPorJugadorAsync(nombreUsuario);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.ISala")]
+    public interface ISala {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/AgregarParticipantesAPartida", ReplyAction="http://tempuri.org/ISala/AgregarParticipantesAPartidaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/AgregarParticipantesAPartidaManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int AgregarParticipantesAPartida(ClienteGloomApp.ServicioGloom.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/AgregarParticipantesAPartida", ReplyAction="http://tempuri.org/ISala/AgregarParticipantesAPartidaResponse")]
+        System.Threading.Tasks.Task<int> AgregarParticipantesAPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CrearPartida", ReplyAction="http://tempuri.org/ISala/CrearPartidaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/CrearPartidaManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int CrearPartida(ClienteGloomApp.ServicioGloom.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CrearPartida", ReplyAction="http://tempuri.org/ISala/CrearPartidaResponse")]
+        System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerDatosHistorial", ReplyAction="http://tempuri.org/ISala/ObtenerDatosHistorialResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/ObtenerDatosHistorialManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        ClienteGloomApp.ServicioGloom.Sala[] ObtenerDatosHistorial(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerDatosHistorial", ReplyAction="http://tempuri.org/ISala/ObtenerDatosHistorialResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala[]> ObtenerDatosHistorialAsync(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuego", ReplyAction="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        string[] ObtenrParticipantesDeJuego(string identificadorSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuego", ReplyAction="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoResponse")]
+        System.Threading.Tasks.Task<string[]> ObtenrParticipantesDeJuegoAsync(string identificadorSala);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ISalaChannel : ClienteGloomApp.ServicioGloom.ISala, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SalaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.ISala>, ClienteGloomApp.ServicioGloom.ISala {
+        
+        public SalaClient(System.ServiceModel.InstanceContext contextoAmistad) {
+        }
+        
+        public SalaClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public SalaClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public SalaClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public SalaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int AgregarParticipantesAPartida(ClienteGloomApp.ServicioGloom.Sala sala) {
+            return base.Channel.AgregarParticipantesAPartida(sala);
+        }
+        
+        public System.Threading.Tasks.Task<int> AgregarParticipantesAPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala) {
+            return base.Channel.AgregarParticipantesAPartidaAsync(sala);
+        }
+        
+        public int CrearPartida(ClienteGloomApp.ServicioGloom.Sala sala) {
+            return base.Channel.CrearPartida(sala);
+        }
+        
+        public System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala) {
+            return base.Channel.CrearPartidaAsync(sala);
+        }
+        
+        public ClienteGloomApp.ServicioGloom.Sala[] ObtenerDatosHistorial(string nombreUsuario) {
+            return base.Channel.ObtenerDatosHistorial(nombreUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala[]> ObtenerDatosHistorialAsync(string nombreUsuario) {
+            return base.Channel.ObtenerDatosHistorialAsync(nombreUsuario);
+        }
+        
+        public string[] ObtenrParticipantesDeJuego(string identificadorSala) {
+            return base.Channel.ObtenrParticipantesDeJuego(identificadorSala);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ObtenrParticipantesDeJuegoAsync(string identificadorSala) {
+            return base.Channel.ObtenrParticipantesDeJuegoAsync(identificadorSala);
         }
     }
 }

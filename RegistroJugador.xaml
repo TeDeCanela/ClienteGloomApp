@@ -5,7 +5,7 @@
         xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         Title="{x:Static p:Resources.TituloRegistroJugador}" Height="800" Width="1900">
     <Grid Background="#122124">
-        <!--<TextBox x:Name="txtBoxNombre" HorizontalAlignment="Left" Height="37" Margin="950,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
+        <TextBox x:Name="txtBoxNombre" HorizontalAlignment="Left" Height="37" Margin="950,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
         <Label x:Name="lblNombre" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="950,115,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
 
         <TextBox x:Name="txtBoxApellidos" HorizontalAlignment="Left" Height="37" Margin="950,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
@@ -111,8 +111,6 @@
                 <ImageBrush ImageSource="/Imagenes/flecha.png"/>
             </Button.Background>
         </Button>
-
-        -->
 
     </Grid>
 </Window>

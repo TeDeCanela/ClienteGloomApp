@@ -80,11 +80,17 @@
     <Compile Include="CrearPartida.xaml.cs">
       <DependentUpon>CrearPartida.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HistorialPartidas.xaml.cs">
+      <DependentUpon>HistorialPartidas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
     <Compile Include="InicioSesion.xaml.cs">
       <DependentUpon>InicioSesion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListaAmigos.xaml.cs">
+      <DependentUpon>ListaAmigos.xaml</DependentUpon>
     </Compile>
     <Compile Include="MensajesEmergentes.cs" />
     <Compile Include="PerfilJugador.xaml.cs">
@@ -98,7 +104,14 @@
     <Compile Include="RegistroJugador.xaml.cs">
       <DependentUpon>RegistroJugador.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HistoriaPersonajes.xaml.cs">
+      <DependentUpon>HistoriaPersonajes.xaml</DependentUpon>
+    </Compile>
     <Page Include="CrearPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HistorialPartidas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,6 +120,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InicioSesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListaAmigos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HistoriaPersonajes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -146,7 +167,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Amistad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Jugador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Sala.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServicioGloom\ImplementacionServicio.wsdl" />
@@ -157,6 +184,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioGloom\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioGloom\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -243,20 +273,97 @@
     <Resource Include="Imagenes\BanderaEU.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="BanderaMexico.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="BanderaEU.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagenes\flecha.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\castilloInicioFondo.png" />
-    <Resource Include="madera.jpg" />
     <Resource Include="Imagenes\madera.jpg" />
     <Resource Include="Imagenes\armas.jpg" />
     <Resource Include="Imagenes\FondoCastillo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\SalonHistorias.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\EscudoGarlo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\EscudoOres.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\EscudoCorbat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\EscudoRamfez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Seti.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Merit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Neferu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Sobek.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Tucani.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Lusiel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Angelus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Luan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Gaia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Arialyn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Aris.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Abelith.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Didorian.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Zael.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Pablian.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenesFamilia\Lorenzeo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\maderaBlanca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\anadir-amigo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\lupa-de-busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\usuario-valido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\usuario-invalido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\maderaOscura.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\historialImagen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="{x:Static p:Resources.TituloInicio}" Height="794" Width="1900">
+    Title="{x:Static p:Resources.TituloInicio}" Height="794" Width="1900">
     <Grid Background="#FFAB9D95">
 
-        <!--<Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
+        <Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
 
         <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="46,238,0,0" VerticalAlignment="Top" Width="202" Height="77" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FFB25979" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
             <Button.Template>
@@ -48,7 +48,7 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnHistorialDePartidas" Content="{x:Static p:Resources.inicioBtnHistorialDePartidas}" HorizontalAlignment="Left" Margin="1194,542,0,0" VerticalAlignment="Top" Width="202" Height="75" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
+        <Button x:Name="btnHistorialDePartidas" Content="{x:Static p:Resources.inicioBtnHistorialDePartidas}" HorizontalAlignment="Left" Margin="1194,542,0,0" VerticalAlignment="Top" Width="202" Height="75" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2" Click="btnHistorialDePartidas_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -62,7 +62,7 @@ CornerRadius="15">
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnListaDeAmigos" Content="{x:Static p:Resources.inicioBtnListaDeAmigos}" HorizontalAlignment="Left" Margin="1194,238,0,0" VerticalAlignment="Top" Width="202" Height="76" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF6A3535" BorderThickness="2,2,2,2">
+        <Button x:Name="btnListaDeAmigos" Content="{x:Static p:Resources.inicioBtnListaDeAmigos}" HorizontalAlignment="Left" Margin="1194,238,0,0" VerticalAlignment="Top" Width="202" Height="76" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderBrush="#FF6A3535" BorderThickness="2,2,2,2" Click="btnListaDeAmigos_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -75,7 +75,7 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnVerPersonajes" Content="{x:Static p:Resources.inicioBtnVerPersonajes}" HorizontalAlignment="Left" Margin="1194,390,0,0" VerticalAlignment="Top" Width="202" Height="80" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderThickness="2,2,2,2" BorderBrush="#FF6A3535">
+        <Button x:Name="btnVerPersonajes" Content="{x:Static p:Resources.inicioBtnVerPersonajes}" HorizontalAlignment="Left" Margin="1194,390,0,0" VerticalAlignment="Top" Width="202" Height="80" Background="#FFB25979" Foreground="White" FontWeight="Bold" FontSize="22" BorderThickness="2,2,2,2" BorderBrush="#FF6A3535" Click="btnVerPersonajes_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -89,7 +89,7 @@ CornerRadius="15">
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnCerrarSesion" Content="{x:Static p:Resources.inicioBtnCerrarSesion}" HorizontalAlignment="Left" Margin="595,707,0,0" VerticalAlignment="Top" Width="332" Height="71" Background="#b25979" Foreground="White" FontSize="22" FontWeight="Bold" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
+        <Button x:Name="btnCerrarSesion" Content="{x:Static p:Resources.inicioBtnCerrarSesion}" HorizontalAlignment="Left" Margin="595,707,0,0" VerticalAlignment="Top" Width="332" Height="71" Background="#b25979" Foreground="White" FontSize="22" FontWeight="Bold" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2" Click="btnCerrarSesion_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -116,6 +116,6 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        -->
+
     </Grid>
 </Window> 

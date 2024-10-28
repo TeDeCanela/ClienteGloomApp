@@ -120,6 +120,12 @@
   <data name="buscarPartidaBtnUnirse" xml:space="preserve">
     <value>Unirse a partida</value>
   </data>
+  <data name="buscarPartidaInstruccion" xml:space="preserve">
+    <value>Buscar partida</value>
+  </data>
+  <data name="buscarPartidaPartida" xml:space="preserve">
+    <value>Partida</value>
+  </data>
   <data name="crearPartidaBtnCrearSala" xml:space="preserve">
     <value>Crear sala</value>
   </data>
@@ -137,6 +143,18 @@
   </data>
   <data name="crearPartidaTipoSala" xml:space="preserve">
     <value>Tipo de sala</value>
+  </data>
+  <data name="entradaPrivadaPartidaInstruccion" xml:space="preserve">
+    <value>Escriba el código de sala</value>
+  </data>
+  <data name="escribirMensajeInstrucción" xml:space="preserve">
+    <value>Escribir mensaje</value>
+  </data>
+  <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
+    <value>Felicitaciones al jugador que con astucia y crueldad ha llevado a todos los demás al borde de la desesperación ¡La victoria es tuya!</value>
+  </data>
+  <data name="finPartidaMiniLeyenda" xml:space="preserve">
+    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
   </data>
   <data name="globalApellidos" xml:space="preserve">
     <value>Apellidos</value>
@@ -158,6 +176,72 @@
   </data>
   <data name="globalPartidaPublica" xml:space="preserve">
     <value>Pública</value>
+  </data>
+  <data name="historiaAbelith" xml:space="preserve">
+    <value>Un conjurador experto en invocar y controlar espíritus usa su conocimiento para negociar con entidades sobrenaturales, a menudo a un alto costo para los vivos.</value>
+  </data>
+  <data name="historiaAngelus" xml:space="preserve">
+    <value>La reina, astuta y manipuladora, usa su encanto para encubrir su verdadera naturaleza cruel y controlar a los nobles.</value>
+  </data>
+  <data name="historiaArialyn" xml:space="preserve">
+    <value>Una enigmática dama que controla las sombras manipula la oscuridad para sus propios fines, creando confusión y miedo en aquellos que cruzan su camino.</value>
+  </data>
+  <data name="historiaAris" xml:space="preserve">
+    <value>Un guerrero solitario de gran destreza busca venganza por una traición pasada, recorriendo el mundo en busca de justicia con su imponente espada.</value>
+  </data>
+  <data name="historiaDidorian" xml:space="preserve">
+    <value>Un antiguo alquimista consumido por su búsqueda de inmortalidad ahora realiza experimentos oscuros en su torre aislada, rodeado de monstruos de su propia creación.</value>
+  </data>
+  <data name="historiaGaia" xml:space="preserve">
+    <value>Una poderosa hechicera vinculada a la naturaleza usa sus habilidades para proteger los bosques antiguos, aunque su poder puede volverse letal contra quienes amenacen su hogar.</value>
+  </data>
+  <data name="historialGanador" xml:space="preserve">
+    <value>Ganó</value>
+  </data>
+  <data name="historialHa" xml:space="preserve">
+    <value>Usted ha</value>
+  </data>
+  <data name="historialInstruccion" xml:space="preserve">
+    <value>Historial de partidas</value>
+  </data>
+  <data name="historialJugoCon" xml:space="preserve">
+    <value>Jugó con</value>
+  </data>
+  <data name="historiaLorenzeo" xml:space="preserve">
+    <value>Un líder militar con fuerza demoníaca arrasa con ciudades y recolecta almas para alimentar su poder oscuro mientras busca conquistar todo a su paso.</value>
+  </data>
+  <data name="historialTipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="historiaLuan" xml:space="preserve">
+    <value>El rey, conocido por su tiranía y crueldad. Su gobierno se basa en el miedo y la opresión.</value>
+  </data>
+  <data name="historiaLusiel" xml:space="preserve">
+    <value>El príncipe heredero, arrogante y despectivo, se divierte abusando de su poder y causando caos.</value>
+  </data>
+  <data name="historiaMerit" xml:space="preserve">
+    <value>La matriarca, conocida por su sarcasmo y falta de paciencia. Maneja los asuntos internos con mano dura y manipula a los demás para mantener el control.</value>
+  </data>
+  <data name="historiaNeferu" xml:space="preserve">
+    <value>La hija mayor, una guerrera despiadada que disfruta causando dolor en la batalla. Su actitud grosera y falta de respeto la convierten en una figura temida en el campo de batalla.</value>
+  </data>
+  <data name="historiaPablian" xml:space="preserve">
+    <value>Un bardo corrompido por poderes oscuros utiliza su música para sembrar discordia y destrucción en los reinos mientras oculta sus verdaderas intenciones.</value>
+  </data>
+  <data name="historiaPersonajeInstruccion" xml:space="preserve">
+    <value>Descripción del personaje</value>
+  </data>
+  <data name="historiaSeti" xml:space="preserve">
+    <value>El patriarca de la familia, Seti es un hombre de voluntad férrea y corazón frío. Su habilidad para manipular y su ambición desmedida le han ganado el respeto de sus seguidores, pero también el odio de sus enemigos</value>
+  </data>
+  <data name="historiaSobek" xml:space="preserve">
+    <value>El hijo menor, torpe pero impredecible. Su comportamiento errático lo hace una amenaza inesperada y peligrosa en la corte, usando el caos a su favor.</value>
+  </data>
+  <data name="historiaTucani" xml:space="preserve">
+    <value>La princesa, impredecible y vengativa, crea desasosiego con su comportamiento errático y su falta de compasión.</value>
+  </data>
+  <data name="historiaZael" xml:space="preserve">
+    <value>Un asesino letal y traidor, usa su habilidad para moverse en las sombras y su artefacto oscuro para llevar caos y muerte sin dejar rastro.</value>
   </data>
   <data name="inicioBtnBuscarPartida" xml:space="preserve">
     <value>Buscar partida</value>
@@ -192,6 +276,18 @@
   <data name="instruccionSeleccionarFoto" xml:space="preserve">
     <value>Seleccione la foto que a la que desee cambiar</value>
   </data>
+  <data name="invitarAmistadesEnviarCorreo" xml:space="preserve">
+    <value>Enviar una invitación por correo</value>
+  </data>
+  <data name="listaAmigosBtnMisAmigos" xml:space="preserve">
+    <value>Mis amigos</value>
+  </data>
+  <data name="listaAmigosbtnVerSolicitud" xml:space="preserve">
+    <value>Ver solicitudes de amistad</value>
+  </data>
+  <data name="listaAmigosInstruccion" xml:space="preserve">
+    <value>Buscar jugador</value>
+  </data>
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Se ha actualizado exitosamente</value>
   </data>
@@ -203,6 +299,18 @@
   </data>
   <data name="mensajeExp03" xml:space="preserve">
     <value>No pudimos encontrar ningún usuario con ese correo o contraseña. Verifique que esté bien escrito o cree una cuenta en “Registrarse”.</value>
+  </data>
+  <data name="mensajeExp04" xml:space="preserve">
+    <value>Este usuario ya es amigo suyo</value>
+  </data>
+  <data name="mensajeExp05" xml:space="preserve">
+    <value>Ya se ha enviado una solicitud a este jugador, espere a su respuesta</value>
+  </data>
+  <data name="mensajeExp06" xml:space="preserve">
+    <value>Para agregar un amigo, debes seleccionar el perfil de otra persona, asegúrate de enviar la solicitud a alguien más.</value>
+  </data>
+  <data name="mensajeExp07" xml:space="preserve">
+    <value>No ha seleccionado a un jugador para enviar solicitud</value>
   </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Se interrumpió la conexión de red, contacte con un administrador del sistema e inténtelo más tarde.</value>
@@ -228,6 +336,36 @@
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>Ha ocurrido un error al registrarse, inténtelo de nuevo</value>
   </data>
+  <data name="mensajeSolcitudEnviadaExito" xml:space="preserve">
+    <value>Tu solicitud de amistad se ha enviado exitosamente</value>
+  </data>
+  <data name="mensajeTituloAdvertencia" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="mensajeTituloExito" xml:space="preserve">
+    <value>Éxito</value>
+  </data>
+  <data name="mensajeTituloInformacion" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="miniHistoriaEncabezado" xml:space="preserve">
+    <value>Sala mini-historia</value>
+  </data>
+  <data name="miniHistoriaInstruccionFamiliar" xml:space="preserve">
+    <value>Seleccionar familiar</value>
+  </data>
+  <data name="miniHistoriaNumeroSala" xml:space="preserve">
+    <value>Número de sala</value>
+  </data>
+  <data name="partidaBtnDescartar" xml:space="preserve">
+    <value>Descartar</value>
+  </data>
+  <data name="partidaBtnExpulsar" xml:space="preserve">
+    <value>Expulsar</value>
+  </data>
+  <data name="partidaBtnUsar" xml:space="preserve">
+    <value>Usar</value>
+  </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Guardar cambios</value>
   </data>
@@ -240,11 +378,20 @@
   <data name="registroInstruccionIcono" xml:space="preserve">
     <value>Selecciona ícono de perfil</value>
   </data>
+  <data name="resultadoAmistad" xml:space="preserve">
+    <value>Los jugadores que coinciden con la búsqueda son</value>
+  </data>
   <data name="salaDescripcionCorbat" xml:space="preserve">
     <value>Son una familia temida y poderosa, cada uno de sus miembros dominando un aspecto oscuro de la magia y la guerra. Unidos por su ambición desmedida y su sed de poder, los Corbat se han convertido en una fuerza imparable, dejando destrucción a su paso.</value>
   </data>
+  <data name="salaDescripcionGarlo" xml:space="preserve">
+    <value>La familia Garlo es conocida en Garloth por su gobierno opresivo y su reputación temida en el reino.</value>
+  </data>
   <data name="salaDescripcionOres" xml:space="preserve">
     <value>Son una familia poderosa y temida, cada miembro ejerciendo su propio dominio sobre las artes oscuras. Unidos por su ambición y un legado de sombras, los Nocturnis han tejido una red de terror a lo largo de los reinos, buscando expandir su influencia maligna.</value>
+  </data>
+  <data name="salaDescripcionRamfez" xml:space="preserve">
+    <value>La familia Ramfez es conocida en Eldoria por su reputación temida y despreciada, manejando el poder a través de la intriga y la crueldad.</value>
   </data>
   <data name="salaInstruccion" xml:space="preserve">
     <value>Sala</value>
@@ -252,8 +399,20 @@
   <data name="salaSeleccionarFamilia" xml:space="preserve">
     <value>salaSeleccionarFamilia</value>
   </data>
+  <data name="solicitudAmistadInstruccion" xml:space="preserve">
+    <value>De clic en el botón de “más” para para aceptar la solicitud</value>
+  </data>
+  <data name="TituloBuscarPartida" xml:space="preserve">
+    <value>Buscar partida</value>
+  </data>
   <data name="TituloCrearPartida" xml:space="preserve">
     <value>Create game</value>
+  </data>
+  <data name="TituloFinPartida" xml:space="preserve">
+    <value>Fin partida</value>
+  </data>
+  <data name="TituloHistorialDePartidas" xml:space="preserve">
+    <value>Historial de partidas</value>
   </data>
   <data name="TituloInicio" xml:space="preserve">
     <value>Inicio</value>
@@ -261,8 +420,17 @@
   <data name="TituloInicioSesion" xml:space="preserve">
     <value>Inicio sesión</value>
   </data>
+  <data name="TituloListaDeAmigos" xml:space="preserve">
+    <value>Lista de amigos</value>
+  </data>
+  <data name="TituloPartida" xml:space="preserve">
+    <value>Partida</value>
+  </data>
   <data name="TituloPerfilJugador" xml:space="preserve">
     <value>Perfil jugador</value>
+  </data>
+  <data name="TituloPersonajes" xml:space="preserve">
+    <value>Personajes</value>
   </data>
   <data name="TituloRegistroJugador" xml:space="preserve">
     <value>Registro jugador</value>
@@ -270,148 +438,13 @@
   <data name="TituloSala" xml:space="preserve">
     <value>Sala</value>
   </data>
-  <data name="salaDescripcionGarlo" xml:space="preserve">
-    <value>La familia Garlo es conocida en Garloth por su gobierno opresivo y su reputación temida en el reino.</value>
-  </data>
-  <data name="salaDescripcionRamfez" xml:space="preserve">
-    <value>La familia Ramfez es conocida en Eldoria por su reputación temida y despreciada, manejando el poder a través de la intriga y la crueldad.</value>
-  </data>
-  <data name="TituloHistorialDePartidas" xml:space="preserve">
-    <value>Historial de partidas</value>
-  </data>
-  <data name="buscarPartidaInstruccion" xml:space="preserve">
-    <value>Buscar partida</value>
-  </data>
-  <data name="buscarPartidaPartida" xml:space="preserve">
-    <value>Partida</value>
-  </data>
-  <data name="historialGanador" xml:space="preserve">
-    <value>Ganador</value>
-  </data>
-  <data name="historialHa" xml:space="preserve">
-    <value>La partida a sido</value>
-  </data>
-  <data name="historialInstruccion" xml:space="preserve">
-    <value>Historial de partidas</value>
-  </data>
-  <data name="historialJugoCon" xml:space="preserve">
-    <value>Jugó con</value>
-  </data>
-  <data name="historialTipo" xml:space="preserve">
-    <value>Tipo</value>
-  </data>
-  <data name="TituloBuscarPartida" xml:space="preserve">
-    <value>Buscar partida</value>
-  </data>
-  <data name="escribirMensajeInstrucción" xml:space="preserve">
-    <value>Escribir mensaje</value>
-  </data>
-  <data name="invitarAmistadesEnviarCorreo" xml:space="preserve">
-    <value>Enviar una invitación por correo</value>
-  </data>
-  <data name="partidaBtnDescartar" xml:space="preserve">
-    <value>Descartar</value>
-  </data>
-  <data name="partidaBtnExpulsar" xml:space="preserve">
-    <value>Expulsar</value>
-  </data>
-  <data name="partidaBtnUsar" xml:space="preserve">
-    <value>Usar</value>
-  </data>
-  <data name="resultadoAmistad" xml:space="preserve">
-    <value>Los jugadores que coinciden con la búsqueda son</value>
-  </data>
-  <data name="TituloPartida" xml:space="preserve">
-    <value>Partida</value>
-  </data>
-  <data name="entradaPrivadaPartidaInstruccion" xml:space="preserve">
-    <value>Escriba el código de sala</value>
-  </data>
-  <data name="historiaAbelith" xml:space="preserve">
-    <value>Un conjurador experto en invocar y controlar espíritus usa su conocimiento para negociar con entidades sobrenaturales, a menudo a un alto costo para los vivos.</value>
-  </data>
-  <data name="historiaAngelus" xml:space="preserve">
-    <value>La reina, astuta y manipuladora, usa su encanto para encubrir su verdadera naturaleza cruel y controlar a los nobles.</value>
-  </data>
-  <data name="historiaArialyn" xml:space="preserve">
-    <value>Una enigmática dama que controla las sombras manipula la oscuridad para sus propios fines, creando confusión y miedo en aquellos que cruzan su camino.</value>
-  </data>
-  <data name="historiaAris" xml:space="preserve">
-    <value>Un guerrero solitario de gran destreza busca venganza por una traición pasada, recorriendo el mundo en busca de justicia con su imponente espada.</value>
-  </data>
-  <data name="historiaDidorian" xml:space="preserve">
-    <value>Un antiguo alquimista consumido por su búsqueda de inmortalidad ahora realiza experimentos oscuros en su torre aislada, rodeado de monstruos de su propia creación.</value>
-  </data>
-  <data name="historiaGaia" xml:space="preserve">
-    <value>Una poderosa hechicera vinculada a la naturaleza usa sus habilidades para proteger los bosques antiguos, aunque su poder puede volverse letal contra quienes amenacen su hogar.</value>
-  </data>
-  <data name="historiaLorenzeo" xml:space="preserve">
-    <value>Un líder militar con fuerza demoníaca arrasa con ciudades y recolecta almas para alimentar su poder oscuro mientras busca conquistar todo a su paso.</value>
-  </data>
-  <data name="historiaLuan" xml:space="preserve">
-    <value>El rey, conocido por su tiranía y crueldad. Su gobierno se basa en el miedo y la opresión.</value>
-  </data>
-  <data name="historiaLusiel" xml:space="preserve">
-    <value>El príncipe heredero, arrogante y despectivo, se divierte abusando de su poder y causando caos.</value>
-  </data>
-  <data name="historiaMerit" xml:space="preserve">
-    <value>La matriarca, conocida por su sarcasmo y falta de paciencia. Maneja los asuntos internos con mano dura y manipula a los demás para mantener el control.</value>
-  </data>
-  <data name="historiaNeferu" xml:space="preserve">
-    <value>La hija mayor, una guerrera despiadada que disfruta causando dolor en la batalla. Su actitud grosera y falta de respeto la convierten en una figura temida en el campo de batalla.</value>
-  </data>
-  <data name="historiaPablian" xml:space="preserve">
-    <value>Un bardo corrompido por poderes oscuros utiliza su música para sembrar discordia y destrucción en los reinos mientras oculta sus verdaderas intenciones.</value>
-  </data>
-  <data name="historiaPersonajeInstruccion" xml:space="preserve">
-    <value>Descripción del personaje</value>
-  </data>
-  <data name="historiaSeti" xml:space="preserve">
-    <value>El patriarca de la familia, Seti es un hombre de voluntad férrea y corazón frío. Su habilidad para manipular y su ambición desmedida le han ganado el respeto de sus seguidores, pero también el odio de sus enemigos</value>
-  </data>
-  <data name="historiaSobek" xml:space="preserve">
-    <value>El hijo menor, torpe pero impredecible. Su comportamiento errático lo hace una amenaza inesperada y peligrosa en la corte, usando el caos a su favor.</value>
-  </data>
-  <data name="historiaTucani" xml:space="preserve">
-    <value>La princesa, impredecible y vengativa, crea desasosiego con su comportamiento errático y su falta de compasión.</value>
-  </data>
-  <data name="historiaZael" xml:space="preserve">
-    <value>Un asesino letal y traidor, usa su habilidad para moverse en las sombras y su artefacto oscuro para llevar caos y muerte sin dejar rastro.</value>
-  </data>
-  <data name="listaAmigosbtnVerSolicitud" xml:space="preserve">
-    <value>Ver solicitudes de amistad</value>
-  </data>
-  <data name="listaAmigosInstruccion" xml:space="preserve">
-    <value>Buscar jugador</value>
-  </data>
-  <data name="miniHistoriaEncabezado" xml:space="preserve">
-    <value>Sala mini-historia</value>
-  </data>
-  <data name="miniHistoriaInstruccionFamiliar" xml:space="preserve">
-    <value>Seleccionar familiar</value>
-  </data>
-  <data name="miniHistoriaNumeroSala" xml:space="preserve">
-    <value>Número de sala</value>
-  </data>
-  <data name="solicitudAmistadInstruccion" xml:space="preserve">
-    <value>De clic en el botón de “más” para para aceptar la solicitud</value>
-  </data>
-  <data name="TituloListaDeAmigos" xml:space="preserve">
-    <value>Lista de amigos</value>
-  </data>
-  <data name="TituloPersonajes" xml:space="preserve">
-    <value>Personajes</value>
-  </data>
-  <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
-    <value>Felicitaciones al jugador que con astucia y crueldad ha llevado a todos los demás al borde de la desesperación ¡La victoria es tuya!</value>
-  </data>
-  <data name="finPartidaMiniLeyenda" xml:space="preserve">
-    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
-  </data>
-  <data name="TituloFinPartida" xml:space="preserve">
-    <value>Fin partida</value>
-  </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
+  </data>
+  <data name="historialPerdedor" xml:space="preserve">
+    <value>Perdió</value>
+  </data>
+  <data name="historialVictoria" xml:space="preserve">
+    <value>Ganador</value>
   </data>
 </root>

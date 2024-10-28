@@ -5,7 +5,7 @@
         xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         Title="{x:Static p:Resources.TituloInicioSesion}" Height="800" Width="1900">
     <Grid Background="#122124">
-        <!--<Image Source="Imagenes/InicioSesion.jpg" Width="833" Height="795" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,-10,0,0" RenderTransformOrigin="0.522,0.508">
+        <Image Source="Imagenes/InicioSesion.jpg" Width="833" Height="795" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,-10,0,0" RenderTransformOrigin="0.522,0.508">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -61,14 +61,13 @@
         <Label x:Name="lblGloom" Content="Gloom" HorizontalAlignment="Left" Margin="1070,54,0,0" VerticalAlignment="Top" Width="250" Height="109" Foreground="White" FontSize="72" FontFamily="Sitka Small"/>
         <Button x:Name="btnCambiarIidomaEspañol" Content="" HorizontalAlignment="Left" Margin="1349,10,0,0" VerticalAlignment="Top" Click="btnCambiarIdiomaEspañol_Click" Width="45" Height="29">
             <Button.Background>
-                <ImageBrush ImageSource="/BanderaMexico.png"/>
+                <ImageBrush ImageSource="Imagenes/BanderaMexico.png"/>
             </Button.Background>
         </Button>
         <Button x:Name="btnCambiarIdiomaIngles" Content="" HorizontalAlignment="Left" Margin="1417,10,0,0" VerticalAlignment="Top" Height="29" Width="45" Click="btnCambiarIdiomaIngles_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/BanderaEU.png"/>
+                <ImageBrush ImageSource="Imagenes/BanderaEU.png"/>
             </Button.Background>
         </Button>
-        -->
     </Grid>
 </Window>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ImplementacionServicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="NetTcpBinding_IServicioAdministrador_policy">
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServicioJuego" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IJugador_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -29,7 +29,36 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="NetTcpBinding_IJugador_policy">
+  <wsp:Policy wsu:Id="NetTcpBinding_IAmigos_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ISala_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -61,16 +90,11 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServicioAdministrador_Response_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:Response" />
-  </wsdl:message>
-  <wsdl:message name="IServicioAdministrador_Response_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ResponseResponse" />
-  </wsdl:message>
   <wsdl:message name="IJugador_AgregarJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarJugador" />
   </wsdl:message>
@@ -78,7 +102,7 @@
     <wsdl:part name="parameters" element="tns:AgregarJugadorResponse" />
   </wsdl:message>
   <wsdl:message name="IJugador_AgregarJugador_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q1:ManejadorExcepciones" />
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q1:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="IJugador_ActualizarJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:ActualizarJugador" />
@@ -87,7 +111,7 @@
     <wsdl:part name="parameters" element="tns:ActualizarJugadorResponse" />
   </wsdl:message>
   <wsdl:message name="IJugador_ActualizarJugador_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q2:ManejadorExcepciones" />
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q2:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="IJugador_AutenticarJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:AutenticarJugador" />
@@ -96,7 +120,7 @@
     <wsdl:part name="parameters" element="tns:AutenticarJugadorResponse" />
   </wsdl:message>
   <wsdl:message name="IJugador_AutenticarJugador_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q3:ManejadorExcepciones" />
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q3:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="IJugador_ObtenerJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerJugador" />
@@ -105,14 +129,98 @@
     <wsdl:part name="parameters" element="tns:ObtenerJugadorResponse" />
   </wsdl:message>
   <wsdl:message name="IJugador_ObtenerJugador_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" name="detail" element="q4:ManejadorExcepciones" />
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q4:ManejadorExcepciones" />
   </wsdl:message>
-  <wsdl:portType name="IServicioAdministrador">
-    <wsdl:operation name="Response">
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministrador/Response" message="tns:IServicioAdministrador_Response_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministrador/ResponseResponse" message="tns:IServicioAdministrador_Response_InputCallbackMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
+  <wsdl:message name="IJugador_BuscarJugadoresPorNombreUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarJugadoresPorNombreUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_BuscarJugadoresPorNombreUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarJugadoresPorNombreUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_BuscarJugadoresPorNombreUsuario_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q5:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_EnviarSolcitudAmistad_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarSolcitudAmistad" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_EnviarSolcitudAmistad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarSolcitudAmistadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_EnviarSolcitudAmistad_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q6:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ValidarSolcitudAmistad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarSolcitudAmistad" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ValidarSolcitudAmistad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarSolcitudAmistadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ValidarSolcitudAmistad_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q7:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ArchivarAmistad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchivarAmistad" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ArchivarAmistad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchivarAmistadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ArchivarAmistad_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q8:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ObtenerListaAmigos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaAmigos" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ObtenerListaAmigos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaAmigosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ObtenerListaAmigos_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q9:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ObtenerSolicitudesDeAmistadPorJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSolicitudesDeAmistadPorJugador" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ObtenerSolicitudesDeAmistadPorJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSolicitudesDeAmistadPorJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAmigos_ObtenerSolicitudesDeAmistadPorJugador_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q10:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="ISala_AgregarParticipantesAPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarParticipantesAPartida" />
+  </wsdl:message>
+  <wsdl:message name="ISala_AgregarParticipantesAPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarParticipantesAPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISala_AgregarParticipantesAPartida_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q11:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="ISala_CrearPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearPartida" />
+  </wsdl:message>
+  <wsdl:message name="ISala_CrearPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISala_CrearPartida_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q12:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="ISala_ObtenerDatosHistorial_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosHistorial" />
+  </wsdl:message>
+  <wsdl:message name="ISala_ObtenerDatosHistorial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosHistorialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISala_ObtenerDatosHistorial_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q13:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="ISala_ObtenrParticipantesDeJuego_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenrParticipantesDeJuego" />
+  </wsdl:message>
+  <wsdl:message name="ISala_ObtenrParticipantesDeJuego_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenrParticipantesDeJuegoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISala_ObtenrParticipantesDeJuego_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q14:ManejadorExcepciones" />
+  </wsdl:message>
   <wsdl:portType name="IJugador">
     <wsdl:operation name="AgregarJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/IJugador/AgregarJugador" message="tns:IJugador_AgregarJugador_InputMessage" />
@@ -134,20 +242,61 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IJugador/ObtenerJugadorResponse" message="tns:IJugador_ObtenerJugador_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/ObtenerJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_ObtenerJugador_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:binding name="NetTcpBinding_IServicioAdministrador" type="tns:IServicioAdministrador">
-    <wsp:PolicyReference URI="#NetTcpBinding_IServicioAdministrador_policy" />
-    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="Response">
-      <soap12:operation soapAction="http://tempuri.org/IServicioAdministrador/Response" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+    <wsdl:operation name="BuscarJugadoresPorNombreUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuario" message="tns:IJugador_BuscarJugadoresPorNombreUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuarioResponse" message="tns:IJugador_BuscarJugadoresPorNombreUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuarioManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_BuscarJugadoresPorNombreUsuario_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
-  </wsdl:binding>
+  </wsdl:portType>
+  <wsdl:portType name="IAmigos">
+    <wsdl:operation name="EnviarSolcitudAmistad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAmigos/EnviarSolcitudAmistad" message="tns:IAmigos_EnviarSolcitudAmistad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAmigos/EnviarSolcitudAmistadResponse" message="tns:IAmigos_EnviarSolcitudAmistad_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAmigos/EnviarSolcitudAmistadManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IAmigos_EnviarSolcitudAmistad_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarSolcitudAmistad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAmigos/ValidarSolcitudAmistad" message="tns:IAmigos_ValidarSolcitudAmistad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAmigos/ValidarSolcitudAmistadResponse" message="tns:IAmigos_ValidarSolcitudAmistad_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAmigos/ValidarSolcitudAmistadManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IAmigos_ValidarSolcitudAmistad_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchivarAmistad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAmigos/ArchivarAmistad" message="tns:IAmigos_ArchivarAmistad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAmigos/ArchivarAmistadResponse" message="tns:IAmigos_ArchivarAmistad_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAmigos/ArchivarAmistadManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IAmigos_ArchivarAmistad_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaAmigos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAmigos/ObtenerListaAmigos" message="tns:IAmigos_ObtenerListaAmigos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAmigos/ObtenerListaAmigosResponse" message="tns:IAmigos_ObtenerListaAmigos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAmigos/ObtenerListaAmigosManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IAmigos_ObtenerListaAmigos_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSolicitudesDeAmistadPorJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugador" message="tns:IAmigos_ObtenerSolicitudesDeAmistadPorJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugadorResponse" message="tns:IAmigos_ObtenerSolicitudesDeAmistadPorJugador_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IAmigos_ObtenerSolicitudesDeAmistadPorJugador_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISala">
+    <wsdl:operation name="AgregarParticipantesAPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/AgregarParticipantesAPartida" message="tns:ISala_AgregarParticipantesAPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/AgregarParticipantesAPartidaResponse" message="tns:ISala_AgregarParticipantesAPartida_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISala/AgregarParticipantesAPartidaManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_AgregarParticipantesAPartida_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/CrearPartida" message="tns:ISala_CrearPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/CrearPartidaResponse" message="tns:ISala_CrearPartida_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISala/CrearPartidaManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_CrearPartida_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosHistorial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerDatosHistorial" message="tns:ISala_ObtenerDatosHistorial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerDatosHistorialResponse" message="tns:ISala_ObtenerDatosHistorial_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISala/ObtenerDatosHistorialManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_ObtenerDatosHistorial_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenrParticipantesDeJuego">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuego" message="tns:ISala_ObtenrParticipantesDeJuego_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoResponse" message="tns:ISala_ObtenrParticipantesDeJuego_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_ObtenrParticipantesDeJuego_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJugador" type="tns:IJugador">
     <wsp:PolicyReference URI="#NetTcpBinding_IJugador_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
@@ -199,21 +348,158 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="BuscarJugadoresPorNombreUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IJugador/BuscarJugadoresPorNombreUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="ImplementacionServicio">
-    <wsdl:port name="NetTcpBinding_IServicioAdministrador" binding="tns:NetTcpBinding_IServicioAdministrador">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioGloom" />
+  <wsdl:binding name="NetTcpBinding_IAmigos" type="tns:IAmigos">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAmigos_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="EnviarSolcitudAmistad">
+      <soap12:operation soapAction="http://tempuri.org/IAmigos/EnviarSolcitudAmistad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarSolcitudAmistad">
+      <soap12:operation soapAction="http://tempuri.org/IAmigos/ValidarSolcitudAmistad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ArchivarAmistad">
+      <soap12:operation soapAction="http://tempuri.org/IAmigos/ArchivarAmistad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaAmigos">
+      <soap12:operation soapAction="http://tempuri.org/IAmigos/ObtenerListaAmigos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSolicitudesDeAmistadPorJugador">
+      <soap12:operation soapAction="http://tempuri.org/IAmigos/ObtenerSolicitudesDeAmistadPorJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISala" type="tns:ISala">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISala_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="AgregarParticipantesAPartida">
+      <soap12:operation soapAction="http://tempuri.org/ISala/AgregarParticipantesAPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CrearPartida">
+      <soap12:operation soapAction="http://tempuri.org/ISala/CrearPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosHistorial">
+      <soap12:operation soapAction="http://tempuri.org/ISala/ObtenerDatosHistorial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenrParticipantesDeJuego">
+      <soap12:operation soapAction="http://tempuri.org/ISala/ObtenrParticipantesDeJuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioJuego">
+    <wsdl:port name="NetTcpBinding_IJugador" binding="tns:NetTcpBinding_IJugador">
+      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioJugador" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioGloom</wsa10:Address>
+        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioJugador</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Upn>NMH14\nmh14</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
-    <wsdl:port name="NetTcpBinding_IJugador" binding="tns:NetTcpBinding_IJugador">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioGloom" />
+    <wsdl:port name="NetTcpBinding_IAmigos" binding="tns:NetTcpBinding_IAmigos">
+      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioAmigos" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioGloom</wsa10:Address>
+        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioAmigos</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>NMH14\nmh14</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISala" binding="tns:NetTcpBinding_ISala">
+      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioSala" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioSala</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Upn>NMH14\nmh14</Upn>
         </Identity>

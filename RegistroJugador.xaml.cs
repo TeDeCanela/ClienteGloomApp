@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class RegistroJugador : Window, ServicioGloom.IServicioAdministradorCallback
+    public partial class RegistroJugador : Window
     {
         private String iconoSeleccionado;
         public RegistroJugador()
@@ -28,12 +28,7 @@ namespace ClienteGloomApp
 
         }
 
-        void IServicioAdministradorCallback.Response(int result)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
 
@@ -154,7 +149,7 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
-        }*/
+        }
     }
 
 }
