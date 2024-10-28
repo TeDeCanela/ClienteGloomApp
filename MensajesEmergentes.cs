@@ -9,7 +9,6 @@ namespace ClienteGloomApp
 {
     public static class MensajesEmergentes
     {
-        // Diccionario para almacenar mensajes de error
         private static readonly Dictionary<string, string> mensajesErrores;
 
         static MensajesEmergentes()
@@ -23,6 +22,7 @@ namespace ClienteGloomApp
             { "5", Properties.Resources.mensajeExp05},
             { "6", Properties.Resources.mensajeExp06},
             { "7", Properties.Resources.mensajeExp07},
+            { "10", Properties.Resources.mensajeExp10},
             { "53", Properties.Resources.mensajeExp53},
             { "4060", Properties.Resources.mensajeExp54060},
             { "10054", Properties.Resources.mensajeExp10054},

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteGloomApp.ServicioGloom;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -66,6 +67,33 @@ namespace ClienteGloomApp
             HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
             nuevavenatana.Show();
             this.Close();
+        }
+
+        private void btnMiniHistoria_Click(object sender, RoutedEventArgs e)
+        {
+            panelMiniEntrada .Visibility = Visibility.Visible;
+        }
+
+        private void btnFlechaPanelAmigos_Click(object sender, RoutedEventArgs e)
+        {
+            panelMiniEntrada.Visibility = Visibility.Collapsed;
+        }
+
+        private void btnEntrarPartidaMiniHistoria_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                InstanceContext contextoSala = new InstanceContext(this);
+                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+                ServicioGloom.Sala sala = new ServicioGloom.Sala();
+                proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
+
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+            
         }
     }
 }

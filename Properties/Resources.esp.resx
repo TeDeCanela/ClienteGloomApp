@@ -210,6 +210,9 @@
   <data name="historiaLorenzeo" xml:space="preserve">
     <value>Un líder militar con fuerza demoníaca arrasa con ciudades y recolecta almas para alimentar su poder oscuro mientras busca conquistar todo a su paso.</value>
   </data>
+  <data name="historialPerdedor" xml:space="preserve">
+    <value>Perdió</value>
+  </data>
   <data name="historialTipo" xml:space="preserve">
     <value>Tipo</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="historiaLusiel" xml:space="preserve">
     <value>El príncipe heredero, arrogante y despectivo, se divierte abusando de su poder y causando caos.</value>
+  </data>
+  <data name="historialVictoria" xml:space="preserve">
+    <value>Ganador</value>
   </data>
   <data name="historiaMerit" xml:space="preserve">
     <value>La matriarca, conocida por su sarcasmo y falta de paciencia. Maneja los asuntos internos con mano dura y manipula a los demás para mantener el control.</value>
@@ -441,10 +447,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
   </data>
-  <data name="historialPerdedor" xml:space="preserve">
-    <value>Perdió</value>
-  </data>
-  <data name="historialVictoria" xml:space="preserve">
-    <value>Ganador</value>
+  <data name="mensajeExp10" xml:space="preserve">
+    <value>No se encontró ninguna sala con ese código o identificador, verifique que estén correctas.</value>
   </data>
 </root>

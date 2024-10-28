@@ -35,7 +35,7 @@
             </Button.Template>
         </Button>
 
-        <Button x:Name="btnMiniHistoria" Content="{x:Static p:Resources.inicioBtnMiniHistoria}" HorizontalAlignment="Left" Margin="46,542,0,0" VerticalAlignment="Top" Width="202" Height="75" Background="#FFB25979" Foreground="White" FontSize="22" FontWeight="Bold" BorderThickness="2,2,2,2" BorderBrush="#FF4E1B1B">
+        <Button x:Name="btnMiniHistoria" Content="{x:Static p:Resources.inicioBtnMiniHistoria}" HorizontalAlignment="Left" Margin="46,542,0,0" VerticalAlignment="Top" Width="202" Height="75" Background="#FFB25979" Foreground="White" FontSize="22" FontWeight="Bold" BorderThickness="2,2,2,2" BorderBrush="#FF4E1B1B" Click="btnMiniHistoria_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -116,6 +116,26 @@ CornerRadius="15">
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <StackPanel x:Name="panelMiniEntrada" Visibility="Collapsed" Background="#40000000" Width="468" Height="276" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="542,305,0,0">
+            <Button x:Name="btnFlechaPanelMiniEntrada" Content="" Height="51" Width="53" RenderTransformOrigin="0.5,0.5" Click="btnFlechaPanelAmigos_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-179.553"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="lblNoSala" Content="{x:Static p:Resources.miniHistoriaNumeroSala}" Width="214" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="18"/>
+            <TextBox x:Name="txtIdSala" TextWrapping="Wrap" Width="290" Height="32" FontSize="18" />
+            <Label x:Name="lblCodigoSala" Content="{x:Static p:Resources.entradaPrivadaPartidaInstruccion}" Width="214" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,10,0,0"/>
+            <TextBox x:Name="txtCodigo" TextWrapping="Wrap" Width="290" Height="33" FontSize="18" Margin="0,10,0,0"/>
+            <Button x:Name="btnEntrarPartidaMiniHistoria" Content="{x:Static p:Resources.buscarPartidaBtnUnirse}" Click="btnEntrarPartidaMiniHistoria_Click" Height="41" Width="143" HorizontalAlignment="Right" Margin="10,10,10,0" Background="White"/>
 
+        </StackPanel>
     </Grid>
 </Window> 

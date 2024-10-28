@@ -198,4 +198,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BuscarSalaExistente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarSalaExistenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BibliotecaClases" minOccurs="0" name="BuscarSalaExistenteResult" nillable="true" type="q15:Sala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

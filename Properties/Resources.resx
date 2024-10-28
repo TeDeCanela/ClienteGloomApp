@@ -318,6 +318,9 @@
   <data name="mensajeExp07" xml:space="preserve">
     <value>No ha seleccionado a un jugador para enviar solicitud</value>
   </data>
+  <data name="mensajeExp10" xml:space="preserve">
+    <value>No se encontró ninguna sala con ese código o identificador, verifique que estén correctas.</value>
+  </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Excepción 10054</value>
   </data>

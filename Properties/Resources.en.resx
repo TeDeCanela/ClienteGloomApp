@@ -210,6 +210,9 @@
   <data name="historiaLorenzeo" xml:space="preserve">
     <value>A military leader with demonic strength ravages cities and collects souls to feed his dark power while seeking to conquer everything in his path.</value>
   </data>
+  <data name="historialPerdedor" xml:space="preserve">
+    <value>Lost</value>
+  </data>
   <data name="historialTipo" xml:space="preserve">
     <value>Type</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="historiaLusiel" xml:space="preserve">
     <value>The crown prince, arrogant and contemptuous, enjoys abusing his power and causing chaos.</value>
+  </data>
+  <data name="historialVictoria" xml:space="preserve">
+    <value>Winner</value>
   </data>
   <data name="historiaMerit" xml:space="preserve">
     <value>The matriarch, known for her sarcasm and lack of patience, handles internal affairs with a firm hand and manipulates others to maintain control.</value>
@@ -441,10 +447,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
   </data>
-  <data name="historialPerdedor" xml:space="preserve">
-    <value>Lost</value>
-  </data>
-  <data name="historialVictoria" xml:space="preserve">
-    <value>Winner</value>
+  <data name="mensajeExp10" xml:space="preserve">
+    <value>No room was found with that code or id. Please verify that the information is correct.</value>
   </data>
 </root>

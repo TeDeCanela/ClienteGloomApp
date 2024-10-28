@@ -664,6 +664,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No se encontró ninguna sala con ese código o identificador, verifique que estén correctas..
+        /// </summary>
+        public static string mensajeExp10 {
+            get {
+                return ResourceManager.GetString("mensajeExp10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Excepción 10054.
         /// </summary>
         public static string mensajeExp10054 {

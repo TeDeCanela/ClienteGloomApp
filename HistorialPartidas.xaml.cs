@@ -32,8 +32,8 @@ namespace ClienteGloomApp
         {
             try
             {
-                InstanceContext contextoAmistad = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoAmistad);
+                InstanceContext contextoSala= new InstanceContext(this);
+                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
                 var historial = proxy.ObtenerDatosHistorial(lblNombreUsuarioRegistrado.Content.ToString());
 
@@ -71,8 +71,8 @@ namespace ClienteGloomApp
 
         private String ObtenerListaJugadores(String idSala)
         {
-               InstanceContext contextoAmistad = new InstanceContext(this);
-               ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoAmistad);
+               InstanceContext contextoSala = new InstanceContext(this);
+               ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
                var historial = proxy.ObtenrParticipantesDeJuego(idSala);
 

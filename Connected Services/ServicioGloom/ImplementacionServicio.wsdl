@@ -221,6 +221,15 @@
   <wsdl:message name="ISala_ObtenrParticipantesDeJuego_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q14:ManejadorExcepciones" />
   </wsdl:message>
+  <wsdl:message name="ISala_BuscarSalaExistente_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarSalaExistente" />
+  </wsdl:message>
+  <wsdl:message name="ISala_BuscarSalaExistente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarSalaExistenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISala_BuscarSalaExistente_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q15:ManejadorExcepciones" />
+  </wsdl:message>
   <wsdl:portType name="IJugador">
     <wsdl:operation name="AgregarJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/IJugador/AgregarJugador" message="tns:IJugador_AgregarJugador_InputMessage" />
@@ -295,6 +304,11 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuego" message="tns:ISala_ObtenrParticipantesDeJuego_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoResponse" message="tns:ISala_ObtenrParticipantesDeJuego_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_ObtenrParticipantesDeJuego_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarSalaExistente">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/BuscarSalaExistente" message="tns:ISala_BuscarSalaExistente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/BuscarSalaExistenteResponse" message="tns:ISala_BuscarSalaExistente_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISala/BuscarSalaExistenteManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_BuscarSalaExistente_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJugador" type="tns:IJugador">
@@ -466,6 +480,18 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenrParticipantesDeJuego">
       <soap12:operation soapAction="http://tempuri.org/ISala/ObtenrParticipantesDeJuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarSalaExistente">
+      <soap12:operation soapAction="http://tempuri.org/ISala/BuscarSalaExistente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

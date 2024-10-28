@@ -714,6 +714,13 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenrParticipantesDeJuego", ReplyAction="http://tempuri.org/ISala/ObtenrParticipantesDeJuegoResponse")]
         System.Threading.Tasks.Task<string[]> ObtenrParticipantesDeJuegoAsync(string identificadorSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/BuscarSalaExistente", ReplyAction="http://tempuri.org/ISala/BuscarSalaExistenteResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/BuscarSalaExistenteManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        ClienteGloomApp.ServicioGloom.Sala BuscarSalaExistente(string idSala, string codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/BuscarSalaExistente", ReplyAction="http://tempuri.org/ISala/BuscarSalaExistenteResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala> BuscarSalaExistenteAsync(string idSala, string codigo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -724,7 +731,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class SalaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.ISala>, ClienteGloomApp.ServicioGloom.ISala {
         
-        public SalaClient(System.ServiceModel.InstanceContext contextoAmistad) {
+        public SalaClient(System.ServiceModel.InstanceContext contextoSala) {
         }
         
         public SalaClient(string endpointConfigurationName) : 
@@ -773,6 +780,14 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<string[]> ObtenrParticipantesDeJuegoAsync(string identificadorSala) {
             return base.Channel.ObtenrParticipantesDeJuegoAsync(identificadorSala);
+        }
+        
+        public ClienteGloomApp.ServicioGloom.Sala BuscarSalaExistente(string idSala, string codigo) {
+            return base.Channel.BuscarSalaExistente(idSala, codigo);
+        }
+        
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala> BuscarSalaExistenteAsync(string idSala, string codigo) {
+            return base.Channel.BuscarSalaExistenteAsync(idSala, codigo);
         }
     }
 }
