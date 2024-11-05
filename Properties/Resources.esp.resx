@@ -318,14 +318,26 @@
   <data name="mensajeExp07" xml:space="preserve">
     <value>No ha seleccionado a un jugador para enviar solicitud</value>
   </data>
+  <data name="mensajeExp10" xml:space="preserve">
+    <value>No se encontró ninguna sala con ese código o identificador, verifique que estén correctas.</value>
+  </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Se interrumpió la conexión de red, contacte con un administrador del sistema e inténtelo más tarde.</value>
   </data>
   <data name="mensajeExp10060" xml:space="preserve">
     <value>Tiempo de espera agotado al conectar, contacte con un administrador del sistema e inténtelo más tarde.</value>
   </data>
+  <data name="mensajeExp11" xml:space="preserve">
+    <value>El correo electrónico ingresado no es válido. Debe tener entre 3 y 255 caracteres, sin más de dos espacios seguidos y seguir el formato usuario@dominio.com.</value>
+  </data>
   <data name="mensajeExp11001" xml:space="preserve">
     <value>Nombre del servidor SQL incorrecto, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajeExp12" xml:space="preserve">
+    <value>Aún no ha seleccionado una imagen para su perfil</value>
+  </data>
+  <data name="mensajeExp14" xml:space="preserve">
+    <value>El personaje ya está seleciconado por otro jugador</value>
   </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Error de autenticación en la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
@@ -354,6 +366,9 @@
   <data name="mensajeTituloInformacion" xml:space="preserve">
     <value>Información</value>
   </data>
+  <data name="miniBtnEmpezar" xml:space="preserve">
+    <value>Empezar</value>
+  </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Sala mini-historia</value>
   </data>
@@ -362,6 +377,12 @@
   </data>
   <data name="miniHistoriaNumeroSala" xml:space="preserve">
     <value>Número de sala</value>
+  </data>
+  <data name="miniInvitarJugadores" xml:space="preserve">
+    <value>Invitar jugadores</value>
+  </data>
+  <data name="miniJugadores" xml:space="preserve">
+    <value>Jugadores</value>
   </data>
   <data name="partidaBtnDescartar" xml:space="preserve">
     <value>Descartar</value>
@@ -447,7 +468,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
   </data>
-  <data name="mensajeExp10" xml:space="preserve">
-    <value>No se encontró ninguna sala con ese código o identificador, verifique que estén correctas.</value>
+  <data name="mensajeExp15" xml:space="preserve">
+    <value>No todod los jugadores han seleccionado un personaje</value>
   </data>
 </root>

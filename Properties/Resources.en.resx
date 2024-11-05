@@ -318,14 +318,26 @@
   <data name="mensajeExp07" xml:space="preserve">
     <value>You haven't selected a player to send a request to.</value>
   </data>
+  <data name="mensajeExp10" xml:space="preserve">
+    <value>No room was found with that code or id. Please verify that the information is correct.</value>
+  </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>The network connection was interrupted, please contact a system administrator and try again later.</value>
   </data>
   <data name="mensajeExp10060" xml:space="preserve">
     <value>Connection timeout, please contact a system administrator and try again later.</value>
   </data>
+  <data name="mensajeExp11" xml:space="preserve">
+    <value>The email entered is invalid. It must be between 3 and 255 characters, with no more than two consecutive spaces, and follow the format(user@domain.com.)</value>
+  </data>
   <data name="mensajeExp11001" xml:space="preserve">
     <value>Incorrect SQL server name, please contact a system administrator and try again later.</value>
+  </data>
+  <data name="mensajeExp12" xml:space="preserve">
+    <value>You have not yet selected a profile picture.</value>
+  </data>
+  <data name="mensajeExp14" xml:space="preserve">
+    <value>This character is already choose</value>
   </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Authentication error in the database, please contact a system administrator and try again later.</value>
@@ -354,6 +366,9 @@
   <data name="mensajeTituloInformacion" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="miniBtnEmpezar" xml:space="preserve">
+    <value>Start</value>
+  </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Mini-story room.</value>
   </data>
@@ -362,6 +377,12 @@
   </data>
   <data name="miniHistoriaNumeroSala" xml:space="preserve">
     <value>Room number</value>
+  </data>
+  <data name="miniInvitarJugadores" xml:space="preserve">
+    <value>Invite player</value>
+  </data>
+  <data name="miniJugadores" xml:space="preserve">
+    <value>Players</value>
   </data>
   <data name="partidaBtnDescartar" xml:space="preserve">
     <value>Discard</value>
@@ -447,7 +468,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
   </data>
-  <data name="mensajeExp10" xml:space="preserve">
-    <value>No room was found with that code or id. Please verify that the information is correct.</value>
+  <data name="mensajeExp15" xml:space="preserve">
+    <value>All playeres have to choose a character</value>
   </data>
 </root>

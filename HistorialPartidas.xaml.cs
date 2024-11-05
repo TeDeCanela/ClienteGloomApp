@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para HistorialPartidas.xaml
     /// </summary>
-    public partial class HistorialPartidas : Window
+    public partial class HistorialPartidas : Window, ISalaCallback
     {
         public HistorialPartidas(String nombreUsuario)
         {
@@ -86,6 +86,11 @@ namespace ClienteGloomApp
             Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
             this.Close();
+        }
+
+        public void EmpezarJuego()
+        {
+            throw new NotImplementedException();
         }
     }
 }

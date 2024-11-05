@@ -21,37 +21,41 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class RegistroJugador : Window
     {
-        private String iconoSeleccionado;
+        private String iconoSeleccionado="sin incono";
+        ValidacionCampos validar = new ValidacionCampos();
         public RegistroJugador()
         {
             InitializeComponent();
-
+            
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
-
             ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
-
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
-
-            jugador.nombreUsuario = txtBoxNombreUsuario.Text;
-            jugador.nombre = txtBoxNombre.Text;
-            jugador.apellidos = txtBoxApellidos.Text;
-            jugador.correo = txtBoxCorreo.Text;
-            jugador.contraseña = pwdContrasena.Password;
-            jugador.tipo = "Jugador";            
-            jugador.icono = iconoSeleccionado;
 
             try
             {
-               int resulatdoIperacion = proxy.AgregarJugador(jugador);
+                jugador.nombreUsuario = txtBoxNombreUsuario.Text;
+                jugador.nombre = txtBoxNombre.Text;
+                jugador.apellidos = txtBoxApellidos.Text;
+                jugador.correo = validar.VerificarCorreo(txtBoxCorreo.Text);
+                jugador.contraseña = pwdContrasena.Password;
+                jugador.tipo = "JugadorRegistrado";
+                jugador.icono= validar.VerificarInconoSeleccionado(iconoSeleccionado);
+
+                int resulatdoIperacion = proxy.AgregarJugador(jugador);
+
                 if (resulatdoIperacion == 1)
                 {
                     MessageBox.Show(Properties.Resources.mensajeRegistroJugadorExito, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCampos();
                 }
+            }
+            catch (ArgumentException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message.ToString(), ex.Message.ToString());
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -150,6 +154,8 @@ namespace ClienteGloomApp
             nuevaVentana.Show();
             this.Close();
         }
+
+       
     }
 
 }

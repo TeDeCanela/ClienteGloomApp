@@ -1,0 +1,41 @@
+﻿<Window x:Class="ClienteGloomApp.PartidaMiniJuego"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteGloomApp"
+        mc:Ignorable="d"
+        Title="PartidaMiniJuego" Height="800" Width="1550">
+
+    <Grid>
+        <Image Source="Imagenes/mesaTablero.jpg" Width="1573" Height="1073" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-86,0,0" Opacity=".8"/>
+        <Button x:Name="btnCarta1" HorizontalAlignment="Left" Height="145" Margin="561,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta2" HorizontalAlignment="Left" Height="145" Margin="430,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta3" HorizontalAlignment="Left" Height="145" Margin="683,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta4" HorizontalAlignment="Left" Height="145" Margin="813,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta5" HorizontalAlignment="Left" Height="145" Margin="946,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta6" HorizontalAlignment="Left" Height="145" Margin="1072,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta7" HorizontalAlignment="Left" Height="145" Margin="1187,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <StackPanel HorizontalAlignment="Left" Margin="720,438,0,0" VerticalAlignment="Top">
+            <Image x:Name="imgJugador1" Height="140" Width="140"/>
+            <Label x:Name="lblJugador1" Content="Jugador 1"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Margin="120,364,0,0" VerticalAlignment="Top">
+            <Image x:Name="imgJugador2" Height="180" Width="180"/>
+            <Label x:Name="lblJugador2" Content="Jugador 2"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top">
+            <Image x:Name="imgJugador3" Height="180" Width="180"/>
+            <Label x:Name="lblJugador3" Content="Jugador 3"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Margin="1289,364,0,0" VerticalAlignment="Top">
+            <Image x:Name="imgJugador4" Height="180" Width="180"/>
+            <Label x:Name="lblJugador4" Content="Jugador 4"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,65 @@
+﻿<Window x:Class="ClienteGloomApp.SalaMiniJuego"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteGloomApp"
+        xmlns:p="clr-namespace:ClienteGloomApp.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.miniHistoriaEncabezado}" Height="800" Width="1550">
+    <Grid>
+        <Image Source="Imagenes/SalaFondo.jpg" Width="1573" Height="1073" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-86,0,0" Opacity=".7"/>
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.553"/>
+                    <TranslateTransform X="17.15" Y="4.827"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="txtJugador1" HorizontalAlignment="Left" Margin="272,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontSize="20" Height="42" IsEnabled="False"/>
+        <Image x:Name="imgJugador1" HorizontalAlignment="Left" Height="67" Margin="139,295,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="txtJugador2" HorizontalAlignment="Left" Margin="272,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontSize="20" Height="42" IsEnabled="False"/>
+        <Image x:Name="imgJugador2" HorizontalAlignment="Left" Height="67" Margin="139,419,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="txtJugador3" HorizontalAlignment="Left" Margin="272,562,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontSize="20" Height="42" IsEnabled="False"/>
+        <Image x:Name="imgJugador3" HorizontalAlignment="Left" Height="67" Margin="139,543,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox x:Name="txtJugador4" HorizontalAlignment="Left" Margin="272,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontSize="20" Height="42" IsEnabled="False"/>
+        <Image x:Name="imgJugador4" HorizontalAlignment="Left" Height="67" Margin="139,656,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label x:Name="lblNombreUsuarioRegistrado" Content="" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.miniInvitarJugadores}" HorizontalAlignment="Left" Margin="39,149,0,0" VerticalAlignment="Top" FontSize="20" Height="48" Width="200"/>
+        <Label x:Name="lblInstruccion" Content="{x:Static p:Resources.miniHistoriaNumeroSala}" HorizontalAlignment="Left" Margin="39,74,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
+        <Label x:Name="lblInstruccionJugadores" Content="{x:Static p:Resources.miniJugadores}" HorizontalAlignment="Left" Margin="54,253,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
+        <Image x:Name="imgFamilia" HorizontalAlignment="Left" Height="139" Margin="889,253,0,0" VerticalAlignment="Top" Width="130" Source="/Imagenes/EscudoGarlo.jpg"/>
+        <Label x:Name="lblInstruccionFamilia" Content="{x:Static p:Resources.miniHistoriaInstruccionFamiliar}" HorizontalAlignment="Left" Margin="1051,291,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
+        <GroupBox x:Name="grupoBotones" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="689,406,0,0" BorderThickness="0" Width="577">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="136,0,0,0">
+                <Button x:Name="btnTucani" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnTucani_Click" Margin="5">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ImagenesFamilia/Tucani.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnLusiel" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnLusiel_Click" Margin="5">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ImagenesFamilia/Lusiel.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnAngelus" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnAngelus_Click" Margin="5">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ImagenesFamilia/Angelus.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnLuan" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnLuan_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ImagenesFamilia/Luan.jpg"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.miniBtnEmpezar}" HorizontalAlignment="Left" Margin="1320,693,0,0" VerticalAlignment="Top" FontSize="20" Height="57" Width="152" Click="btnEmpezar_Click"/>
+    </Grid>
+</Window>

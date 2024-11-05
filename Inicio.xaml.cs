@@ -19,7 +19,8 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para Inicio.xaml
     /// </summary>
-    public partial class Inicio : Window {
+    public partial class Inicio : Window, ISalaCallback
+    {
         private String identificadorUsuario;
 
         public Inicio(String nombreDelUsuario)
@@ -86,7 +87,13 @@ namespace ClienteGloomApp
                 InstanceContext contextoSala = new InstanceContext(this);
                 ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
-                proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
+                var resultado = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
+                if (resultado!=null)
+                {
+                    SalaMiniJuego nuevaVentana = new SalaMiniJuego(lblNombreUsuario.Content.ToString(), resultado);
+                    nuevaVentana.Show();
+                    this.Close();
+                }
 
             }
             catch (FaultException<ManejadorExcepciones> ex)
@@ -94,6 +101,11 @@ namespace ClienteGloomApp
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
             
+        }
+
+        public void EmpezarJuego()
+        {
+            throw new NotImplementedException();
         }
     }
 }

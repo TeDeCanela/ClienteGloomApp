@@ -691,11 +691,47 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El correo electrónico ingresado no es válido. Debe tener entre 3 y 255 caracteres, sin más de dos espacios seguidos y seguir el formato usuario@dominio.com..
+        /// </summary>
+        public static string mensajeExp11 {
+            get {
+                return ResourceManager.GetString("mensajeExp11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Excepción 11001.
         /// </summary>
         public static string mensajeExp11001 {
             get {
                 return ResourceManager.GetString("mensajeExp11001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aún no ha seleccionado una imagen para su perfil.
+        /// </summary>
+        public static string mensajeExp12 {
+            get {
+                return ResourceManager.GetString("mensajeExp12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Este personaje ya está seleccionado.
+        /// </summary>
+        public static string mensajeExp14 {
+            get {
+                return ResourceManager.GetString("mensajeExp14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No todos los jugadores han seleccionado un personaje.
+        /// </summary>
+        public static string mensajeExp15 {
+            get {
+                return ResourceManager.GetString("mensajeExp15", resourceCulture);
             }
         }
         
@@ -781,6 +817,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Empezar.
+        /// </summary>
+        public static string miniBtnEmpezar {
+            get {
+                return ResourceManager.GetString("miniBtnEmpezar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Sala mini-historia.
         /// </summary>
         public static string miniHistoriaEncabezado {
@@ -804,6 +849,24 @@ namespace ClienteGloomApp.Properties {
         public static string miniHistoriaNumeroSala {
             get {
                 return ResourceManager.GetString("miniHistoriaNumeroSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invitar jugadores.
+        /// </summary>
+        public static string miniInvitarJugadores {
+            get {
+                return ResourceManager.GetString("miniInvitarJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugadores.
+        /// </summary>
+        public static string miniJugadores {
+            get {
+                return ResourceManager.GetString("miniJugadores", resourceCulture);
             }
         }
         

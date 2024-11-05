@@ -52,9 +52,9 @@ namespace ClienteGloomApp
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            InstanceContext contextoJugador = new InstanceContext(this);
+            InstanceContext contexJugador = new InstanceContext(this);
 
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
