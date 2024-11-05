@@ -19,37 +19,40 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class Sala : Window
     {
-        public Sala()
+        private String identificadorUsuario;
+        private String codigoSala;
+        public Sala(String nombreUsuario, String codigo)
         {
             InitializeComponent();
+            identificadorUsuario = nombreUsuario;
+            codigoSala = codigo;
         }
 
 
         private void btnOres_Click(object sender, RoutedEventArgs e)
         {
-
+            txtDescripcionFamilia.Text = Properties.Resources.salaDescripcionOres;
         }
 
         private void btnCorbat_Click(object sender, RoutedEventArgs e)
         {
-
+            txtDescripcionFamilia.Text = Properties.Resources.salaDescripcionCorbat;
         }
 
         private void btnGarlo_Click(object sender, RoutedEventArgs e)
         {
-
+            txtDescripcionFamilia.Text = Properties.Resources.salaDescripcionGarlo;
         }
 
         private void btnRamfez_Click(object sender, RoutedEventArgs e)
         {
-
+            txtDescripcionFamilia.Text = Properties.Resources.salaDescripcionRamfez;
         }
 
-
-
-        //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-
-        //}
+        private void btnInvitarJugadores_Click(object sender, RoutedEventArgs e)
+        {
+            InvitacionJugador invitacionJugador = new InvitacionJugador(identificadorUsuario, codigoSala);
+            invitacionJugador.Show();
+        }
     }
 }

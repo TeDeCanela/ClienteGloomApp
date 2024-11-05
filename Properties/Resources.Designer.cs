@@ -214,6 +214,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invitar.
+        /// </summary>
+        public static string globalInvitar {
+            get {
+                return ResourceManager.GetString("globalInvitar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Invitar Jugadores.
         /// </summary>
         public static string globalInvitarJugadores {
@@ -610,6 +619,24 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invitación por correo enviada exitosamente.
+        /// </summary>
+        public static string mensajeCorreoEnviadoExitoso {
+            get {
+                return ResourceManager.GetString("mensajeCorreoEnviadoExitoso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La invitación por correo no pudo ser enviada, inténtelo de nuevo más tarde.
+        /// </summary>
+        public static string mensajeCorreoEnviadoFallido {
+            get {
+                return ResourceManager.GetString("mensajeCorreoEnviadoFallido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario registrado.
         /// </summary>
         public static string mensajeExp01 {
@@ -907,6 +934,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Buscar partida.
         /// </summary>
         public static string TituloBuscarPartida {
@@ -957,6 +993,15 @@ namespace ClienteGloomApp.Properties {
         public static string TituloInicioSesion {
             get {
                 return ResourceManager.GetString("TituloInicioSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invitación a jugadores.
+        /// </summary>
+        public static string TituloInvitacionJugador {
+            get {
+                return ResourceManager.GetString("TituloInvitacionJugador", resourceCulture);
             }
         }
         

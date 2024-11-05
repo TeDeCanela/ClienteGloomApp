@@ -41,7 +41,7 @@ namespace ClienteGloomApp
         private void btnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
         {
             App app = (App)Application.Current;
-            app.cambiarIdioma("esp");
+            app.CambiarIdioma("esp");
 
             actualizarElementos();
         }
@@ -49,7 +49,7 @@ namespace ClienteGloomApp
         private void btnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
         {
             App app = (App)Application.Current;
-            app.cambiarIdioma("en");
+            app.CambiarIdioma("en");
 
             actualizarElementos();
         }
@@ -62,7 +62,7 @@ namespace ClienteGloomApp
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
-            /*jugador.nombreUsuario = txtBoxNombre.Text;
+            jugador.nombreUsuario = txtBoxNombre.Text;
             jugador.contraseña = passwordBox.Password;
 
             try
@@ -78,16 +78,16 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }*/
+            }
         }
 
-        private void actualizarElementos()
+        private void ActualizarElementos()
         {
-            /*lblNombreUsuario.Content = Properties.Resources.globalNombreUsuario;
+            lblNombreUsuario.Content = Properties.Resources.globalNombreUsuario;
             lblContraseña.Content = Properties.Resources.globalContraseña;
             btnIniciarSesion.Content = Properties.Resources.inicioSesionBtnIniciarSesion;
             btnJugarComoInvitado.Content = Properties.Resources.inicioSesionBtnJugarComoInvitado;
-            btnRegistrarse.Content = Properties.Resources.inicioSesionBtnRegistrarse;*/
+            btnRegistrarse.Content = Properties.Resources.inicioSesionBtnRegistrarse;
 
 
         }

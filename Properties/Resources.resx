@@ -168,6 +168,9 @@
   <data name="globalEmpezar" xml:space="preserve">
     <value>Empezar</value>
   </data>
+  <data name="globalInvitar" xml:space="preserve">
+    <value>Invitar</value>
+  </data>
   <data name="globalInvitarJugadores" xml:space="preserve">
     <value>Invitar Jugadores</value>
   </data>
@@ -300,6 +303,12 @@
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Actualizado exitosamente</value>
   </data>
+  <data name="mensajeCorreoEnviadoExitoso" xml:space="preserve">
+    <value>Invitación por correo enviada exitosamente</value>
+  </data>
+  <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
+    <value>La invitación por correo no pudo ser enviada, inténtelo de nuevo más tarde</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Usuario registrado</value>
   </data>
@@ -399,6 +408,9 @@
   <data name="solicitudAmistadInstruccion" xml:space="preserve">
     <value>De clic en el botón de “más” para para aceptar la solcitud</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
   <data name="TituloBuscarPartida" xml:space="preserve">
     <value>Buscar partida</value>
   </data>
@@ -416,6 +428,9 @@
   </data>
   <data name="TituloInicioSesion" xml:space="preserve">
     <value>Inicio sesión</value>
+  </data>
+  <data name="TituloInvitacionJugador" xml:space="preserve">
+    <value>Invitación a jugadores</value>
   </data>
   <data name="TituloListaDeAmigos" xml:space="preserve">
     <value>Lista de amigos</value>

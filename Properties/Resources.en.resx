@@ -165,8 +165,20 @@
   <data name="globalCorreo" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="globalEmpezar" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="globalInvitar" xml:space="preserve">
+    <value>Invite</value>
+  </data>
   <data name="globalInvitarJugadores" xml:space="preserve">
     <value>Invite players</value>
+  </data>
+  <data name="globalJugadores" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="globalListo" xml:space="preserve">
+    <value>Ready</value>
   </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Name</value>
@@ -291,6 +303,12 @@
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Update succefully!</value>
   </data>
+  <data name="mensajeCorreoEnviadoExitoso" xml:space="preserve">
+    <value>Email invitation sent successfully</value>
+  </data>
+  <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
+    <value>The email invitation could not be sent, please try again later</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>This username has already been registered, please choose another.</value>
   </data>
@@ -299,6 +317,12 @@
   </data>
   <data name="mensajeExp03" xml:space="preserve">
     <value>We couldn't find an account with that email and password. Please double-check your spelling or create a new account by clicking "Register".</value>
+  </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>This room name is already taken, please try entering a different name.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>This code already exists.</value>
   </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>The network connection was interrupted, please contact a system administrator and try again later.</value>
@@ -317,6 +341,12 @@
   </data>
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Unable to open the database, please contact a system administrator and try again later.</value>
+  </data>
+  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
+    <value>Game created successfully!</value>
+  </data>
+  <data name="mensajePartidaCreadaFallido" xml:space="preserve">
+    <value>The game could not be created. Please try again.</value>
   </data>
   <data name="mensajeRegistroJugadorExito" xml:space="preserve">
     <value>You have registered successfully!</value>
@@ -396,6 +426,9 @@
   <data name="TituloInicioSesion" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="TituloInvitacionJugador" xml:space="preserve">
+    <value>Invite player</value>
+  </data>
   <data name="TituloListaDeAmigos" xml:space="preserve">
     <value>Friends list</value>
   </data>
@@ -416,26 +449,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
-  </data>
-  <data name="globalJugadores" xml:space="preserve">
-    <value>Players</value>
-  </data>
-  <data name="globalListo" xml:space="preserve">
-    <value>Ready</value>
-  </data>
-  <data name="globalEmpezar" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
-    <value>Game created successfully!</value>
-  </data>
-  <data name="mensajeExp08" xml:space="preserve">
-    <value>This room name is already taken, please try entering a different name.</value>
-  </data>
-  <data name="mensajeExp09" xml:space="preserve">
-    <value>This code already exists.</value>
-  </data>
-  <data name="mensajePartidaCreadaFallido" xml:space="preserve">
-    <value>The game could not be created. Please try again.</value>
   </data>
 </root>

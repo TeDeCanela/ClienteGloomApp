@@ -7,7 +7,7 @@
     <Grid Background="#FFC38E79">
 
         <Label x:Name="lblSala" Content="{x:Static p:Resources.salaInstruccion}" HorizontalAlignment="Left" Margin="56,24,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
-        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.globalInvitarJugadores}" HorizontalAlignment="Left" Margin="83,109,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
+        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.globalInvitarJugadores}" HorizontalAlignment="Left" Margin="83,109,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnInvitarJugadores_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -51,7 +51,7 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="txtDescripcionFamilia" Margin="775,392,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1015" Height="157" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtDescripcionFamilia" Margin="775,392,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1015" Height="157" />
         <Button x:Name="btnListo" Content="{x:Static p:Resources.globalListo}" HorizontalAlignment="Left" Margin="1578,594,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -65,7 +65,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.globalEmpezar}" HorizontalAlignment="Left" Margin="1578,679,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnListo_Copiar_Click">
+        <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.globalEmpezar}" HorizontalAlignment="Left" Margin="1578,679,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 

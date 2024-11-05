@@ -165,8 +165,20 @@
   <data name="globalCorreo" xml:space="preserve">
     <value>Correo</value>
   </data>
+  <data name="globalEmpezar" xml:space="preserve">
+    <value>Empezar</value>
+  </data>
+  <data name="globalInvitar" xml:space="preserve">
+    <value>Invitar</value>
+  </data>
   <data name="globalInvitarJugadores" xml:space="preserve">
     <value>Invitar jugadores</value>
+  </data>
+  <data name="globalJugadores" xml:space="preserve">
+    <value>Jugadores</value>
+  </data>
+  <data name="globalListo" xml:space="preserve">
+    <value>Listo</value>
   </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
@@ -291,6 +303,12 @@
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Se ha actualizado exitosamente</value>
   </data>
+  <data name="mensajeCorreoEnviadoExitoso" xml:space="preserve">
+    <value>Invitación por correo enviada exitosamente</value>
+  </data>
+  <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
+    <value>La invitación por correo no pudo ser enviada, inténtelo de nuevo más tarde</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Este nombre de usuario ya se ha registrado, seleccione otro.</value>
   </data>
@@ -299,6 +317,12 @@
   </data>
   <data name="mensajeExp03" xml:space="preserve">
     <value>No pudimos encontrar ningún usuario con ese correo o contraseña. Verifique que esté bien escrito o cree una cuenta en “Registrarse”.</value>
+  </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>Este código ya existe.</value>
   </data>
   <data name="mensajeExp10054" xml:space="preserve">
     <value>Se interrumpió la conexión de red, contacte con un administrador del sistema e inténtelo más tarde.</value>
@@ -317,6 +341,12 @@
   </data>
   <data name="mensajeExp54060" xml:space="preserve">
     <value>No se pudo abrir la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
+  </data>
+  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
+    <value>¡Partida creada con éxito!</value>
+  </data>
+  <data name="mensajePartidaCreadaFallido" xml:space="preserve">
+    <value>La partida no pudo crearse. Por favor, inténtelo nuevamente.</value>
   </data>
   <data name="mensajeRegistroJugadorExito" xml:space="preserve">
     <value>¡Se ha registrado con éxito!</value>
@@ -396,6 +426,9 @@
   <data name="TituloInicioSesion" xml:space="preserve">
     <value>Inicio sesión</value>
   </data>
+  <data name="TituloInvitacionJugador" xml:space="preserve">
+    <value>Invitar a jugador</value>
+  </data>
   <data name="TituloListaDeAmigos" xml:space="preserve">
     <value>Lista de amigos</value>
   </data>
@@ -416,26 +449,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
-  </data>
-  <data name="globalJugadores" xml:space="preserve">
-    <value>Jugadores</value>
-  </data>
-  <data name="globalListo" xml:space="preserve">
-    <value>Listo</value>
-  </data>
-  <data name="globalEmpezar" xml:space="preserve">
-    <value>Empezar</value>
-  </data>
-  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
-    <value>¡Partida creada con éxito!</value>
-  </data>
-  <data name="mensajeExp08" xml:space="preserve">
-    <value>Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente.</value>
-  </data>
-  <data name="mensajeExp09" xml:space="preserve">
-    <value>Este código ya existe.</value>
-  </data>
-  <data name="mensajePartidaCreadaFallido" xml:space="preserve">
-    <value>La partida no pudo crearse. Por favor, inténtelo nuevamente.</value>
   </data>
 </root>

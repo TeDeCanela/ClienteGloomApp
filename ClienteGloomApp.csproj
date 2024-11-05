@@ -86,6 +86,9 @@
     <Compile Include="InicioSesion.xaml.cs">
       <DependentUpon>InicioSesion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InvitacionJugador.xaml.cs">
+      <DependentUpon>InvitacionJugador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MensajesEmergentes.cs" />
     <Compile Include="PerfilJugador.xaml.cs">
       <DependentUpon>PerfilJugador.xaml</DependentUpon>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InicioSesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InvitacionJugador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,6 +280,64 @@
     <Resource Include="Imagenes\madera.jpg" />
     <Resource Include="Imagenes\armas.jpg" />
     <Resource Include="Imagenes\FondoCastillo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\CartasModificadoras\Accidente1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Accidente2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Accidente3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Accidente4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Accidente5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Accidente6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Accidente7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desamor7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Desgracia7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Enfermedad7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Escándalo7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Fraude7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Pérdida7.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina1.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina2.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina3.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina4.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina5.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina6.png" />
+    <Resource Include="Imagenes\CartasModificadoras\Ruina7.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

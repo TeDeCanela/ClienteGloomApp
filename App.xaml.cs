@@ -16,7 +16,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class App : Application
     {
-        public void cambiarIdioma(string idioma)
+        public void CambiarIdioma(string idioma)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
 

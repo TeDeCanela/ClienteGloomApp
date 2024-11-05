@@ -51,6 +51,8 @@ namespace ClienteGloomApp
                 if (resultadoOperacion == 1)
                 {
                     MessageBox.Show(Properties.Resources.mensajePartidaCreadaExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    string codigo = ObtenerCodigoSala(sala.idAdministrador, sala.nombreSala);
                     LimpiarCampos();
                 }
             }
@@ -58,6 +60,10 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
+
+            Sala salaVentana = new Sala(identificadorUsuario, codigo);
+            salaVentana.Show();
+            this.Close();
 
         }
 
@@ -70,6 +76,28 @@ namespace ClienteGloomApp
             return fechaFormato;
         }
 
+        private void cambiarDeVentana(string usuario, string codigo)
+        {
+            Sala salaVentana = new Sala(usuario);
+            salaVentana.Show();
+            this.Close();
+        }
+
+        private string ObtenerCodigoSala(string administrador, string nombreSala)
+        {
+ 
+            
+            InstanceContext contextoPartida = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoPartida);
+
+            string codigoSala = proxy.BuscarCodigoSala(administrador, nombreSala);
+
+            return codigoSala;
+
+
+        }
+
+
         private void LimpiarCampos()
         {
             txtNombreSala.Text = string.Empty;
@@ -77,5 +105,7 @@ namespace ClienteGloomApp
             txtTipoPartida.Text = string.Empty;
             txtTipoSala.Text = string.Empty;
         }
+
+        
     }
 }
