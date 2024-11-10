@@ -87,5 +87,25 @@ namespace ClienteGloomApp
 
 
         }
+
+        private void btnIniciarComoInvitado_Click(object sender, RoutedEventArgs e)
+        {
+            InstanceContext contexJugador = new InstanceContext(this);
+
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+
+            try
+            {
+                var jugadorCreadoinvitado = proxy.AgregarJugadorInvitado();
+               
+                    Inicio nuevaVentana = new Inicio(jugadorCreadoinvitado.nombreUsuario);
+                    nuevaVentana.Show();
+                    this.Close();
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+        }
     }
 }

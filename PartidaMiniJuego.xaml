@@ -9,13 +9,13 @@
 
     <Grid>
         <Image Source="Imagenes/mesaTablero.jpg" Width="1573" Height="1073" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-86,0,0" Opacity=".8"/>
-        <Button x:Name="btnCarta1" HorizontalAlignment="Left" Height="145" Margin="561,625,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="btnCarta2" HorizontalAlignment="Left" Height="145" Margin="430,625,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="btnCarta3" HorizontalAlignment="Left" Height="145" Margin="683,625,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="btnCarta4" HorizontalAlignment="Left" Height="145" Margin="813,625,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="btnCarta5" HorizontalAlignment="Left" Height="145" Margin="946,625,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="btnCarta6" HorizontalAlignment="Left" Height="145" Margin="1072,625,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="btnCarta7" HorizontalAlignment="Left" Height="145" Margin="1187,625,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="btnCarta1" Width="105" Height="145" Margin="561,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta2" Width="105" Height="145" Margin="430,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta3" Width="105" Height="145" Margin="683,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta4" Width="105" Height="145" Margin="813,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta5" Width="105" Height="145" Margin="946,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta6" Width="105" Height="145" Margin="1072,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta7" Width="105" Height="145" Margin="1187,625,0,0" Background="Transparent"/>
         <StackPanel HorizontalAlignment="Left" Margin="720,438,0,0" VerticalAlignment="Top">
             <Image x:Name="imgJugador1" Height="140" Width="140"/>
             <Label x:Name="lblJugador1" Content="Jugador 1"/>

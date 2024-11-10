@@ -270,6 +270,9 @@
   <data name="inicioBtnVerPersonajes" xml:space="preserve">
     <value>Ver personajes</value>
   </data>
+  <data name="inicioInstruccionInvitado" xml:space="preserve">
+    <value>Para acceder a todas las funcionalidades tiene que registrarse</value>
+  </data>
   <data name="inicioSesionBtnIniciarSesion" xml:space="preserve">
     <value>Iniciar sesión</value>
   </data>
@@ -338,6 +341,9 @@
   </data>
   <data name="mensajeExp14" xml:space="preserve">
     <value>El personaje ya está seleciconado por otro jugador</value>
+  </data>
+  <data name="mensajeExp15" xml:space="preserve">
+    <value>No todod los jugadores han seleccionado un personaje</value>
   </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Error de autenticación en la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
@@ -467,8 +473,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
-  </data>
-  <data name="mensajeExp15" xml:space="preserve">
-    <value>No todod los jugadores han seleccionado un personaje</value>
   </data>
 </root>

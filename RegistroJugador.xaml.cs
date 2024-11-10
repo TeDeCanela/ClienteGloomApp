@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class RegistroJugador : Window
+    public partial class RegistroJugador : Window, IServicioJuegoTableroCallback
     {
         private String iconoSeleccionado="sin incono";
         ValidacionCampos validar = new ValidacionCampos();
@@ -155,7 +155,10 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-       
+        public void EnviarTurno(string nombreDelUsusarioEnTurno)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

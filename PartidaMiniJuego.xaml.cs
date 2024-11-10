@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para PartidaMiniJuego.xaml
     /// </summary>
-    public partial class PartidaMiniJuego : Window, IServicioJuegoTableroCallback
+    public partial class PartidaMiniJuego : Window, IServicioJuegoTableroCallback, ISalaCallback
     {
         public PartidaMiniJuego(string nombreUsuario, int cantidadJugadores, string numeroSala)     
         {
@@ -28,14 +28,25 @@ namespace ClienteGloomApp
             InstanceContext contextoTableroJuego = new InstanceContext(this);
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTableroJuego);
 
-            proxy.IngresarJugadorAJuego(lblJugador1.Content.ToString(), numeroSala, cantidadJugadores);
+            proxy.IniciarPartidaPorAdministrador(lblJugador1.Content.ToString(), numeroSala, cantidadJugadores);
             AsignarJugadores();
+            PonerImagenesCarta(nombreUsuario);
 
         }
 
-        public void RecibirTurno(bool validarTurno)
+        public void ActualizarNumeroJugadores()
         {
             throw new NotImplementedException();
+        }
+
+        public void EmpezarJuego()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EnviarTurno(string nombreDelUsusarioEnTurno)
+        {
+            Console.WriteLine(nombreDelUsusarioEnTurno);
         }
 
         private void AsignarJugadores()
@@ -52,7 +63,19 @@ namespace ClienteGloomApp
                 { "Angelus", "ImagenesFamilia/Angelus.png" }
             };
 
-            int i = 0;
+            if (personajesPorUsuario.TryGetValue(lblJugador1.Content.ToString(), out var personajeUsuario))
+            {
+                var (nombrePersonaje, vida) = personajeUsuario;
+
+                if (rutaImagenesPorPersonaje.TryGetValue(nombrePersonaje, out var rutaImagen))
+                {
+                    lblJugador1.Content = lblJugador1.Content.ToString();
+                    imgJugador1.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
+                }
+
+                personajesPorUsuario.Remove(lblJugador1.Content.ToString());
+            }
+            int i = 1;
             foreach (var usuario in personajesPorUsuario)
             {
                 var (nombrePersonaje, vida) = usuario.Value;
@@ -61,10 +84,6 @@ namespace ClienteGloomApp
                 {
                     switch (i)
                     {
-                        case 0:
-                            lblJugador1.Content = usuario.Key;
-                            imgJugador1.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
-                            break;
                         case 1:
                             lblJugador2.Content = usuario.Key;
                             imgJugador2.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
@@ -81,6 +100,43 @@ namespace ClienteGloomApp
                 }
                 i++;
                 if (i >= 4) break;
+            }
+        }
+
+        private void PonerImagenesCarta(string nombreUsuario)
+        {
+            InstanceContext contextoCarta = new InstanceContext(this);
+            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+            List<Carta> mazoDeJuan = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
+
+            // Diccionario de botones para cada carta (ejemplo: btnCarta1, btnCarta2, etc.)
+            Dictionary<int, Button> botonesCartas = new Dictionary<int, Button>
+{
+    { 0, btnCarta1 },
+    { 1, btnCarta2 },
+    { 2, btnCarta3 },
+    { 3, btnCarta4 },
+    { 4, btnCarta5 },
+    { 5, btnCarta6 },
+    { 6, btnCarta7 }
+};
+
+            // Asignar imágenes a los fondos de los botones según el identificador de la carta
+            for (int i = 0; i < mazoDeJuan.Count && i < botonesCartas.Count; i++)
+            {
+                var carta = mazoDeJuan[i];
+                string identificador = carta.identificador;
+
+                // Verificar si el identificador de la carta existe en el diccionario de rutas
+                if (RutasDeCartas.RutasImagenesPorIdentificador.TryGetValue(identificador, out var rutaImagen))
+                {
+                    botonesCartas[i].Background = new ImageBrush(new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute)));
+                }
+                else
+                {
+                    // Si no se encuentra la ruta, dejar el fondo vacío
+                    botonesCartas[i].Background = null;
+                }
             }
         }
     }
