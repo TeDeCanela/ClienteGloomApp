@@ -165,6 +165,9 @@
   <data name="globalCorreo" xml:space="preserve">
     <value>Correo</value>
   </data>
+  <data name="globalEnviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
@@ -339,6 +342,9 @@
   <data name="mensajeExp14" xml:space="preserve">
     <value>El personaje ya está seleciconado por otro jugador</value>
   </data>
+  <data name="mensajeExp15" xml:space="preserve">
+    <value>No todod los jugadores han seleccionado un personaje</value>
+  </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Error de autenticación en la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
   </data>
@@ -468,7 +474,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
   </data>
-  <data name="mensajeExp15" xml:space="preserve">
-    <value>No todod los jugadores han seleccionado un personaje</value>
+  <data name="mensajeChatNoHabilitado" xml:space="preserve">
+    <value>El chat no se encuentra habilitado</value>
   </data>
 </root>

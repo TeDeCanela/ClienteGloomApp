@@ -30,7 +30,7 @@ namespace ClienteGloomApp
   
         }
 
-        public void Response(int result)
+        /*public void Response(int result)
         {
             throw new NotImplementedException();
         }
@@ -106,6 +106,6 @@ namespace ClienteGloomApp
         public void EmpezarJuego()
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

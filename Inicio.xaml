@@ -6,7 +6,7 @@
     Title="{x:Static p:Resources.TituloInicio}" Height="794" Width="1900">
     <Grid Background="#FFAB9D95">
 
-        <Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
+        <!--<Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
 
         <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="46,238,0,0" VerticalAlignment="Top" Width="202" Height="77" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FFB25979" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
             <Button.Template>
@@ -136,6 +136,6 @@ CornerRadius="15">
             <TextBox x:Name="txtCodigo" TextWrapping="Wrap" Width="290" Height="33" FontSize="18" Margin="0,10,0,0"/>
             <Button x:Name="btnEntrarPartidaMiniHistoria" Content="{x:Static p:Resources.buscarPartidaBtnUnirse}" Click="btnEntrarPartidaMiniHistoria_Click" Height="41" Width="143" HorizontalAlignment="Right" Margin="10,10,10,0" Background="White"/>
 
-        </StackPanel>
+        </StackPanel> -->
     </Grid>
 </Window> 

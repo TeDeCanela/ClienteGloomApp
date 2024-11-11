@@ -205,6 +205,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enviar.
+        /// </summary>
+        public static string globalEnviar {
+            get {
+                return ResourceManager.GetString("globalEnviar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombre.
         /// </summary>
         public static string globalNombre {
@@ -597,6 +606,15 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeActualizacionExitosa {
             get {
                 return ResourceManager.GetString("mensajeActualizacionExitosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El chat no se encuentra habilitado.
+        /// </summary>
+        public static string mensajeChatNoHabilitado {
+            get {
+                return ResourceManager.GetString("mensajeChatNoHabilitado", resourceCulture);
             }
         }
         

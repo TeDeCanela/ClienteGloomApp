@@ -165,6 +165,9 @@
   <data name="globalCorreo" xml:space="preserve">
     <value>Correo</value>
   </data>
+  <data name="globalEnviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
@@ -296,6 +299,9 @@
   </data>
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Actualizado exitosamente</value>
+  </data>
+  <data name="mensajeChatNoHabilitado" xml:space="preserve">
+    <value>El chat no se encuentra habilitado</value>
   </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Usuario registrado</value>

@@ -165,6 +165,9 @@
   <data name="globalCorreo" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="globalEnviar" xml:space="preserve">
+    <value>Send</value>
+  </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -339,6 +342,9 @@
   <data name="mensajeExp14" xml:space="preserve">
     <value>This character is already choose</value>
   </data>
+  <data name="mensajeExp15" xml:space="preserve">
+    <value>All playeres have to choose a character</value>
+  </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Authentication error in the database, please contact a system administrator and try again later.</value>
   </data>
@@ -468,7 +474,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
   </data>
-  <data name="mensajeExp15" xml:space="preserve">
-    <value>All playeres have to choose a character</value>
+  <data name="mensajeChatNoHabilitado" xml:space="preserve">
+    <value>Chat is not enabled</value>
   </data>
 </root>
