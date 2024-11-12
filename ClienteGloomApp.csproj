@@ -110,6 +110,7 @@
     <Compile Include="HistoriaPersonajes.xaml.cs">
       <DependentUpon>HistoriaPersonajes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RutasDeCartas.cs" />
     <Compile Include="SalaMiniJuego.xaml.cs">
       <DependentUpon>SalaMiniJuego.xaml</DependentUpon>
     </Compile>
@@ -398,6 +399,29 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\SalaFondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\AhogadoEnPantano.png" />
+    <Resource Include="ImagenCarta\AsesionadoPorHeredero.png" />
+    <Resource Include="ImagenCarta\AtragantarHueso.png" />
+    <Resource Include="ImagenCarta\BebeCenteno.png" />
+    <Resource Include="ImagenCarta\CayoDesdeAlto.png" />
+    <Resource Include="ImagenCarta\ComidoPorOsos.png" />
+    <Resource Include="ImagenCarta\ConsumidoPorFuego.png" />
+    <Resource Include="ImagenCarta\DesaparecioEnNiebla.png" />
+    <Resource Include="ImagenCarta\Desmembrado.png" />
+    <Resource Include="ImagenCarta\DevoradoPorComdrejas.png" />
+    <Resource Include="ImagenCarta\EmpujadoPorLasEscaleras.png" />
+    <Resource Include="ImagenCarta\HorneadoEnTarta.png" />
+    <Resource Include="ImagenCarta\MuerteInoportuna.png" />
+    <Resource Include="ImagenCarta\MuertePorDesesperacion.png" />
+    <Resource Include="ImagenCarta\MuerteSarampio.png" />
+    <Resource Include="ImagenCarta\MuerteSinPreocupacion.png" />
+    <Resource Include="ImagenCarta\MuerteViejo.png" />
+    <Resource Include="ImagenCarta\NoRegreso.png" />
+    <Resource Include="ImagenCarta\QurmadoPorTurbia.png" />
+    <Resource Include="ImagenCarta\SeveramenteQuemado.png" />
+    <Resource Include="ImagenCarta\SinAire.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

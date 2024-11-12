@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,12 +23,16 @@ namespace ClienteGloomApp
     public partial class Inicio : Window, ISalaCallback
     {
         private String identificadorUsuario;
+        private String tipoJugador;
 
         public Inicio(String nombreDelUsuario)
         {
             InitializeComponent();
             lblNombreUsuario.Content = nombreDelUsuario;
-  
+            ValidarTipoJugador(nombreDelUsuario);
+            RestringirTipoJugador();
+
+
         }
 
         /*public void Response(int result)
@@ -101,6 +106,31 @@ namespace ClienteGloomApp
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
             
+        }
+        private void ValidarTipoJugador(string nombre)
+        {
+            string patron = @"^Invitado\d+$";
+             
+            if (Regex.IsMatch(nombre, patron))
+            {
+                tipoJugador = "Invitado";
+            }
+            else
+            {
+                tipoJugador = "Registrado";
+            }
+        }
+
+        private void RestringirTipoJugador()
+        {
+            if(tipoJugador == "Invitado")
+            {
+                btnCrearPartida.IsEnabled = false;
+                btnPerfil.IsEnabled = false;
+                btnListaDeAmigos.IsEnabled = false;
+                btnHistorialDePartidas.IsEnabled = false;
+                lblInstruccionInvitado.Visibility = Visibility.Visible;
+            }
         }
 
         public void EmpezarJuego()

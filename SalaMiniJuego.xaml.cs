@@ -20,7 +20,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para SalaMiniJuego.xaml
     /// </summary>
-    public partial class SalaMiniJuego : Window, ISalaCallback
+    public partial class SalaMiniJuego : Window, ISalaCallback, IServicioJuegoTableroCallback
     {
         private DispatcherTimer timer;
         ServicioGloom.Sala salaRegistrada = new ServicioGloom.Sala();
@@ -29,17 +29,9 @@ namespace ClienteGloomApp
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
-            ActualizarJugadores();
-
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(3);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-
-        }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            //ActualizarJugadores();
+            ConectarConSala();
+            ActualizarNumeroJugadores();
+           
         }
         private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
@@ -48,15 +40,12 @@ namespace ClienteGloomApp
             this.Close();*/
         }
 
-        public void EmpezarJuego(List<string> jugadores)
+        private void ConectarConSala()
         {
-            // Aquí puedes actualizar los TextBox con la lista de jugadores recibida del callback
-            txtJugador1.Text = jugadores.Count > 0 ? jugadores[0] : string.Empty;
-            txtJugador2.Text = jugadores.Count > 1 ? jugadores[1] : string.Empty;
-            txtJugador3.Text = jugadores.Count > 2 ? jugadores[2] : string.Empty;
-            txtJugador4.Text = jugadores.Count > 3 ? jugadores[3] : string.Empty;
+            InstanceContext contextoSala = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            proxy.ConectarConSala(lblNombreUsuarioRegistrado.Content.ToString());
         }
-
         private void ActualizarJugadores()
         {
             InstanceContext contextoSala = new InstanceContext(this);
@@ -71,86 +60,47 @@ namespace ClienteGloomApp
 
         public void EmpezarJuego()
         {
-            throw new NotImplementedException();
+            PartidaMiniJuego nuevaVentana = new PartidaMiniJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.noJugadores, salaRegistrada.idSala);
+            nuevaVentana.Show();
+            this.Close();
         }
 
         private void btnTucani_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-
-                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), "Tucani", 0);
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
-            
+            IngresarSeleccionPersonaje("Tucani");
         }
 
         private void btnLusiel_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-
-                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), "Lusiel", 0);
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
-            
+            IngresarSeleccionPersonaje("Lusiel");
         }
 
         private void btnAngelus_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-
-                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), "Angelus", 0);
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
-            
+            IngresarSeleccionPersonaje("Angelus");
         }
 
         private void btnLuan_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-
-                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), "Luan", 0);
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
-            
+            IngresarSeleccionPersonaje("Luan");
         }
 
         private void btnEmpezar_Click(object sender, RoutedEventArgs e)
-        {  
+        {
             try
             {
-                validarAdministrador();
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-                proxy.validarPersonajesSeleccionados(salaRegistrada.noJugadores);
-                PartidaMiniJuego nuevaVentana = new PartidaMiniJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.noJugadores, salaRegistrada.idSala);
-                nuevaVentana.Show();
-                this.Close();
+                IngresarJugadorEnTablero();
+
+                if (ValidarAdministrador())
+                {
+                    InstanceContext contextoSala = new InstanceContext(this);
+                    ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+
+                    proxy.validarPersonajesSeleccionados(salaRegistrada.noJugadores);
+                    proxy.EmpezarPartida(salaRegistrada.idSala);
+                }
             }
-            catch(InvalidOperationException ex)
+            catch (InvalidOperationException ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
@@ -158,17 +108,55 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
-            
+
         }
 
-        private void validarAdministrador()
+        private bool ValidarAdministrador()
         {
-            if (!salaRegistrada.idAdministrador.Equals(lblNombreUsuarioRegistrado.Content.ToString()))
+            return salaRegistrada.idAdministrador.Equals(lblNombreUsuarioRegistrado.Content.ToString());
+        }
+
+        public void ActualizarNumeroJugadores()
+        {
+            
+            InstanceContext contextoSala = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            var listaJugadores = proxy.ObtenerJugadoresConectados(lblNombreUsuarioRegistrado.Content.ToString());
+            txtJugador1.Text = listaJugadores.Count() > 0 ? listaJugadores[0] : string.Empty;
+            txtJugador2.Text = listaJugadores.Count() > 1 ? listaJugadores[1] : string.Empty;
+            txtJugador3.Text = listaJugadores.Count() > 2 ? listaJugadores[2] : string.Empty;
+            txtJugador4.Text = listaJugadores.Count() > 3 ? listaJugadores[3] : string.Empty;
+            
+        }
+       
+        private void IngresarJugadorEnTablero()
+        {
+            InstanceContext contextoSala= new InstanceContext(this);
+            ServicioGloom.ServicioJuegoTableroClient proxySala= new ServicioGloom.ServicioJuegoTableroClient(contextoSala);
+
+            proxySala.IngresarJugadorAJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.idSala, salaRegistrada.noJugadores);
+        }
+
+        private void IngresarSeleccionPersonaje(String personaje)
+        {
+            try
             {
-                throw new InvalidOperationException("16");
+                InstanceContext contextoSala = new InstanceContext(this);
+                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+
+                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), personaje, 0);
             }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+        }
+
+        public void EnviarTurno(string nombreDelUsusarioEnTurno)
+        {
+            throw new NotImplementedException();
         }
     }
 
-   
+
 }

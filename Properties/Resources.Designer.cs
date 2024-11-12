@@ -529,6 +529,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Para acceder a todas las funcionalidades tiene que registrarse.
+        /// </summary>
+        public static string inicioInstruccionInvitado {
+            get {
+                return ResourceManager.GetString("inicioInstruccionInvitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar sesión.
         /// </summary>
         public static string inicioSesionBtnIniciarSesion {

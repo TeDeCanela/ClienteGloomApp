@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para HistorialPartidas.xaml
     /// </summary>
-    public partial class HistorialPartidas : Window, ISalaCallback
+    public partial class HistorialPartidas : Window
     {
         public HistorialPartidas(String nombreUsuario)
         {
@@ -32,8 +32,8 @@ namespace ClienteGloomApp
         {
             try
             {
-                InstanceContext contextoSala= new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+                InstanceContext contextoHistorial= new InstanceContext(this);
+                ServicioGloom.ServicioHistorialPartidaClient proxy = new ServicioGloom.ServicioHistorialPartidaClient(contextoHistorial);
 
                 var historial = proxy.ObtenerDatosHistorial(lblNombreUsuarioRegistrado.Content.ToString());
 
@@ -71,10 +71,10 @@ namespace ClienteGloomApp
 
         private String ObtenerListaJugadores(String idSala)
         {
-               InstanceContext contextoSala = new InstanceContext(this);
-               ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            InstanceContext contextoHistorial = new InstanceContext(this);
+            ServicioGloom.ServicioHistorialPartidaClient proxy = new ServicioGloom.ServicioHistorialPartidaClient(contextoHistorial);
 
-               var historial = proxy.ObtenrParticipantesDeJuego(idSala);
+            var historial = proxy.ObtenrParticipantesDeJuego(idSala);
 
                string participantes = string.Join(", ", historial);
                
@@ -86,11 +86,6 @@ namespace ClienteGloomApp
             /*Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
             this.Close();*/
-        }
-
-        public void EmpezarJuego()
-        {
-            throw new NotImplementedException();
         }
     }
 }

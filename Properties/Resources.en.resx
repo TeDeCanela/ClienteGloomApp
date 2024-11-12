@@ -273,6 +273,9 @@
   <data name="inicioBtnVerPersonajes" xml:space="preserve">
     <value>View characters</value>
   </data>
+  <data name="inicioInstruccionInvitado" xml:space="preserve">
+    <value>To access all the features you have to register</value>
+  </data>
   <data name="inicioSesionBtnIniciarSesion" xml:space="preserve">
     <value>Login</value>
   </data>

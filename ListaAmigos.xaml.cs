@@ -27,11 +27,6 @@ namespace ClienteGloomApp
             lblNombreUsuarioRegistrado.Content = nombreusuarioRegistrado;
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void txtBuscador_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
