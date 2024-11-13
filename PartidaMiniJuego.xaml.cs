@@ -281,5 +281,12 @@ namespace ClienteGloomApp
         {
             Console.WriteLine(jugador);
         }
+
+        private void BtnChat_Click(object sender, RoutedEventArgs e)
+        {
+            // Abre la ventana de chat con el nombre de usuario actual y el número de sala
+            var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
+            chatWindow.Show();
+        }
     }
 }
