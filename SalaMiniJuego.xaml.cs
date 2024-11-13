@@ -30,13 +30,21 @@ namespace ClienteGloomApp
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
-            ConectarConSala();
-            ActualizarNumeroJugadores();
-            PonerPersonajesUsados();
-            if (!ValidarAdministrador())
+            try
             {
-                btnEmpezar.Content = Properties.Resources.salaBtnListo;
+                ConectarConSala();
+                ActualizarNumeroJugadores();
+                PonerPersonajesUsados();
+                if (!ValidarAdministrador())
+                {
+                    btnEmpezar.Content = Properties.Resources.salaBtnListo;
+                }
             }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+           
 
 
         }
@@ -255,6 +263,11 @@ namespace ClienteGloomApp
                         break;
                 }
             }
+        }
+
+        public void EnviarGanador(string jugador)
+        {
+            throw new NotImplementedException();
         }
     }
 

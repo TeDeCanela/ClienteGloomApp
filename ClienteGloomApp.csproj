@@ -443,5 +443,8 @@
     <Resource Include="ImagenCarta\SeveramenteQuemado.png" />
     <Resource Include="ImagenCarta\SinAire.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\fondoCartaPrincipal.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

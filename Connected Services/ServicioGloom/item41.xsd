@@ -9,6 +9,7 @@
   <xs:complexType name="Carta">
     <xs:sequence>
       <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="valor" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

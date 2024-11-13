@@ -21,20 +21,31 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class PartidaMiniJuego : Window, IServicioJuegoTableroCallback, ISalaCallback
     {
-        List<Carta> mazoDeJugador;
-        private String identificadorSala;
-        private bool esAdministrador;
+        List<Carta> mazoDeJugador = new List<Carta>();
+        Carta cartaSeleccionada = new Carta();
+        String jugadorPropietario;
+
         public PartidaMiniJuego(string nombreUsuario, int cantidadJugadores, string numeroSala)     
         {
             InitializeComponent();
             lblJugador1.Content = nombreUsuario;
-            identificadorSala = numeroSala;
+            jugadorPropietario = nombreUsuario;
+            lblNumeroSala.Content = numeroSala;
             InstanceContext contextoTableroJuego = new InstanceContext(this);
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTableroJuego);
+            try
+            {
+                proxy.IniciarPartidaPorAdministrador(jugadorPropietario, numeroSala, cantidadJugadores);
+                AsignarJugadores();
+                PonerImagenCarta(nombreUsuario);
 
-            proxy.IniciarPartidaPorAdministrador(lblJugador1.Content.ToString(), numeroSala, cantidadJugadores);
-            AsignarJugadores();
-            PonerImagenCarta(nombreUsuario);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+
+            }
+            
 
         }
 
@@ -53,9 +64,20 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        public void EnviarTurno(string nombreDelUsusarioEnTurno)
+        public void EnviarTurno(string nombreDelUsuarioEnTurno)
         {
-            Console.WriteLine(nombreDelUsusarioEnTurno);
+            if (!nombreDelUsuarioEnTurno.Equals(jugadorPropietario))
+            {
+                btnDescartar.IsEnabled = false;
+                btnUsar.IsEnabled = false;
+                btnMazoCartas.IsEnabled = false;
+            }
+            else
+            {
+                btnDescartar.IsEnabled = true;
+                btnUsar.IsEnabled = true;
+                btnMazoCartas.IsEnabled = true;
+            }
         }
 
         private void AsignarJugadores()
@@ -72,17 +94,17 @@ namespace ClienteGloomApp
                 { "Angelus", "ImagenesFamilia/Angelus.png" }
             };
 
-            if (personajesPorUsuario.TryGetValue(lblJugador1.Content.ToString(), out var personajeUsuario))
+            if (personajesPorUsuario.TryGetValue(jugadorPropietario, out var personajeUsuario))
             {
                 var (nombrePersonaje, vida) = personajeUsuario;
 
                 if (rutaImagenesPorPersonaje.TryGetValue(nombrePersonaje, out var rutaImagen))
                 {
-                    lblJugador1.Content = lblJugador1.Content.ToString();
+                    lblJugador1.Content = jugadorPropietario;
                     imgJugador1.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
                 }
 
-                personajesPorUsuario.Remove(lblJugador1.Content.ToString());
+                personajesPorUsuario.Remove(jugadorPropietario);
             }
             int i = 1;
             foreach (var usuario in personajesPorUsuario)
@@ -128,15 +150,23 @@ namespace ClienteGloomApp
                     { 5, btnCarta6 },
                     { 6, btnCarta7 }
                 };
-            for (int i = 0; i < mazoDeJugador.Count && i < botonesCartas.Count; i++)
+            for (int i = 0; i < botonesCartas.Count; i++)
             {
-                var carta = mazoDeJugador[i];
-                string identificador = carta.identificador;
-                botonesCartas[i].Tag = i;
-
-                if (RutasDeCartas.RutasImagenesPorIdentificador.TryGetValue(identificador, out var rutaImagen))
+                if (i < mazoDeJugador.Count)
                 {
-                    botonesCartas[i].Background = new ImageBrush(new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute)));
+                    var carta = mazoDeJugador[i];
+                    string identificador = carta.identificador;
+                    botonesCartas[i].Tag = i;
+                    botonesCartas[i].Visibility = Visibility.Visible;
+
+                    if (RutasDeCartas.RutasImagenesPorIdentificador.TryGetValue(identificador, out var rutaImagen))
+                    {
+                        botonesCartas[i].Background = new ImageBrush(new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute)));
+                    }
+                }
+                else
+                {
+                    botonesCartas[i].Visibility = Visibility.Collapsed;
                 }
             }
         }
@@ -157,7 +187,7 @@ namespace ClienteGloomApp
 
                 if (indice >= 0 && indice < mazoDeJugador.Count)
                 {
-                    Carta cartaSeleccionada = mazoDeJugador[indice];
+                    cartaSeleccionada = mazoDeJugador[indice];
 
                     if (botonSeleccionado.Background is ImageBrush rutaImagen && rutaImagen.ImageSource is BitmapImage rutaImagenOriginal)
                     {
@@ -167,14 +197,90 @@ namespace ClienteGloomApp
             }
         }
 
-        // private void 
+        private void BtnMazoCartas_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                InstanceContext contextoCarta = new InstanceContext(this);
+                ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+                proxy.AgregarCartaAMazoJugador(jugadorPropietario);
+                PonerImagenCarta(jugadorPropietario);
+                ActualizarTurno();
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+            
+        }
+
+        private void BtnDescartar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                InstanceContext contextoCarta = new InstanceContext(this);
+                ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+                proxy.QuitarCartaDeMazoJugador(jugadorPropietario, cartaSeleccionada);
+                PonerImagenCarta(jugadorPropietario);
+                cartaSeleccionada = new Carta { identificador = string.Empty, valor = 0, tipo = "vacío" };
+                ActualizarTurno();
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+            
+
+        }
+
+        private void BtnUsar_Click(object sender, RoutedEventArgs e)
+        {
+            ValidarTipoCarta(cartaSeleccionada.tipo);
+            PonerImagenCarta(jugadorPropietario);
+            cartaSeleccionada = new Carta { identificador = string.Empty, valor = 0, tipo = "vacío" };
+            ActualizarTurno();
+
+        }
+
+        private void ActualizarTurno()
+        {
+            InstanceContext contextoJugador = new InstanceContext(this);
+            ServicioGloom.ServicioJuegoTableroClient proxyJugador = new ServicioGloom.ServicioJuegoTableroClient(contextoJugador);
+            proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
+        }
+
+        private void ValidarTipoCarta(string tipo)
+        {
+            InstanceContext contextoSala = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            if (tipo.Equals("modificador"))
+            {
+                proxy.SumarVidaPersonaje(jugadorPropietario, cartaSeleccionada.valor);
+
+            }else if (tipo.Equals("muerte"))
+            {
+                try
+                {
+                    proxy.TerminarPartidaMiniJuego();
+                }
+                catch (FaultException<ManejadorExcepciones> ex)
+                {
+                    MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                }
+                
+            }
+        }
+
+        public void EnviarGanador(string jugador)
+        {
+            Console.WriteLine(jugador);
+        }
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
             // Abre la ventana de chat con el nombre de usuario actual y el número de sala
-            var chatWindow = new Chat(lblJugador1.Content.ToString(), identificadorSala);
+            var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
             chatWindow.Show();
         }
-
     }
 }

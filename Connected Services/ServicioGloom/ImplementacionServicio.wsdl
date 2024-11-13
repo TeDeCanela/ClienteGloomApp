@@ -399,6 +399,12 @@
   <wsdl:message name="ISala_ObtenerPersonajesUsados_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerPersonajesUsadosResponse" />
   </wsdl:message>
+  <wsdl:message name="ISala_SumarVidaPersonaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:SumarVidaPersonaje" />
+  </wsdl:message>
+  <wsdl:message name="ISala_TerminarPartidaMiniJuego_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminarPartidaMiniJuego" />
+  </wsdl:message>
   <wsdl:message name="ISala_EmpezarJuego_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EmpezarJuego" />
   </wsdl:message>
@@ -407,6 +413,9 @@
   </wsdl:message>
   <wsdl:message name="ISala_ActualizarImagenPersonaje_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarImagenPersonaje" />
+  </wsdl:message>
+  <wsdl:message name="ISala_EnviarGanador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EnviarGanador" />
   </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_IngresarJugadorAJuego_InputMessage">
     <wsdl:part name="parameters" element="tns:IngresarJugadorAJuego" />
@@ -432,6 +441,12 @@
   <wsdl:message name="IServicioJuegoTablero_EliminarJugadorDeJuego_OutputMessage">
     <wsdl:part name="parameters" element="tns:EliminarJugadorDeJuegoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_CambiarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_CambiarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarTurnoResponse" />
+  </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_EnviarTurno_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EnviarTurno" />
   </wsdl:message>
@@ -440,6 +455,12 @@
   </wsdl:message>
   <wsdl:message name="IServicioCarta_ObtenerMazoJugador_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerMazoJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioCarta_AgregarCartaAMazoJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarCartaAMazoJugador" />
+  </wsdl:message>
+  <wsdl:message name="IServicioCarta_QuitarCartaDeMazoJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuitarCartaDeMazoJugador" />
   </wsdl:message>
   <wsdl:message name="IServicioHistorialPartida_ObtenerDatosHistorial_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDatosHistorial" />
@@ -590,6 +611,12 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerPersonajesUsados" message="tns:ISala_ObtenerPersonajesUsados_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerPersonajesUsadosResponse" message="tns:ISala_ObtenerPersonajesUsados_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SumarVidaPersonaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/SumarVidaPersonaje" message="tns:ISala_SumarVidaPersonaje_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminarPartidaMiniJuego">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/TerminarPartidaMiniJuego" message="tns:ISala_TerminarPartidaMiniJuego_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EmpezarJuego">
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/EmpezarJuego" message="tns:ISala_EmpezarJuego_OutputCallbackMessage" />
     </wsdl:operation>
@@ -598,6 +625,9 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarImagenPersonaje">
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ActualizarImagenPersonaje" message="tns:ISala_ActualizarImagenPersonaje_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarGanador">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/EnviarGanador" message="tns:ISala_EnviarGanador_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IServicioJuegoTablero">
@@ -617,6 +647,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/EliminarJugadorDeJuego" message="tns:IServicioJuegoTablero_EliminarJugadorDeJuego_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/EliminarJugadorDeJuegoResponse" message="tns:IServicioJuegoTablero_EliminarJugadorDeJuego_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CambiarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/CambiarTurno" message="tns:IServicioJuegoTablero_CambiarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/CambiarTurnoResponse" message="tns:IServicioJuegoTablero_CambiarTurno_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EnviarTurno">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/EnviarTurno" message="tns:IServicioJuegoTablero_EnviarTurno_OutputCallbackMessage" />
     </wsdl:operation>
@@ -625,6 +659,12 @@
     <wsdl:operation name="ObtenerMazoJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioCarta/ObtenerMazoJugador" message="tns:IServicioCarta_ObtenerMazoJugador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioCarta/ObtenerMazoJugadorResponse" message="tns:IServicioCarta_ObtenerMazoJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCartaAMazoJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugador" message="tns:IServicioCarta_AgregarCartaAMazoJugador_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuitarCartaDeMazoJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioCarta/QuitarCartaDeMazoJugador" message="tns:IServicioCarta_QuitarCartaDeMazoJugador_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IServicioHistorialPartida">
@@ -921,6 +961,18 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SumarVidaPersonaje">
+      <soap12:operation soapAction="http://tempuri.org/ISala/SumarVidaPersonaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="TerminarPartidaMiniJuego">
+      <soap12:operation soapAction="http://tempuri.org/ISala/TerminarPartidaMiniJuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="EmpezarJuego">
       <soap12:operation soapAction="http://tempuri.org/ISala/EmpezarJuego" style="document" />
       <wsdl:output>
@@ -935,6 +987,12 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarImagenPersonaje">
       <soap12:operation soapAction="http://tempuri.org/ISala/ActualizarImagenPersonaje" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarGanador">
+      <soap12:operation soapAction="http://tempuri.org/ISala/EnviarGanador" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -979,6 +1037,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CambiarTurno">
+      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/CambiarTurno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EnviarTurno">
       <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/EnviarTurno" style="document" />
       <wsdl:output>
@@ -997,6 +1064,18 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCartaAMazoJugador">
+      <soap12:operation soapAction="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="QuitarCartaDeMazoJugador">
+      <soap12:operation soapAction="http://tempuri.org/IServicioCarta/QuitarCartaDeMazoJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IServicioHistorialPartida" type="tns:IServicioHistorialPartida">
