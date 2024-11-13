@@ -256,8 +256,14 @@ namespace ClienteGloomApp
             if (tipo.Equals("modificador"))
             {
                 proxy.SumarVidaPersonaje(jugadorPropietario, cartaSeleccionada.valor);
+                InstanceContext contextoCarta = new InstanceContext(this);
+                ServicioGloom.ServicioCartaClient proxyCarta= new ServicioGloom.ServicioCartaClient(contextoCarta);
+                proxyCarta.QuitarCartaDeMazoJugador(jugadorPropietario, cartaSeleccionada);
 
-            }else if (tipo.Equals("muerte"))
+
+
+            }
+            else if (tipo.Equals("muerte"))
             {
                 try
                 {
