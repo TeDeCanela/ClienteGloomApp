@@ -72,6 +72,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusquedaPartida.xaml.cs">
+      <DependentUpon>BusquedaPartida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <DependentUpon>SalaMiniJuego.xaml</DependentUpon>
     </Compile>
     <Compile Include="ValidacionCampos.cs" />
+    <Page Include="BusquedaPartida.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Chat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
