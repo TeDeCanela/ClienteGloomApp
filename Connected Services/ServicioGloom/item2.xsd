@@ -307,6 +307,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SumarVidaPersonaje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cantidadVida" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TerminarPartidaMiniJuego">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="EmpezarJuego">
     <xs:complexType>
       <xs:sequence />
@@ -322,6 +335,13 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="personaje" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="personajeAnterior" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarGanador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -377,10 +397,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="CambiarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroSala" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarTurnoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="EnviarTurno">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="nombreDelUsusarioEnTurno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreDelUsuarioEnTurno" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -398,6 +430,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AgregarCartaAMazoJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuitarCartaDeMazoJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="cartaAEliminar" nillable="true" type="q20:Carta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ObtenerDatosHistorial">
     <xs:complexType>
       <xs:sequence>
@@ -408,7 +455,7 @@
   <xs:element name="ObtenerDatosHistorialResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BibliotecaClases" minOccurs="0" name="ObtenerDatosHistorialResult" nillable="true" type="q20:ArrayOfSala" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BibliotecaClases" minOccurs="0" name="ObtenerDatosHistorialResult" nillable="true" type="q21:ArrayOfSala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -422,7 +469,7 @@
   <xs:element name="ObtenrParticipantesDeJuegoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenrParticipantesDeJuegoResult" nillable="true" type="q21:ArrayOfstring" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenrParticipantesDeJuegoResult" nillable="true" type="q22:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -442,7 +489,7 @@
   <xs:element name="ObtenerHistorialMensajesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="ObtenerHistorialMensajesResult" nillable="true" type="q22:ArrayOfChat" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="ObtenerHistorialMensajesResult" nillable="true" type="q23:ArrayOfChat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -461,7 +508,7 @@
   <xs:element name="enviarMensajeCliente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="mensajesChat" nillable="true" type="q23:Chat" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="mensajesChat" nillable="true" type="q24:Chat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

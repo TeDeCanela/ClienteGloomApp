@@ -29,12 +29,12 @@
 
         <StackPanel HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top">
             <Image x:Name="imgJugador3" Height="180" Width="180"/>
-            <Label x:Name="lblJugador3" Content="Jugador 3"/>
+            <Label x:Name="lblJugador3" Content=""/>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Margin="1289,364,0,0" VerticalAlignment="Top">
             <Image x:Name="imgJugador4" Height="180" Width="180"/>
-            <Label x:Name="lblJugador4" Content="Jugador 4"/>
+            <Label x:Name="lblJugador4" Content=""/>
         </StackPanel>
 
         <StackPanel x:Name="panCarta"  Visibility="Collapsed" Background="#80000000" Margin="856,221,330,162">
@@ -45,10 +45,16 @@
             </Button>
             <Image x:Name="imgCarta" Height="279" Width="172"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="15">
-                <Button x:Name="btnDescartar" Content="{x:Static p:Resources.partidaBtnDescartar}" Width="100" Margin="0,0,10,0" Height="26"/>
-                <Button x:Name="btnUsar" Content="{x:Static p:Resources.partidaBtnUsar}" Width="100"/>
+                <Button x:Name="btnDescartar" Content="{x:Static p:Resources.partidaBtnDescartar}" Width="100" Margin="0,0,10,0" Height="26" Click="BtnDescartar_Click"/>
+                <Button x:Name="btnUsar" Content="{x:Static p:Resources.partidaBtnUsar}" Width="100" Click="BtnUsar_Click"/>
             </StackPanel>
         </StackPanel>
+        <Button x:Name="btnMazoCartas" HorizontalAlignment="Left" Margin="392,521,0,0" VerticalAlignment="Top" Height="230" Width="159" Click="BtnMazoCartas_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/fondoCartaPrincipal.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblNumeroSala" HorizontalAlignment="Left" Margin="22,29,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

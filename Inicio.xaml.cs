@@ -148,5 +148,10 @@ namespace ClienteGloomApp
         {
             throw new NotImplementedException();
         }
+
+        public void EnviarGanador(string jugador)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
