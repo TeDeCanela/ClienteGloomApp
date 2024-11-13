@@ -66,9 +66,9 @@ namespace ClienteGloomApp
                 int resultado = proxy.AutenticarJugador(jugador);
                 if (resultado == 1)
                 {
-                    Inicio nuevaVentana = new Inicio(jugador.nombreUsuario);
+                    /*Inicio nuevaVentana = new Inicio(jugador.nombreUsuario);
                     nuevaVentana.Show();
-                    this.Close();
+                    this.Close();*/
                 }
             }
             catch (FaultException<ManejadorExcepciones> ex)

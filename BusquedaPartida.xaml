@@ -1,0 +1,52 @@
+﻿<Window
+        x:Class="ClienteGloomApp.BusquedaPartida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteGloomApp"
+        xmlns:p="clr-namespace:ClienteGloomApp.Properties"
+        Title="BusquedaPartida" Height="800" Width="1900">
+    <Grid Background="#122124" >
+        <DataGrid Name="tblSalas" AutoGenerateColumns="False" HeadersVisibility="Column"
+                  Background="Transparent"               
+            Foreground="White"
+            RowBackground="Transparent"
+            AlternatingRowBackground="Transparent"
+            BorderBrush="Transparent"
+            GridLinesVisibility="None"
+            HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="400" Margin="0,0,0,100">
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre de la Sala" Binding="{Binding NombreSala}" Width="*" />
+                <DataGridTextColumn Header="Jugadores Activos" Binding="{Binding JugadoresActivos}" Width="*" />
+                <DataGridTextColumn Header="Tipo de Partida" Binding="{Binding TipoPartida}" Width="*" />
+            </DataGrid.Columns>
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+        </DataGrid>
+
+        <Button x:Name="btnUnirseAPartida" Content="{x:Static p:Resources.buscarPartidaBtnUnirse}" HorizontalAlignment="Left" Margin="715,689,0,0" VerticalAlignment="Top" Width="182" Height="50" Click="btnUnirseAPartida_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Grid.Column="1">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="White" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    CornerRadius="15">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        
+        
+
+    </Grid>
+</Window>
