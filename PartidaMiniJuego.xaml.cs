@@ -22,10 +22,13 @@ namespace ClienteGloomApp
     public partial class PartidaMiniJuego : Window, IServicioJuegoTableroCallback, ISalaCallback
     {
         List<Carta> mazoDeJugador;
+        private String identificadorSala;
+        private bool esAdministrador;
         public PartidaMiniJuego(string nombreUsuario, int cantidadJugadores, string numeroSala)     
         {
             InitializeComponent();
             lblJugador1.Content = nombreUsuario;
+            identificadorSala = numeroSala;
             InstanceContext contextoTableroJuego = new InstanceContext(this);
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTableroJuego);
 
@@ -164,6 +167,14 @@ namespace ClienteGloomApp
             }
         }
 
-       // private void 
+        // private void 
+
+        private void BtnChat_Click(object sender, RoutedEventArgs e)
+        {
+            // Abre la ventana de chat con el nombre de usuario actual y el número de sala
+            var chatWindow = new Chat(lblJugador1.Content.ToString(), identificadorSala);
+            chatWindow.Show();
+        }
+
     }
 }

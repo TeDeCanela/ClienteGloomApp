@@ -95,6 +95,9 @@
     <Compile Include="InicioSesion.xaml.cs">
       <DependentUpon>InicioSesion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InvitacionJugador.xaml.cs">
+      <DependentUpon>InvitacionJugador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListaAmigos.xaml.cs">
       <DependentUpon>ListaAmigos.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InicioSesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InvitacionJugador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

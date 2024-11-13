@@ -1,9 +1,6 @@
 ﻿using ClienteGloomApp.ServicioGloom;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
+using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,33 +16,38 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para Chat.xaml
     /// </summary>
-    public partial class Chat : Window, IChatCallback
+    public partial class Chat : Window, ServicioGloom.IServicioChat
     {
         private String identificadorUsuario;
-        public Chat()
+        private String identificadorSala;
+        public Chat(String nombreUsuario, String numeroSala)
         {
             InitializeComponent();
+            identificadorSala = numeroSala;
+
+            InstanceContext context = new InstanceContext(this);
+            ServicioGloom.ChatClient proxy = new ServicioGloom.ChatClient(context);
+
+            proxy.agregarJugador(identificadorUsuario);
         }
 
-        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        private void BtnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext context = new InstanceContext(this);
             ServicioGloom.ChatClient proxy = new ChatClient(context);
 
-            proxy.agregarJugador(identificadorUsuario);
-
-           // proxy.enviarMensaje(identificadorUsuario, InputMensaje.Text);
+            proxy.enviarMensaje(identificadorUsuario, InputMensaje.Text);
         }
 
-        void IChatCallback.enviarMensajeCliente(ServicioGloom.Chat mensajesChat)
+        void IChatCallback.enviarMensajeCliente(Chat mensajesChat)
         {
-            /*try
+            try
             {
                 lstChat.Dispatcher.Invoke(() =>
                 {
                     if (lstChat.Visibility == Visibility.Visible && lstChat.IsEnabled)
                     {
-                        lstChat.Items.Add($"{identificadorUsuario} : {mensajesChat.mensaje}");
+                        lstChat.Items.Add($"{identificadorUsuario} : {mensajesChat}");
                     }
                     else
                     {
@@ -56,7 +58,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }*/
+            }
         }
     }
 }

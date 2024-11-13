@@ -303,6 +303,9 @@
   <data name="mensajeActualizacionExitosa" xml:space="preserve">
     <value>Update succefully!</value>
   </data>
+  <data name="mensajeChatNoHabilitado" xml:space="preserve">
+    <value>Chat is not enabled</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>This username has already been registered, please choose another.</value>
   </data>
@@ -348,8 +351,20 @@
   <data name="mensajeExp15" xml:space="preserve">
     <value>All playeres have to choose a character</value>
   </data>
+  <data name="mensajeExp16" xml:space="preserve">
+    <value>The server couldn't connect all the players</value>
+  </data>
+  <data name="mensajeExp17" xml:space="preserve">
+    <value>The room isn't full yet, please wait for other players</value>
+  </data>
+  <data name="mensajeExp18" xml:space="preserve">
+    <value>Your server connection timed out. Please try again later</value>
+  </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Authentication error in the database, please contact a system administrator and try again later.</value>
+  </data>
+  <data name="mensajeExp19" xml:space="preserve">
+    <value>You haven't selected a character yet. Please choose a character before proceeding</value>
   </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Cannot find the SQL server, please contact a system administrator and try again later.</value>
@@ -480,19 +495,13 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
   </data>
-  <data name="mensajeExp16" xml:space="preserve">
-    <value>The server couldn't connect all the players</value>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>This room name is already taken, please try entering a different name.</value>
   </data>
-  <data name="mensajeExp17" xml:space="preserve">
-    <value>The room isn't full yet, please wait for other players</value>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>This code already exists.</value>
   </data>
-  <data name="mensajeExp18" xml:space="preserve">
-    <value>Your server connection timed out. Please try again later</value>
-  </data>
-  <data name="mensajeExp19" xml:space="preserve">
-    <value>You haven't selected a character yet. Please choose a character before proceeding</value>
-  </data>
-	<data name="mensajeChatNoHabilitado" xml:space="preserve">
-    <value>Chat is not enabled</value>
+  <data name="mensajeExp22" xml:space="preserve">
+    <value>There was a problem with the server. Please check your network connection and try again.</value>
   </data>
 </root>

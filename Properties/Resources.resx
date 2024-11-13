@@ -327,6 +327,12 @@
   <data name="mensajeExp07" xml:space="preserve">
     <value>No ha seleccionado a un jugador para enviar solicitud</value>
   </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>Este código ya existe.</value>
+  </data>
   <data name="mensajeExp10" xml:space="preserve">
     <value>No se encontró ninguna sala con ese código o identificador, verifique que estén correctas.</value>
   </data>
@@ -365,6 +371,9 @@
   </data>
   <data name="mensajeExp19" xml:space="preserve">
     <value>No puede dar clic al botón "Listo" si no ha seleccionado un personaje</value>
+  </data>
+  <data name="mensajeExp22" xml:space="preserve">
+    <value>Se produjo un problema con el servidor. Intente nuevamente más tarde.</value>
   </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Excpeción 53</value>

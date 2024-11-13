@@ -691,6 +691,24 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente..
+        /// </summary>
+        public static string mensajeExp08 {
+            get {
+                return ResourceManager.GetString("mensajeExp08", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Este código ya existe..
+        /// </summary>
+        public static string mensajeExp09 {
+            get {
+                return ResourceManager.GetString("mensajeExp09", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No se encontró ninguna sala con ese código o identificador, verifique que estén correctas..
         /// </summary>
         public static string mensajeExp10 {
@@ -804,6 +822,15 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeExp19 {
             get {
                 return ResourceManager.GetString("mensajeExp19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se produjo un problema con el servidor. Intente nuevamente más tarde..
+        /// </summary>
+        public static string mensajeExp22 {
+            get {
+                return ResourceManager.GetString("mensajeExp22", resourceCulture);
             }
         }
         
