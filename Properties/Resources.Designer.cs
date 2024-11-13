@@ -763,11 +763,47 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo conectar el servidor con todos los jugadores.
+        /// </summary>
+        public static string mensajeExp16 {
+            get {
+                return ResourceManager.GetString("mensajeExp16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La sala aun no está llena espere a los demás jugadores.
+        /// </summary>
+        public static string mensajeExp17 {
+            get {
+                return ResourceManager.GetString("mensajeExp17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se termino el tiempo de espera del servidor, intente realizar la operación más tarde.
+        /// </summary>
+        public static string mensajeExp18 {
+            get {
+                return ResourceManager.GetString("mensajeExp18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Excepción 18456.
         /// </summary>
         public static string mensajeExp18456 {
             get {
                 return ResourceManager.GetString("mensajeExp18456", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No puede dar clic al botón &quot;Listo&quot; si no ha seleccionado un personaje.
+        /// </summary>
+        public static string mensajeExp19 {
+            get {
+                return ResourceManager.GetString("mensajeExp19", resourceCulture);
             }
         }
         
@@ -966,6 +1002,15 @@ namespace ClienteGloomApp.Properties {
         public static string resultadoAmistad {
             get {
                 return ResourceManager.GetString("resultadoAmistad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Listo.
+        /// </summary>
+        public static string salaBtnListo {
+            get {
+                return ResourceManager.GetString("salaBtnListo", resourceCulture);
             }
         }
         

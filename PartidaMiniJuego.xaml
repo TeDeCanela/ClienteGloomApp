@@ -4,18 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteGloomApp"
+        xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         mc:Ignorable="d"
         Title="PartidaMiniJuego" Height="800" Width="1550">
 
     <Grid>
         <Image Source="Imagenes/mesaTablero.jpg" Width="1573" Height="1073" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-86,0,0" Opacity=".8"/>
-        <Button x:Name="btnCarta1" Width="105" Height="145" Margin="561,625,0,0" Background="Transparent"/>
-        <Button x:Name="btnCarta2" Width="105" Height="145" Margin="430,625,0,0" Background="Transparent"/>
-        <Button x:Name="btnCarta3" Width="105" Height="145" Margin="683,625,0,0" Background="Transparent"/>
-        <Button x:Name="btnCarta4" Width="105" Height="145" Margin="813,625,0,0" Background="Transparent"/>
-        <Button x:Name="btnCarta5" Width="105" Height="145" Margin="946,625,0,0" Background="Transparent"/>
-        <Button x:Name="btnCarta6" Width="105" Height="145" Margin="1072,625,0,0" Background="Transparent"/>
-        <Button x:Name="btnCarta7" Width="105" Height="145" Margin="1187,625,0,0" Background="Transparent"/>
+        <Button x:Name="btnCarta2" Width="105" Height="145" Margin="918,632,527,7" Background="Transparent" Click="BtnVerCarta_Click"/>
+        <Button x:Name="btnCarta1" Width="105" Height="145" Margin="848,632,596,7" Background="Transparent" Click="BtnVerCarta_Click"/>
+        <Button x:Name="btnCarta3" Width="105" Height="145" Margin="986,632,459,7" Background="Transparent" Click="BtnVerCarta_Click"/>
+        <Button x:Name="btnCarta4" Width="105" Height="145" Margin="1045,632,400,7" Background="Transparent" Click="BtnVerCarta_Click"/>
+        <Button x:Name="btnCarta5" Width="105" Height="145" Margin="1091,632,354,7" Background="Transparent" Click="BtnVerCarta_Click"/>
+        <Button x:Name="btnCarta6" Width="105" Height="145" Margin="1150,632,295,7" Background="Transparent" Click="BtnVerCarta_Click"/>
+        <Button x:Name="btnCarta7" Width="105" Height="145" Margin="1196,632,249,7" Background="Transparent" Click="BtnVerCarta_Click"/>
         <StackPanel HorizontalAlignment="Left" Margin="720,438,0,0" VerticalAlignment="Top">
             <Image x:Name="imgJugador1" Height="140" Width="140"/>
             <Label x:Name="lblJugador1" Content="Jugador 1"/>
@@ -34,6 +35,19 @@
         <StackPanel HorizontalAlignment="Left" Margin="1289,364,0,0" VerticalAlignment="Top">
             <Image x:Name="imgJugador4" Height="180" Width="180"/>
             <Label x:Name="lblJugador4" Content="Jugador 4"/>
+        </StackPanel>
+
+        <StackPanel x:Name="panCarta"  Visibility="Collapsed" Background="#80000000" Margin="856,221,330,162">
+            <Button x:Name="btnCerrar"  Content="" Width="45" Margin="10" HorizontalAlignment="Right" Height="38" BorderBrush="{x:Null}" Click="Cerrar_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+                </Button.Background>
+            </Button>
+            <Image x:Name="imgCarta" Height="279" Width="172"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="15">
+                <Button x:Name="btnDescartar" Content="{x:Static p:Resources.partidaBtnDescartar}" Width="100" Margin="0,0,10,0" Height="26"/>
+                <Button x:Name="btnUsar" Content="{x:Static p:Resources.partidaBtnUsar}" Width="100"/>
+            </StackPanel>
         </StackPanel>
 
 

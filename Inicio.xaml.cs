@@ -28,6 +28,7 @@ namespace ClienteGloomApp
         public Inicio(String nombreDelUsuario)
         {
             InitializeComponent();
+
             lblNombreUsuario.Content = nombreDelUsuario;
             ValidarTipoJugador(nombreDelUsuario);
             RestringirTipoJugador();
@@ -35,7 +36,7 @@ namespace ClienteGloomApp
 
         }
 
-        /*public void Response(int result)
+        public void Response(int result)
         {
             throw new NotImplementedException();
         }
@@ -136,6 +137,16 @@ namespace ClienteGloomApp
         public void EmpezarJuego()
         {
             throw new NotImplementedException();
-        }*/
+        }
+
+        public void ActualizarNumeroJugadores()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

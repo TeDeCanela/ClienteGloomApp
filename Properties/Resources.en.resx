@@ -417,6 +417,9 @@
   <data name="resultadoAmistad" xml:space="preserve">
     <value>The players that match the search are</value>
   </data>
+  <data name="salaBtnListo" xml:space="preserve">
+    <value>Ready</value>
+  </data>
   <data name="salaDescripcionCorbat" xml:space="preserve">
     <value>They are a feared and powerful family, each member mastering a dark aspect of magic and war. United by their boundless ambition and thirst for power, the Corbat family has become an unstoppable force, leaving destruction in their wake.</value>
   </data>
@@ -477,7 +480,19 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
   </data>
-  <data name="mensajeChatNoHabilitado" xml:space="preserve">
+  <data name="mensajeExp16" xml:space="preserve">
+    <value>The server couldn't connect all the players</value>
+  </data>
+  <data name="mensajeExp17" xml:space="preserve">
+    <value>The room isn't full yet, please wait for other players</value>
+  </data>
+  <data name="mensajeExp18" xml:space="preserve">
+    <value>Your server connection timed out. Please try again later</value>
+  </data>
+  <data name="mensajeExp19" xml:space="preserve">
+    <value>You haven't selected a character yet. Please choose a character before proceeding</value>
+  </data>
+	<data name="mensajeChatNoHabilitado" xml:space="preserve">
     <value>Chat is not enabled</value>
   </data>
 </root>

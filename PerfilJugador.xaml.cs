@@ -42,15 +42,11 @@ namespace ClienteGloomApp
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
             jugador = proxy.ObtenerJugador(identificadorUsuario);
-            try {
-                string rutaRelativa = jugador.icono; ;
-            BitmapImage bitmap = new BitmapImage(new Uri($"pack://application:,,,{rutaRelativa}", UriKind.Absolute));
-            imgFotoPerfil.Source = bitmap;
-            }
-            catch (Exception ex)
+            if (RutasDeCartas.RutasImagenesPerfiles.TryGetValue(jugador.icono, out var rutaImagen))
             {
-                MessageBox.Show($"Error al cargar la imagen: {ex.Message}");
+                imgFotoPerfil.Source= new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
             }
+           
 
             lblNombreUsuarioRegistrado.Content = jugador.nombreUsuario;
             txtNombre.Text = jugador.nombre;
@@ -94,9 +90,9 @@ namespace ClienteGloomApp
 
        private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
-            /*Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
         private void btnPerfilCalavera_Click(object sender, RoutedEventArgs e)
         {
@@ -164,14 +160,14 @@ namespace ClienteGloomApp
             botonSeleccionada.BorderBrush = new SolidColorBrush(Colors.Magenta);
             botonSeleccionada.BorderThickness = new Thickness(4);
 
-            /*foreach (var child in panelbotones.Children)
+            foreach (var child in panelbotones.Children)
             {
                 if (child is Button botonesDeContendero && botonesDeContendero != botonSeleccionada)
                 {
 
                     botonesDeContendero.BorderBrush = null;
                 }
-            }*/
+            }
         }
     }
 }

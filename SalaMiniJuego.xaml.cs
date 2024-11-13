@@ -22,8 +22,9 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class SalaMiniJuego : Window, ISalaCallback, IServicioJuegoTableroCallback
     {
-        private DispatcherTimer timer;
         ServicioGloom.Sala salaRegistrada = new ServicioGloom.Sala();
+        bool persoanjeSeleciconado = false;
+
         public SalaMiniJuego(String nombreUsuario, Sala sala)
         {
             InitializeComponent();
@@ -31,13 +32,22 @@ namespace ClienteGloomApp
             salaRegistrada = sala;
             ConectarConSala();
             ActualizarNumeroJugadores();
-           
+            PonerPersonajesUsados();
+            if (!ValidarAdministrador())
+            {
+                btnEmpezar.Content = Properties.Resources.salaBtnListo;
+            }
+
+
         }
         private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
-            /*Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            InstanceContext contextoSala = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            proxy.SacarDeSala(lblNombreUsuarioRegistrado.Content.ToString());
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void ConectarConSala()
@@ -89,6 +99,7 @@ namespace ClienteGloomApp
         {
             try
             {
+                ValidarSeleccionPersonaje();
                 IngresarJugadorEnTablero();
 
                 if (ValidarAdministrador())
@@ -96,13 +107,13 @@ namespace ClienteGloomApp
                     InstanceContext contextoSala = new InstanceContext(this);
                     ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
-                    proxy.validarPersonajesSeleccionados(salaRegistrada.noJugadores);
+                    proxy.ValidarPersonajesSeleccionados(salaRegistrada.noJugadores);
                     proxy.EmpezarPartida(salaRegistrada.idSala);
                 }
             }
             catch (InvalidOperationException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                MessageBox.Show(Properties.Resources.mensajeExp19, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -114,6 +125,14 @@ namespace ClienteGloomApp
         private bool ValidarAdministrador()
         {
             return salaRegistrada.idAdministrador.Equals(lblNombreUsuarioRegistrado.Content.ToString());
+        }
+
+        private void ValidarSeleccionPersonaje()
+        {
+            if (!persoanjeSeleciconado)
+            {
+                throw new InvalidOperationException("19");
+            }
         }
 
         public void ActualizarNumeroJugadores()
@@ -141,6 +160,7 @@ namespace ClienteGloomApp
         {
             try
             {
+                persoanjeSeleciconado = true;
                 InstanceContext contextoSala = new InstanceContext(this);
                 ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
@@ -154,7 +174,87 @@ namespace ClienteGloomApp
 
         public void EnviarTurno(string nombreDelUsusarioEnTurno)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+        }
+
+        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        {
+            CambiarPersonajeAnterior(personajeAnterior);
+            switch (personaje)
+            {
+                case "Tucani":
+                    btnTucani.BorderBrush = Brushes.Red;
+                    btnTucani.BorderThickness = new Thickness(2);
+                    break;
+                case "Lusiel":
+                    btnLusiel.BorderBrush = Brushes.Fuchsia;
+                    btnLusiel.BorderThickness = new Thickness(2);
+                    break;
+                case "Angelus":
+                    btnAngelus.BorderBrush = Brushes.Green;
+                    btnAngelus.BorderThickness = new Thickness(2);
+                    break;
+                case "Luan":
+                    btnLuan.BorderBrush = Brushes.Blue;
+                    btnLuan.BorderThickness = new Thickness(2);
+                    break;
+            }
+        }
+
+        private void PonerPersonajesUsados()
+        {
+            InstanceContext contextoSala = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            List<string> personajes = proxy.ObtenerPersonajesUsados().ToList();
+
+            foreach (var personaje in personajes)
+            {
+                switch (personaje)
+                {
+                    case "Tucani":
+                        btnTucani.BorderBrush = Brushes.Red;
+                        btnTucani.BorderThickness = new Thickness(2);
+                        break;
+                    case "Lusiel":
+                        btnLusiel.BorderBrush = Brushes.Fuchsia;
+                        btnLusiel.BorderThickness = new Thickness(2);
+                        break;
+                    case "Angelus":
+                        btnAngelus.BorderBrush = Brushes.Green;
+                        btnAngelus.BorderThickness = new Thickness(2);
+                        break;
+                    case "Luan":
+                        btnLuan.BorderBrush = Brushes.Blue;
+                        btnLuan.BorderThickness = new Thickness(2);
+                        break;
+                }
+            }
+        }
+
+        public void CambiarPersonajeAnterior(string personajeAnterior)
+        {
+            if(!personajeAnterior.Equals("sin personaje"))
+            {
+                switch (personajeAnterior)
+                {
+                    case "Tucani":
+                        btnTucani.BorderBrush = null;
+                        btnTucani.BorderThickness = new Thickness(0);
+                        break;
+                    case "Lusiel":
+                        btnLusiel.BorderBrush = null;
+                        btnLusiel.BorderThickness = new Thickness(0);
+                        break;
+                    case "Angelus":
+                        btnAngelus.BorderBrush = null;
+                        btnAngelus.BorderThickness = new Thickness(0);
+                        break;
+                    case "Luan":
+                        btnLuan.BorderBrush = null;
+                        btnLuan.BorderThickness = new Thickness(0);
+                        break;
+                }
+            }
         }
     }
 
