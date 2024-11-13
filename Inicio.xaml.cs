@@ -142,5 +142,10 @@ namespace ClienteGloomApp
         {
             throw new NotImplementedException();
         }
+
+        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

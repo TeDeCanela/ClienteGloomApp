@@ -42,15 +42,11 @@ namespace ClienteGloomApp
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
             jugador = proxy.ObtenerJugador(identificadorUsuario);
-            try {
-                string rutaRelativa = jugador.icono; ;
-            BitmapImage bitmap = new BitmapImage(new Uri($"pack://application:,,,{rutaRelativa}", UriKind.Absolute));
-            imgFotoPerfil.Source = bitmap;
-            }
-            catch (Exception ex)
+            if (RutasDeCartas.RutasImagenesPerfiles.TryGetValue(jugador.icono, out var rutaImagen))
             {
-                MessageBox.Show($"Error al cargar la imagen: {ex.Message}");
+                imgFotoPerfil.Source= new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
             }
+           
 
             lblNombreUsuarioRegistrado.Content = jugador.nombreUsuario;
             txtNombre.Text = jugador.nombre;

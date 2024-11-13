@@ -106,7 +106,7 @@
             </UniformGrid>
         </GroupBox>
         <Label x:Name="lblFoto_Instruccion" Content="{x:Static p:Resources.instruccionSeleccionarFoto}" HorizontalAlignment="Left" Margin="1112,100,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="-2.449,1.587" Foreground="White" FontWeight="Bold"/>
-        <Image x:Name="imgFotoPerfil" Source="Imagenes/PerfilCalavera.png" Stretch="Uniform" Margin="729,112,1055,567" />
-       
+        <Image x:Name="imgFotoPerfil" HorizontalAlignment="Left" Height="138" Margin="655,147,0,0" VerticalAlignment="Top" Width="155"/>
+
     </Grid>
 </Window>

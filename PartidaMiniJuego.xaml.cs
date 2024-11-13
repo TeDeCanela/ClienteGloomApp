@@ -21,6 +21,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class PartidaMiniJuego : Window, IServicioJuegoTableroCallback, ISalaCallback
     {
+        List<Carta> mazoDeJugador;
         public PartidaMiniJuego(string nombreUsuario, int cantidadJugadores, string numeroSala)     
         {
             InitializeComponent();
@@ -30,8 +31,13 @@ namespace ClienteGloomApp
 
             proxy.IniciarPartidaPorAdministrador(lblJugador1.Content.ToString(), numeroSala, cantidadJugadores);
             AsignarJugadores();
-            PonerImagenesCarta(nombreUsuario);
+            PonerImagenCarta(nombreUsuario);
 
+        }
+
+        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        {
+            throw new NotImplementedException();
         }
 
         public void ActualizarNumeroJugadores()
@@ -103,41 +109,61 @@ namespace ClienteGloomApp
             }
         }
 
-        private void PonerImagenesCarta(string nombreUsuario)
+        private void PonerImagenCarta(string nombreUsuario)
         {
             InstanceContext contextoCarta = new InstanceContext(this);
             ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
-            List<Carta> mazoDeJuan = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
+            mazoDeJugador = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
 
-            // Diccionario de botones para cada carta (ejemplo: btnCarta1, btnCarta2, etc.)
             Dictionary<int, Button> botonesCartas = new Dictionary<int, Button>
-{
-    { 0, btnCarta1 },
-    { 1, btnCarta2 },
-    { 2, btnCarta3 },
-    { 3, btnCarta4 },
-    { 4, btnCarta5 },
-    { 5, btnCarta6 },
-    { 6, btnCarta7 }
-};
-
-            // Asignar imágenes a los fondos de los botones según el identificador de la carta
-            for (int i = 0; i < mazoDeJuan.Count && i < botonesCartas.Count; i++)
+                {
+                    { 0, btnCarta1 },
+                    { 1, btnCarta2 },
+                    { 2, btnCarta3 },
+                    { 3, btnCarta4 },
+                    { 4, btnCarta5 },
+                    { 5, btnCarta6 },
+                    { 6, btnCarta7 }
+                };
+            for (int i = 0; i < mazoDeJugador.Count && i < botonesCartas.Count; i++)
             {
-                var carta = mazoDeJuan[i];
+                var carta = mazoDeJugador[i];
                 string identificador = carta.identificador;
+                botonesCartas[i].Tag = i;
 
-                // Verificar si el identificador de la carta existe en el diccionario de rutas
                 if (RutasDeCartas.RutasImagenesPorIdentificador.TryGetValue(identificador, out var rutaImagen))
                 {
                     botonesCartas[i].Background = new ImageBrush(new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute)));
                 }
-                else
+            }
+        }
+
+        private void Cerrar_Click(object sender, RoutedEventArgs e)
+        {
+            panCarta.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnVerCarta_Click(object sender, RoutedEventArgs e)
+        {
+            panCarta.Visibility = Visibility.Visible;
+            Button botonSeleccionado = sender as Button;
+
+            if (botonSeleccionado != null && botonSeleccionado.Tag != null)
+            {
+                int indice = int.Parse(botonSeleccionado.Tag.ToString());
+
+                if (indice >= 0 && indice < mazoDeJugador.Count)
                 {
-                    // Si no se encuentra la ruta, dejar el fondo vacío
-                    botonesCartas[i].Background = null;
+                    Carta cartaSeleccionada = mazoDeJugador[indice];
+
+                    if (botonSeleccionado.Background is ImageBrush rutaImagen && rutaImagen.ImageSource is BitmapImage rutaImagenOriginal)
+                    {
+                        imgCarta.Source = rutaImagenOriginal;
+                    }
                 }
             }
         }
+
+       // private void 
     }
 }

@@ -345,8 +345,20 @@
   <data name="mensajeExp15" xml:space="preserve">
     <value>No todos los jugadores han seleccionado un personaje</value>
   </data>
+  <data name="mensajeExp16" xml:space="preserve">
+    <value>No se pudo conectar el servidor con todos los jugadores</value>
+  </data>
+  <data name="mensajeExp17" xml:space="preserve">
+    <value>La sala aun no está llena espere a los demás jugadores</value>
+  </data>
+  <data name="mensajeExp18" xml:space="preserve">
+    <value>Se termino el tiempo de espera del servidor, intente realizar la operación más tarde</value>
+  </data>
   <data name="mensajeExp18456" xml:space="preserve">
     <value>Excepción 18456</value>
+  </data>
+  <data name="mensajeExp19" xml:space="preserve">
+    <value>No puede dar clic al botón "Listo" si no ha seleccionado un personaje</value>
   </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Excpeción 53</value>
@@ -413,6 +425,9 @@
   </data>
   <data name="resultadoAmistad" xml:space="preserve">
     <value>Los jugadores que coinciden con la búsqueda son</value>
+  </data>
+  <data name="salaBtnListo" xml:space="preserve">
+    <value>Listo</value>
   </data>
   <data name="salaDescripcionCorbat" xml:space="preserve">
     <value>Descripción Corbat</value>

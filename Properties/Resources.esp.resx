@@ -414,6 +414,9 @@
   <data name="resultadoAmistad" xml:space="preserve">
     <value>Los jugadores que coinciden con la búsqueda son</value>
   </data>
+  <data name="salaBtnListo" xml:space="preserve">
+    <value>Listo</value>
+  </data>
   <data name="salaDescripcionCorbat" xml:space="preserve">
     <value>Son una familia temida y poderosa, cada uno de sus miembros dominando un aspecto oscuro de la magia y la guerra. Unidos por su ambición desmedida y su sed de poder, los Corbat se han convertido en una fuerza imparable, dejando destrucción a su paso.</value>
   </data>
@@ -473,5 +476,17 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
+  </data>
+  <data name="mensajeExp16" xml:space="preserve">
+    <value>No se pudo conectar el servidor con todos los jugadores</value>
+  </data>
+  <data name="mensajeExp17" xml:space="preserve">
+    <value>La sala aun no esta llena, espere a los demás jugadores</value>
+  </data>
+  <data name="mensajeExp18" xml:space="preserve">
+    <value>Su conexión al servidor se agotó. Por favor, intente nuevamente más tarde</value>
+  </data>
+  <data name="mensajeExp19" xml:space="preserve">
+    <value>Aún no has seleccionado un personaje. Por favor, elige un personaje antes de continuar</value>
   </data>
 </root>
