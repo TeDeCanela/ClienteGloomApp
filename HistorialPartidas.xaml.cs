@@ -85,7 +85,12 @@ namespace ClienteGloomApp
         {
             /*Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
+        }
+
+        public void EmpezarJuego()
+        {
+            throw new NotImplementedException();
         }
     }
 }
