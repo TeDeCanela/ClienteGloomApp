@@ -4,9 +4,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="{x:Static p:Resources.TituloCrearPartida}" Height="800" Width="1900">
+        Title="" Height="800" Width="1900">
     <Grid Background="#1a1e1d">
-        <Label x:Name="lblCrearPartida" Content="Label"  Foreground="White"  HorizontalAlignment="Left" Margin="155,84,0,0" VerticalAlignment="Top"/>
-
+        <!--<Label x:Name="lblCrearPartida" Content="{x:Static p:Resources.crearPartidaInstruccion}"  Foreground="White"  HorizontalAlignment="Left" Margin="115,39,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lblNombreDeLaSala" Content="{x:Static p:Resources.crearPartidaNombreSala}"  Foreground="White"  HorizontalAlignment="Left" Margin="825,94,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtNombreSala" HorizontalAlignment="Left" Height="37" Margin="665,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
+        <Label x:Name="lblTipoSala" Content="{x:Static p:Resources.crearPartidaTipoSala}"  Foreground="White"  HorizontalAlignment="Left" Margin="825,194,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtTipoSala" HorizontalAlignment="Left" Height="37" Margin="665,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
+        <Label x:Name="lblNumeroJugadores" Content="{x:Static p:Resources.crearPartidaNumeroJugadores}"  Foreground="White"  HorizontalAlignment="Left" Margin="825,287,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtNumeroJugadores" HorizontalAlignment="Left" Height="37" Margin="665,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
+        <Label x:Name="lblTipoPartida" Content="{x:Static p:Resources.crearPartidaTipoPartida}"  Foreground="White"  HorizontalAlignment="Left" Margin="825,392,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtTipoPartida" HorizontalAlignment="Left" Height="37" Margin="665,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="490" FontSize="20"/>
+        <Button x:Name="btnCrearSala" Content="{x:Static p:Resources.crearPartidaBtnCrearSala}" HorizontalAlignment="Left" Margin="871,564,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="btnRegistrar_Click" Background="#FFC9BE9D" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    CornerRadius="15">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        -->
     </Grid>
 </Window>
