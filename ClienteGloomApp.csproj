@@ -86,6 +86,9 @@
     <Compile Include="HistorialPartidas.xaml.cs">
       <DependentUpon>HistorialPartidas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion.xaml.cs">
       <DependentUpon>InicioSesion.xaml</DependentUpon>
     </Compile>
@@ -191,6 +194,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Carta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Chat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Jugador.datasource">

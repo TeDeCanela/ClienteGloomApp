@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para Chat.xaml
     /// </summary>
-    public partial class Chat : Window
+    public partial class Chat : Window, IChatCallback
     {
         private String identificadorUsuario;
         public Chat()
@@ -34,12 +34,12 @@ namespace ClienteGloomApp
 
             proxy.agregarJugador(identificadorUsuario);
 
-            proxy.enviarMensaje(identificadorUsuario, InputMensaje.Text);
+           // proxy.enviarMensaje(identificadorUsuario, InputMensaje.Text);
         }
 
-        void IChatCallback.enviarMensajeCliente(Chat mensajesChat)
+        void IChatCallback.enviarMensajeCliente(ServicioGloom.Chat mensajesChat)
         {
-            try
+            /*try
             {
                 lstChat.Dispatcher.Invoke(() =>
                 {
@@ -56,7 +56,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
+            }*/
         }
     }
 }

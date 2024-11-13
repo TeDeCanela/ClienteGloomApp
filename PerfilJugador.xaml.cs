@@ -90,9 +90,9 @@ namespace ClienteGloomApp
 
        private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
-            /*Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
         private void btnPerfilCalavera_Click(object sender, RoutedEventArgs e)
         {
@@ -160,14 +160,14 @@ namespace ClienteGloomApp
             botonSeleccionada.BorderBrush = new SolidColorBrush(Colors.Magenta);
             botonSeleccionada.BorderThickness = new Thickness(4);
 
-            /*foreach (var child in panelbotones.Children)
+            foreach (var child in panelbotones.Children)
             {
                 if (child is Button botonesDeContendero && botonesDeContendero != botonSeleccionada)
                 {
 
                     botonesDeContendero.BorderBrush = null;
                 }
-            }*/
+            }
         }
     }
 }

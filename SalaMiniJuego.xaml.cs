@@ -47,7 +47,7 @@ namespace ClienteGloomApp
             proxy.SacarDeSala(lblNombreUsuarioRegistrado.Content.ToString());
             Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void ConectarConSala()
