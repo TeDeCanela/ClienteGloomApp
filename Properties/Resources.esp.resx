@@ -126,6 +126,21 @@
   <data name="buscarPartidaPartida" xml:space="preserve">
     <value>Partida</value>
   </data>
+  <data name="cartaPerderTurno" xml:space="preserve">
+    <value>Ilusiones de libertad: Pierde un turno</value>
+  </data>
+  <data name="cartaQuitarCarta" xml:space="preserve">
+    <value>La Raíz de todo mal: Selecciona un jugador para eliminar una de las cartas de su mazo</value>
+  </data>
+  <data name="cartaRobarCarta1" xml:space="preserve">
+    <value>Amigo Imaginario: Roba una carta</value>
+  </data>
+  <data name="cartaRobarCarta2" xml:space="preserve">
+    <value>Roba 2 cartas </value>
+  </data>
+  <data name="cartaSaltarJugador" xml:space="preserve">
+    <value>Selecciona un jugador para eliminar una de las cartas de su mazo</value>
+  </data>
   <data name="crearPartidaBtnCrearSala" xml:space="preserve">
     <value>Crear sala</value>
   </data>
@@ -149,6 +164,13 @@
   </data>
   <data name="escribirMensajeInstrucción" xml:space="preserve">
     <value>Escribir mensaje</value>
+  </data>
+  <data name="finMiniInstruccionGanador" xml:space="preserve">
+    <value>La voz del destino ha hablado y yo he respondido, he ganado
+</value>
+  </data>
+  <data name="finMiniIntruccionPuntos" xml:space="preserve">
+    <value>puntos de autoestima</value>
   </data>
   <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
     <value>Felicitaciones al jugador que con astucia y crueldad ha llevado a todos los demás al borde de la desesperación ¡La victoria es tuya!</value>
@@ -327,6 +349,12 @@
   <data name="mensajeExp07" xml:space="preserve">
     <value>No ha seleccionado a un jugador para enviar solicitud</value>
   </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>Este código ya existe.</value>
+  </data>
   <data name="mensajeExp10" xml:space="preserve">
     <value>No se encontró ninguna sala con ese código o identificador, verifique que estén correctas.</value>
   </data>
@@ -365,6 +393,36 @@
   </data>
   <data name="mensajeExp19" xml:space="preserve">
     <value>Aún no has seleccionado un personaje. Por favor, elige un personaje antes de continuar</value>
+  </data>
+  <data name="mensajeExp20" xml:space="preserve">
+    <value>Solo puede agarrar 7 cartas como máximo.</value>
+  </data>
+  <data name="mensajeExp21" xml:space="preserve">
+    <value>No quedan más cartas en el mazo.</value>
+  </data>
+  <data name="mensajeExp22" xml:space="preserve">
+    <value>Se produjo un problema con el servidor. Verifique la conexión de red e intente nuevamente.</value>
+  </data>
+  <data name="mensajeExp34" xml:space="preserve">
+    <value>En este momento, la sala está completa. Por favor, intenta más tarde.</value>
+  </data>
+  <data name="mensajeExp35" xml:space="preserve">
+    <value>No se permiten números ni caracteres especiales en el nombre y apellido.</value>
+  </data>
+  <data name="mensajeExp36" xml:space="preserve">
+    <value>Para crear tu nombre de usuario, comienza con una letra (mayúscula o minúscula) y luego puedes agregar números y guiones bajos si lo deseas.</value>
+  </data>
+  <data name="mensajeExp37" xml:space="preserve">
+    <value>Para tu seguridad, crea una contraseña fuerte que combine letras mayúsculas y minúsculas, números y que sea diferente a tu nombre de usuario. Evita usar palabras comunes o información personal. Un ejemplo de contraseña segura podría ser 'MiContraseña!2023'.</value>
+  </data>
+  <data name="mensajeExp38" xml:space="preserve">
+    <value>Has gastado la carta en un jugador que ya no tiene cartas en su mazo</value>
+  </data>
+  <data name="mensajeExp39" xml:space="preserve">
+    <value>La partida está en progreso. ¡Únete a la siguiente!</value>
+  </data>
+  <data name="mensajeExp40" xml:space="preserve">
+    <value>Debe seleccionar un jugador para aplicar el castigo</value>
   </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>No se puede encontrar el servidor SQL, contacte con un administrador del sistema e inténtelo más tarde.</value>
@@ -494,14 +552,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
-  </data>
-  <data name="mensajeExp08" xml:space="preserve">
-    <value>Este nombre para la sala ya está siendo ocupado, intente ingresando otro nombre diferente.</value>
-  </data>
-  <data name="mensajeExp09" xml:space="preserve">
-    <value>Este código ya existe.</value>
-  </data>
-  <data name="mensajeExp22" xml:space="preserve">
-    <value>Se produjo un problema con el servidor. Verifique la conexión de red e intente nuevamente.</value>
   </data>
 </root>

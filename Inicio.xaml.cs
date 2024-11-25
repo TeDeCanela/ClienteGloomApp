@@ -20,7 +20,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para Inicio.xaml
     /// </summary>
-    public partial class Inicio : Window, ISalaCallback
+    public partial class Inicio : Window
     {
         private String identificadorUsuario;
         private String tipoJugador;
@@ -90,13 +90,14 @@ namespace ClienteGloomApp
         {
             try
             {
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+                InstanceContext contextoCrearPartida= new InstanceContext(this);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
-                var resultado = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
-                if (resultado!=null)
+                var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
+                if (resultadoSala != null)
                 {
-                    SalaMiniJuego nuevaVentana = new SalaMiniJuego(lblNombreUsuario.Content.ToString(), resultado);
+                    proxy.ValidarCantidadJugadoresEnSala(resultadoSala.idSala, resultadoSala.noJugadores);
+                    SalaMiniJuego nuevaVentana = new SalaMiniJuego(lblNombreUsuario.Content.ToString(), resultadoSala);
                     nuevaVentana.Show();
                     this.Close();
                 }
@@ -132,26 +133,6 @@ namespace ClienteGloomApp
                 btnHistorialDePartidas.IsEnabled = false;
                 lblInstruccionInvitado.Visibility = Visibility.Visible;
             }
-        }
-
-        public void EmpezarJuego()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ActualizarNumeroJugadores()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EnviarGanador(string jugador)
-        {
-            throw new NotImplementedException();
         }
     }
 }

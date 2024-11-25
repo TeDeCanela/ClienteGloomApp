@@ -126,6 +126,21 @@
   <data name="buscarPartidaPartida" xml:space="preserve">
     <value>Partida</value>
   </data>
+  <data name="cartaPerderTurno" xml:space="preserve">
+    <value>Pierde un turno</value>
+  </data>
+  <data name="cartaQuitarCarta" xml:space="preserve">
+    <value>Selecicona un jugador para quitarle una carta</value>
+  </data>
+  <data name="cartaRobarCarta1" xml:space="preserve">
+    <value>Roba una carta</value>
+  </data>
+  <data name="cartaRobarCarta2" xml:space="preserve">
+    <value>Roba dos cartas</value>
+  </data>
+  <data name="cartaSaltarJugador" xml:space="preserve">
+    <value>Hasta que la muerte nos separe</value>
+  </data>
   <data name="crearPartidaBtnCrearSala" xml:space="preserve">
     <value>Crear sala</value>
   </data>
@@ -149,6 +164,12 @@
   </data>
   <data name="escribirMensajeInstrucción" xml:space="preserve">
     <value>Escribir mensaje</value>
+  </data>
+  <data name="finMiniInstruccionGanador" xml:space="preserve">
+    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
+  </data>
+  <data name="finMiniIntruccionPuntos" xml:space="preserve">
+    <value>de puntos de autoestima</value>
   </data>
   <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
     <value>Felicitaciones al jugador que con astucia y crueldad ha llevado a todos los demás al borde de la desesperación ¡La victoria es tuya!</value>
@@ -372,8 +393,35 @@
   <data name="mensajeExp19" xml:space="preserve">
     <value>No puede dar clic al botón "Listo" si no ha seleccionado un personaje</value>
   </data>
+  <data name="mensajeExp20" xml:space="preserve">
+    <value>No puede agarrar más de 7 cartas</value>
+  </data>
+  <data name="mensajeExp21" xml:space="preserve">
+    <value>No quedan más cartas en el mazo.</value>
+  </data>
   <data name="mensajeExp22" xml:space="preserve">
     <value>Se produjo un problema con el servidor. Intente nuevamente más tarde.</value>
+  </data>
+  <data name="mensajeExp34" xml:space="preserve">
+    <value>La sala ya está llena, no puede ingresar</value>
+  </data>
+  <data name="mensajeExp35" xml:space="preserve">
+    <value>Nombre Incorrecto</value>
+  </data>
+  <data name="mensajeExp36" xml:space="preserve">
+    <value>Nombre de usuario incorrecto</value>
+  </data>
+  <data name="mensajeExp37" xml:space="preserve">
+    <value>No cumple con el formato la contraseña</value>
+  </data>
+  <data name="mensajeExp38" xml:space="preserve">
+    <value>El jugador ya no tiene cartas para quitar</value>
+  </data>
+  <data name="mensajeExp39" xml:space="preserve">
+    <value>La partida está en progreso. ¡Únete a la siguiente!</value>
+  </data>
+  <data name="mensajeExp40" xml:space="preserve">
+    <value>Debe seleccionar un jugador para aplicar el castigo</value>
   </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Excpeción 53</value>

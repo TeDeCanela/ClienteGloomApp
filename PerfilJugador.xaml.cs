@@ -21,6 +21,8 @@ namespace ClienteGloomApp
     {
         private String identificadorUsuario;
         private String iconoSeleccionado;
+        ValidacionCampos validar = new ValidacionCampos();
+
         public PerfilJugador(String nombreUsuario)
         {
             InitializeComponent();
@@ -66,10 +68,10 @@ namespace ClienteGloomApp
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
             jugador.nombreUsuario = lblNombreUsuarioRegistrado.Content.ToString();
-            jugador.nombre = txtNombre.Text;
-            jugador.apellidos = txtApellidos.Text;
-            jugador.correo = txtCorreo.Text;
-            jugador.contraseña = pwdContrasena.Password;
+            jugador.nombre = validar.VerificarNombreYApellidos(txtNombre.Text);
+            jugador.apellidos = validar.VerificarNombreYApellidos(txtApellidos.Text);
+            jugador.correo = validar.VerificarCorreo(txtCorreo.Text);
+            jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
             jugador.tipo = "Jugador";
             jugador.icono = iconoSeleccionado;
 
@@ -80,6 +82,10 @@ namespace ClienteGloomApp
                 {
                     MessageBox.Show(Properties.Resources.mensajeActualizacionExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
+            }
+            catch (ArgumentException ex)
+            {
+
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {

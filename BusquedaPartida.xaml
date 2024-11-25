@@ -7,6 +7,7 @@
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
         Title="BusquedaPartida" Height="800" Width="1900">
     <Grid Background="#122124" >
+       <!--
         <DataGrid Name="tblSalas" AutoGenerateColumns="False" HeadersVisibility="Column"
                   Background="Transparent"               
             Foreground="White"
@@ -46,7 +47,7 @@
             </Button.Template>
         </Button>
         
-        
+        -->
 
     </Grid>
 </Window>

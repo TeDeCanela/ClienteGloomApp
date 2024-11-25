@@ -20,16 +20,19 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para SalaMiniJuego.xaml
     /// </summary>
-    public partial class SalaMiniJuego : Window, ISalaCallback, IServicioJuegoTableroCallback
+    public partial class SalaMiniJuego : Window, ISalaCallback
     {
+        
         ServicioGloom.Sala salaRegistrada = new ServicioGloom.Sala();
         bool persoanjeSeleciconado = false;
+        string numeroDeSala;
 
         public SalaMiniJuego(String nombreUsuario, Sala sala)
         {
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
+            numeroDeSala = sala.idSala;
             try
             {
                 ConectarConSala();
@@ -52,23 +55,31 @@ namespace ClienteGloomApp
         {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            proxy.SacarDeSala(lblNombreUsuarioRegistrado.Content.ToString());
-            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
-            nuevaVentana.Show();
-            this.Close();
+            if (ValidarAdministrador())
+            {
+                proxy.SacarATodosLosJugadoresDeSala(numeroDeSala);
+            }
+            else
+            {
+                proxy.SacarDeSala(numeroDeSala, lblNombreUsuarioRegistrado.Content.ToString());
+                Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+                nuevaVentana.Show();
+                this.Close();
+            }
+           
         }
 
         private void ConectarConSala()
         {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            proxy.ConectarConSala(lblNombreUsuarioRegistrado.Content.ToString());
+            proxy.ConectarConSala(numeroDeSala, lblNombreUsuarioRegistrado.Content.ToString());
         }
         private void ActualizarJugadores()
         {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            proxy.ConectarConSala(lblNombreUsuarioRegistrado.Content.ToString());
+            proxy.ConectarConSala(numeroDeSala,lblNombreUsuarioRegistrado.Content.ToString());
             var listaJugadores = proxy.ObtenerJugadoresConectados(lblNombreUsuarioRegistrado.Content.ToString());
             txtJugador1.Text = listaJugadores.Count() > 0 ? listaJugadores[0] : string.Empty;
             txtJugador2.Text = listaJugadores.Count() > 1 ? listaJugadores[1] : string.Empty;
@@ -78,9 +89,11 @@ namespace ClienteGloomApp
 
         public void EmpezarJuego()
         {
+            
             PartidaMiniJuego nuevaVentana = new PartidaMiniJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.noJugadores, salaRegistrada.idSala);
             nuevaVentana.Show();
             this.Close();
+            
         }
 
         private void btnTucani_Click(object sender, RoutedEventArgs e)
@@ -109,15 +122,17 @@ namespace ClienteGloomApp
             {
                 ValidarSeleccionPersonaje();
                 IngresarJugadorEnTablero();
-
+                
                 if (ValidarAdministrador())
                 {
                     InstanceContext contextoSala = new InstanceContext(this);
                     ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
-                    proxy.ValidarPersonajesSeleccionados(salaRegistrada.noJugadores);
+                    proxy.ValidarPersonajesSeleccionados(numeroDeSala, salaRegistrada.noJugadores);
                     proxy.EmpezarPartida(salaRegistrada.idSala);
                 }
+                btnEmpezar.BorderBrush = Brushes.Green;
+                btnEmpezar.BorderThickness = new Thickness(4);
             }
             catch (InvalidOperationException ex)
             {
@@ -148,7 +163,7 @@ namespace ClienteGloomApp
             
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            var listaJugadores = proxy.ObtenerJugadoresConectados(lblNombreUsuarioRegistrado.Content.ToString());
+            var listaJugadores = proxy.ObtenerJugadoresConectados(numeroDeSala);
             txtJugador1.Text = listaJugadores.Count() > 0 ? listaJugadores[0] : string.Empty;
             txtJugador2.Text = listaJugadores.Count() > 1 ? listaJugadores[1] : string.Empty;
             txtJugador3.Text = listaJugadores.Count() > 2 ? listaJugadores[2] : string.Empty;
@@ -159,7 +174,7 @@ namespace ClienteGloomApp
         private void IngresarJugadorEnTablero()
         {
             InstanceContext contextoSala= new InstanceContext(this);
-            ServicioGloom.ServicioJuegoTableroClient proxySala= new ServicioGloom.ServicioJuegoTableroClient(contextoSala);
+            ServicioGloom.SalaClient proxySala = new ServicioGloom.SalaClient(contextoSala);
 
             proxySala.IngresarJugadorAJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.idSala, salaRegistrada.noJugadores);
         }
@@ -172,17 +187,14 @@ namespace ClienteGloomApp
                 InstanceContext contextoSala = new InstanceContext(this);
                 ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
-                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), personaje, 0);
+                proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), personaje, numeroDeSala);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
-        }
-
-        public void EnviarTurno(string nombreDelUsusarioEnTurno)
-        {
-            //throw new NotImplementedException();
+            btnEmpezar.BorderBrush = Brushes.Red;
+            btnEmpezar.BorderThickness = new Thickness(4);
         }
 
         public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
@@ -191,7 +203,7 @@ namespace ClienteGloomApp
             switch (personaje)
             {
                 case "Tucani":
-                    btnTucani.BorderBrush = Brushes.Red;
+                    btnTucani.BorderBrush = Brushes.Yellow;
                     btnTucani.BorderThickness = new Thickness(2);
                     break;
                 case "Lusiel":
@@ -199,7 +211,7 @@ namespace ClienteGloomApp
                     btnLusiel.BorderThickness = new Thickness(2);
                     break;
                 case "Angelus":
-                    btnAngelus.BorderBrush = Brushes.Green;
+                    btnAngelus.BorderBrush = Brushes.Purple;
                     btnAngelus.BorderThickness = new Thickness(2);
                     break;
                 case "Luan":
@@ -213,7 +225,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            List<string> personajes = proxy.ObtenerPersonajesUsados().ToList();
+            List<string> personajes = proxy.ObtenerPersonajesUsados(numeroDeSala).ToList();
 
             foreach (var personaje in personajes)
             {
@@ -265,11 +277,12 @@ namespace ClienteGloomApp
             }
         }
 
-        public void EnviarGanador(string jugador)
+        public void SacarDeSalaATodosJugadores()
         {
-            throw new NotImplementedException();
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            nuevaVentana.Show();
+            this.Close();
         }
+    
     }
-
-
 }

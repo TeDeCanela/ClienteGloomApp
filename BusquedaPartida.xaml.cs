@@ -22,6 +22,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class BusquedaPartida : Window
     {
+        /*
         private SalaClient servicio;
         private String identificadorUsuario;
 
@@ -116,6 +117,6 @@ namespace ClienteGloomApp
         
     }
 
-        
+  */      
     }
 }

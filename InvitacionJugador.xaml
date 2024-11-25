@@ -7,6 +7,7 @@
         xmlns:av="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="av" x:Class="ClienteGloomApp.InvitacionJugador"
         Title="InvitacionJugador" Height="650" Width="400">
     <Grid Background="#717273">
+        <!--
         <Button x:Name="btnInvitar" Content="{x:Static p:Resources.globalInvitar}" HorizontalAlignment="Left" Margin="200,299,0,0" VerticalAlignment="Top" Width="175" Height="50" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnInvitar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -34,5 +35,6 @@
             </Button.Template>
         </Button>
         <ListBox x:Name="lstListaAmigos" av:ItemsSource="{av:SampleData ItemCount=5}" Margin="30,28,25,381" SelectionChanged="lstListaAmigos_SelectionChanged"/>
-    </Grid>
+   -->
+        </Grid>
 </Window>

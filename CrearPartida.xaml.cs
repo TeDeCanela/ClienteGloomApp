@@ -19,6 +19,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class CrearPartida : Window
     {
+        /*
         public CrearPartida()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }*/
+            }
 
         }
 
@@ -71,7 +72,7 @@ namespace ClienteGloomApp
             /*txtNombreSala.Text = string.Empty;
             txtNumeroJugadores.Text = string.Empty;
             txtTipoPartida.Text = string.Empty;
-            txtTipoSala.Text = string.Empty;*/
+            txtTipoSala.Text = string.Empty;
         }
 
         public void cambiarVista()
@@ -80,5 +81,6 @@ namespace ClienteGloomApp
             sala.Show();
             this.Close();
         }
+    */
     }
 }

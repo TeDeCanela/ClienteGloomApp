@@ -21,10 +21,11 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class InvitacionJugador : Window
     {
+        /*
         private String identificadorUsuario;
         private String codigoSala;
         private String correoAmigo;
-        public readonly IInvitacion invitacion = new ServicioGloom.InvitacionClient();
+       // public readonly IInvitacion invitacion = new ServicioGloom.InvitacionClient();
         //public readonly  
         public InvitacionJugador(String nombreUsuario, String codigo)
         {
@@ -35,13 +36,13 @@ namespace ClienteGloomApp
         }
         private void CargarListaAmigos(string usuario)
         {
-            try
-            {
+          //  try
+            //{
                 InstanceContext contexto = new InstanceContext(this);
                 ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contexto);
                 var listaAmigos = proxy.ObtenerListaAmigos(usuario);
                 lstListaAmigos.ItemsSource = listaAmigos;
-            }
+           // }
         }
         private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)
         {
@@ -106,6 +107,6 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
-        }
+        }*/
     }
 }

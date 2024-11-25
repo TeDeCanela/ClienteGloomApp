@@ -56,8 +56,7 @@
         </Button>
         <Label x:Name="lblNumeroSala" HorizontalAlignment="Left" Margin="22,29,0,0" VerticalAlignment="Top"/>
 
-        <Button x:Name="btnChat" Content="{x:Static p:Resources.globalChat}" 
-        HorizontalAlignment="Right" VerticalAlignment="Top" 
+        <Button x:Name="btnChat" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" 
         Margin="0,10,10,0" Width="175" Height="50" 
         Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" 
         FontWeight="Bold" Click="btnInvitarCorreo_Click">
@@ -72,8 +71,37 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
-
-
+        <Button x:Name="btnCartaBonus" HorizontalAlignment="Left" Margin="404,113,0,0" VerticalAlignment="Top" Height="136" Width="134" Click="BtnCartaBonus_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/fondoCartaBonus.jpg"/>
+            </Button.Background>
+        </Button>
+        <StackPanel/>
+        <StackPanel x:Name="panCartaBonus" Visibility="Collapsed" Background="#80000000" Margin="538,210,516,209">
+            <Button x:Name="btnCerrarCartaBonus"  Content="" Width="45" Margin="10" HorizontalAlignment="Right" Height="38" BorderBrush="{x:Null}" Click="CerrarCartaBonus_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+                </Button.Background>
+            </Button>
+            <Image x:Name="imgCartaBonus" Height="171" Width="172"/>
+            <Label x:Name="lblCarta" FontWeight="Bold" Foreground="White" Width="394"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+                <Button x:Name="btnJugador2"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="Cambiarjugador_Click"/>
+                <Button x:Name="btnJugador3"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="Cambiarjugador_Click"/>
+                <Button x:Name="btnJugador4"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="Cambiarjugador_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <Rectangle x:Name="decCarta" HorizontalAlignment="Left" Height="230" Margin="392,521,0,0"
+           Stroke="Black" VerticalAlignment="Top" Width="159" Visibility="Visible">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="decCartaBonus" HorizontalAlignment="Left" Height="136" Margin="404,113,0,0"
+   Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Window>

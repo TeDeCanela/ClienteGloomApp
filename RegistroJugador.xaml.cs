@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class RegistroJugador : Window, IServicioJuegoTableroCallback
+    public partial class RegistroJugador : Window
     {
         private String iconoSeleccionado="sin incono";
         ValidacionCampos validar = new ValidacionCampos();
@@ -37,11 +37,11 @@ namespace ClienteGloomApp
 
             try
             {
-                jugador.nombreUsuario = txtBoxNombreUsuario.Text;
-                jugador.nombre = txtBoxNombre.Text;
-                jugador.apellidos = txtBoxApellidos.Text;
+                jugador.nombreUsuario = validar.VerificarNombreUsuario(txtBoxNombreUsuario.Text);
+                jugador.nombre = validar.VerificarNombreYApellidos(txtBoxNombre.Text);
+                jugador.apellidos = validar.VerificarNombreYApellidos(txtBoxApellidos.Text);
                 jugador.correo = validar.VerificarCorreo(txtBoxCorreo.Text);
-                jugador.contraseña = pwdContrasena.Password;
+                jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
                 jugador.tipo = "JugadorRegistrado";
                 jugador.icono= validar.VerificarInconoSeleccionado(iconoSeleccionado);
 
@@ -55,7 +55,7 @@ namespace ClienteGloomApp
             }
             catch (ArgumentException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message.ToString(), ex.Message.ToString());
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -70,6 +70,17 @@ namespace ClienteGloomApp
             txtBoxApellidos.Text = string.Empty;
             txtBoxCorreo.Text = string.Empty;
             pwdContrasena.Password = string.Empty;
+            iconoSeleccionado = "sin incono";
+
+            foreach (var conjuntoBotones in panelbotones.Children)
+            {
+                if (conjuntoBotones is Button boton)
+                {
+                    boton.BorderBrush = null;
+                    boton.BorderThickness = new Thickness(1);
+
+                }
+            }
         }
 
         private void btnPerfilCalavera_Click(object sender, RoutedEventArgs e)
@@ -153,11 +164,6 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
-        }
-
-        public void EnviarTurno(string nombreDelUsusarioEnTurno)
-        {
-            throw new NotImplementedException();
         }
     }
 

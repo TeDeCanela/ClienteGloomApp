@@ -16,7 +16,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para Chat.xaml
     /// </summary>
-    public partial class Chat : Window, ServicioGloom.IServicioChat
+    public partial class Chat : Window//, ServicioGloom.IServicioChat
     {
         private String identificadorUsuario;
         private String identificadorSala;
@@ -38,8 +38,8 @@ namespace ClienteGloomApp
 
             proxy.enviarMensaje(identificadorUsuario, InputMensaje.Text);
         }
-
-        void IChatCallback.enviarMensajeCliente(Chat mensajesChat)
+        /*
+        void IChatCallback.EnviarMensajeCliente(Chat mensajesChat)
         {
             try
             {
@@ -60,5 +60,6 @@ namespace ClienteGloomApp
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
+        */
     }
 }
