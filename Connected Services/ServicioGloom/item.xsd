@@ -47,6 +47,7 @@
       <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="noJugadores" type="xs:int" />
+      <xs:element minOccurs="0" name="noJugadoresActuales" type="xs:int" />
       <xs:element minOccurs="0" name="nombreSala" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="tipoPartida" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="tipoSala" nillable="true" type="xs:string" />

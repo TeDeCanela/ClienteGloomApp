@@ -25,7 +25,7 @@ namespace ClienteGloomApp
         private String codigoSala;
         private String correoAmigo;
         public readonly IInvitacion invitacion = new ServicioGloom.InvitacionClient();
-        //public readonly  
+         
         public InvitacionJugador(String nombreUsuario, String codigo)
         {
             InitializeComponent();
@@ -38,9 +38,17 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contexto = new InstanceContext(this);
-                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contexto);
+                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
                 var listaAmigos = proxy.ObtenerListaAmigos(usuario);
-                lstListaAmigos.ItemsSource = listaAmigos;
+
+                var nombresAmigos = listaAmigos.Select(a => a.jugadorAmigo.nombreUsuario).ToList();
+
+                lstListaAmigos.ItemsSource = nombresAmigos;
+                //lstListaAmigos.ItemsSource = listaAmigos;
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
         private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)
@@ -50,8 +58,8 @@ namespace ClienteGloomApp
         private string ObtenerCorreoAmigo(string nombreUsuarioAmigo)
         {
             InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.AmistadClient proxy = new ServicioGloom.AmistadClient(contexto);
-            ServicioGloom.Amistad amistad = new ServicioGloom.Amistad();
+            ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
+            //ServicioGloom.Amistad amistad = new ServicioGloom.Amistad();
             string correo = proxy.ObtenerCorreoAmigo(nombreUsuarioAmigo);
             return correo;
         }

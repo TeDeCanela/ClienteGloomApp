@@ -159,14 +159,32 @@
   <data name="globalApellidos" xml:space="preserve">
     <value>Apellidos</value>
   </data>
+  <data name="globalChat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
   <data name="globalContraseña" xml:space="preserve">
     <value>Contraseña</value>
   </data>
   <data name="globalCorreo" xml:space="preserve">
     <value>Correo</value>
   </data>
+  <data name="globalEmpezar" xml:space="preserve">
+    <value>Empezar</value>
+  </data>
   <data name="globalEnviar" xml:space="preserve">
     <value>Enviar</value>
+  </data>
+  <data name="globalInvitar" xml:space="preserve">
+    <value>Invitar</value>
+  </data>
+  <data name="globalInvitarJugadores" xml:space="preserve">
+    <value>Invitar jugadores</value>
+  </data>
+  <data name="globalJugadores" xml:space="preserve">
+    <value>Jugadores</value>
+  </data>
+  <data name="globalListo" xml:space="preserve">
+    <value>Listo</value>
   </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Nombre</value>
@@ -306,6 +324,12 @@
   <data name="mensajeChatNoHabilitado" xml:space="preserve">
     <value>El chat no se encuentra habilitado</value>
   </data>
+  <data name="mensajeCorreoEnviadoExitoso" xml:space="preserve">
+    <value>Invitación por correo enviada exitosamente</value>
+  </data>
+  <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
+    <value>La invitación por correo no pudo ser enviada, inténtelo de nuevo más tarde</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Usuario registrado</value>
   </data>
@@ -381,6 +405,9 @@
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Excepción 54060</value>
   </data>
+  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
+    <value>¡Partida creada con éxito!</value>
+  </data>
   <data name="mensajeRegistroJugadorExito" xml:space="preserve">
     <value>Mensaje de Exito para el Registro</value>
   </data>
@@ -423,6 +450,18 @@
   <data name="partidaBtnExpulsar" xml:space="preserve">
     <value>Expulsar</value>
   </data>
+  <data name="partidaBtnMiniHistoria" xml:space="preserve">
+    <value>Mini historia</value>
+  </data>
+  <data name="partidaBtnNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="partidaBtnPrivada" xml:space="preserve">
+    <value>Privada</value>
+  </data>
+  <data name="partidaBtnPublica" xml:space="preserve">
+    <value>Pública</value>
+  </data>
   <data name="partidaBtnUsar" xml:space="preserve">
     <value>Usar</value>
   </data>
@@ -455,6 +494,9 @@
   </data>
   <data name="salaDescripcionRamfez" xml:space="preserve">
     <value>Descripción Ramfez</value>
+  </data>
+  <data name="salaExpulsarJugador" xml:space="preserve">
+    <value>salaExpulsarJugador</value>
   </data>
   <data name="salaInstruccion" xml:space="preserve">
     <value>Sala</value>

@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para RegistroUsuario.xaml
     /// </summary>
-    public partial class RegistroJugador : Window, IServicioJuegoTableroCallback
+    public partial class RegistroJugador : Window
     {
         private String iconoSeleccionado="sin incono";
         ValidacionCampos validar = new ValidacionCampos();
@@ -32,7 +32,9 @@ namespace ClienteGloomApp
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            //ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
             try

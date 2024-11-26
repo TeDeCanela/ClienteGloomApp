@@ -20,7 +20,7 @@
             </Button.Template>
         </Button>
         <Label x:Name="lblInvitarAmistadPorCorreo" Content="{x:Static p:Resources.invitarAmistadesEnviarCorreo}" HorizontalAlignment="Left" Margin="30,361,0,0" VerticalAlignment="Top" Width="360" Height="50" Foreground="White" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Margin="30,416,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345" Height="38"/>
+        <TextBox x:Name="txtCorreo" Margin="30,416,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345" Height="38"/>
         <Button x:Name="btnInvitarCorreo" Content="{x:Static p:Resources.globalInvitar}" HorizontalAlignment="Left" Margin="200,509,0,0" VerticalAlignment="Top" Width="175" Height="50" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnInvitarCorreo_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -34,5 +34,6 @@
             </Button.Template>
         </Button>
         <ListBox x:Name="lstListaAmigos" av:ItemsSource="{av:SampleData ItemCount=5}" Margin="30,28,25,381" SelectionChanged="lstListaAmigos_SelectionChanged"/>
-    </Grid>
+        
+        </Grid>
 </Window>

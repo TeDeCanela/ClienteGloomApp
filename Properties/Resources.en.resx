@@ -159,14 +159,32 @@
   <data name="globalApellidos" xml:space="preserve">
     <value>Last name</value>
   </data>
+  <data name="globalChat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
   <data name="globalContraseña" xml:space="preserve">
     <value>Password</value>
   </data>
   <data name="globalCorreo" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="globalEmpezar" xml:space="preserve">
+    <value>Start</value>
+  </data>
   <data name="globalEnviar" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="globalInvitar" xml:space="preserve">
+    <value>Invite</value>
+  </data>
+  <data name="globalInvitarJugadores" xml:space="preserve">
+    <value>Invite players</value>
+  </data>
+  <data name="globalJugadores" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="globalListo" xml:space="preserve">
+    <value>Ready</value>
   </data>
   <data name="globalNombre" xml:space="preserve">
     <value>Name</value>
@@ -306,6 +324,12 @@
   <data name="mensajeChatNoHabilitado" xml:space="preserve">
     <value>Chat is not enabled</value>
   </data>
+  <data name="mensajeCorreoEnviadoExitoso" xml:space="preserve">
+    <value>Email invitation sent successfully</value>
+  </data>
+  <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
+    <value>The email invitation could not be sent, please try again later</value>
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>This username has already been registered, please choose another.</value>
   </data>
@@ -326,6 +350,12 @@
   </data>
   <data name="mensajeExp07" xml:space="preserve">
     <value>You haven't selected a player to send a request to.</value>
+  </data>
+  <data name="mensajeExp08" xml:space="preserve">
+    <value>This room name is already taken, please try entering a different name.</value>
+  </data>
+  <data name="mensajeExp09" xml:space="preserve">
+    <value>This code already exists.</value>
   </data>
   <data name="mensajeExp10" xml:space="preserve">
     <value>No room was found with that code or id. Please verify that the information is correct.</value>
@@ -366,11 +396,17 @@
   <data name="mensajeExp19" xml:space="preserve">
     <value>You haven't selected a character yet. Please choose a character before proceeding</value>
   </data>
+  <data name="mensajeExp22" xml:space="preserve">
+    <value>There was a problem with the server. Please check your network connection and try again.</value>
+  </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Cannot find the SQL server, please contact a system administrator and try again later.</value>
   </data>
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Unable to open the database, please contact a system administrator and try again later.</value>
+  </data>
+  <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
+    <value>Game created successfully!</value>
   </data>
   <data name="mensajeRegistroJugadorExito" xml:space="preserve">
     <value>You have registered successfully!</value>
@@ -414,6 +450,18 @@
   <data name="partidaBtnExpulsar" xml:space="preserve">
     <value>Kick out</value>
   </data>
+  <data name="partidaBtnMiniHistoria" xml:space="preserve">
+    <value>Mini story</value>
+  </data>
+  <data name="partidaBtnNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="partidaBtnPrivada" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="partidaBtnPublica" xml:space="preserve">
+    <value>Public</value>
+  </data>
   <data name="partidaBtnUsar" xml:space="preserve">
     <value>Use</value>
   </data>
@@ -446,6 +494,9 @@
   </data>
   <data name="salaDescripcionRamfez" xml:space="preserve">
     <value>The Ramfez family is known in Eldoria for their feared and despised reputation, wielding power through intrigue and cruelty.</value>
+  </data>
+  <data name="salaExpulsarJugador" xml:space="preserve">
+    <value>Expel player</value>
   </data>
   <data name="salaInstruccion" xml:space="preserve">
     <value>Room</value>
@@ -494,14 +545,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
-  </data>
-  <data name="mensajeExp08" xml:space="preserve">
-    <value>This room name is already taken, please try entering a different name.</value>
-  </data>
-  <data name="mensajeExp09" xml:space="preserve">
-    <value>This code already exists.</value>
-  </data>
-  <data name="mensajeExp22" xml:space="preserve">
-    <value>There was a problem with the server. Please check your network connection and try again.</value>
   </data>
 </root>

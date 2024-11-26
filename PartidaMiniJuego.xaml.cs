@@ -84,7 +84,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes();
+            var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajesSala();
 
             var rutaImagenesPorPersonaje = new Dictionary<string, string>
             {
@@ -203,7 +203,7 @@ namespace ClienteGloomApp
             {
                 InstanceContext contextoCarta = new InstanceContext(this);
                 ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
-                proxy.AgregarCartaAMazoJugador(jugadorPropietario);
+                //proxy.AgregarCartaAMazoJugador(jugadorPropietario);
                 PonerImagenCarta(jugadorPropietario);
                 ActualizarTurno();
             }
@@ -246,7 +246,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contextoJugador = new InstanceContext(this);
             ServicioGloom.ServicioJuegoTableroClient proxyJugador = new ServicioGloom.ServicioJuegoTableroClient(contextoJugador);
-            proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
+            //proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
         }
 
         private void ValidarTipoCarta(string tipo)
@@ -255,13 +255,13 @@ namespace ClienteGloomApp
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
             if (tipo.Equals("modificador"))
             {
-                proxy.SumarVidaPersonaje(jugadorPropietario, cartaSeleccionada.valor);
+                //proxy.SumarVidaPersonaje(jugadorPropietario, cartaSeleccionada.valor);
 
             }else if (tipo.Equals("muerte"))
             {
                 try
                 {
-                    proxy.TerminarPartidaMiniJuego();
+                    //proxy.TerminarPartidaMiniJuego();
                 }
                 catch (FaultException<ManejadorExcepciones> ex)
                 {
@@ -279,8 +279,54 @@ namespace ClienteGloomApp
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
             // Abre la ventana de chat con el nombre de usuario actual y el número de sala
-            var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
-            chatWindow.Show();
+            //var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
+            //chatWindow.Show();
+        }
+
+
+        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActivas)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarTurno(string nombreDelUsuarioEnTurno)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarImagenMazoCartaSobrante()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarImagenMazoCartaBonus()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarMazoJugador()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.NotificarVotacionExpulsion(string jugadorPropuesto)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.NotificarResultadoExpulsion(string jugadorExpulsado, bool expulsado)
+        {
+            throw new NotImplementedException();
         }
     }
 }

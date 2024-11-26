@@ -108,7 +108,8 @@
             </Button.Background>
         </Button>
         <TextBox x:Name="txtHistoria" HorizontalAlignment="Left" Margin="200,626,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="1256" Height="138" FontSize="24" IsEnabled="False" Grid.RowSpan="2"/>
-        <Label x:Name="lblDescripcionPersonaje" Content= "{x:Static p:Resources.TituloPersonajes}" HorizontalAlignment="Left" Margin="58,626,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
+        <!--<Label x:Name="lblDescripcionPersonaje" Content= "{x:Static p:Resources.TituloPersonajes}" HorizontalAlignment="Left" Margin="58,626,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lblNombreUsuarioRegistrado" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-  </Grid> 
+    -->
+        </Grid> 
 </Window>

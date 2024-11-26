@@ -22,7 +22,7 @@ namespace ClienteGloomApp
         public HistoriaPersonajes(String nombreUsuario)
         {
             InitializeComponent();
-            lblNombreUsuarioRegistrado.Content = nombreUsuario;
+            //lblNombreUsuarioRegistrado.Content = nombreUsuario;
         }
 
         private void btnMerit_Click(object sender, RoutedEventArgs e)

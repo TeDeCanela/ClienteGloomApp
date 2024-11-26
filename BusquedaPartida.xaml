@@ -5,22 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        Title="BusquedaPartida" Height="800" Width="1900">
-    <Grid Background="#122124" >
+        Title="BusquedaPartida" Height="850" Width="1900" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-116" >
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/castilloBusqueda.png" Stretch="Fill" Opacity="1" />
+        </Grid.Background>
+
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="44,17,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.553"/>
+                    <TranslateTransform X="17.15" Y="4.827"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+            </Button.Background>
+        </Button>
+
         <DataGrid Name="tblSalas" AutoGenerateColumns="False" HeadersVisibility="Column"
                   Background="Transparent"               
-            Foreground="White"
-            RowBackground="Transparent"
-            AlternatingRowBackground="Transparent"
-            BorderBrush="Transparent"
-            GridLinesVisibility="None"
-            HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="400" Margin="0,0,0,100">
-
+                  Foreground="White"
+                  RowBackground="Transparent"
+                  AlternatingRowBackground="Transparent"
+                  BorderBrush="White"
+                  BorderThickness="1"
+                  GridLinesVisibility="All"
+                  HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="400" Margin="0,0,0,100"
+                  FontSize="22">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nombre de la Sala" Binding="{Binding NombreSala}" Width="*" />
-                <DataGridTextColumn Header="Jugadores Activos" Binding="{Binding JugadoresActivos}" Width="*" />
-                <DataGridTextColumn Header="Tipo de Partida" Binding="{Binding TipoPartida}" Width="*" />
+                <DataGridTextColumn Header="Nombre de la Sala" Binding="{Binding nombreSala}" Width="*" />
+                <DataGridTextColumn Header="Jugadores Activos / Máximos" Width="*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0}/{1}">
+                            <Binding Path="noJugadoresActuales" />
+                            <Binding Path="noJugadores" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Tipo de Partida" Binding="{Binding tipoPartida}" Width="*" />
+                <DataGridTextColumn Header="Tipo de Sala" Binding="{Binding tipoSala}" Width="*" />
             </DataGrid.Columns>
 
             <DataGrid.ColumnHeaderStyle>
@@ -28,11 +56,15 @@
                     <Setter Property="Background" Value="Transparent" />
                     <Setter Property="Foreground" Value="White" />
                     <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="30" />
+                    <Setter Property="BorderBrush" Value="White" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
         </DataGrid>
 
-        <Button x:Name="btnUnirseAPartida" Content="{x:Static p:Resources.buscarPartidaBtnUnirse}" HorizontalAlignment="Left" Margin="715,689,0,0" VerticalAlignment="Top" Width="182" Height="50" Click="btnUnirseAPartida_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Grid.Column="1">
+
+        <Button x:Name="btnUnirseAPartida" Content="{x:Static p:Resources.buscarPartidaBtnUnirse}" HorizontalAlignment="Center" Margin="0,704,0,0" VerticalAlignment="Top" Width="182" Height="50" Click="BtnUnirseAPartida_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="White" 
@@ -45,8 +77,11 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
-        
 
+        <StackPanel Name="panelCodigoAcceso" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <TextBlock Text="Ingrese el código de acceso" Foreground="White" FontSize="16" Margin="0,0,0,10" HorizontalAlignment="Center" />
+            <TextBox Name="txtCodigoAcceso" Width="200" Height="30" HorizontalAlignment="Center" />
+            <Button Content="Confirmar Código" Width="100" Height="30" Margin="0,10,0,0" HorizontalAlignment="Center" Click="BtnConfirmarCodigo_Click" />
+        </StackPanel>
     </Grid>
 </Window>

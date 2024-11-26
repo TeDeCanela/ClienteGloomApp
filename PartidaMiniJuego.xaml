@@ -18,8 +18,8 @@
         <Button x:Name="btnCarta6" Width="105" Height="145" Margin="1150,632,295,7" Background="Transparent" Click="BtnVerCarta_Click"/>
         <Button x:Name="btnCarta7" Width="105" Height="145" Margin="1196,632,249,7" Background="Transparent" Click="BtnVerCarta_Click"/>
         <StackPanel HorizontalAlignment="Left" Margin="720,438,0,0" VerticalAlignment="Top">
-            <Image x:Name="imgJugador1" Height="140" Width="140"/>
             <Label x:Name="lblJugador1" Content="Jugador 1"/>
+            <Image x:Name="imgJugador1" Height="140" Width="140"/>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Margin="120,364,0,0" VerticalAlignment="Top">
@@ -60,7 +60,7 @@
         HorizontalAlignment="Right" VerticalAlignment="Top" 
         Margin="0,10,10,0" Width="175" Height="50" 
         Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" 
-        FontWeight="Bold" Click="btnInvitarCorreo_Click">
+        FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -72,8 +72,5 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
-
-
     </Grid>
 </Window>

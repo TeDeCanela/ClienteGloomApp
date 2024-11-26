@@ -78,9 +78,9 @@ namespace ClienteGloomApp
 
         public void EmpezarJuego()
         {
-            PartidaMiniJuego nuevaVentana = new PartidaMiniJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.noJugadores, salaRegistrada.idSala);
+            /*PartidaMiniJuego nuevaVentana = new PartidaMiniJuego(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.noJugadores, salaRegistrada.idSala);
             nuevaVentana.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnTucani_Click(object sender, RoutedEventArgs e)
@@ -185,7 +185,7 @@ namespace ClienteGloomApp
             //throw new NotImplementedException();
         }
 
-        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        void ISalaCallback.ActualizarImagenPersonaje(string personaje, string personajeAnterior)
         {
             CambiarPersonajeAnterior(personajeAnterior);
             switch (personaje)
@@ -266,6 +266,69 @@ namespace ClienteGloomApp
         }
 
         public void EnviarGanador(string jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.EmpezarJuego()
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ActualizarNumeroJugadores()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActivas)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.EnviarTurno(string nombreDelUsusarioEnTurno)
+        {
+            throw new NotImplementedException();
+        }
+
+ 
+
+        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarTurno(string nombreDelUsuarioEnTurno)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarImagenMazoCartaSobrante()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarImagenMazoCartaBonus()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarMazoJugador()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.NotificarVotacionExpulsion(string jugadorPropuesto)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.NotificarResultadoExpulsion(string jugadorExpulsado, bool expulsado)
         {
             throw new NotImplementedException();
         }

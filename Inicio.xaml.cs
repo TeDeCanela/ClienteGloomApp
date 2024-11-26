@@ -20,15 +20,15 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para Inicio.xaml
     /// </summary>
-    public partial class Inicio : Window, ISalaCallback
+    public partial class Inicio : Window
     {
-        private String identificadorUsuario;
+        //private String identificadorUsuario;
         private String tipoJugador;
 
         public Inicio(String nombreDelUsuario)
         {
             InitializeComponent();
-
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             lblNombreUsuario.Content = nombreDelUsuario;
             ValidarTipoJugador(nombreDelUsuario);
             RestringirTipoJugador();
@@ -43,9 +43,9 @@ namespace ClienteGloomApp
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
+            /*PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnVerPersonajes_Click(object sender, RoutedEventArgs e)
@@ -57,9 +57,9 @@ namespace ClienteGloomApp
 
         private void btnListaDeAmigos_Click(object sender, RoutedEventArgs e)
         {
-            ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
+            /*ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
@@ -71,9 +71,9 @@ namespace ClienteGloomApp
 
         private void btnHistorialDePartidas_Click(object sender, RoutedEventArgs e)
         {
-            HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
+            /*HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
             nuevavenatana.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnMiniHistoria_Click(object sender, RoutedEventArgs e)
@@ -96,9 +96,9 @@ namespace ClienteGloomApp
                 var resultado = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
                 if (resultado!=null)
                 {
-                    SalaMiniJuego nuevaVentana = new SalaMiniJuego(lblNombreUsuario.Content.ToString(), resultado);
+                    /*SalaMiniJuego nuevaVentana = new SalaMiniJuego(lblNombreUsuario.Content.ToString(), resultado);
                     nuevaVentana.Show();
-                    this.Close();
+                    this.Close();*/
                 }
 
             }
@@ -152,6 +152,20 @@ namespace ClienteGloomApp
         public void EnviarGanador(string jugador)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnCrearPartida_Click(object sender, RoutedEventArgs e)
+        {
+            CrearPartida ventanaCrearPartida = new CrearPartida(lblNombreUsuario.Content.ToString());
+            ventanaCrearPartida.Show();
+            this.Close();
+        }
+
+        private void btnBuscarPartida_Click(object sender, RoutedEventArgs e)
+        {
+            BusquedaPartida ventanBusqueda = new BusquedaPartida(lblNombreUsuario.Content.ToString());
+            ventanBusqueda.Show();
+            this.Close();
         }
     }
 }

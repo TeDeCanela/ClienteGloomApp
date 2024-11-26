@@ -17,4 +17,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ValueTupleOfstringint" nillable="true" type="tns:ValueTupleOfstringint" />
+  <xs:complexType name="ArrayOfValueTupleOfstringint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValueTupleOfstringint" type="tns:ValueTupleOfstringint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValueTupleOfstringint" nillable="true" type="tns:ArrayOfValueTupleOfstringint" />
 </xs:schema>

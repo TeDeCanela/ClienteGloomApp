@@ -19,7 +19,7 @@ namespace ClienteGloomApp
 
     public partial class PerfilJugador : Window
     {
-        private String identificadorUsuario;
+        /*private String identificadorUsuario;
         private String iconoSeleccionado;
         public PerfilJugador(String nombreUsuario)
         {
@@ -168,6 +168,6 @@ namespace ClienteGloomApp
                     botonesDeContendero.BorderBrush = null;
                 }
             }
-        }
+        }*/
     }
 }
