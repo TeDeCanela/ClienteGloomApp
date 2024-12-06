@@ -107,9 +107,9 @@ namespace ClienteGloomApp
 
         private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
-            /*Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
     }
 }

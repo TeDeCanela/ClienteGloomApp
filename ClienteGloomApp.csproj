@@ -226,7 +226,6 @@
     <None Include="Connected Services\ServicioGloom\ClienteGloomApp.ServicioGloom.Sala.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioGloom\ImplementacionServicio.wsdl" />
     <None Include="Connected Services\ServicioGloom\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -242,9 +241,10 @@
     <None Include="Connected Services\ServicioGloom\item4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioGloom\item41.xsd">
+    <None Include="Connected Services\ServicioGloom\item5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioGloom\ServicioJuego.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -276,24 +276,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\InicioSesion.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServicioGloom\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGloom\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGloom\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGloom\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServicioGloom\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -542,6 +524,24 @@
   <ItemGroup>
     <Resource Include="ImagenCarta\PerderTurno.png" />
     <Resource Include="ImagenCarta\QuitarCarta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioGloom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGloom\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGloom\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGloom\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicioGloom\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

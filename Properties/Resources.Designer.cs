@@ -207,6 +207,15 @@ namespace ClienteGloomApp.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a La voz del destino ha hablado y yo he respondido, he ganado.
         /// </summary>
+        public static string finMiniComentarioGanador {
+            get {
+                return ResourceManager.GetString("finMiniComentarioGanador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La voz del destino ha hablado y yo he respondido, he ganado.
+        /// </summary>
         public static string finMiniInstruccionGanador {
             get {
                 return ResourceManager.GetString("finMiniInstruccionGanador", resourceCulture);

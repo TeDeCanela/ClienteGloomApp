@@ -71,7 +71,7 @@ namespace ClienteGloomApp
             jugador.nombre = validar.VerificarNombreYApellidos(txtNombre.Text);
             jugador.apellidos = validar.VerificarNombreYApellidos(txtApellidos.Text);
             jugador.correo = validar.VerificarCorreo(txtCorreo.Text);
-            jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
+            jugador.contraseña = pwdContrasena.Password;//validar.VerificarContrasena(pwdContrasena.Password);
             jugador.tipo = "Jugador";
             jugador.icono = iconoSeleccionado;
 
@@ -85,7 +85,7 @@ namespace ClienteGloomApp
             }
             catch (ArgumentException ex)
             {
-
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {

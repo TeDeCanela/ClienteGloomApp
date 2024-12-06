@@ -33,6 +33,8 @@ namespace ClienteGloomApp
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
             numeroDeSala = sala.idSala;
+            btnEmpezar.BorderBrush = Brushes.Red;
+            btnEmpezar.BorderThickness = new Thickness(4);
             try
             {
                 ConectarConSala();
@@ -283,6 +285,15 @@ namespace ClienteGloomApp
             nuevaVentana.Show();
             this.Close();
         }
-    
+        //ToDO
+        public void ActualizarSalasActivas(Sala[] salasActivas)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

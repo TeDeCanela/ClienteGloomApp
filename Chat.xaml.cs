@@ -28,7 +28,7 @@ namespace ClienteGloomApp
             InstanceContext context = new InstanceContext(this);
             ServicioGloom.ChatClient proxy = new ServicioGloom.ChatClient(context);
 
-            proxy.agregarJugador(identificadorUsuario);
+            proxy.AgregarJugadorAChat(identificadorUsuario);
         }
 
         private void BtnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -36,7 +36,7 @@ namespace ClienteGloomApp
             InstanceContext context = new InstanceContext(this);
             ServicioGloom.ChatClient proxy = new ChatClient(context);
 
-            proxy.enviarMensaje(identificadorUsuario, InputMensaje.Text);
+            proxy.EnviarMensaje(identificadorUsuario, InputMensaje.Text);
         }
         /*
         void IChatCallback.EnviarMensajeCliente(Chat mensajesChat)

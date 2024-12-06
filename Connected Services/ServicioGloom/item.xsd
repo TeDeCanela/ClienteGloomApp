@@ -1,62 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BibliotecaClases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="Jugador">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCarta">
     <xs:sequence>
-      <xs:element minOccurs="0" name="apellidos" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="icono" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Carta" nillable="true" type="tns:Carta" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Jugador" nillable="true" type="tns:Jugador" />
-  <xs:complexType name="ManejadorExcepciones">
+  <xs:element name="ArrayOfCarta" nillable="true" type="tns:ArrayOfCarta" />
+  <xs:complexType name="Carta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Carta" nillable="true" type="tns:Carta" />
+  <xs:complexType name="ArrayOfChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chat" nillable="true" type="tns:Chat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChat" nillable="true" type="tns:ArrayOfChat" />
+  <xs:complexType name="Chat">
     <xs:sequence>
       <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ManejadorExcepciones" nillable="true" type="tns:ManejadorExcepciones" />
-  <xs:complexType name="ArrayOfJugador">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Jugador" nillable="true" type="tns:Jugador" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJugador" nillable="true" type="tns:ArrayOfJugador" />
-  <xs:complexType name="Amistad">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="jugadorAmigo" nillable="true" type="tns:Jugador" />
-      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="tns:Jugador" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Amistad" nillable="true" type="tns:Amistad" />
-  <xs:complexType name="ArrayOfAmistad">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Amistad" nillable="true" type="tns:Amistad" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAmistad" nillable="true" type="tns:ArrayOfAmistad" />
-  <xs:complexType name="Sala">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ganador" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="idAdministrador" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="noJugadores" type="xs:int" />
-      <xs:element minOccurs="0" name="nombreSala" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tipoPartida" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tipoSala" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Sala" nillable="true" type="tns:Sala" />
-  <xs:complexType name="ArrayOfSala">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sala" nillable="true" type="tns:Sala" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfSala" nillable="true" type="tns:ArrayOfSala" />
+  <xs:element name="Chat" nillable="true" type="tns:Chat" />
 </xs:schema>

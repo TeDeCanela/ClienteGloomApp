@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace ClienteGloomApp
     public partial class FinPartidaMini : Window
     {
         string jugadorPropietario;
+        string tipoJugador;
         string identificadorSala;
         public FinPartidaMini(string nombreUsuario, string ganador, string idSala)
         {
@@ -29,6 +31,7 @@ namespace ClienteGloomApp
             jugadorPropietario = nombreUsuario;
             identificadorSala = idSala;
             AsignarJugadores();
+            lblDialogoGanador.Content="(" + ganador + "): "+ Properties.Resources.finMiniComentarioGanador;
         }
 
         private void AsignarJugadores()
@@ -51,7 +54,7 @@ namespace ClienteGloomApp
 
                 if (rutaImagenesPorPersonaje.TryGetValue(nombrePersonaje, out var rutaImagen))
                 {
-                    lblJugador1.Content = lblJugador1.Content = personajeUsuario.Item2.ToString() + Properties.Resources.finMiniIntruccionPuntos;
+                    lblJugador1.Content = lblJugador1.Content = personajeUsuario.Item2.ToString() + " " + Properties.Resources.finMiniIntruccionPuntos;
                     imgJugador1.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
                 }
 
@@ -70,11 +73,33 @@ namespace ClienteGloomApp
 
                 if (rutaImagenesPorPersonaje.TryGetValue(nombrePersonaje, out var rutaImagen))
                 {
-                    labels[i].Content = vida.ToString() + Properties.Resources.finMiniIntruccionPuntos;
+                    labels[i].Content = vida.ToString() + " " + Properties.Resources.finMiniIntruccionPuntos;
                     images[i].Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
                     i++;
                 }
             }
+        }
+        private void ValidarTipoJugador(string nombre)
+        {
+            string patron = @"^Invitado\d+$";
+
+            if (Regex.IsMatch(nombre, patron))
+            {
+                tipoJugador = "Invitado";
+            }
+            else
+            {
+                tipoJugador = "Registrado";
+            }
+        }
+
+        private void btnFlecha_Click(object sender, RoutedEventArgs e)
+        {
+             Inicio nuevaVentana = new Inicio(jugadorPropietario);
+             nuevaVentana.Show();
+             this.Close();
+        
+
         }
     }
 }
