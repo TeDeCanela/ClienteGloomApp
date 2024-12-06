@@ -787,14 +787,14 @@
   <wsdl:message name="IChat_EnviarMensaje_OutputMessage">
     <wsdl:part name="parameters" element="tns:EnviarMensajeResponse" />
   </wsdl:message>
-  <wsdl:message name="IChat_ObtenerHistorialMensajes_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerHistorialMensajes" />
+  <wsdl:message name="IChat_HistorialMensajes_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistorialMensajes" />
   </wsdl:message>
-  <wsdl:message name="IChat_ObtenerHistorialMensajes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerHistorialMensajesResponse" />
+  <wsdl:message name="IChat_HistorialMensajes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistorialMensajesResponse" />
   </wsdl:message>
-  <wsdl:message name="IChat_RecibirMensaje_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:RecibirMensaje" />
+  <wsdl:message name="IChat_EnviarMensajeCliente_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensajeCliente" />
   </wsdl:message>
   <wsdl:message name="IInvitacion_EnviarInvitacion_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarInvitacion" />
@@ -1167,12 +1167,12 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IChat/EnviarMensaje" message="tns:IChat_EnviarMensaje_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChat/EnviarMensajeResponse" message="tns:IChat_EnviarMensaje_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ObtenerHistorialMensajes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChat/ObtenerHistorialMensajes" message="tns:IChat_ObtenerHistorialMensajes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChat/ObtenerHistorialMensajesResponse" message="tns:IChat_ObtenerHistorialMensajes_OutputMessage" />
+    <wsdl:operation name="HistorialMensajes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChat/HistorialMensajes" message="tns:IChat_HistorialMensajes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChat/HistorialMensajesResponse" message="tns:IChat_HistorialMensajes_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RecibirMensaje">
-      <wsdl:output wsaw:Action="http://tempuri.org/IChat/RecibirMensaje" message="tns:IChat_RecibirMensaje_OutputCallbackMessage" />
+    <wsdl:operation name="EnviarMensajeCliente">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChat/EnviarMensajeCliente" message="tns:IChat_EnviarMensajeCliente_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IInvitacion">
@@ -1995,8 +1995,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerHistorialMensajes">
-      <soap12:operation soapAction="http://tempuri.org/IChat/ObtenerHistorialMensajes" style="document" />
+    <wsdl:operation name="HistorialMensajes">
+      <soap12:operation soapAction="http://tempuri.org/IChat/HistorialMensajes" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2004,8 +2004,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RecibirMensaje">
-      <soap12:operation soapAction="http://tempuri.org/IChat/RecibirMensaje" style="document" />
+    <wsdl:operation name="EnviarMensajeCliente">
+      <soap12:operation soapAction="http://tempuri.org/IChat/EnviarMensajeCliente" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

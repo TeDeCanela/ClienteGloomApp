@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="" Height="800" Width="1550">
     <Grid>
-        <!--<Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="171*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
@@ -128,6 +128,5 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        -->
     </Grid>
 </Window>

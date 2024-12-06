@@ -994,21 +994,19 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ObtenerHistorialMensajes">
+  <xs:element name="HistorialMensajes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HistorialMensajesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="HistorialMensajesResult" nillable="true" type="q36:ArrayOfChat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ObtenerHistorialMensajesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="ObtenerHistorialMensajesResult" nillable="true" type="q36:ArrayOfChat" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RecibirMensaje">
+  <xs:element name="EnviarMensajeCliente">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" minOccurs="0" name="mensaje" nillable="true" type="q37:Chat" />

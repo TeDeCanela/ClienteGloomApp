@@ -5,7 +5,7 @@
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
         Title="" Height="800" Width="1900">
     <Grid Background="#FFC38E79">
-        <!--<Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,332,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.705,1.792" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombre}" HorizontalAlignment="Left" Margin="167,332,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.705,1.792" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lblNombre" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="128,67,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lblApellidos" Content="{x:Static p:Resources.globalApellidos}" HorizontalAlignment="Left" Margin="167,557,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lblCorreo" Content="{x:Static p:Resources.globalCorreo}" HorizontalAlignment="Left" Margin="624,321,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" FontWeight="Bold"/>
@@ -107,6 +107,6 @@
         </GroupBox>
         <Label x:Name="lblFoto_Instruccion" Content="{x:Static p:Resources.instruccionSeleccionarFoto}" HorizontalAlignment="Left" Margin="1112,100,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="-2.449,1.587" Foreground="White" FontWeight="Bold"/>
         <Image x:Name="imgFotoPerfil" HorizontalAlignment="Left" Height="138" Margin="655,147,0,0" VerticalAlignment="Top" Width="155"/>
-        -->
+        
     </Grid>
 </Window>

@@ -19,7 +19,7 @@ namespace ClienteGloomApp
 
     public partial class PerfilJugador : Window
     {
-        /*private String identificadorUsuario;
+        private String identificadorUsuario;
         private String iconoSeleccionado;
         ValidacionCampos validar = new ValidacionCampos();
 
@@ -174,6 +174,6 @@ namespace ClienteGloomApp
                     botonesDeContendero.BorderBrush = null;
                 }
             }
-        }*/
+        }
     }
 }

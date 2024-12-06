@@ -21,7 +21,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class ListaAmigos : Window
     {
-        /*public ListaAmigos(String nombreusuarioRegistrado)
+        public ListaAmigos(String nombreusuarioRegistrado)
         {
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreusuarioRegistrado;
@@ -298,6 +298,6 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
-        }*/
+        }
     }
 }

@@ -11,8 +11,8 @@
 namespace ClienteGloomApp.ServicioGloom {
     using System.Runtime.Serialization;
     using System;
-    
-    
+    using System.ServiceModel;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
@@ -700,7 +700,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public JugadorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-        
+
+        public JugadorClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public int AgregarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
             return base.Channel.AgregarJugador(jugador);
         }
@@ -832,7 +836,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public AmigosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-        
+
+        public AmigosClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public int EnviarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
             return base.Channel.EnviarSolcitudAmistad(solicitud);
         }
@@ -1943,18 +1951,18 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/EnviarMensaje", ReplyAction="http://tempuri.org/IChat/EnviarMensajeResponse")]
         System.Threading.Tasks.Task EnviarMensajeAsync(string nombreUsuario, string mensaje, string idSala);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/ObtenerHistorialMensajes", ReplyAction="http://tempuri.org/IChat/ObtenerHistorialMensajesResponse")]
-        ClienteGloomApp.ServicioGloom.Chat[] ObtenerHistorialMensajes(string idSala);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/HistorialMensajes", ReplyAction="http://tempuri.org/IChat/HistorialMensajesResponse")]
+        ClienteGloomApp.ServicioGloom.Chat[] HistorialMensajes();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/ObtenerHistorialMensajes", ReplyAction="http://tempuri.org/IChat/ObtenerHistorialMensajesResponse")]
-        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Chat[]> ObtenerHistorialMensajesAsync(string idSala);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/HistorialMensajes", ReplyAction="http://tempuri.org/IChat/HistorialMensajesResponse")]
+        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Chat[]> HistorialMensajesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IChatCallback {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChat/RecibirMensaje")]
-        void RecibirMensaje(ClienteGloomApp.ServicioGloom.Chat mensaje);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChat/EnviarMensajeCliente")]
+        void EnviarMensajeCliente(ClienteGloomApp.ServicioGloom.Chat mensaje);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2001,12 +2009,12 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.EnviarMensajeAsync(nombreUsuario, mensaje, idSala);
         }
         
-        public ClienteGloomApp.ServicioGloom.Chat[] ObtenerHistorialMensajes(string idSala) {
-            return base.Channel.ObtenerHistorialMensajes(idSala);
+        public ClienteGloomApp.ServicioGloom.Chat[] HistorialMensajes() {
+            return base.Channel.HistorialMensajes();
         }
         
-        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Chat[]> ObtenerHistorialMensajesAsync(string idSala) {
-            return base.Channel.ObtenerHistorialMensajesAsync(idSala);
+        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Chat[]> HistorialMensajesAsync() {
+            return base.Channel.HistorialMensajesAsync();
         }
     }
     
