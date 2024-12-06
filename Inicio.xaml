@@ -4,12 +4,12 @@
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
         
-    Height="794" Width="1900">
+    Height="794" Width="1900" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFAB9D95">
         
         <Image Source="Imagenes/castilloInicioFondo.png" Width="1553" Height="915" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Margin="-8,0,0,0"/>
 
-        <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="46,238,0,0" VerticalAlignment="Top" Width="202" Height="77" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FFB25979" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2">
+        <Button x:Name="btnCrearPartida" Content="{x:Static p:Resources.inicioBtnCrearPartida}" HorizontalAlignment="Left" Margin="46,238,0,0" VerticalAlignment="Top" Width="202" Height="77" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FFB25979" BorderBrush="#FF4E1B1B" BorderThickness="2,2,2,2" Click="btnCrearPartida_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -22,7 +22,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnBuscarPartida" Content="{x:Static p:Resources.inicioBtnBuscarPartida}" HorizontalAlignment="Left" Margin="46,392,0,0" VerticalAlignment="Top" Width="202" Height="75" Foreground="White" RenderTransformOrigin="0.657,0.687" FontSize="20" Background="#FFB25979" FontWeight="Bold" BorderThickness="2,2,2,2" BorderBrush="#FF4E1B1B">
+        <Button x:Name="btnBuscarPartida" Content="{x:Static p:Resources.inicioBtnBuscarPartida}" HorizontalAlignment="Left" Margin="46,392,0,0" VerticalAlignment="Top" Width="202" Height="75" Foreground="White" RenderTransformOrigin="0.5,0.5" FontSize="20" Background="#FFB25979" FontWeight="Bold" BorderThickness="2,2,2,2" BorderBrush="#FF4E1B1B" Click="btnBuscarPartida_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -138,6 +138,5 @@ CornerRadius="15">
             <Button x:Name="btnEntrarPartidaMiniHistoria" Content="{x:Static p:Resources.buscarPartidaBtnUnirse}" Click="btnEntrarPartidaMiniHistoria_Click" Height="41" Width="143" HorizontalAlignment="Right" Margin="10,10,10,0" Background="White"/>
             <Label x:Name="lblInstruccionInvitado" Content="{x:Static p:Resources.inicioInstruccionInvitado}" HorizontalAlignment="Left" Margin="500,15,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold" Visibility="Collapsed"/>
         </StackPanel>
-        
     </Grid>
 </Window> 

@@ -32,7 +32,9 @@ namespace ClienteGloomApp
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+            //ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            //ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
             try
@@ -45,13 +47,13 @@ namespace ClienteGloomApp
                 jugador.tipo = "JugadorRegistrado";
                 jugador.icono= validar.VerificarInconoSeleccionado(iconoSeleccionado);
 
-                int resulatdoIperacion = proxy.AgregarJugador(jugador);
+                /*int resulatdoIperacion = proxy.AgregarJugador(jugador);
 
                 if (resulatdoIperacion == 1)
                 {
                     MessageBox.Show(Properties.Resources.mensajeRegistroJugadorExito, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCampos();
-                }
+                }*/
             }
             catch (ArgumentException ex)
             {

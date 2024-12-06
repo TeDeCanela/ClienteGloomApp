@@ -1,13 +1,13 @@
-﻿<Window
+﻿<Window x:Class="ClienteGloomApp.InvitacionJugador"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
-        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="av" x:Class="ClienteGloomApp.InvitacionJugador"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="av" 
         Title="InvitacionJugador" Height="650" Width="400">
     <Grid Background="#717273">
-        <!--
+
         <Button x:Name="btnInvitar" Content="{x:Static p:Resources.globalInvitar}" HorizontalAlignment="Left" Margin="200,299,0,0" VerticalAlignment="Top" Width="175" Height="50" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnInvitar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -21,7 +21,7 @@
             </Button.Template>
         </Button>
         <Label x:Name="lblInvitarAmistadPorCorreo" Content="{x:Static p:Resources.invitarAmistadesEnviarCorreo}" HorizontalAlignment="Left" Margin="30,361,0,0" VerticalAlignment="Top" Width="360" Height="50" Foreground="White" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Margin="30,416,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345" Height="38"/>
+        <TextBox x:Name="txtCorreo" Margin="30,416,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345" Height="38"/>
         <Button x:Name="btnInvitarCorreo" Content="{x:Static p:Resources.globalInvitar}" HorizontalAlignment="Left" Margin="200,509,0,0" VerticalAlignment="Top" Width="175" Height="50" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="btnInvitarCorreo_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -35,6 +35,7 @@
             </Button.Template>
         </Button>
         <ListBox x:Name="lstListaAmigos" av:ItemsSource="{av:SampleData ItemCount=5}" Margin="30,28,25,381" SelectionChanged="lstListaAmigos_SelectionChanged"/>
-   -->
+        
         </Grid>
+
 </Window>

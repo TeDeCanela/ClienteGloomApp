@@ -24,6 +24,37 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="jugadorAmigo" nillable="true" type="tns:Jugador" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="tns:Jugador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Amistad" nillable="true" type="tns:Amistad" />
+  <xs:complexType name="ArrayOfAmistad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Amistad" nillable="true" type="tns:Amistad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAmistad" nillable="true" type="tns:ArrayOfAmistad" />
+  <xs:complexType name="Sala">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ganador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idAdministrador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noJugadores" type="xs:int" />
+      <xs:element minOccurs="0" name="noJugadoresActuales" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreSala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoPartida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoSala" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sala" nillable="true" type="tns:Sala" />
+  <xs:complexType name="ArrayOfSala">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sala" nillable="true" type="tns:Sala" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Chat" nillable="true" type="tns:Chat" />

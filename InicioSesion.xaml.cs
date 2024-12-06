@@ -26,6 +26,7 @@ namespace ClienteGloomApp
         {
             InitializeComponent();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -55,7 +56,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contexJugador = new InstanceContext(this);
 
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
             try
@@ -95,7 +96,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contexJugador = new InstanceContext(this);
 
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+            /*ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             try
             {
@@ -108,7 +109,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
+            }*/
         }
     }
 }

@@ -199,7 +199,7 @@ namespace ClienteGloomApp
             btnEmpezar.BorderThickness = new Thickness(4);
         }
 
-        public void ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        void ISalaCallback.ActualizarImagenPersonaje(string personaje, string personajeAnterior)
         {
             CambiarPersonajeAnterior(personajeAnterior);
             switch (personaje)

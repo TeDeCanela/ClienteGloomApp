@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="{x:Static p:Resources.TituloPartida}" Height="800" Width="1550">
     <Grid>
-        
+
         <Image Source="Imagenes/SalaFondo.jpg" Width="1573" Height="1073" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-86,0,0" Opacity=".7"/>
         <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="btnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
@@ -32,7 +32,7 @@
         <TextBox x:Name="txtJugador4" HorizontalAlignment="Left" Margin="272,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontSize="20" Height="42" IsEnabled="False"/>
         <Image x:Name="imgJugador4" HorizontalAlignment="Left" Height="67" Margin="139,656,0,0" VerticalAlignment="Top" Width="68"/>
         <Label x:Name="lblNombreUsuarioRegistrado" Content="" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.miniInvitarJugadores}" HorizontalAlignment="Left" Margin="39,149,0,0" VerticalAlignment="Top" FontSize="20" Height="48" Width="200"/>
+        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.miniInvitarJugadores}" HorizontalAlignment="Left" Margin="39,149,0,0" VerticalAlignment="Top" FontSize="20" Height="48" Width="200" Click="BtnInvitarJugadores_Click"/>
         <Label x:Name="lblInstruccion" Content="{x:Static p:Resources.miniHistoriaNumeroSala}" HorizontalAlignment="Left" Margin="39,74,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
         <Label x:Name="lblInstruccionJugadores" Content="{x:Static p:Resources.miniJugadores}" HorizontalAlignment="Left" Margin="54,253,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
         <Image x:Name="imgFamilia" HorizontalAlignment="Left" Height="139" Margin="889,253,0,0" VerticalAlignment="Top" Width="130" Source="/Imagenes/EscudoGarlo.jpg"/>
@@ -62,6 +62,6 @@
             </StackPanel>
         </GroupBox>
         <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.miniBtnEmpezar}" HorizontalAlignment="Left" Margin="1320,693,0,0" VerticalAlignment="Top" FontSize="20" Height="57" Width="152" Click="btnEmpezar_Click"/>
-    
-        </Grid>
+
+    </Grid>
 </Window>

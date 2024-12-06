@@ -89,6 +89,9 @@
     <Compile Include="FinPartidaMini.xaml.cs">
       <DependentUpon>FinPartidaMini.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FinPartidaNormal.xaml.cs">
+      <DependentUpon>FinPartidaNormal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HistorialPartidas.xaml.cs">
       <DependentUpon>HistorialPartidas.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,9 @@
     <Compile Include="PartidaMiniJuego.xaml.cs">
       <DependentUpon>PartidaMiniJuego.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PartidaNormal.xaml.cs">
+      <DependentUpon>PartidaNormal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PerfilJugador.xaml.cs">
       <DependentUpon>PerfilJugador.xaml</DependentUpon>
     </Compile>
@@ -123,6 +129,9 @@
       <DependentUpon>HistoriaPersonajes.xaml</DependentUpon>
     </Compile>
     <Compile Include="RutasDeCartas.cs" />
+    <Compile Include="SalaNormal.xaml.cs">
+      <DependentUpon>SalaNormal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SalaMiniJuego.xaml.cs">
       <DependentUpon>SalaMiniJuego.xaml</DependentUpon>
     </Compile>
@@ -140,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FinPartidaMini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinPartidaNormal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,6 +192,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PartidaNormal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PerfilJugador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -188,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HistoriaPersonajes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SalaNormal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -434,6 +455,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\fondoCartaPrincipal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\AbelithSinFondo.png" />
+    <Resource Include="Imagenes\LorenzeoSinFondo.png" />
+    <Resource Include="Imagenes\MeritSinFondo.png" />
+    <Resource Include="Imagenes\TucaniSinFondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\GaiaSinFondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\AngelusSinFondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\castilloBusqueda.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ImagenCarta\Accidente1.png" />

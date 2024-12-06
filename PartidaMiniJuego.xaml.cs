@@ -334,14 +334,14 @@ namespace ClienteGloomApp
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
-            var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
-            chatWindow.Show();
+            //var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
+            //chatWindow.Show();
         }
 
         private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)
         {
-            var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
-            chatWindow.Show();
+            //var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
+            //chatWindow.Show();
         }
 
         public void ActualizarTurno(string nombreDelUsuarioEnTurno)
@@ -650,5 +650,17 @@ namespace ClienteGloomApp
         {
             throw new NotImplementedException();
         }
+
+        void IServicioJuegoTableroCallback.RecibirExpulsion(string jugadorObjetivo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ActualizarInterfazExpulsion(string jugadorExpulsado)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

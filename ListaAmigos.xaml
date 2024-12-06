@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:ClienteGloomApp"
         xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.TituloListaDeAmigos}" Height="800" Width="1550">
+        Title="" Height="800" Width="1550">
     <Grid>
-        <Grid.RowDefinitions>
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="171*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
@@ -128,5 +128,6 @@
                 </Button.Background>
             </Button>
         </StackPanel>
+        -->
     </Grid>
 </Window>

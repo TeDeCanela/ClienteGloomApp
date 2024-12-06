@@ -1,65 +1,67 @@
-﻿using ClienteGloomApp.ServicioGloom;
+﻿using System;
 using System.ServiceModel;
-using System;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using ClienteGloomApp.ServicioGloom;
 
 namespace ClienteGloomApp
 {
-    /// <summary>
-    /// Lógica de interacción para Chat.xaml
-    /// </summary>
-    public partial class Chat : Window//, ServicioGloom.IServicioChat
+    public partial class Chat : Window, IChatCallback
     {
-        private String identificadorUsuario;
-        private String identificadorSala;
-        public Chat(String nombreUsuario, String numeroSala)
+        private IChat proxy;
+        private string nombreUsuario;
+        private string idSala;
+
+        public Chat(string nombreUsuario, string idSala)
         {
             InitializeComponent();
-            identificadorSala = numeroSala;
+            this.nombreUsuario = nombreUsuario;
+            this.idSala = idSala;
 
             InstanceContext context = new InstanceContext(this);
-            ServicioGloom.ChatClient proxy = new ServicioGloom.ChatClient(context);
+            proxy = new ChatClient(context); // Conexión al servicio de juego
+            proxy.AgregarJugadorAChat(nombreUsuario, idSala); // Actualización para reflejar el cambio en el servicio
 
-            proxy.AgregarJugadorAChat(identificadorUsuario);
-        }
-
-        private void BtnRegistrar_Click(object sender, RoutedEventArgs e)
-        {
-            InstanceContext context = new InstanceContext(this);
-            ServicioGloom.ChatClient proxy = new ChatClient(context);
-
-            proxy.EnviarMensaje(identificadorUsuario, InputMensaje.Text);
-        }
-        /*
-        void IChatCallback.EnviarMensajeCliente(Chat mensajesChat)
-        {
-            try
+            // Cargar mensajes anteriores
+            var historial = proxy.ObtenerHistorialMensajes(idSala);
+            foreach (var mensaje in historial)
             {
-                lstChat.Dispatcher.Invoke(() =>
+                lstChat.Items.Add($"{mensaje.nombreUsuario}: {mensaje.mensaje}");
+            }
+        }
+
+
+
+        private void BtnEnviar_Click(object sender, RoutedEventArgs e)
+        {
+            string mensaje = txtMensaje.Text.Trim();
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                proxy.EnviarMensaje(nombreUsuario, mensaje, idSala);
+                txtMensaje.Clear();
+            }
+        }
+
+        public void RecibirMensaje(ServicioGloom.Chat mensaje)
+        {
+            if (mensaje == null)
+            {
+                Console.WriteLine("El mensaje recibido es nulo.");
+                return;
+            }
+
+            Console.WriteLine($"Mensaje recibido en el cliente: {mensaje.nombreUsuario}: {mensaje.mensaje}");
+
+            lstChat.Dispatcher.Invoke(() =>
+            {
+                if (lstChat != null)
                 {
-                    if (lstChat.Visibility == Visibility.Visible && lstChat.IsEnabled)
-                    {
-                        lstChat.Items.Add($"{identificadorUsuario} : {mensajesChat}");
-                    }
-                    else
-                    {
-                        MessageBox.Show(Properties.Resources.mensajeChatNoHabilitado, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                });
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
+                    lstChat.Items.Add($"{mensaje.nombreUsuario}: {mensaje.mensaje}");
+                }
+                else
+                {
+                    Console.WriteLine("lstChat no está inicializado.");
+                }
+            });
         }
-        */
     }
 }

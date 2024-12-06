@@ -1,0 +1,61 @@
+﻿<Window x:Class="ClienteGloomApp.FinPartidaNormal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteGloomApp"
+        mc:Ignorable="d"
+        Title="FinPartidaNormal" Height="800" Width="1550">
+    <Grid>
+
+        <Image Source="Imagenes/SalaFondo.jpg" Width="2838" Height="1111" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.522,0.508" Opacity=".7"/>
+
+        <GroupBox x:Name="grupoBotones" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,49,0,0" BorderThickness="0" Width="774" Height="595">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="766">
+                <Grid Width="707">
+                    <!-- Define two columns: one for Image and one for Label -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <!-- For the Label -->
+                        <!-- For the Image -->
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- First Row -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="imgFamilia1" Height="120" Width="120" Grid.Row="0" Grid.Column="0" />
+                    <Label x:Name="lblJugador1" Grid.Column="1" VerticalAlignment="Center" Margin="78,0,79,0"/>
+
+                    <Image x:Name="imgFamilia2" Height="120" Width="120" Grid.Row="1" Grid.Column="0" />
+                    <Label x:Name="lblJugador2" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="78,0,79,0"/>
+
+                    <Image x:Name="imgFamilia3" Height="120" Width="120" Grid.Row="2" Grid.Column="0" />
+                    <Label x:Name="lblJugador3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="78,0,79,0"/>
+
+                    <Image x:Name="imgFamilia4" Height="120" Width="120" Grid.Row="3" Grid.Column="0" />
+                    <Label x:Name="lblJugador4" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="78,0,79,0"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="44,17,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.5,0.5" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.553"/>
+                    <TranslateTransform X="0.001" Y="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
