@@ -126,6 +126,21 @@
   <data name="buscarPartidaPartida" xml:space="preserve">
     <value>Game</value>
   </data>
+  <data name="cartaPerderTurno" xml:space="preserve">
+    <value>Illusions of Freedom: Lose a turn.</value>
+  </data>
+  <data name="cartaQuitarCarta" xml:space="preserve">
+    <value>The Root of all Evil: Choose a player to remove one card from their deck.</value>
+  </data>
+  <data name="cartaRobarCarta1" xml:space="preserve">
+    <value>Imaginary Friend: Draw one card.</value>
+  </data>
+  <data name="cartaRobarCarta2" xml:space="preserve">
+    <value>A second chance: Draw 2 cards.</value>
+  </data>
+  <data name="cartaSaltarJugador" xml:space="preserve">
+    <value>'Til Death Do Us Part: Prevent a player from using their cards for a round.</value>
+  </data>
   <data name="crearPartidaBtnCrearSala" xml:space="preserve">
     <value>Create room</value>
   </data>
@@ -149,6 +164,12 @@
   </data>
   <data name="escribirMensajeInstrucción" xml:space="preserve">
     <value>Write a message</value>
+  </data>
+  <data name="finMiniInstruccionGanador" xml:space="preserve">
+    <value>Destiny has declared its verdict, and I am victorious.</value>
+  </data>
+  <data name="finMiniIntruccionPuntos" xml:space="preserve">
+    <value>self-esteem points</value>
   </data>
   <data name="finPartidaFelicitacionLeyenda" xml:space="preserve">
     <value>Congratulations to the player who has cunningly and cruelly driven everyone else to the brink of despair. Victory is yours!</value>
@@ -396,8 +417,35 @@
   <data name="mensajeExp19" xml:space="preserve">
     <value>You haven't selected a character yet. Please choose a character before proceeding</value>
   </data>
+  <data name="mensajeExp20" xml:space="preserve">
+    <value>You can only draw up to 7 cards.</value>
+  </data>
+  <data name="mensajeExp21" xml:space="preserve">
+    <value>There are no more cards in the deck.</value>
+  </data>
   <data name="mensajeExp22" xml:space="preserve">
     <value>There was a problem with the server. Please check your network connection and try again.</value>
+  </data>
+  <data name="mensajeExp34" xml:space="preserve">
+    <value>The room is full at this time. Please try again later.</value>
+  </data>
+  <data name="mensajeExp35" xml:space="preserve">
+    <value>Numbers and special characters are not allowed in the first and last name.</value>
+  </data>
+  <data name="mensajeExp36" xml:space="preserve">
+    <value>To create your username, start with a letter (uppercase or lowercase) and then you can add numbers and underscores if you wish.</value>
+  </data>
+  <data name="mensajeExp37" xml:space="preserve">
+    <value>For your security, create a strong password that combines uppercase and lowercase letters, numbers, and is different from your username. Avoid using common words or personal information. An example of a strong password would be 'My!Password2023'.</value>
+  </data>
+  <data name="mensajeExp38" xml:space="preserve">
+    <value>You've played the card on a player who doesn't have any cards left in their deck.</value>
+  </data>
+  <data name="mensajeExp39" xml:space="preserve">
+    <value>The match is in progress. Join the next one!</value>
+  </data>
+  <data name="mensajeExp40" xml:space="preserve">
+    <value>You must select a player to apply the penalty.</value>
   </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Cannot find the SQL server, please contact a system administrator and try again later.</value>
@@ -416,6 +464,9 @@
   </data>
   <data name="mensajeSolcitudEnviadaExito" xml:space="preserve">
     <value>Your friend request has been sent successfully.</value>
+  </data>
+  <data name="mensajeTipoPartidaNoPermitida" xml:space="preserve">
+    <value>It is not possible to create a public Mini Story room, it can only be private.</value>
   </data>
   <data name="mensajeTituloAdvertencia" xml:space="preserve">
     <value>Warning</value>

@@ -21,6 +21,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class InvitacionJugador : Window
     {
+        
         private String identificadorUsuario;
         private String codigoSala;
         private String correoAmigo;
@@ -44,7 +45,6 @@ namespace ClienteGloomApp
                 var nombresAmigos = listaAmigos.Select(a => a.jugadorAmigo.nombreUsuario).ToList();
 
                 lstListaAmigos.ItemsSource = nombresAmigos;
-                //lstListaAmigos.ItemsSource = listaAmigos;
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -59,7 +59,6 @@ namespace ClienteGloomApp
         {
             InstanceContext contexto = new InstanceContext(this);
             ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
-            //ServicioGloom.Amistad amistad = new ServicioGloom.Amistad();
             string correo = proxy.ObtenerCorreoAmigo(nombreUsuarioAmigo);
             return correo;
         }

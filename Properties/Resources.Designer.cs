@@ -88,6 +88,51 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Pierde un turno.
+        /// </summary>
+        public static string cartaPerderTurno {
+            get {
+                return ResourceManager.GetString("cartaPerderTurno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecicona un jugador para quitarle una carta.
+        /// </summary>
+        public static string cartaQuitarCarta {
+            get {
+                return ResourceManager.GetString("cartaQuitarCarta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Roba una carta.
+        /// </summary>
+        public static string cartaRobarCarta1 {
+            get {
+                return ResourceManager.GetString("cartaRobarCarta1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Roba dos cartas.
+        /// </summary>
+        public static string cartaRobarCarta2 {
+            get {
+                return ResourceManager.GetString("cartaRobarCarta2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hasta que la muerte nos separe.
+        /// </summary>
+        public static string cartaSaltarJugador {
+            get {
+                return ResourceManager.GetString("cartaSaltarJugador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear sala.
         /// </summary>
         public static string crearPartidaBtnCrearSala {
@@ -156,6 +201,24 @@ namespace ClienteGloomApp.Properties {
         public static string escribirMensajeInstrucción {
             get {
                 return ResourceManager.GetString("escribirMensajeInstrucción", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La voz del destino ha hablado y yo he respondido, he ganado.
+        /// </summary>
+        public static string finMiniInstruccionGanador {
+            get {
+                return ResourceManager.GetString("finMiniInstruccionGanador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a de puntos de autoestima.
+        /// </summary>
+        public static string finMiniIntruccionPuntos {
+            get {
+                return ResourceManager.GetString("finMiniIntruccionPuntos", resourceCulture);
             }
         }
         
@@ -898,11 +961,92 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No puede agarrar más de 7 cartas.
+        /// </summary>
+        public static string mensajeExp20 {
+            get {
+                return ResourceManager.GetString("mensajeExp20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No quedan más cartas en el mazo..
+        /// </summary>
+        public static string mensajeExp21 {
+            get {
+                return ResourceManager.GetString("mensajeExp21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Se produjo un problema con el servidor. Intente nuevamente más tarde..
         /// </summary>
         public static string mensajeExp22 {
             get {
                 return ResourceManager.GetString("mensajeExp22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La sala ya está llena, no puede ingresar.
+        /// </summary>
+        public static string mensajeExp34 {
+            get {
+                return ResourceManager.GetString("mensajeExp34", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre Incorrecto.
+        /// </summary>
+        public static string mensajeExp35 {
+            get {
+                return ResourceManager.GetString("mensajeExp35", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de usuario incorrecto.
+        /// </summary>
+        public static string mensajeExp36 {
+            get {
+                return ResourceManager.GetString("mensajeExp36", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No cumple con el formato la contraseña.
+        /// </summary>
+        public static string mensajeExp37 {
+            get {
+                return ResourceManager.GetString("mensajeExp37", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El jugador ya no tiene cartas para quitar.
+        /// </summary>
+        public static string mensajeExp38 {
+            get {
+                return ResourceManager.GetString("mensajeExp38", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La partida está en progreso. ¡Únete a la siguiente!.
+        /// </summary>
+        public static string mensajeExp39 {
+            get {
+                return ResourceManager.GetString("mensajeExp39", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe seleccionar un jugador para aplicar el castigo.
+        /// </summary>
+        public static string mensajeExp40 {
+            get {
+                return ResourceManager.GetString("mensajeExp40", resourceCulture);
             }
         }
         
@@ -957,6 +1101,15 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeSolcitudEnviadaExito {
             get {
                 return ResourceManager.GetString("mensajeSolcitudEnviadaExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No es posible crear una sala Mini historia pública, sólo puede ser privada..
+        /// </summary>
+        public static string mensajeTipoPartidaNoPermitida {
+            get {
+                return ResourceManager.GetString("mensajeTipoPartidaNoPermitida", resourceCulture);
             }
         }
         

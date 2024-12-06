@@ -23,7 +23,7 @@
             </Button.Background>
         </Button>
         <Label x:Name="lblSala" Content="{x:Static p:Resources.salaInstruccion}" HorizontalAlignment="Left" Margin="56,24,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
-        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.globalInvitarJugadores}" HorizontalAlignment="Left" Margin="83,109,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="BtnInvitarJugadores_Click">
+        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.globalInvitarJugadores}" HorizontalAlignment="Left" Margin="83,109,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="BtnInvitarJugadores_Click" Visibility="Collapsed">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -45,27 +45,27 @@
             <StackPanel Orientation="Horizontal" Width="610">
                 <Button x:Name="btnOres" Height="80" Width="90" BorderBrush="{x:Null}" Margin="00,0" Click="BtnOres_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="/Imagenes/PerfilCorazon.png"/>
+                        <ImageBrush ImageSource="Imagenes/EscudoOres.jpg"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="btnCorbat" Height="80" Width="90" BorderBrush="{x:Null}" Margin="05,0" Click="BtnCorbat_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="/Imagenes/PerfilDiamante.png"/>
+                        <ImageBrush ImageSource="Imagenes/EscudoCorbat.jpg"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="btnGarlo" Height="80" Width="90" BorderBrush="{x:Null}" Margin="05,0" Click="BtnGarlo_Click"  >
                     <Button.Background>
-                        <ImageBrush ImageSource="/Imagenes/PerfilCastillo.png"/>
+                        <ImageBrush ImageSource="Imagenes/EscudoGarlo.jpg"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="btnRamfez" Height="80" Width="90" BorderBrush="{x:Null}" Margin="05,0" Click="BtnRamfez_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="/Imagenes/PerfilCalavera.png"/>
+                        <ImageBrush ImageSource="Imagenes/EscudoRamfez.jpg"/>
                     </Button.Background>
                 </Button>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="txtDescripcionFamilia" Margin="630,392,465,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="157" />
+        <TextBox x:Name="txtDescripcionFamilia" Margin="630,392,465,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="157" IsReadOnly="True"/>
         <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.globalEmpezar}" HorizontalAlignment="Left" Margin="1297,679,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="BtnEmpezar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -78,10 +78,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="txtJugador1" HorizontalAlignment="Left" Margin="145,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="35" />
-        <TextBox x:Name="txtJugador2" HorizontalAlignment="Left" Margin="145,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="35"/>
-        <TextBox x:Name="txtJugador3" HorizontalAlignment="Left" Margin="145,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="34"/>
-        <TextBox x:Name="txtJugador4" HorizontalAlignment="Left" Margin="145,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="34"/>
+        <TextBox x:Name="txtJugador1" HorizontalAlignment="Left" Margin="145,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="35" IsEnabled="False"/>
+        <TextBox x:Name="txtJugador2" HorizontalAlignment="Left" Margin="145,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="35" IsEnabled="False"/>
+        <TextBox x:Name="txtJugador3" HorizontalAlignment="Left" Margin="145,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="34" IsEnabled="False"/>
+        <TextBox x:Name="txtJugador4" HorizontalAlignment="Left" Margin="145,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="34" IsEnabled="False"/>
         <Label x:Name="lblnombreUsuario" HorizontalAlignment="Left" Margin="145,706,0,0" VerticalAlignment="Top"/>
 
     </Grid>

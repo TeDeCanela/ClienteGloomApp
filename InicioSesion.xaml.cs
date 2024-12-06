@@ -21,6 +21,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class InicioSesion : Window
     {
+        ValidacionCampos validar = new ValidacionCampos();
         public InicioSesion()
         {
             InitializeComponent();
@@ -58,12 +59,10 @@ namespace ClienteGloomApp
             ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
-
-            jugador.nombreUsuario = txtBoxNombre.Text;
-            jugador.contraseña = passwordBox.Password;
-
             try
             {
+                jugador.nombreUsuario = txtBoxNombre.Text;//validar.VerificarNombreUsuario(txtBoxNombre.Text);
+                jugador.contraseña = passwordBox.Password;//validar.VerificarContrasena(passwordBox.Password);
                 int resultado = proxy.AutenticarJugador(jugador);
                 if (resultado == 1)
                 {
@@ -71,6 +70,10 @@ namespace ClienteGloomApp
                     nuevaVentana.Show();
                     this.Close();
                 }
+            }
+            catch (ArgumentException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -93,7 +96,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contexJugador = new InstanceContext(this);
 
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            /*ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             try
             {
@@ -106,7 +109,7 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
+            }*/
         }
     }
 }

@@ -32,32 +32,32 @@ namespace ClienteGloomApp
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            //ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
             //ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
             try
             {
-                jugador.nombreUsuario = txtBoxNombreUsuario.Text;
-                jugador.nombre = txtBoxNombre.Text;
-                jugador.apellidos = txtBoxApellidos.Text;
+                jugador.nombreUsuario = validar.VerificarNombreUsuario(txtBoxNombreUsuario.Text);
+                jugador.nombre = validar.VerificarNombreYApellidos(txtBoxNombre.Text);
+                jugador.apellidos = validar.VerificarNombreYApellidos(txtBoxApellidos.Text);
                 jugador.correo = validar.VerificarCorreo(txtBoxCorreo.Text);
-                jugador.contraseña = pwdContrasena.Password;
+                jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
                 jugador.tipo = "JugadorRegistrado";
                 jugador.icono= validar.VerificarInconoSeleccionado(iconoSeleccionado);
 
-                int resulatdoIperacion = proxy.AgregarJugador(jugador);
+                /*int resulatdoIperacion = proxy.AgregarJugador(jugador);
 
                 if (resulatdoIperacion == 1)
                 {
                     MessageBox.Show(Properties.Resources.mensajeRegistroJugadorExito, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCampos();
-                }
+                }*/
             }
             catch (ArgumentException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message.ToString(), ex.Message.ToString());
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -72,6 +72,17 @@ namespace ClienteGloomApp
             txtBoxApellidos.Text = string.Empty;
             txtBoxCorreo.Text = string.Empty;
             pwdContrasena.Password = string.Empty;
+            iconoSeleccionado = "sin incono";
+
+            foreach (var conjuntoBotones in panelbotones.Children)
+            {
+                if (conjuntoBotones is Button boton)
+                {
+                    boton.BorderBrush = null;
+                    boton.BorderThickness = new Thickness(1);
+
+                }
+            }
         }
 
         private void btnPerfilCalavera_Click(object sender, RoutedEventArgs e)
@@ -155,11 +166,6 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
-        }
-
-        public void EnviarTurno(string nombreDelUsusarioEnTurno)
-        {
-            throw new NotImplementedException();
         }
     }
 

@@ -23,23 +23,26 @@ namespace ClienteGloomApp
     public partial class SalaNormal : Window, ISalaCallback, IServicioJuegoTableroCallback
     {
         ServicioGloom.Sala salaNormal = new ServicioGloom.Sala();
-        //private String identificadorUsuario;
-        //private String idSalaNormal;
         bool familiaSeleccionada = false;
         public SalaNormal(String nombreUsuario, Sala sala)
         {
+            
+
             InitializeComponent();
             this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
             lblnombreUsuario.Content = nombreUsuario;
             salaNormal = sala;
 
-            
+            if (sala.tipoPartida == "Privada")
+            {
+                btnInvitarJugadores.Visibility = Visibility.Visible;
+            }
 
             try
             {
                 ConectarConSala();
                 ActualizarNumeroJugadores();
-                FamiliaSeleccionadas();
+                PonerFamiliasSeleccionadas();
 
                 if (!ValidarAdministrador())
                 {
@@ -62,64 +65,29 @@ namespace ClienteGloomApp
         {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            proxy.ConectarConSala(lblnombreUsuario.Content.ToString());
+            proxy.ConectarConSala(salaNormal.idSala, lblnombreUsuario.Content.ToString());
         }
 
         public void ActualizarNumeroJugadores()
         {
-            try
-            {
-                InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-                proxy.ConectarConSala(lblnombreUsuario.Content.ToString());
-                var listaJugadores = proxy.ObtenerJugadoresConectados(lblnombreUsuario.Content.ToString());
-                txtJugador1.Text = listaJugadores.Count() > 0 ? listaJugadores[0] : string.Empty;
-                txtJugador2.Text = listaJugadores.Count() > 1 ? listaJugadores[1] : string.Empty;
-                txtJugador3.Text = listaJugadores.Count() > 2 ? listaJugadores[2] : string.Empty;
-                txtJugador4.Text = listaJugadores.Count() > 3 ? listaJugadores[3] : string.Empty;
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
 
-
-        }
-
-        private void FamiliaSeleccionadas()
-        {
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
-            List<string> familias = proxy.ObtenerFamiliaSeleccionada(salaNormal.idSala).ToList();
+            var listaJugadores = proxy.ObtenerJugadoresConectados(salaNormal.idSala);
+            txtJugador1.Text = listaJugadores.Count() > 0 ? listaJugadores[0] : string.Empty;
+            txtJugador2.Text = listaJugadores.Count() > 1 ? listaJugadores[1] : string.Empty;
+            txtJugador3.Text = listaJugadores.Count() > 2 ? listaJugadores[2] : string.Empty;
+            txtJugador4.Text = listaJugadores.Count() > 3 ? listaJugadores[3] : string.Empty;
 
-            foreach (var familia in familias)
-            {
-                switch (familia)
-                {
-                    case "Ores":
-                        btnOres.BorderBrush = Brushes.Red;
-                        btnOres.BorderThickness = new Thickness(2);
-                        break;
-                    case "Corbat":
-                        btnCorbat.BorderBrush = Brushes.Fuchsia;
-                        btnCorbat.BorderThickness = new Thickness(2);
-                        break;
-                    case "Garlo":
-                        btnGarlo.BorderBrush = Brushes.Green;
-                        btnGarlo.BorderThickness = new Thickness(2);
-                        break;
-                    case "Ramfez":
-                        btnRamfez.BorderBrush = Brushes.Blue;
-                        btnRamfez.BorderThickness = new Thickness(2);
-                        break;
-                }
-            }
+
+
         }
 
         private void BtnOres_Click(object sender, RoutedEventArgs e)
         {
             txtDescripcionFamilia.Text = Properties.Resources.salaDescripcionOres;
             IngresarSeleccionFamilia("Ores");
+
         }
 
         private void BtnCorbat_Click(object sender, RoutedEventArgs e)
@@ -144,48 +112,28 @@ namespace ClienteGloomApp
         {
             try
             {
-                Console.WriteLine($"Estado de 'familiaSeleccionada' antes de la validación: {familiaSeleccionada}");
                 ValidarSeleccionFamilia();
-
-                Console.WriteLine("Selección de familia validada correctamente.");
-
                 IngresarJugadorEnTablero();
 
                 if (ValidarAdministrador())
                 {
-                    Console.WriteLine("El usuario es el administrador, procediendo con la validación de familias...");
-
-                    // Instanciar el proxy del servicio
                     InstanceContext contexto = new InstanceContext(this);
                     ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
 
-                    // Validar si todos los jugadores han seleccionado una familia
                     proxy.ValidarFamiliaSeleccionada(salaNormal.noJugadores, salaNormal.idSala);
-
                     proxy.EmpezarPartida(salaNormal.idSala);
 
-                    // Si la validación es exitosa, proceder a iniciar la partida
-                    //InstanceContext contextoTablero = new InstanceContext(this);
-                    /*ServicioGloom.ServicioJuegoTableroClient proxyTablero = new ServicioGloom.ServicioJuegoTableroClient(contexto);
-                    proxyTablero.IniciarPartidaPorAdministrador(lblnombreUsuario.Content.ToString(), salaNormal.idSala, salaNormal.noJugadores);
-                    List<Carta> cartasSobrantes = proxyTablero.ObtenerCartasSobrantes().ToList();*/
-
-
-                    // Cambiar a la ventana PartidaNormal
-                    PartidaNormal ventanaPartida = new PartidaNormal(lblnombreUsuario.Content.ToString(), salaNormal);
-                    ventanaPartida.Show();
-                    this.Close();
                 }
+                btnEmpezar.BorderBrush = Brushes.Green;
+                btnEmpezar.BorderThickness = new Thickness(4);
 
             }
             catch (InvalidOperationException ex)
             {
-                Console.WriteLine($"Validación fallida: {ex.Message}");
-                MessageBox.Show("No puede dar clic al botón 'Listo' si no ha seleccionado una familia.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Properties.Resources.mensajeExp19, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);//cambiarlo
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                Console.WriteLine($"Excepción de servicio: {ex.Detail.mensaje}");
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
@@ -195,7 +143,6 @@ namespace ClienteGloomApp
         {
             if (!familiaSeleccionada)
             {
-                Console.WriteLine("Validación fallida: 'familiaSeleccionada' es false.");
                 throw new InvalidOperationException("31");
             }
         }
@@ -203,9 +150,9 @@ namespace ClienteGloomApp
         private void IngresarJugadorEnTablero()
         {
             InstanceContext contextoSala = new InstanceContext(this);
-            ServicioGloom.ServicioJuegoTableroClient proxyTablero = new ServicioGloom.ServicioJuegoTableroClient(contextoSala);
+            ServicioGloom.SalaClient proxySala = new ServicioGloom.SalaClient(contextoSala);
 
-            proxyTablero.IngresarJugadorAJuego(lblnombreUsuario.Content.ToString(), salaNormal.idSala, salaNormal.noJugadores);
+            proxySala.IngresarJugadorAJuego(lblnombreUsuario.Content.ToString(), salaNormal.idSala, salaNormal.noJugadores);
         }
 
         private void BtnInvitarJugadores_Click(object sender, RoutedEventArgs e)
@@ -218,73 +165,25 @@ namespace ClienteGloomApp
         {
             try
             {
-                //DeshabilitarBotonFamilia(familia);
-                // Notificar al servidor la nueva selección
+
+                familiaSeleccionada = true;
                 InstanceContext contextoSala = new InstanceContext(this);
                 ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
 
                 proxy.SeleccionarFamilia(lblnombreUsuario.Content.ToString(), familia, salaNormal.idSala);
 
-                familiaSeleccionada = true;
-
-
-                // Actualizar visualmente la selección en el cliente
-
-                Console.WriteLine($"Familia seleccionada por {lblnombreUsuario.Content} es {familia}, estado de familiaSeleccionada: {familiaSeleccionada}");
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
+
+            btnEmpezar.BorderBrush = Brushes.Red;
+            btnEmpezar.BorderThickness = new Thickness(4);
         }
 
 
-        private void ActivarTodosLosBotones()
-        {
-            btnOres.IsEnabled = true;
-            btnCorbat.IsEnabled = true;
-            btnGarlo.IsEnabled = true;
-            btnRamfez.IsEnabled = true;
-        }
 
-
-        private void ActivarBotonFamilia(string familia)
-        {
-            switch (familia)
-            {
-                case "Ores":
-                    btnOres.IsEnabled = true;
-                    break;
-                case "Corbat":
-                    btnCorbat.IsEnabled = true;
-                    break;
-                case "Garlo":
-                    btnGarlo.IsEnabled = true;
-                    break;
-                case "Ramfez":
-                    btnRamfez.IsEnabled = true;
-                    break;
-            }
-        }
-
-        private void DeshabilitarBotonFamilia(string familia)
-        {
-            switch (familia)
-            {
-                case "Ores":
-                    btnOres.IsEnabled = false;
-                    break;
-                case "Corbat":
-                    btnCorbat.IsEnabled = false;
-                    break;
-                case "Garlo":
-                    btnGarlo.IsEnabled = false;
-                    break;
-                case "Ramfez":
-                    btnRamfez.IsEnabled = false;
-                    break;
-            }
-        }
 
 
 
@@ -294,23 +193,25 @@ namespace ClienteGloomApp
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
             if (ValidarAdministrador())
             {
-                // Llama al método del servicio para que el administrador salga de la sala
-                proxy.SalirDeSala(salaNormal.idSala, lblnombreUsuario.Content.ToString());
+                proxy.SacarATodosLosJugadoresDeSala(salaNormal.idSala);
                 MessageBox.Show("Has salido de la sala y esta ha sido eliminada.", "Sala eliminada", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                proxy.SacarDeSala(lblnombreUsuario.Content.ToString());
+                proxy.SacarDeSala(salaNormal.idSala, lblnombreUsuario.Content.ToString());
+                Inicio regresoInicio = new Inicio(lblnombreUsuario.Content.ToString());
+                regresoInicio.Show();
+                this.Close();
             }
-            Inicio nuevaVentana = new Inicio(lblnombreUsuario.Content.ToString());
-            nuevaVentana.Show();
-            this.Close();
+
         }
 
 
-        void ISalaCallback.EmpezarJuego()
+        public void EmpezarJuego()
         {
-
+            PartidaNormal nuevaVentana = new PartidaNormal(lblnombreUsuario.Content.ToString(), salaNormal);
+            nuevaVentana.Show();
+            this.Close();
         }
 
         void ISalaCallback.ActualizarNumeroJugadores()
@@ -323,7 +224,7 @@ namespace ClienteGloomApp
 
         void ISalaCallback.ActualizarImagenPersonaje(string personaje, string personajeAnterior)
         {
-            
+
         }
 
 
@@ -332,20 +233,65 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
+        void ISalaCallback.ActualizarSeleccionFamilia(string familia, string familiaAnterior)
         {
-            Dispatcher.Invoke(() =>
+            CambiarFamiliaAnterior(familiaAnterior);
+            switch (familia)
             {
-                Console.WriteLine($"ActualizarSeleccionFamilia callback recibido: {nombreUsuario} ha seleccionado {nombreFamilia}");
-                DeshabilitarBotonFamilia(nombreFamilia);
-            });
+                case "Ores":
+                    btnOres.BorderBrush = Brushes.Red;
+                    btnOres.BorderThickness = new Thickness(2);
+                    break;
+                case "Corbat":
+                    btnCorbat.BorderBrush = Brushes.Fuchsia;
+                    btnCorbat.BorderThickness = new Thickness(2);
+                    break;
+                case "Garlo":
+                    btnGarlo.BorderBrush = Brushes.Green;
+                    btnGarlo.BorderThickness = new Thickness(2);
+                    break;
+                case "Ramfez":
+                    btnRamfez.BorderBrush = Brushes.Blue;
+                    btnRamfez.BorderThickness = new Thickness(2);
+                    break;
+            }
         }
 
         public void CambiarFamiliaAnterior(string familiaAnterior)
         {
-            if (!familiaAnterior.Equals("Sin familia"))
+            if (!familiaAnterior.Equals("sin familia"))
             {
                 switch (familiaAnterior)
+                {
+                    case "Ores":
+                        btnOres.BorderBrush = null;
+                        btnOres.BorderThickness = new Thickness(0);
+                        break;
+                    case "Corbat":
+                        btnCorbat.BorderBrush = null;
+                        btnCorbat.BorderThickness = new Thickness(0);
+                        break;
+                    case "Garlo":
+                        btnGarlo.BorderBrush = null;
+                        btnGarlo.BorderThickness = new Thickness(0);
+                        break;
+                    case "Ramfez":
+                        btnRamfez.BorderBrush = null;
+                        btnRamfez.BorderThickness = new Thickness(0);
+                        break;
+                }
+            }
+        }
+
+        private void PonerFamiliasSeleccionadas()
+        {
+            InstanceContext contextoSala = new InstanceContext(this);
+            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+            List<string> familias = proxy.ObtenerFamiliaSeleccionada(salaNormal.idSala).ToList();
+
+            foreach (string familia in familias)
+            {
+                switch (familia)
                 {
                     case "Ores":
                         btnOres.BorderBrush = Brushes.Red;
@@ -365,8 +311,9 @@ namespace ClienteGloomApp
                         break;
                 }
             }
-        }
 
+
+        }
         void IServicioJuegoTableroCallback.EnviarTurno(string nombreDelUsusarioEnTurno)
         {
             throw new NotImplementedException();
@@ -404,12 +351,24 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        void IServicioJuegoTableroCallback.NotificarResultadoExpulsion(string jugadorExpulsado, bool expulsado)
+        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActivas)
         {
             throw new NotImplementedException();
         }
 
-        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActivas)
+        public void SacarDeSalaATodosJugadores()
+        {
+            Inicio nuevaVentana = new Inicio(lblnombreUsuario.Content.ToString());
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        void IServicioJuegoTableroCallback.RecibirExpulsion(string jugadorObjetivo)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarInterfazExpulsion(string jugadorExpulsado)
         {
             throw new NotImplementedException();
         }

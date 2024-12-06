@@ -9,6 +9,7 @@ namespace ClienteGloomApp
 {
     public partial class BusquedaPartida : Window, ISalaCallback
     {
+        
         private SalaClient servicio;
         private string identificadorUsuario;
         private Sala salaSeleccionada;
@@ -22,7 +23,6 @@ namespace ClienteGloomApp
             salasActivas = new ObservableCollection<Sala>();
             tblSalas.ItemsSource = salasActivas;
 
-            // Asegúrate de que la clase implemente ISalaCallback y pasa InstanceContext con "this"
             InstanceContext context = new InstanceContext(this);
             servicio = new SalaClient(context);
 
@@ -47,9 +47,9 @@ namespace ClienteGloomApp
                     salasActivas.Add(sala);
                 }
             }
-            catch (Exception ex)
+            catch (FaultException<ManejadorExcepciones> ex)
             {
-                MessageBox.Show($"Error al cargar las salas activas: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
 
@@ -76,9 +76,9 @@ namespace ClienteGloomApp
                     panelCodigoAcceso.Visibility = Visibility.Visible;
                 }
             }
-            catch (Exception ex)
+            catch (FaultException<ManejadorExcepciones> ex)
             {
-                MessageBox.Show($"Error al unirse a la sala: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
 
@@ -108,9 +108,9 @@ namespace ClienteGloomApp
                     AbrirVentanaSalaMiniHistoria(identificadorUsuario, salaSeleccionada);
                 }
             }
-            catch (Exception ex)
+            catch (FaultException<ManejadorExcepciones> ex)
             {
-                MessageBox.Show($"Error al unirse a la sala: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
 
@@ -128,10 +128,8 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-        // Implementación de los métodos de ISalaCallback
         public void ActualizarSalasActivas(List<Sala> salasActualizadas)
         {
-            // Actualiza las salas activas desde el callback
             this.salasActivas.Clear();
             foreach (var sala in salasActualizadas)
             {
@@ -181,6 +179,14 @@ namespace ClienteGloomApp
             nuevaVentana.Show();
             this.Close();
         }
+
+        
+
+        void ISalaCallback.SacarDeSalaATodosJugadores()
+        {
+            throw new NotImplementedException();
+        }
+
 
         void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
         {

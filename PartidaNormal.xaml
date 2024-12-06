@@ -10,6 +10,7 @@
     <Grid>
         <Image Source="Imagenes/mesaTablero.jpg" Width="1549" Height="1045" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="-34,-89,0,0" Opacity=".8"/>
 
+        <Label x:Name="lblNumeroSala" HorizontalAlignment="Left" Margin="22,29,0,0" VerticalAlignment="Top"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,634,0,0" VerticalAlignment="Top">
             <Label x:Name="lblJugador1" Content="Jugador 1"/>
             <Image x:Name="imgPersonaje1" Height="140" Width="140"/>
@@ -25,14 +26,14 @@
             <Image x:Name="imgPersonaje8" Height="140" Width="140"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top">
-            <Label x:Name="lblJugador3" Content="Jugador 3"/>
+            <Label x:Name="lblJugador3" Content=""/>
             <Image x:Name="imgPersonaje9" Height="140" Width="140"/>
             <Image x:Name="imgPersonaje10" Height="140" Width="140"/>
             <Image x:Name="imgPersonaje11" Height="140" Width="140"/>
             <Image x:Name="imgPersonaje12" Height="140" Width="140"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="1323,164,0,0" VerticalAlignment="Top">
-            <Label x:Name="lblJugador4" Content="Jugador 4"/>
+            <Label x:Name="lblJugador4" Content=""/>
             <Image x:Name="imgPersonaje13" Height="140" Width="140"/>
             <Image x:Name="imgPersonaje14" Height="140" Width="140"/>
             <Image x:Name="imgPersonaje15" Height="140" Width="140"/>
@@ -65,7 +66,7 @@
             HorizontalAlignment="Right" VerticalAlignment="Top" 
             Margin="0,109,40,0" Width="175" Height="50" 
             Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" 
-            FontWeight="Bold" Click="btnIniciarVotacion_Click" >
+            FontWeight="Bold" Click="BtnIniciarVotacion_Click" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -78,14 +79,20 @@
             </Button.Template>
         </Button>
 
-        <StackPanel x:Name="panExpulsion" Visibility="Collapsed" Background="LightGray" Margin="10" VerticalAlignment="Top">
-            <TextBlock Text="Selecciona un jugador para expulsar:" FontWeight="Bold" Margin="5"/>
-            <ListBox x:Name="lbxJugadoresParaExpulsion" Margin="5" Height="150"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-                <Button x:Name="btnConfirmarExpulsion" Content="Confirmar" Width="80" Margin="5" Click="BtnConfirmarExpulsion_Click"/>
-                <Button x:Name="btnCancelarExpulsion" Content="Cancelar" Width="80" Margin="5" Click="BtnCancelarExpulsion_Click"/>
-            </StackPanel>
-        </StackPanel>
+        <Button x:Name="btnCartaBonus" HorizontalAlignment="Left" Margin="838,291,0,0" VerticalAlignment="Top" Height="136" Width="134" Click="BtnCartaBonus_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/fondoCartaBonus.jpg"/>
+            </Button.Background>
+        </Button>
+
+        <Rectangle x:Name="decCartaBonus" HorizontalAlignment="Left" Height="136" Margin="838,291,0,0"
+Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        
 
         <StackPanel x:Name="panCarta"  Visibility="Collapsed" Background="#80000000" Margin="856,221,330,162">
             <Button x:Name="btnCerrar"  Content="" Width="45" Margin="10" HorizontalAlignment="Right" Height="38" BorderBrush="{x:Null}" Click="Cerrar_Click">
@@ -99,6 +106,63 @@
                 <Button x:Name="btnUsar" Content="Usar falta" Width="100" Click="BtnUsar_Click"/>
             </StackPanel>
         </StackPanel>
+        <Button x:Name="btnMazoCartas" HorizontalAlignment="Left" Margin="474,227,0,0" VerticalAlignment="Top" Height="230" Width="158" Click="BtnMazoCartas_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/fondoCartaPrincipal.jpg"/>
+            </Button.Background>
+        </Button>
+
+        <Rectangle x:Name="decCarta" HorizontalAlignment="Left" Height="230" Margin="474,227,0,0"
+            Stroke="Black" VerticalAlignment="Top" Width="158" Visibility="Visible">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <StackPanel x:Name="panCartaBonus" Visibility="Collapsed" Background="#80000000" Margin="538,210,516,209">
+            <Button x:Name="btnCerrarCartaBonus"  Content="" Width="45" Margin="10" HorizontalAlignment="Right" Height="38" BorderBrush="{x:Null}" Click="CerrarCartaBonus_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+                </Button.Background>
+            </Button>
+            <Image x:Name="imgCartaBonus" Height="171" Width="172"/>
+            <Label x:Name="lblCarta" FontWeight="Bold" Foreground="White" Width="394"/>
+
+        </StackPanel>
+
+       
+
+        <StackPanel x:Name="panSeleccionObjetivos" Visibility="Collapsed" Background="LightGray" Margin="10" VerticalAlignment="Top">
+            <Label x:Name="lblSeleccionUsuario" FontWeight="Bold" Margin="5" />
+            <StackPanel x:Name="panUsuariosObjetivo" Orientation="Vertical" Margin="10">
+                <!-- Botones dinámicos de usuarios se agregarán aquí -->
+            </StackPanel>
+            <Label x:Name="lblSeleccionPersonaje" FontWeight="Bold" Margin="5" />
+            <StackPanel x:Name="panPersonajesObjetivo" Orientation="Vertical" Margin="10">
+                <!-- Botones dinámicos de personajes se agregarán aquí -->
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                <Button x:Name="btnConfirmarSeleccion" Content="Confirmar" Width="80" Margin="5" Click="BtnConfirmarSeleccion_Click" />
+                <Button x:Name="btnCancelarSeleccion" Content="Cancelar" Width="80" Margin="5" Click="BtnCancelarSeleccion_Click" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="panCargando" Visibility="Collapsed" Background="Gray" Opacity="0.8">
+            <TextBlock Text="Cargando datos..." FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel x:Name="panExpulsion" Visibility="Collapsed" Background="LightGray" Margin="10" VerticalAlignment="Top">
+            <TextBlock Text="Selecciona un jugador para expulsar:" FontWeight="Bold" Margin="5"/>
+            <ListBox x:Name="lbxJugadoresParaExpulsion" Margin="5" Height="150"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <Button x:Name="btnConfirmarExpulsion" Content="Confirmar" Width="80" Margin="5" Click="BtnConfirmarExpulsion_Click"/>
+                <Button x:Name="btnCancelarExpulsion" Content="Cancelar" Width="80" Margin="5" Click="BtnCancelarExpulsion_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!--<StackPanel x:Name="panUsuariosBonus" Visibility="Visible" Orientation="Vertical" Margin="10">
+             Los botones de los jugadores serán añadidos dinámicamente 
+        </StackPanel>-->
 
 
     </Grid>

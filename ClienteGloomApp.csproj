@@ -86,6 +86,12 @@
     <Compile Include="CrearPartida.xaml.cs">
       <DependentUpon>CrearPartida.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FinPartidaMini.xaml.cs">
+      <DependentUpon>FinPartidaMini.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FinPartidaNormal.xaml.cs">
+      <DependentUpon>FinPartidaNormal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HistorialPartidas.xaml.cs">
       <DependentUpon>HistorialPartidas.xaml</DependentUpon>
     </Compile>
@@ -139,6 +145,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CrearPartida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinPartidaMini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinPartidaNormal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -474,6 +488,96 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\castilloBusqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Accidente1.png" />
+    <Resource Include="ImagenCarta\Accidente2.png" />
+    <Resource Include="ImagenCarta\Accidente3.png" />
+    <Resource Include="ImagenCarta\Accidente4.png" />
+    <Resource Include="ImagenCarta\Accidente5.png" />
+    <Resource Include="ImagenCarta\Accidente6.png" />
+    <Resource Include="ImagenCarta\Accidente7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Desamor1.png" />
+    <Resource Include="ImagenCarta\Desamor2.png" />
+    <Resource Include="ImagenCarta\Desamor3.png" />
+    <Resource Include="ImagenCarta\Desamor4.png" />
+    <Resource Include="ImagenCarta\Desgracia2.png" />
+    <Resource Include="ImagenCarta\Desgracia3.png" />
+    <Resource Include="ImagenCarta\Desgracia4.png" />
+    <Resource Include="ImagenCarta\Desgracia5.png" />
+    <Resource Include="ImagenCarta\Enfermedad1.png" />
+    <Resource Include="ImagenCarta\Enfermedad2.png" />
+    <Resource Include="ImagenCarta\Enfermedad3.png" />
+    <Resource Include="ImagenCarta\Enfermedad4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Desamor5.png" />
+    <Resource Include="ImagenCarta\Desamor6.png" />
+    <Resource Include="ImagenCarta\Desgracia6.png" />
+    <Resource Include="ImagenCarta\Desgracia7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Desgracia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Desamor7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Enfermedad5.png" />
+    <Resource Include="ImagenCarta\Enfermedad6.png" />
+    <Resource Include="ImagenCarta\Enfermedad7.png" />
+    <Resource Include="ImagenCarta\Escándalo1.png" />
+    <Resource Include="ImagenCarta\Escándalo2.png" />
+    <Resource Include="ImagenCarta\Escándalo3.png" />
+    <Resource Include="ImagenCarta\Escándalo4.png" />
+    <Resource Include="ImagenCarta\Escándalo5.png" />
+    <Resource Include="ImagenCarta\Escándalo7.png" />
+    <Resource Include="ImagenCarta\Fraude1.png" />
+    <Resource Include="ImagenCarta\Fraude2.png" />
+    <Resource Include="ImagenCarta\Fraude3.png" />
+    <Resource Include="ImagenCarta\Fraude4.png" />
+    <Resource Include="ImagenCarta\Fraude5.png" />
+    <Resource Include="ImagenCarta\Fraude6.png" />
+    <Resource Include="ImagenCarta\Fraude7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Escándalo6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Pérdida1.png" />
+    <Resource Include="ImagenCarta\Pérdida2.png" />
+    <Resource Include="ImagenCarta\Pérdida3.png" />
+    <Resource Include="ImagenCarta\Ruina2.png" />
+    <Resource Include="ImagenCarta\Ruina3.png" />
+    <Resource Include="ImagenCarta\Ruina4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Pérdida4.png" />
+    <Resource Include="ImagenCarta\Pérdida5.png" />
+    <Resource Include="ImagenCarta\Pérdida6.png" />
+    <Resource Include="ImagenCarta\Ruina5.png" />
+    <Resource Include="ImagenCarta\Ruina6.png" />
+    <Resource Include="ImagenCarta\Ruina7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Ruina1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\Pérdida7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\fondoCartaBonus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\RobarCarta1.png" />
+    <Resource Include="ImagenCarta\RobarCarta2.png" />
+    <Resource Include="ImagenCarta\SaltarJugador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagenCarta\PerderTurno.png" />
+    <Resource Include="ImagenCarta\QuitarCarta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

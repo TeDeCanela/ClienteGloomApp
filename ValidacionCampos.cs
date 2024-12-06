@@ -35,22 +35,55 @@ namespace ClienteGloomApp
             return icono;
         }
 
-        public string VerificarNombreUsario(string nombreUsuario)
+        public string VerificarNombreYApellidos(string nombre)
         {
-            string correoRegex = @"^[a-zA-Z0-9._-]{3,16}$";
+            string nombreRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{5,255}(?<! )$";
 
-            if (string.IsNullOrWhiteSpace(nombreUsuario))
+            if (string.IsNullOrWhiteSpace(nombre))
             {
-                throw new ArgumentException("11");
+                throw new ArgumentException("35");
             }
 
-            if (!Regex.IsMatch(nombreUsuario, correoRegex))
+            if (!Regex.IsMatch(nombre, nombreRegex))
             {
-                throw new ArgumentException("11");
+                throw new ArgumentException("35");
             }
 
-            return nombreUsuario;
+            return nombre;
         }
 
+        public string VerificarNombreUsuario(string nombre)
+        {
+            string nombreRegex = @"^(?! )(?!.* {2})[a-zA-Z0-9_ ]+(?<! )$";
+
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                throw new ArgumentException("36");
+            }
+
+            if (!Regex.IsMatch(nombre, nombreRegex))
+            {
+                throw new ArgumentException("36");
+            }
+
+            return nombre;
+        }
+
+        public string VerificarContrasena(string nombre)
+        {
+            string nombreRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,15}$";
+
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                throw new ArgumentException("37");
+            }
+
+            if (!Regex.IsMatch(nombre, nombreRegex))
+            {
+                throw new ArgumentException("37");
+            }
+
+            return nombre;
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,13 +20,12 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para CrearPartida.xaml
     /// </summary>
-    public partial class CrearPartida : Window, ISalaCallback
+    public partial class CrearPartida : Window, ISalaCallback, ICreacionPartidaCallback
     {
         private string identificadorUsuario;
-        private string tipoSalaSeleccionada; // Almacena si es "Normal" o "Mini historia"
-        private int numeroJugadoresSeleccionado; // Almacena el número de jugadores (2, 3 o 4)
+        private string tipoSalaSeleccionada; 
+        private int numeroJugadoresSeleccionado; 
         private string tipoPartidaSeleccionada;
-        //private string codigoSala;
         public CrearPartida(String nombreUsuario)
         {
             InitializeComponent();
@@ -41,38 +41,59 @@ namespace ClienteGloomApp
 
             ServicioGloom.Sala sala = new ServicioGloom.Sala();
 
-            sala.nombreSala = txtNombreSala.Text;
-            sala.tipoSala = tipoSalaSeleccionada;
-            sala.tipoPartida = tipoPartidaSeleccionada;
-            sala.noJugadores = numeroJugadoresSeleccionado;
-            sala.idAdministrador = identificadorUsuario;
-            sala.ganador = "Sin ganador";
-            sala.fecha = ObtenerFecha();
+            string nombrePartida = txtNombreSala.Text;
 
-            try
+            if (ContieneCaracteresEspeciales(nombrePartida))
             {
-                int resultadoOperacion = proxy.CrearPartida(sala);
-                if (resultadoOperacion == 1)
-                {
+                MessageBox.Show("El campo de texto contiene caracteres especiales no permitidos.");
+                txtNombreSala.Clear();
+            }
+            else
+            {
+                sala.nombreSala = txtNombreSala.Text;
+                sala.tipoSala = tipoSalaSeleccionada;
+                sala.tipoPartida = tipoPartidaSeleccionada;
+                sala.noJugadores = numeroJugadoresSeleccionado;
+                sala.idAdministrador = identificadorUsuario;
+                sala.ganador = "Sin ganador";
+                sala.fecha = ObtenerFecha();
 
-                    MessageBox.Show(Properties.Resources.mensajePartidaCreadaExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                    if(tipoSalaSeleccionada == "Mini historia")
+                try
+                {
+                    if (tipoSalaSeleccionada == "Mini historia" && tipoPartidaSeleccionada == "Pública")
                     {
-                        CambiarASalaMiniJuego();
-                        //var salaMiniJuego = proxy.BuscarSalaExistente();
+                        MessageBox.Show(Properties.Resources.mensajeTipoPartidaNoPermitida, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
-                    else{
-                        CambiarASalaNormal();
+                    else
+                    {
+                        int resultadoOperacion = proxy.CrearPartida(sala);
+                        if (resultadoOperacion == 1)
+                        {
+                            MessageBox.Show(Properties.Resources.mensajePartidaCreadaExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                            if (tipoSalaSeleccionada == "Mini historia")
+                            {
+                                CambiarASalaMiniJuego();
+                            }
+                            else
+                            {
+                                CambiarASalaNormal();
+                            }
+                        }
                     }
-                    
+                }
+                catch (FaultException<ManejadorExcepciones> ex)
+                {
+                    MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
                 }
             }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
+        }
 
 
+        private bool ContieneCaracteresEspeciales(string texto)
+        {
+            string patron = @"[@?#{\[\]""'¿-]";  
+
+            return Regex.IsMatch(texto, patron);
         }
 
         private string ObtenerFecha()
@@ -91,10 +112,11 @@ namespace ClienteGloomApp
             string codigoSalaNormal = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
 
             InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
 
             var salaNormal = proxy.BuscarSalaExistente(codigoSalaNormal, codigoSalaNormal);
 
+            
             SalaNormal sala = new SalaNormal(identificadorUsuario, salaNormal);
             sala.Show();
             this.Close();
@@ -105,10 +127,9 @@ namespace ClienteGloomApp
             string codigoSalaMini = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
 
             InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
 
             var salaMini = proxy.BuscarSalaExistente(codigoSalaMini, codigoSalaMini);
-            //string codigoSalaMini = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
             SalaMiniJuego sala = new SalaMiniJuego(identificadorUsuario, salaMini);
             sala.Show();
             this.Close();
@@ -118,7 +139,6 @@ namespace ClienteGloomApp
         {
             InstanceContext contexto = new InstanceContext(this);
             ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
-            //ServicioGloom.Amistad amistad = new ServicioGloom.Amistad();
             string codigo = proxy.ObtenerCodigoSala(usuarioAdminsitrador, nombreSala);
             return codigo;
         }
@@ -139,20 +159,6 @@ namespace ClienteGloomApp
             // Implementación del método
         }
 
-        //void ISalaCallback.ActualizarSalasActivas(List<Sala> salasActivas)
-        //{
-            // Implementación del método
-        //}
-
-        void ISalaCallback.ResultadoUnirseASala(string resultado, string mensaje, bool exito)
-        {
-            // Implementación del método
-        }
-
-        void ISalaCallback.ActualizarSalasActivas(ServicioGloom.Sala[] salasActivas)
-        {
-            throw new NotImplementedException();
-        }
 
         private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
@@ -161,10 +167,7 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
-        {
-            throw new NotImplementedException();
-        }
+ 
 
         private void BtnSalaNormal_Click(object sender, RoutedEventArgs e)
         {
@@ -199,6 +202,31 @@ namespace ClienteGloomApp
         private void BtnPartidaPrivada_Click(object sender, RoutedEventArgs e)
         {
             tipoPartidaSeleccionada = "Privada";
+        }
+
+        void ISalaCallback.SacarDeSalaATodosJugadores()
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActivas)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ICreacionPartidaCallback.NotificarPartidaCreada(string mensaje)
+        {
+            throw new NotImplementedException();
         }
     }
     

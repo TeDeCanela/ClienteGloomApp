@@ -8,14 +8,14 @@
         xmlns:p="clr-namespace:ClienteGloomApp.Properties"
         Title="Chat" Height="300" Width="600">
     <Grid>
-        
+
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/madera.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <ListBox x:Name="lstChat" Margin="20,36,20,120"/>
-        <TextBox x:Name="InputMensaje" HorizontalAlignment="Center" VerticalAlignment="Top" 
+        <TextBox x:Name="txtMensaje" HorizontalAlignment="Center" VerticalAlignment="Top" 
          Width="560" Height="30" TextWrapping="Wrap" Margin="0,189,0,0"/>
-        <Button x:Name="btnEnviar" Content="{x:Static p:Resources.registrarseBtnRegistrar}" HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Width="270" Height="30" Click="BtnRegistrar_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
+        <Button x:Name="btnEnviar" Content="{x:Static p:Resources.globalEnviar}" HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Width="270" Height="30" Click="BtnEnviar_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
