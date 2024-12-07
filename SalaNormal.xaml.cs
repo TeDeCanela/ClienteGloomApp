@@ -372,6 +372,11 @@ namespace ClienteGloomApp
         {
             throw new NotImplementedException();
         }
+
+        void IServicioJuegoTableroCallback.ActualizarJugadorMuerto(string jugadorMuerto)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

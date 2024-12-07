@@ -19,7 +19,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para FinPartidaNormal.xaml
     /// </summary>
-    public partial class FinPartidaNormal : Window, ICreacionPartidaCallback, IServicioJuegoTableroCallback
+    public partial class FinPartidaNormal : Window, IServicioJuegoTableroCallback
     {
         private string jugadorPropietario;
         private string identificadorSala;
@@ -81,11 +81,6 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        void ICreacionPartidaCallback.NotificarPartidaCreada(string mensaje)
-        {
-            throw new NotImplementedException();
-        }
-
 
         void IServicioJuegoTableroCallback.NotificarVotacionExpulsion(string jugadorPropuesto)
         {
@@ -130,6 +125,11 @@ namespace ClienteGloomApp
                 nuevaVentana.Show();
                 this.Close();
             
+        }
+
+        void IServicioJuegoTableroCallback.ActualizarJugadorMuerto(string jugadorMuerto)
+        {
+            throw new NotImplementedException();
         }
     }
 }

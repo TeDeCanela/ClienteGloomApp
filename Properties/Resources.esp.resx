@@ -598,4 +598,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
   </data>
+  <data name="finMiniComentarioGanador" xml:space="preserve">
+    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
+  </data>
 </root>

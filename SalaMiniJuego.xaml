@@ -32,7 +32,7 @@
         <TextBox x:Name="txtJugador4" HorizontalAlignment="Left" Margin="272,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontSize="20" Height="42" IsEnabled="False"/>
         <Image x:Name="imgJugador4" HorizontalAlignment="Left" Height="67" Margin="139,656,0,0" VerticalAlignment="Top" Width="68"/>
         <Label x:Name="lblNombreUsuarioRegistrado" Content="" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.miniInvitarJugadores}" HorizontalAlignment="Left" Margin="39,149,0,0" VerticalAlignment="Top" FontSize="20" Height="48" Width="200" Click="BtnInvitarJugadores_Click"/>
+        <Button x:Name="btnInvitarJugadores" Content="{x:Static p:Resources.miniInvitarJugadores}" HorizontalAlignment="Left" Margin="39,149,0,0" VerticalAlignment="Top" FontSize="20" Height="48" Width="200" />
         <Label x:Name="lblInstruccion" Content="{x:Static p:Resources.miniHistoriaNumeroSala}" HorizontalAlignment="Left" Margin="39,74,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
         <Label x:Name="lblInstruccionJugadores" Content="{x:Static p:Resources.miniJugadores}" HorizontalAlignment="Left" Margin="54,253,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
         <Image x:Name="imgFamilia" HorizontalAlignment="Left" Height="139" Margin="889,253,0,0" VerticalAlignment="Top" Width="130" Source="/Imagenes/EscudoGarlo.jpg"/>

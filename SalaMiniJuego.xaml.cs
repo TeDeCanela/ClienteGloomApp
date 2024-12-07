@@ -33,6 +33,8 @@ namespace ClienteGloomApp
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
             numeroDeSala = sala.idSala;
+            btnEmpezar.BorderBrush = Brushes.Red;
+            btnEmpezar.BorderThickness = new Thickness(4);
             try
             {
                 ConectarConSala();
@@ -284,25 +286,19 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActivas)
+        public void ActualizarSalasActivas(Sala[] salasActivas)
         {
             throw new NotImplementedException();
         }
 
-        void ISalaCallback.ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
+        public void ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
         {
             throw new NotImplementedException();
         }
 
-        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
+        void ISalaCallback.ActualizarSeleccionFamilia(string nombreFamilia, string nombreFamiliaAnterior)
         {
             throw new NotImplementedException();
-        }
-
-        private void BtnInvitarJugadores_Click(object sender, RoutedEventArgs e)
-        {
-            InvitacionJugador invitacionJugador = new InvitacionJugador(lblNombreUsuarioRegistrado.Content.ToString(), numeroDeSala);
-            invitacionJugador.Show();
         }
     }
 }

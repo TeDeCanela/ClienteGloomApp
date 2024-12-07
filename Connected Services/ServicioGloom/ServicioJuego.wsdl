@@ -475,6 +475,12 @@
   <wsdl:message name="ISala_ObtenerSalasActivasConEstado_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q18:ManejadorExcepciones" />
   </wsdl:message>
+  <wsdl:message name="ISala_SalirDeSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:SalirDeSala" />
+  </wsdl:message>
+  <wsdl:message name="ISala_SalirDeSala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SalirDeSalaResponse" />
+  </wsdl:message>
   <wsdl:message name="ISala_UnirseASalaPublicaNormal_InputMessage">
     <wsdl:part name="parameters" element="tns:UnirseASalaPublicaNormal" />
   </wsdl:message>
@@ -492,12 +498,6 @@
   </wsdl:message>
   <wsdl:message name="ISala_UnirseASalaPrivadaMiniHistoria_OutputMessage">
     <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaMiniHistoriaResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISala_SalirDeSala_InputMessage">
-    <wsdl:part name="parameters" element="tns:SalirDeSala" />
-  </wsdl:message>
-  <wsdl:message name="ISala_SalirDeSala_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SalirDeSalaResponse" />
   </wsdl:message>
   <wsdl:message name="ISala_ObtenerCodigoSala_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerCodigoSala" />
@@ -595,8 +595,8 @@
   <wsdl:message name="IServicioJuegoTablero_AgregarCastigo_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarCastigo" />
   </wsdl:message>
-  <wsdl:message name="IServicioJuegoTablero_TerminarPartidaMiniJuego_InputMessage">
-    <wsdl:part name="parameters" element="tns:TerminarPartidaMiniJuego" />
+  <wsdl:message name="IServicioJuegoTablero_MatarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:MatarJugador" />
   </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_AplicarModificadorPositivo_InputMessage">
     <wsdl:part name="parameters" element="tns:AplicarModificadorPositivo" />
@@ -652,6 +652,9 @@
   <wsdl:message name="IServicioJuegoTablero_EnviarGanador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EnviarGanador" />
   </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_ActualizarJugadorMuerto_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugadorMuerto" />
+  </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_NotificarVotacionExpulsion_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarVotacionExpulsion" />
   </wsdl:message>
@@ -688,9 +691,6 @@
   <wsdl:message name="IServicioCarta_ObtenerMazoRestante_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerMazoRestanteResponse" />
   </wsdl:message>
-  <wsdl:message name="IServicioCarta_NotificarActualizacion_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarActualizacion" />
-  </wsdl:message>
   <wsdl:message name="IServicioHistorialPartida_ObtenerDatosHistorial_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDatosHistorial" />
   </wsdl:message>
@@ -715,9 +715,6 @@
   <wsdl:message name="ICreacionPartida_ObtenerUsuariosYPersonajes_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerUsuariosYPersonajesResponse" />
   </wsdl:message>
-  <wsdl:message name="ICreacionPartida_ObtenerUsuariosYPersonajes_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q21:ManejadorExcepciones" />
-  </wsdl:message>
   <wsdl:message name="ICreacionPartida_BuscarSalaExistente_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarSalaExistente" />
   </wsdl:message>
@@ -725,7 +722,7 @@
     <wsdl:part name="parameters" element="tns:BuscarSalaExistenteResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_BuscarSalaExistente_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q22:ManejadorExcepciones" />
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q21:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarCantidadJugadoresEnSala_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidarCantidadJugadoresEnSala" />
@@ -734,7 +731,7 @@
     <wsdl:part name="parameters" element="tns:ValidarCantidadJugadoresEnSalaResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarCantidadJugadoresEnSala_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q23:ManejadorExcepciones" />
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q22:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarPartidaNoIniciada_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidarPartidaNoIniciada" />
@@ -743,6 +740,15 @@
     <wsdl:part name="parameters" element="tns:ValidarPartidaNoIniciadaResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarPartidaNoIniciada_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q23:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFamiliaPorJugador" />
+  </wsdl:message>
+  <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFamiliaPorJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q24:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_InputMessage">
@@ -754,15 +760,6 @@
   <wsdl:message name="ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q25:ManejadorExcepciones" />
   </wsdl:message>
-  <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerFamiliaPorJugador" />
-  </wsdl:message>
-  <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerFamiliaPorJugadorResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q26:ManejadorExcepciones" />
-  </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliasYPersonajes_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliasYPersonajes" />
   </wsdl:message>
@@ -770,28 +767,22 @@
     <wsdl:part name="parameters" element="tns:ObtenerFamiliasYPersonajesResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliasYPersonajes_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q27:ManejadorExcepciones" />
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q26:ManejadorExcepciones" />
   </wsdl:message>
-  <wsdl:message name="ICreacionPartida_NotificarPartidaCreada_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarPartidaCreada" />
+  <wsdl:message name="IChat_EnviarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IChat_ObtenerHistorialMensajes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerHistorialMensajes" />
+  </wsdl:message>
+  <wsdl:message name="IChat_ObtenerHistorialMensajes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerHistorialMensajesResponse" />
   </wsdl:message>
   <wsdl:message name="IChat_AgregarJugadorAChat_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarJugadorAChat" />
   </wsdl:message>
   <wsdl:message name="IChat_AgregarJugadorAChat_OutputMessage">
     <wsdl:part name="parameters" element="tns:AgregarJugadorAChatResponse" />
-  </wsdl:message>
-  <wsdl:message name="IChat_EnviarMensaje_InputMessage">
-    <wsdl:part name="parameters" element="tns:EnviarMensaje" />
-  </wsdl:message>
-  <wsdl:message name="IChat_EnviarMensaje_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EnviarMensajeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IChat_HistorialMensajes_InputMessage">
-    <wsdl:part name="parameters" element="tns:HistorialMensajes" />
-  </wsdl:message>
-  <wsdl:message name="IChat_HistorialMensajes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:HistorialMensajesResponse" />
   </wsdl:message>
   <wsdl:message name="IChat_EnviarMensajeCliente_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EnviarMensajeCliente" />
@@ -927,6 +918,10 @@
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstadoResponse" message="tns:ISala_ObtenerSalasActivasConEstado_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstadoManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_ObtenerSalasActivasConEstado_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SalirDeSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/SalirDeSala" message="tns:ISala_SalirDeSala_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/SalirDeSalaResponse" message="tns:ISala_SalirDeSala_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UnirseASalaPublicaNormal">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/UnirseASalaPublicaNormal" message="tns:ISala_UnirseASalaPublicaNormal_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/UnirseASalaPublicaNormalResponse" message="tns:ISala_UnirseASalaPublicaNormal_OutputMessage" />
@@ -938,10 +933,6 @@
     <wsdl:operation name="UnirseASalaPrivadaMiniHistoria">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/UnirseASalaPrivadaMiniHistoria" message="tns:ISala_UnirseASalaPrivadaMiniHistoria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/UnirseASalaPrivadaMiniHistoriaResponse" message="tns:ISala_UnirseASalaPrivadaMiniHistoria_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SalirDeSala">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/SalirDeSala" message="tns:ISala_SalirDeSala_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/SalirDeSalaResponse" message="tns:ISala_SalirDeSala_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerCodigoSala">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerCodigoSala" message="tns:ISala_ObtenerCodigoSala_InputMessage" />
@@ -1019,8 +1010,8 @@
     <wsdl:operation name="AgregarCastigo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/AgregarCastigo" message="tns:IServicioJuegoTablero_AgregarCastigo_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="TerminarPartidaMiniJuego">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaMiniJuego" message="tns:IServicioJuegoTablero_TerminarPartidaMiniJuego_InputMessage" />
+    <wsdl:operation name="MatarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/MatarJugador" message="tns:IServicioJuegoTablero_MatarJugador_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AplicarModificadorPositivo">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivo" message="tns:IServicioJuegoTablero_AplicarModificadorPositivo_InputMessage" />
@@ -1070,6 +1061,9 @@
     <wsdl:operation name="EnviarGanador">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/EnviarGanador" message="tns:IServicioJuegoTablero_EnviarGanador_OutputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ActualizarJugadorMuerto">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/ActualizarJugadorMuerto" message="tns:IServicioJuegoTablero_ActualizarJugadorMuerto_OutputCallbackMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarVotacionExpulsion">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/NotificarVotacionExpulsion" message="tns:IServicioJuegoTablero_NotificarVotacionExpulsion_OutputCallbackMessage" />
     </wsdl:operation>
@@ -1102,9 +1096,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioCarta/ObtenerMazoRestante" message="tns:IServicioCarta_ObtenerMazoRestante_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioCarta/ObtenerMazoRestanteResponse" message="tns:IServicioCarta_ObtenerMazoRestante_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="NotificarActualizacion">
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicioCarta/NotificarActualizacion" message="tns:IServicioCarta_NotificarActualizacion_OutputCallbackMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IServicioHistorialPartida">
     <wsdl:operation name="ObtenerDatosHistorial">
@@ -1122,7 +1113,6 @@
     <wsdl:operation name="ObtenerUsuariosYPersonajes">
       <wsdl:input wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerUsuariosYPersonajes" message="tns:ICreacionPartida_ObtenerUsuariosYPersonajes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerUsuariosYPersonajesResponse" message="tns:ICreacionPartida_ObtenerUsuariosYPersonajes_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerUsuariosYPersonajesManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ICreacionPartida_ObtenerUsuariosYPersonajes_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="BuscarSalaExistente">
       <wsdl:input wsaw:Action="http://tempuri.org/ICreacionPartida/BuscarSalaExistente" message="tns:ICreacionPartida_BuscarSalaExistente_InputMessage" />
@@ -1139,37 +1129,33 @@
       <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/ValidarPartidaNoIniciadaResponse" message="tns:ICreacionPartida_ValidarPartidaNoIniciada_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ICreacionPartida/ValidarPartidaNoIniciadaManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ICreacionPartida_ValidarPartidaNoIniciada_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ObtenerFamiliaYPersonajesPorUsuario">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuario" message="tns:ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuarioResponse" message="tns:ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuarioManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_ManejadorExcepcionesFault_FaultMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ObtenerFamiliaPorJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaPorJugador" message="tns:ICreacionPartida_ObtenerFamiliaPorJugador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaPorJugadorResponse" message="tns:ICreacionPartida_ObtenerFamiliaPorJugador_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaPorJugadorManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ICreacionPartida_ObtenerFamiliaPorJugador_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFamiliaYPersonajesPorUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuario" message="tns:ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuarioResponse" message="tns:ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuarioManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerFamiliasYPersonajes">
       <wsdl:input wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliasYPersonajes" message="tns:ICreacionPartida_ObtenerFamiliasYPersonajes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliasYPersonajesResponse" message="tns:ICreacionPartida_ObtenerFamiliasYPersonajes_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliasYPersonajesManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ICreacionPartida_ObtenerFamiliasYPersonajes_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="NotificarPartidaCreada">
-      <wsdl:output wsaw:Action="http://tempuri.org/ICreacionPartida/NotificarPartidaCreada" message="tns:ICreacionPartida_NotificarPartidaCreada_OutputCallbackMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IChat">
+    <wsdl:operation name="EnviarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChat/EnviarMensaje" message="tns:IChat_EnviarMensaje_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHistorialMensajes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChat/ObtenerHistorialMensajes" message="tns:IChat_ObtenerHistorialMensajes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChat/ObtenerHistorialMensajesResponse" message="tns:IChat_ObtenerHistorialMensajes_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AgregarJugadorAChat">
       <wsdl:input wsaw:Action="http://tempuri.org/IChat/AgregarJugadorAChat" message="tns:IChat_AgregarJugadorAChat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChat/AgregarJugadorAChatResponse" message="tns:IChat_AgregarJugadorAChat_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EnviarMensaje">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChat/EnviarMensaje" message="tns:IChat_EnviarMensaje_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChat/EnviarMensajeResponse" message="tns:IChat_EnviarMensaje_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="HistorialMensajes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChat/HistorialMensajes" message="tns:IChat_HistorialMensajes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChat/HistorialMensajesResponse" message="tns:IChat_HistorialMensajes_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EnviarMensajeCliente">
       <wsdl:output wsaw:Action="http://tempuri.org/IChat/EnviarMensajeCliente" message="tns:IChat_EnviarMensajeCliente_OutputCallbackMessage" />
@@ -1474,6 +1460,15 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="SalirDeSala">
+      <soap12:operation soapAction="http://tempuri.org/ISala/SalirDeSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UnirseASalaPublicaNormal">
       <soap12:operation soapAction="http://tempuri.org/ISala/UnirseASalaPublicaNormal" style="document" />
       <wsdl:input>
@@ -1494,15 +1489,6 @@
     </wsdl:operation>
     <wsdl:operation name="UnirseASalaPrivadaMiniHistoria">
       <soap12:operation soapAction="http://tempuri.org/ISala/UnirseASalaPrivadaMiniHistoria" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SalirDeSala">
-      <soap12:operation soapAction="http://tempuri.org/ISala/SalirDeSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1673,8 +1659,8 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="TerminarPartidaMiniJuego">
-      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaMiniJuego" style="document" />
+    <wsdl:operation name="MatarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/MatarJugador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1778,6 +1764,12 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ActualizarJugadorMuerto">
+      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/ActualizarJugadorMuerto" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NotificarVotacionExpulsion">
       <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/NotificarVotacionExpulsion" style="document" />
       <wsdl:output>
@@ -1845,12 +1837,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NotificarActualizacion">
-      <soap12:operation soapAction="http://tempuri.org/IServicioCarta/NotificarActualizacion" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IServicioHistorialPartida" type="tns:IServicioHistorialPartida">
     <wsp:PolicyReference URI="#NetTcpBinding_IServicioHistorialPartida_policy" />
@@ -1891,9 +1877,6 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ManejadorExcepcionesFault">
-        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
-      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="BuscarSalaExistente">
       <soap12:operation soapAction="http://tempuri.org/ICreacionPartida/BuscarSalaExistente" style="document" />
@@ -1931,8 +1914,8 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerFamiliaYPersonajesPorUsuario">
-      <soap12:operation soapAction="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuario" style="document" />
+    <wsdl:operation name="ObtenerFamiliaPorJugador">
+      <soap12:operation soapAction="http://tempuri.org/ICreacionPartida/ObtenerFamiliaPorJugador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1943,8 +1926,8 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerFamiliaPorJugador">
-      <soap12:operation soapAction="http://tempuri.org/ICreacionPartida/ObtenerFamiliaPorJugador" style="document" />
+    <wsdl:operation name="ObtenerFamiliaYPersonajesPorUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ICreacionPartida/ObtenerFamiliaYPersonajesPorUsuario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1967,36 +1950,27 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="NotificarPartidaCreada">
-      <soap12:operation soapAction="http://tempuri.org/ICreacionPartida/NotificarPartidaCreada" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IChat" type="tns:IChat">
     <wsp:PolicyReference URI="#NetTcpBinding_IChat_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="AgregarJugadorAChat">
-      <soap12:operation soapAction="http://tempuri.org/IChat/AgregarJugadorAChat" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="EnviarMensaje">
       <soap12:operation soapAction="http://tempuri.org/IChat/EnviarMensaje" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHistorialMensajes">
+      <soap12:operation soapAction="http://tempuri.org/IChat/ObtenerHistorialMensajes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="HistorialMensajes">
-      <soap12:operation soapAction="http://tempuri.org/IChat/HistorialMensajes" style="document" />
+    <wsdl:operation name="AgregarJugadorAChat">
+      <soap12:operation soapAction="http://tempuri.org/IChat/AgregarJugadorAChat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

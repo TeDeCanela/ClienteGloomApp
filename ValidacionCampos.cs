@@ -37,7 +37,7 @@ namespace ClienteGloomApp
 
         public string VerificarNombreYApellidos(string nombre)
         {
-            string nombreRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{5,255}(?<! )$";
+            string nombreRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
 
             if (string.IsNullOrWhiteSpace(nombre))
             {
@@ -54,19 +54,38 @@ namespace ClienteGloomApp
 
         public string VerificarNombreUsuario(string nombre)
         {
-            string nombreRegex = @"^(?! )(?!.* {2})[a-zA-Z0-9_ ]+(?<! )$";
-
             if (string.IsNullOrWhiteSpace(nombre))
             {
                 throw new ArgumentException("36");
             }
 
+            ValidarFormatoNombre(nombre);
+            ValidarNombreProhibido(nombre);
+
+            return nombre;
+        }
+
+        private void ValidarFormatoNombre(string nombre)
+        {
+            string nombreRegex = @"^(?! )(?!.* {2})[a-zA-Z0-9_ ]+(?<! )$";
+
             if (!Regex.IsMatch(nombre, nombreRegex))
             {
                 throw new ArgumentException("36");
             }
+        }
 
-            return nombre;
+        private void ValidarNombreProhibido(string nombre)
+        {
+            if (nombre.Equals("Sin ganador", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ArgumentException("El nombre no puede ser 'Sin ganador'.");
+            }
+
+            if (Regex.IsMatch(nombre, @"^Invitado\d+$"))
+            {
+                throw new ArgumentException("El nombre no puede comenzar con 'Invitado#'.");
+            }
         }
 
         public string VerificarContrasena(string nombre)

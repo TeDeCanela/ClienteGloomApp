@@ -18,23 +18,32 @@
         <Button x:Name="btnCarta6" Width="105" Height="145" Margin="1150,632,295,7" Background="Transparent" Click="BtnVerCarta_Click"/>
         <Button x:Name="btnCarta7" Width="105" Height="145" Margin="1196,632,249,7" Background="Transparent" Click="BtnVerCarta_Click"/>
         <StackPanel HorizontalAlignment="Left" Margin="720,438,0,0" VerticalAlignment="Top">
-            <Image x:Name="imgJugador1" Height="140" Width="140"/>
-            <Label x:Name="lblJugador1" Content="Jugador 1"/>
+            <Border x:Name="borderJugador1" BorderBrush="Transparent" BorderThickness="0">
+                <Image x:Name="imgJugador1" Width="150" Height="150" Stretch="Uniform" MouseLeftButtonDown="ImgJugador_MouseLeftButtonDown"/>
+            </Border>
+            <Label x:Name="lblJugador1" Content="" />
+            
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Margin="120,364,0,0" VerticalAlignment="Top">
-            <Image x:Name="imgJugador2" Height="180" Width="180"/>
-            <Label x:Name="lblJugador2" Content="Jugador 2"/>
+            <Border x:Name="borderJugador2" BorderBrush="Transparent" BorderThickness="0">
+                <Image x:Name="imgJugador2" Width="150" Height="150" Stretch="Uniform" MouseLeftButtonDown="ImgJugador_MouseLeftButtonDown"/>
+            </Border>
+            <Label x:Name="lblJugador2" Content=""/>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top">
-            <Image x:Name="imgJugador3" Height="180" Width="180"/>
-            <Label x:Name="lblJugador3" Content=""/>
+            <Border x:Name="borderJugador3" BorderBrush="Transparent" BorderThickness="0">
+                <Image x:Name="imgJugador3" Width="150" Height="150" Stretch="Uniform" MouseLeftButtonDown="ImgJugador_MouseLeftButtonDown"/>
+            </Border>
+            <Label x:Name="lblJugador3" Content="" />
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Margin="1289,364,0,0" VerticalAlignment="Top">
-            <Image x:Name="imgJugador4" Height="180" Width="180"/>
-            <Label x:Name="lblJugador4" Content=""/>
+            <Border x:Name="borderJugador4" BorderBrush="Transparent" BorderThickness="0">
+                <Image x:Name="imgJugador4" Width="150" Height="150" Stretch="Uniform" MouseLeftButtonDown="ImgJugador_MouseLeftButtonDown"/>
+            </Border>
+            <Label x:Name="lblJugador4" Content="" />
         </StackPanel>
 
         <StackPanel x:Name="panCarta"  Visibility="Collapsed" Background="#80000000" Margin="856,221,330,162">
@@ -86,9 +95,9 @@
             <Image x:Name="imgCartaBonus" Height="171" Width="172"/>
             <Label x:Name="lblCarta" FontWeight="Bold" Foreground="White" Width="394"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
-                <Button x:Name="btnJugador2"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="Cambiarjugador_Click"/>
-                <Button x:Name="btnJugador3"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="Cambiarjugador_Click"/>
-                <Button x:Name="btnJugador4"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="Cambiarjugador_Click"/>
+                <Button x:Name="btnJugador2"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+                <Button x:Name="btnJugador3"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+                <Button x:Name="btnJugador4"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
             </StackPanel>
         </StackPanel>
         <Rectangle x:Name="decCarta" HorizontalAlignment="Left" Height="230" Margin="392,521,0,0"
@@ -97,8 +106,20 @@
                 <SolidColorBrush Color="#80808080"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="decCartaFinal" HorizontalAlignment="Left" Height="230" Margin="392,521,0,0"
+   Stroke="Black" VerticalAlignment="Top" Width="159" Visibility="Visible">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle x:Name="decCartaBonus" HorizontalAlignment="Left" Height="136" Margin="404,113,0,0"
    Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="decCartaBonusFinal" HorizontalAlignment="Left" Height="136" Margin="404,113,0,0"
+Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#80808080"/>
             </Rectangle.Fill>

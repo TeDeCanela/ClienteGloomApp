@@ -20,7 +20,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para PartidaNormal.xaml
     /// </summary>
-    public partial class PartidaNormal : Window, IServicioJuegoTableroCallback, IServicioCartaCallback, ICreacionPartidaCallback, ISalaCallback
+    public partial class PartidaNormal : Window, IServicioJuegoTableroCallback, ISalaCallback
     {
         ServicioGloom.Sala salaNormal = new ServicioGloom.Sala();
 
@@ -985,15 +985,7 @@ namespace ClienteGloomApp
             }
         }
 
-        void IServicioCartaCallback.NotificarActualizacion(string mensaje)
-        {
-            throw new NotImplementedException();
-        }
 
-        void ICreacionPartidaCallback.NotificarPartidaCreada(string mensaje)
-        {
-            throw new NotImplementedException();
-        }
 
         void ISalaCallback.EmpezarJuego()
         {
@@ -1130,6 +1122,9 @@ namespace ClienteGloomApp
 
         }
 
- 
+        void IServicioJuegoTableroCallback.ActualizarJugadorMuerto(string jugadorMuerto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

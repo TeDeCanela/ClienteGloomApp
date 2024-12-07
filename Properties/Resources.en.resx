@@ -597,4 +597,7 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
   </data>
+  <data name="finMiniComentarioGanador" xml:space="preserve">
+    <value>The voice of destiny has spoken, and I have answered, I have won.</value>
+  </data>
 </root>

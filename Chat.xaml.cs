@@ -27,11 +27,11 @@ namespace ClienteGloomApp
                 proxy = new ChatClient(context);
 
                 // Agregar jugador al chat
-                proxy.AgregarJugadorAChat(identificadorUsuario, identificadorSala);
+                //proxy.AgregarJugadorAChat(identificadorUsuario, identificadorSala);
                 Console.WriteLine($"Jugador {identificadorUsuario} agregado al chat en sala {identificadorSala}.");
 
                 // Obtener el historial de mensajes
-                var historial = proxy.HistorialMensajes();
+                var historial = proxy.ObtenerHistorialMensajes();
                 foreach (var mensaje in historial)
                 {
                     lstChat.Items.Add($"{mensaje.nombreUsuario}: {mensaje.mensaje}");
@@ -59,8 +59,8 @@ namespace ClienteGloomApp
             {
                 if (!string.IsNullOrWhiteSpace(txtMensaje.Text))
                 {
-                    proxy.AgregarJugadorAChat(identificadorUsuario, identificadorSala);
-                    proxy.EnviarMensaje(identificadorUsuario, identificadorSala, txtMensaje.Text);
+                    //proxy.AgregarJugadorAChat(identificadorUsuario, identificadorSala);
+                    //proxy.EnviarMensaje(identificadorUsuario, identificadorSala, txtMensaje.Text);
                     txtMensaje.Clear();
                 }
                 else
@@ -124,5 +124,6 @@ namespace ClienteGloomApp
                 Console.WriteLine($"Error al cerrar la conexión: {ex.Message}");
             }
         }
+
     }
 }

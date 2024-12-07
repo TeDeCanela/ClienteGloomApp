@@ -94,6 +94,7 @@ namespace ClienteGloomApp
                 ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
                 var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
+                ValidarSalaActiva(resultadoSala.ganador);
                 if (resultadoSala != null)
                 {
                     proxy.ValidarCantidadJugadoresEnSala(resultadoSala.idSala, resultadoSala.noJugadores);
@@ -106,8 +107,19 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+
+            }catch (InvalidOperationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            } 
+        }
+
+        private void ValidarSalaActiva(string ganador)
+        {
+            if (!ganador.Equals("Sin ganador"))
+            {
+                throw new InvalidOperationException("43");
             }
-            
         }
         private void ValidarTipoJugador(string nombre)
         {

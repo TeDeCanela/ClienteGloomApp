@@ -4,26 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClienteGloomApp"
+        xmlns:p ="clr-namespace:ClienteGloomApp.Properties"
         mc:Ignorable="d"
         Title="FinPartidaMini" Height="800" Width="1550">
     <Grid>
         <Image Source="Imagenes/SalaFondo.jpg" Width="2838" Height="1111" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-63,0,0" Opacity=".7"/>
         <GroupBox x:Name="grupoBotones" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="352,46,0,0" BorderThickness="0" Width="773" Height="595">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="136,0,0,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="136,0,0,0" Width="478">
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10" Width="265">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top">
                     <Image x:Name="imgJugador1" Height="120" Width="120"/>
-                    <Label x:Name="lblJugador1" HorizontalAlignment="Center" RenderTransformOrigin="1.007,-0.641"/>
+                    <Label x:Name="lblJugador1" Width="319"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top">
                     <Image x:Name="imgJugador2" Height="120" Width="120"/>
-                    <Label x:Name="lblJugador2" HorizontalAlignment="Center"/>
+                    <Label x:Name="lblJugador2" Width="308"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top">
                     <Image x:Name="imgJugador3" Height="120" Width="120"/>
-                    <Label x:Name="lblJugador3"  HorizontalAlignment="Center"/>
+                    <Label x:Name="lblJugador3" Width="352"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top">
@@ -32,5 +33,19 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
+        <Label x:Name="lblDialogoGanador" HorizontalAlignment="Left" Margin="375,699,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="Black" RenderTransformOrigin="0.259,0.393" FontFamily="Vivaldi"/>
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.553"/>
+                    <TranslateTransform X="17.15" Y="4.827"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/Imagenes/flecha.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -20,7 +20,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para CrearPartida.xaml
     /// </summary>
-    public partial class CrearPartida : Window, ISalaCallback, ICreacionPartidaCallback
+    public partial class CrearPartida : Window, ISalaCallback
     {
         private string identificadorUsuario;
         private string tipoSalaSeleccionada; 
@@ -224,10 +224,6 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        void ICreacionPartidaCallback.NotificarPartidaCreada(string mensaje)
-        {
-            throw new NotImplementedException();
-        }
     }
     
 }

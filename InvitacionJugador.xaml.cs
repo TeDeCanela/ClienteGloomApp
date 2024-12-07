@@ -39,7 +39,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contexto = new InstanceContext(this);
-                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
+                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contexto);
                 var listaAmigos = proxy.ObtenerListaAmigos(usuario);
 
                 var nombresAmigos = listaAmigos.Select(a => a.jugadorAmigo.nombreUsuario).ToList();
@@ -58,7 +58,7 @@ namespace ClienteGloomApp
         private string ObtenerCorreoAmigo(string nombreUsuarioAmigo)
         {
             InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
+            ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contexto);
             string correo = proxy.ObtenerCorreoAmigo(nombreUsuarioAmigo);
             return correo;
         }

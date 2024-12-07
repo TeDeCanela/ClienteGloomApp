@@ -41,7 +41,7 @@
                 <DataGridTextColumn Header="Nombre de la Sala" Binding="{Binding nombreSala}" Width="*" />
                 <DataGridTextColumn Header="Jugadores Activos / Máximos" Width="*">
                     <DataGridTextColumn.Binding>
-                        <MultiBinding StringFormat="{}/{1}">
+                        <MultiBinding StringFormat="{}{1}/{0}">
                             <Binding Path="noJugadoresActuales" />
                             <Binding Path="noJugadores" />
                         </MultiBinding>
