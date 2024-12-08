@@ -334,8 +334,9 @@ namespace ClienteGloomApp
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
-            //var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
-            //chatWindow.Show();
+            Chat ventanaChat = Chat.ObtenerInstancia(lblJugador1.Content.ToString());
+            ventanaChat.Show();
+            ventanaChat.Focus();
         }
 
         private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)

@@ -71,9 +71,9 @@ namespace ClienteGloomApp
 
         private void btnHistorialDePartidas_Click(object sender, RoutedEventArgs e)
         {
-            /*HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
+            HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
             nuevavenatana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnMiniHistoria_Click(object sender, RoutedEventArgs e)
@@ -91,7 +91,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoCrearPartida= new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
                 var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
                 ValidarSalaActiva(resultadoSala.ganador);

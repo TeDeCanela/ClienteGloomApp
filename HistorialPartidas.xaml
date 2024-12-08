@@ -6,7 +6,7 @@
         Title="--" Height="800" Width="1900">
 
     <Grid Background="#FF1A1E1D">
-        <!--<Image Source="Imagenes/historialImagen.png" Width="653" Height="914" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="1005,0,0,0"/>
+        <Image Source="Imagenes/historialImagen.png" Width="653" Height="914" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="1005,0,0,0"/>
         <Label Content="{x:Static p:Resources.TituloHistorialDePartidas}" HorizontalAlignment="Left" Margin="53,61,0,0" VerticalAlignment="Top" FontSize="26" Foreground="White" FontWeight="Bold"/>
         <DataGrid x:Name="dgHistorial" Margin="29,155,900,25" AutoGenerateColumns="false" CanUserAddRows="False" ItemsSource="{Binding}" IsReadOnly="True" CanUserDeleteRows="False" FontSize="20" Background="Transparent" Foreground="White" GridLinesVisibility="All"
           HorizontalGridLinesBrush="White"
@@ -57,7 +57,7 @@
             </Button.Background>
         </Button> 
         <Label x:Name="lblNombreUsuarioRegistrado" Content="" HorizontalAlignment="Left" Margin="940,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-    -->
+    
         </Grid>
 </Window>
 

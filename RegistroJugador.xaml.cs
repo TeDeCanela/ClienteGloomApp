@@ -32,7 +32,7 @@ namespace ClienteGloomApp
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 

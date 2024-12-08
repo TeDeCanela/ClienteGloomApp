@@ -21,7 +21,7 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class HistorialPartidas : Window
     {
-        /*public HistorialPartidas(String nombreUsuario)
+        public HistorialPartidas(String nombreUsuario)
         {
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
@@ -91,7 +91,7 @@ namespace ClienteGloomApp
         public void EmpezarJuego()
         {
             throw new NotImplementedException();
-        }*/
+        }
     }
 }
 
