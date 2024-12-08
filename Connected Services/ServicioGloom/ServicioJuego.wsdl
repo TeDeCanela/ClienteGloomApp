@@ -3,28 +3,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IJugador_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -32,28 +15,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IAmigos_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -61,28 +27,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_ISala_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -90,28 +39,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IServicioJuegoTablero_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -119,28 +51,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IServicioCarta_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -148,28 +63,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IServicioHistorialPartida_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -177,28 +75,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_ICreacionPartida_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -206,28 +87,11 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IChat_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -235,40 +99,23 @@
   <wsp:Policy wsu:Id="NetTcpBinding_IInvitacion_policy">
     <wsp:ExactlyOne>
       <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJugador_AgregarJugador_InputMessage">
@@ -333,6 +180,9 @@
   </wsdl:message>
   <wsdl:message name="IJugador_EliminarJugadorInvitado_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q7:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_CerrarSesionJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesionJugador" />
   </wsdl:message>
   <wsdl:message name="IAmigos_EnviarSolcitudAmistad_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarSolcitudAmistad" />
@@ -829,6 +679,9 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IJugador/EliminarJugadorInvitadoResponse" message="tns:IJugador_EliminarJugadorInvitado_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/EliminarJugadorInvitadoManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_EliminarJugadorInvitado_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CerrarSesionJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugador/CerrarSesionJugador" message="tns:IJugador_CerrarSesionJugador_InputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IAmigos">
     <wsdl:operation name="EnviarSolcitudAmistad">
@@ -1253,6 +1106,12 @@
       <wsdl:fault name="ManejadorExcepcionesFault">
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesionJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugador/CerrarSesionJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IAmigos" type="tns:IAmigos">
@@ -2000,84 +1859,57 @@
   </wsdl:binding>
   <wsdl:service name="ServicioJuego">
     <wsdl:port name="NetTcpBinding_IJugador" binding="tns:NetTcpBinding_IJugador">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioJugador" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJugador" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioJugador</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJugador</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAmigos" binding="tns:NetTcpBinding_IAmigos">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioAmigos" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioAmigos" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioAmigos</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioAmigos</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ISala" binding="tns:NetTcpBinding_ISala">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioSala" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioSala" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioSala</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioSala</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioJuegoTablero" binding="tns:NetTcpBinding_IServicioJuegoTablero">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioJuegoTablero" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJuegoTablero" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioJuegoTablero</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJuegoTablero</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioCarta" binding="tns:NetTcpBinding_IServicioCarta">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioCarta" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCarta" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioCarta</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCarta</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioHistorialPartida" binding="tns:NetTcpBinding_IServicioHistorialPartida">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioHistorialPartida" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioHistorialPartida" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioHistorialPartida</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioHistorialPartida</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ICreacionPartida" binding="tns:NetTcpBinding_ICreacionPartida">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioCreacionPartida" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCreacionPartida" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioCreacionPartida</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCreacionPartida</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IChat" binding="tns:NetTcpBinding_IChat">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioChat" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioChat" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioChat</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioChat</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IInvitacion" binding="tns:NetTcpBinding_IInvitacion">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloomm/ServicioInvitacion" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioInvitacion" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloomm/ServicioInvitacion</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>CUCHAU\kahun</Upn>
-        </Identity>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioInvitacion</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

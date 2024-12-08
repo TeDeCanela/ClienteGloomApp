@@ -43,9 +43,9 @@ namespace ClienteGloomApp
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            /*PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
+            PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnVerPersonajes_Click(object sender, RoutedEventArgs e)
@@ -57,9 +57,9 @@ namespace ClienteGloomApp
 
         private void btnListaDeAmigos_Click(object sender, RoutedEventArgs e)
         {
-            /*ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
+            ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
@@ -71,9 +71,9 @@ namespace ClienteGloomApp
 
         private void btnHistorialDePartidas_Click(object sender, RoutedEventArgs e)
         {
-            /*HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
+            HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
             nuevavenatana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnMiniHistoria_Click(object sender, RoutedEventArgs e)
@@ -106,7 +106,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
 
             }catch (InvalidOperationException ex)
             {

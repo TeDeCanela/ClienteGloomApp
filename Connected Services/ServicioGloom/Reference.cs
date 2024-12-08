@@ -164,6 +164,9 @@ namespace ClienteGloomApp.ServicioGloom {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mensajeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -173,6 +176,19 @@ namespace ClienteGloomApp.ServicioGloom {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codigoField, value) != true)) {
+                    this.codigoField = value;
+                    this.RaisePropertyChanged("codigo");
+                }
             }
         }
         
@@ -672,6 +688,12 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/EliminarJugadorInvitado", ReplyAction="http://tempuri.org/IJugador/EliminarJugadorInvitadoResponse")]
         System.Threading.Tasks.Task<bool> EliminarJugadorInvitadoAsync(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IJugador/CerrarSesionJugador")]
+        void CerrarSesionJugador(string nombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IJugador/CerrarSesionJugador")]
+        System.Threading.Tasks.Task CerrarSesionJugadorAsync(string nombreJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -682,7 +704,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class JugadorClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IJugador>, ClienteGloomApp.ServicioGloom.IJugador {
         
-        public JugadorClient(System.ServiceModel.InstanceContext contextoJugador) {
+        public JugadorClient() {
         }
         
         public JugadorClient(string endpointConfigurationName) : 
@@ -756,6 +778,14 @@ namespace ClienteGloomApp.ServicioGloom {
         public System.Threading.Tasks.Task<bool> EliminarJugadorInvitadoAsync(string nombreUsuario) {
             return base.Channel.EliminarJugadorInvitadoAsync(nombreUsuario);
         }
+        
+        public void CerrarSesionJugador(string nombreJugador) {
+            base.Channel.CerrarSesionJugador(nombreJugador);
+        }
+        
+        public System.Threading.Tasks.Task CerrarSesionJugadorAsync(string nombreJugador) {
+            return base.Channel.CerrarSesionJugadorAsync(nombreJugador);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -814,7 +844,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AmigosClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IAmigos>, ClienteGloomApp.ServicioGloom.IAmigos {
         
-        public AmigosClient(System.ServiceModel.InstanceContext contextoAmistad) {
+        public AmigosClient() {
         }
         
         public AmigosClient(string endpointConfigurationName) : 
@@ -1836,7 +1866,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class CreacionPartidaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.ICreacionPartida>, ClienteGloomApp.ServicioGloom.ICreacionPartida {
         
-        public CreacionPartidaClient(System.ServiceModel.InstanceContext contextoTablero) {
+        public CreacionPartidaClient(System.ServiceModel.InstanceContext contexto) {
         }
         
         public CreacionPartidaClient(string endpointConfigurationName) : 

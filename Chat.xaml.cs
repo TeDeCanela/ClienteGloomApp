@@ -1,6 +1,8 @@
 ﻿using ClienteGloomApp.ServicioGloom;
 using System;
+using System.Linq;
 using System.ServiceModel;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace ClienteGloomApp
@@ -12,41 +14,52 @@ namespace ClienteGloomApp
     {
         private string identificadorUsuario;
         private string identificadorSala;
-        private ChatClient proxy;
+        private ChatClient proxyChat;
+        ValidacionCampos validar = new ValidacionCampos();
 
-        public Chat(string nombreUsuario, string numeroSala)
+        private static Chat instanciaUnica;
+
+        public static Chat ObtenerInstancia(string nombreUsuario)
+        {
+            if (instanciaUnica == null || !instanciaUnica.IsVisible)
+            {
+                instanciaUnica = new Chat(nombreUsuario);
+            }
+            else
+            {
+                instanciaUnica.Focus();
+            }
+
+            return instanciaUnica;
+        }
+
+        private Chat(string nombreUsuario)
         {
             InitializeComponent();
             identificadorUsuario = nombreUsuario;
-            identificadorSala = numeroSala;
+
 
             try
             {
-                // Configuración del contexto y proxy
-                InstanceContext context = new InstanceContext(this);
-                proxy = new ChatClient(context);
+                InstanceContext contexto = new InstanceContext(this);
+                proxyChat = new ChatClient(contexto);
 
-                // Agregar jugador al chat
-                //proxy.AgregarJugadorAChat(identificadorUsuario, identificadorSala);
-                Console.WriteLine($"Jugador {identificadorUsuario} agregado al chat en sala {identificadorSala}.");
+                proxyChat.AgregarJugadorAChat(identificadorUsuario);
 
-                // Obtener el historial de mensajes
-                var historial = proxy.ObtenerHistorialMensajes();
+                var historial = proxyChat.ObtenerHistorialMensajes();
                 foreach (var mensaje in historial)
                 {
                     lstChat.Items.Add($"{mensaje.nombreUsuario}: {mensaje.mensaje}");
                 }
-
                 if (lstChat.Items.Count > 0)
                 {
                     lstChat.ScrollIntoView(lstChat.Items[lstChat.Items.Count - 1]);
                 }
+
             }
-            catch (Exception ex)
+            catch (FaultException<ManejadorExcepciones> ex)
             {
-                Console.WriteLine($"Error al inicializar el chat: {ex.Message}");
-                MessageBox.Show($"No se pudo conectar al chat: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Close();
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
         }
 
@@ -59,8 +72,9 @@ namespace ClienteGloomApp
             {
                 if (!string.IsNullOrWhiteSpace(txtMensaje.Text))
                 {
-                    //proxy.AgregarJugadorAChat(identificadorUsuario, identificadorSala);
-                    //proxy.EnviarMensaje(identificadorUsuario, identificadorSala, txtMensaje.Text);
+
+                    string mensajeVerificado = validar.VerificarMensajeChat(txtMensaje.Text);
+                    proxyChat.EnviarMensaje(identificadorUsuario, mensajeVerificado);
                     txtMensaje.Clear();
                 }
                 else
@@ -68,10 +82,13 @@ namespace ClienteGloomApp
                     MessageBox.Show("No puedes enviar un mensaje vacío.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                Console.WriteLine($"Error al enviar el mensaje: {ex.Message}");
-                MessageBox.Show($"Error al enviar mensaje: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
         }
 
@@ -86,24 +103,16 @@ namespace ClienteGloomApp
                 {
                     if (lstChat.Visibility == Visibility.Visible && lstChat.IsEnabled)
                     {
-                        lstChat.Items.Add($"{identificadorUsuario} : {mensajesChat.mensaje}");
+                        lstChat.Items.Add($"{mensajesChat.nombreUsuario} : {mensajesChat.mensaje}");
 
-                        string mensajeFormateado = $"{mensajesChat.nombreUsuario}: {mensajesChat.mensaje}";
-                        lstChat.Items.Add(mensajeFormateado);
                         lstChat.ScrollIntoView(lstChat.Items[lstChat.Items.Count - 1]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("lstChat no está visible o habilitado.");
                     }
 
                 });
-                Console.WriteLine($"Mensaje recibido: {mensajesChat.nombreUsuario}: {mensajesChat.mensaje}");
             }
-            catch (Exception ex)
+            catch (FaultException<ManejadorExcepciones> ex)
             {
-                Console.WriteLine($"Error al procesar mensaje recibido: {ex.Message}");
-                MessageBox.Show($"Error al procesar mensaje recibido: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
         }
 
@@ -112,18 +121,18 @@ namespace ClienteGloomApp
         /// </summary>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+
             try
             {
-                if (proxy != null)
+                if (proxyChat != null)
                 {
-                    proxy.Close();
+                    proxyChat.Close();
                 }
             }
-            catch (Exception ex)
+            catch (FaultException<ManejadorExcepciones> ex)
             {
-                Console.WriteLine($"Error al cerrar la conexión: {ex.Message}");
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
         }
-
     }
 }

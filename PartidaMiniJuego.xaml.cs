@@ -66,7 +66,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
 
             }
 
@@ -230,7 +230,23 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
 
         }
@@ -250,7 +266,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                Console.WriteLine("Fue aqui");
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
 
 
@@ -283,14 +316,54 @@ namespace ClienteGloomApp
                 PonerInformacionCartaBonus(carta.tipo);
             } catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
-            
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+
         }
 
         private void ActualizarTurnoLlamar()
         {
-            proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
+            try
+            {
+                proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+
         }
 
         private void ValidarTipoCarta(string tipo)
@@ -299,29 +372,48 @@ namespace ClienteGloomApp
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTablero);
             InstanceContext contextoCarta = new InstanceContext(this);
             ServicioGloom.ServicioCartaClient proxyCarta = new ServicioGloom.ServicioCartaClient(contextoCarta);
-            if (tipo.Equals("modificador"))
+            try
             {
-                SeleciconarJugadorParaModificar();  
-                proxyCarta.QuitarCartaDeMazoJugador(jugadorPropietario, cartaSeleccionada);
-                decCarta.Visibility = Visibility.Visible;
-                decCartaBonus.Visibility = Visibility.Visible;
-            }
-            else if (tipo.Equals("muerte"))
-            {
-                try
+                if (tipo.Equals("modificador"))
                 {
-                    SeleccionarJugadorParaMatar();
+                    SeleciconarJugadorParaModificar();
                     proxyCarta.QuitarCartaDeMazoJugador(jugadorPropietario, cartaSeleccionada);
-                    
                     decCarta.Visibility = Visibility.Visible;
                     decCartaBonus.Visibility = Visibility.Visible;
                 }
-                catch (FaultException<ManejadorExcepciones> ex)
+                else if (tipo.Equals("muerte"))
                 {
-                    MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-                }
 
+                    SeleccionarJugadorParaMatar();
+                    proxyCarta.QuitarCartaDeMazoJugador(jugadorPropietario, cartaSeleccionada);
+
+                    decCarta.Visibility = Visibility.Visible;
+                    decCartaBonus.Visibility = Visibility.Visible;
+
+
+                }
             }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+
         }
 
         public void EnviarGanador(string jugador)
@@ -334,8 +426,8 @@ namespace ClienteGloomApp
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
-            //var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
-            //chatWindow.Show();
+            var chatWindow = new Chat(lblJugador1.Content.ToString(), lblNumeroSala.Content.ToString());
+            chatWindow.Show();
         }
 
         private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)
@@ -377,52 +469,72 @@ namespace ClienteGloomApp
 
         private void PonerInformacionCartaBonus(string tipo)
         {
-            InstanceContext contextoTablero = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoTablero);
-            var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes(lblNumeroSala.Content.ToString());
-            int botonIndex = 0;
-            var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
-
-            switch (tipo)
+            try
             {
-                case "saltarJugador":
-                    lblCarta.Content = Properties.Resources.cartaSaltarJugador;
-                    foreach (var usuario in personajesPorUsuario.Keys)
-                    {
-                        if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
+                InstanceContext contextoTablero = new InstanceContext(this);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoTablero);
+                var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes(lblNumeroSala.Content.ToString());
+                int botonIndex = 0;
+                var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
+
+                switch (tipo)
+                {
+                    case "saltarJugador":
+                        lblCarta.Content = Properties.Resources.cartaSaltarJugador;
+                        foreach (var usuario in personajesPorUsuario.Keys)
                         {
-                            botonesJugadores[botonIndex].Content = usuario;
-                            botonesJugadores[botonIndex].Visibility = Visibility.Visible;
-                            botonIndex++;
+                            if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
+                            {
+                                botonesJugadores[botonIndex].Content = usuario;
+                                botonesJugadores[botonIndex].Visibility = Visibility.Visible;
+                                botonIndex++;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case "robar2Cartas":
-                    lblCarta.Content = Properties.Resources.cartaRobarCarta2;
-                    break;
+                    case "robar2Cartas":
+                        lblCarta.Content = Properties.Resources.cartaRobarCarta2;
+                        break;
 
-                case "robar1Cartas":
-                    lblCarta.Content = Properties.Resources.cartaRobarCarta1;
-                    break;
+                    case "robar1Cartas":
+                        lblCarta.Content = Properties.Resources.cartaRobarCarta1;
+                        break;
 
-                case "QuitarCarta":
-                    lblCarta.Content = Properties.Resources.cartaQuitarCarta;
-                    foreach (var usuario in personajesPorUsuario.Keys)
-                    {
-                        if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
+                    case "QuitarCarta":
+                        lblCarta.Content = Properties.Resources.cartaQuitarCarta;
+                        foreach (var usuario in personajesPorUsuario.Keys)
                         {
-                            botonesJugadores[botonIndex].Content = usuario;
-                            botonesJugadores[botonIndex].Visibility = Visibility.Visible;
-                            botonIndex++;
+                            if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
+                            {
+                                botonesJugadores[botonIndex].Content = usuario;
+                                botonesJugadores[botonIndex].Visibility = Visibility.Visible;
+                                botonIndex++;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case "PerderTurno":
-                    lblCarta.Content = Properties.Resources.cartaPerderTurno;
-                    break;
+                    case "PerderTurno":
+                        lblCarta.Content = Properties.Resources.cartaPerderTurno;
+                        break;
+                }
             }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            
         }
 
         private void CerrarCartaBonus_Click(object sender, RoutedEventArgs e)
@@ -497,6 +609,22 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
         }
 
@@ -648,7 +776,13 @@ namespace ClienteGloomApp
 
         public void ActualizarJugadorMuerto(string jugadorMuerto)
         {
-            throw new NotImplementedException();
+            if (jugadorMuerto.Equals(jugadorPropietario))
+            {
+                decCartaBonus.Visibility = Visibility.Visible;
+                decCarta.Visibility = Visibility.Visible;
+                btnUsar.IsEnabled = false;
+                btnDescartar.IsEnabled = false;
+            }
         }
 
         void IServicioJuegoTableroCallback.RecibirExpulsion(string jugadorObjetivo)
@@ -664,6 +798,13 @@ namespace ClienteGloomApp
         void IServicioJuegoTableroCallback.NotificarVotacionExpulsion(string jugadorPropuesto)
         {
             throw new NotImplementedException();
+        }
+
+        private void DirigirJigadorInicioDeSesions()
+        {
+            Inicio nuevaVentana = new Inicio(jugadorPropietario.ToString());
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 }

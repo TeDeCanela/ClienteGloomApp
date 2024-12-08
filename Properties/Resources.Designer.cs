@@ -1159,6 +1159,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Codigo.
+        /// </summary>
+        public static string miniHisotriaInstruccionCodigo {
+            get {
+                return ResourceManager.GetString("miniHisotriaInstruccionCodigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Sala mini-historia.
         /// </summary>
         public static string miniHistoriaEncabezado {

@@ -483,6 +483,9 @@
   <data name="miniBtnEmpezar" xml:space="preserve">
     <value>Empezar</value>
   </data>
+  <data name="miniHisotriaInstruccionCodigo" xml:space="preserve">
+    <value>Codigo</value>
+  </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Sala mini-historia</value>
   </data>

@@ -32,6 +32,8 @@ namespace ClienteGloomApp
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
+            lblInstruccion.Content = Properties.Resources.miniHistoriaNumeroSala + " :" + sala.idSala;
+            lblInstruccionCodigo.Content = Properties.Resources.miniHisotriaInstruccionCodigo + " :" + sala.codigo;
             numeroDeSala = sala.idSala;
             btnEmpezar.BorderBrush = Brushes.Red;
             btnEmpezar.BorderThickness = new Thickness(4);
@@ -47,7 +49,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
            
 
@@ -142,7 +144,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
 
         }
@@ -193,7 +195,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             btnEmpezar.BorderBrush = Brushes.Red;
             btnEmpezar.BorderThickness = new Thickness(4);
@@ -300,5 +302,13 @@ namespace ClienteGloomApp
         {
             throw new NotImplementedException();
         }
+
+        private void BtnInvitarJugadores_Click(object sender, RoutedEventArgs e)
+        {
+            InvitacionJugador invitacionJugador = new InvitacionJugador(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.idSala);
+            invitacionJugador.Show();
+        }
+
+        
     }
 }
