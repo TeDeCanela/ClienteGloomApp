@@ -27,9 +27,9 @@ namespace ClienteGloomApp
             }
             else
             {
-                instanciaUnica.Focus();
+                instanciaUnica.Focus(); 
             }
-
+            
             return instanciaUnica;
         }
 
@@ -41,11 +41,11 @@ namespace ClienteGloomApp
 
             try
             {
-                InstanceContext contexto = new InstanceContext(this);
+                InstanceContext contexto = new InstanceContext(this);  
                 proxyChat = new ChatClient(contexto);
 
                 proxyChat.AgregarJugadorAChat(identificadorUsuario);
-
+               
                 var historial = proxyChat.ObtenerHistorialMensajes();
                 foreach (var mensaje in historial)
                 {
@@ -59,7 +59,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
 
@@ -88,7 +88,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
 
@@ -112,7 +112,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
 
@@ -121,7 +121,7 @@ namespace ClienteGloomApp
         /// </summary>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            
             try
             {
                 if (proxyChat != null)
@@ -131,7 +131,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
     }

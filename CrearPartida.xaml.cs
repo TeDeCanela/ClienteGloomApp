@@ -26,6 +26,7 @@ namespace ClienteGloomApp
         private string tipoSalaSeleccionada; 
         private int numeroJugadoresSeleccionado; 
         private string tipoPartidaSeleccionada;
+        ValidacionCampos validar = new ValidacionCampos();
         public CrearPartida(String nombreUsuario)
         {
             InitializeComponent();
@@ -41,16 +42,10 @@ namespace ClienteGloomApp
 
             ServicioGloom.Sala sala = new ServicioGloom.Sala();
 
-            string nombrePartida = txtNombreSala.Text;
 
-            if (ContieneCaracteresEspeciales(nombrePartida))
-            {
-                MessageBox.Show("El campo de texto contiene caracteres especiales no permitidos.");
-                txtNombreSala.Clear();
-            }
-            else
-            {
-                sala.nombreSala = txtNombreSala.Text;
+
+
+            sala.nombreSala = validar.VerificarNombrePartida(txtNombreSala.Text);
                 sala.tipoSala = tipoSalaSeleccionada;
                 sala.tipoPartida = tipoPartidaSeleccionada;
                 sala.noJugadores = numeroJugadoresSeleccionado;
@@ -81,20 +76,17 @@ namespace ClienteGloomApp
                         }
                     }
                 }
-                catch (FaultException<ManejadorExcepciones> ex)
+            catch (ArgumentException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
                 {
                     MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
                 }
-            }
+            
         }
 
-
-        private bool ContieneCaracteresEspeciales(string texto)
-        {
-            string patron = @"[@?#{\[\]""'¿-]";  
-
-            return Regex.IsMatch(texto, patron);
-        }
 
         private string ObtenerFecha()
         {
@@ -112,7 +104,7 @@ namespace ClienteGloomApp
             string codigoSalaNormal = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
 
             InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
 
             var salaNormal = proxy.BuscarSalaExistente(codigoSalaNormal, codigoSalaNormal);
 
@@ -127,7 +119,7 @@ namespace ClienteGloomApp
             string codigoSalaMini = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
 
             InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
 
             var salaMini = proxy.BuscarSalaExistente(codigoSalaMini, codigoSalaMini);
             SalaMiniJuego sala = new SalaMiniJuego(identificadorUsuario, salaMini);

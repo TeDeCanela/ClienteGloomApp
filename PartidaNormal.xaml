@@ -127,7 +127,11 @@ Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
             </Button>
             <Image x:Name="imgCartaBonus" Height="171" Width="172"/>
             <Label x:Name="lblCarta" FontWeight="Bold" Foreground="White" Width="394"/>
-
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+                <Button x:Name="btnJugador2"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+                <Button x:Name="btnJugador3"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+                <Button x:Name="btnJugador4"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+            </StackPanel>
         </StackPanel>
 
        
@@ -162,8 +166,11 @@ Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
 
         <!--<StackPanel x:Name="panUsuariosBonus" Visibility="Visible" Orientation="Vertical" Margin="10">
              Los botones de los jugadores serán añadidos dinámicamente 
-        </StackPanel>-->
-
+        </StackPanel>
+        <Button x:Name="btnJugador2"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+        <Button x:Name="btnJugador3"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+        <Button x:Name="btnJugador4"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
+        -->
 
     </Grid>
 </Window>

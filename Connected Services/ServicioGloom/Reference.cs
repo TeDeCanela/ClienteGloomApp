@@ -11,8 +11,8 @@
 namespace ClienteGloomApp.ServicioGloom {
     using System.Runtime.Serialization;
     using System;
-    
-    
+    using System.ServiceModel;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
@@ -722,7 +722,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public JugadorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-        
+
+        public JugadorClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public int AgregarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
             return base.Channel.AgregarJugador(jugador);
         }
@@ -862,7 +866,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public AmigosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-        
+
+        public AmigosClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public int EnviarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
             return base.Channel.EnviarSolcitudAmistad(solicitud);
         }
@@ -1667,7 +1675,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServicioCartaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IServicioCarta>, ClienteGloomApp.ServicioGloom.IServicioCarta {
         
-        public ServicioCartaClient(System.ServiceModel.InstanceContext contextoCarta) {
+        public ServicioCartaClient() {
         }
         
         public ServicioCartaClient(string endpointConfigurationName) : 
@@ -1685,7 +1693,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public ServicioCartaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-        
+
+        public ServicioCartaClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public ClienteGloomApp.ServicioGloom.Carta[] ObtenerMazoJugador(string nombreJugador) {
             return base.Channel.ObtenerMazoJugador(nombreJugador);
         }
@@ -1770,7 +1782,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public ServicioHistorialPartidaClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
-        
+
+        public ServicioHistorialPartidaClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public ServicioHistorialPartidaClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
@@ -1884,7 +1900,11 @@ namespace ClienteGloomApp.ServicioGloom {
         public CreacionPartidaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-        
+
+        public CreacionPartidaClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerUsuariosYPersonajes(string numeroSala) {
             return base.Channel.ObtenerUsuariosYPersonajes(numeroSala);
         }

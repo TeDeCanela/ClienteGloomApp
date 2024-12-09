@@ -91,7 +91,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoCrearPartida= new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
                 var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
                 ValidarSalaActiva(resultadoSala.ganador);

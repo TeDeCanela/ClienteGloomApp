@@ -237,7 +237,7 @@ namespace ClienteGloomApp
         {
             panCartaBonus.Visibility = Visibility.Visible;
             InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient();
             try
             {
                 Carta carta = proxy.ObtenerCartasBonus();
@@ -260,7 +260,7 @@ namespace ClienteGloomApp
         private void PonerInformacionCartaBonus(string tipo)
         {
             InstanceContext contextoTablero = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoTablero);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
             var familiasPorJugador = proxy.ObtenerFamiliaPorJugador(lblNumeroSala.Content.ToString()); // Obtener las familias por jugador
             int botonIndex = 0;
             var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
@@ -315,7 +315,7 @@ namespace ClienteGloomApp
             cartaBonusSeleccionada = new Carta { identificador = string.Empty, valor = 0, tipo = "vacío" };
             ActualizarTurnoLlamar();
             DeshabilitaCampos();
-            jugadorSeleciconadoParaCastigo = "";
+            jugadorSeleciconadoParaCastigo   = "";
             btnJugador2.BorderThickness = new Thickness(0);
             btnJugador3.BorderThickness = new Thickness(0);
             btnJugador4.BorderThickness = new Thickness(0);
@@ -774,7 +774,7 @@ namespace ClienteGloomApp
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
-
+            
             Chat ventanaChat = Chat.ObtenerInstancia(lblJugador1.Content.ToString());
             ventanaChat.Show();
             ventanaChat.Focus();
@@ -1007,7 +1007,7 @@ namespace ClienteGloomApp
 
                 MessageBox.Show(jugadorObjetivo, "Has sido expulsado", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-                Inicio ventanaInicio = new Inicio(lblJugador1.Content.ToString()); // Asegúrate de que Inicio sea la ventana del menú principal
+                Inicio ventanaInicio = new Inicio(lblJugador1.Content.ToString()); 
                 ventanaInicio.Show();
                 this.Close();
             });

@@ -56,7 +56,7 @@ namespace ClienteGloomApp
         {
             InstanceContext contexJugador = new InstanceContext(this);
 
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
             try
