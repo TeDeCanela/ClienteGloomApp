@@ -107,7 +107,7 @@ namespace ClienteGloomApp
 
         public string VerificarNombrePartida(string nombrePartida)
         {
-            string nombreRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
+            string nombreRegex = @"^(?! )(?!.[\\!\\#\\$%\\&'\\(\\)\\\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
 
             if (string.IsNullOrWhiteSpace(nombrePartida))
             {
@@ -124,7 +124,7 @@ namespace ClienteGloomApp
 
         public string VerificarMensajeChat(string mensaje)
         {
-            string mensajeRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
+            string mensajeRegex = @"^(?! )(?!.[\\!\\#\\$%\\&'\\(\\)\\\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
 
             if (string.IsNullOrWhiteSpace(mensaje))
             {

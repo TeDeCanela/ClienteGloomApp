@@ -18,15 +18,36 @@ namespace ClienteGloomApp
 
         public BusquedaPartida(string nombreUsuario)
         {
-            InitializeComponent();
-            identificadorUsuario = nombreUsuario;
-            salasActivas = new ObservableCollection<Sala>();
-            tblSalas.ItemsSource = salasActivas;
+            try
+            {
+                InitializeComponent();
+                identificadorUsuario = nombreUsuario;
+                salasActivas = new ObservableCollection<Sala>();
+                tblSalas.ItemsSource = salasActivas;
 
-            InstanceContext context = new InstanceContext(this);
-            servicio = new SalaClient(context);
+                InstanceContext context = new InstanceContext(this);
+                servicio = new SalaClient(context);
 
-            CargarSalasActivas();
+                CargarSalasActivas();
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
 
         private void CargarSalasActivas()
@@ -38,7 +59,7 @@ namespace ClienteGloomApp
 
                 if (salasDesdeServicio == null || salasDesdeServicio.Length == 0)
                 {
-                    MessageBox.Show("No se encontraron salas activas.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("60", Properties.Resources.mensajeTituloInformacion , MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
@@ -49,7 +70,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -58,7 +96,7 @@ namespace ClienteGloomApp
             salaSeleccionada = (Sala)tblSalas.SelectedItem;
             if (salaSeleccionada == null)
             {
-                MessageBox.Show("Por favor, selecciona una sala.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("61", Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -68,7 +106,7 @@ namespace ClienteGloomApp
                 if (salaSeleccionada.tipoPartida == "Pública" && salaSeleccionada.tipoSala == "Normal")
                 {
                     servicio.UnirseASalaPublicaNormalAsync(idSala, identificadorUsuario);
-                    MessageBox.Show("Te has unido a la sala pública correctamente.");
+                    MessageBox.Show("63");
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
                 else if (salaSeleccionada.tipoPartida == "Privada")
@@ -78,7 +116,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -88,7 +143,7 @@ namespace ClienteGloomApp
 
             if (string.IsNullOrEmpty(codigoAcceso))
             {
-                MessageBox.Show("Código de acceso no proporcionado.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("64", Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -98,19 +153,36 @@ namespace ClienteGloomApp
                 if (salaSeleccionada.tipoSala == "Normal")
                 {
                     servicio.UnirseASalaPrivadaNormalAsync(identificadorUsuario, idSala, codigoAcceso);
-                    MessageBox.Show("Te has unido a la sala privada correctamente.");
+                    MessageBox.Show("65");
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
                 else if (salaSeleccionada.tipoSala == "Mini historia")
                 {
                     servicio.UnirseASalaPrivadaMiniHistoriaAsync(identificadorUsuario, idSala, codigoAcceso);
-                    MessageBox.Show("Te has unido a la sala privada correctamente.");
+                    MessageBox.Show("65");
                     AbrirVentanaSalaMiniHistoria(identificadorUsuario, salaSeleccionada);
                 }
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
         }
 
@@ -141,11 +213,11 @@ namespace ClienteGloomApp
         {
             if (esExitoso)
             {
-                MessageBox.Show("Te has unido a la sala correctamente.");
+                MessageBox.Show("66");
             }
             else
             {
-                MessageBox.Show("No se pudo unir a la sala. Verifica el código de acceso.");
+                MessageBox.Show("67");
             }
         }
 
@@ -191,6 +263,13 @@ namespace ClienteGloomApp
         void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
         {
             throw new NotImplementedException();
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 }

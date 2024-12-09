@@ -165,6 +165,9 @@
   <data name="escribirMensajeInstrucción" xml:space="preserve">
     <value>Write a message</value>
   </data>
+  <data name="finMiniComentarioGanador" xml:space="preserve">
+    <value>The voice of destiny has spoken, and I have answered, I have won.</value>
+  </data>
   <data name="finMiniInstruccionGanador" xml:space="preserve">
     <value>Destiny has declared its verdict, and I am victorious.</value>
   </data>
@@ -480,6 +483,9 @@
   <data name="miniBtnEmpezar" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="miniHisotriaInstruccionCodigo" xml:space="preserve">
+    <value>Codigo</value>
+  </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Mini-story room.</value>
   </data>
@@ -596,8 +602,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
-  </data>
-  <data name="finMiniComentarioGanador" xml:space="preserve">
-    <value>The voice of destiny has spoken, and I have answered, I have won.</value>
   </data>
 </root>

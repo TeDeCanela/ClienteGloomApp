@@ -22,7 +22,7 @@ namespace ClienteGloomApp
         public HistoriaPersonajes(String nombreUsuario)
         {
             InitializeComponent();
-            //lblNombreUsuarioRegistrado.Content = nombreUsuario;
+            lblNombreUsuarioRegistrado.Content = nombreUsuario;
         }
 
         private void btnMerit_Click(object sender, RoutedEventArgs e)
@@ -107,9 +107,10 @@ namespace ClienteGloomApp
 
         private void btnFlecha_Click(object sender, RoutedEventArgs e)
         {
-            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
+            InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
         }
+
     }
 }

@@ -354,6 +354,9 @@
   <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
     <value>La invitación por correo no pudo ser enviada, inténtelo de nuevo más tarde</value>
   </data>
+  <data name="mensajeExp" xml:space="preserve">
+    <value />
+  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Usuario registrado</value>
   </data>
@@ -399,6 +402,9 @@
   <data name="mensajeExp12" xml:space="preserve">
     <value>Aún no ha seleccionado una imagen para su perfil</value>
   </data>
+  <data name="mensajeExp13" xml:space="preserve">
+    <value>Nombre de usuario incorrecto</value>
+  </data>
   <data name="mensajeExp14" xml:space="preserve">
     <value>Este personaje ya está seleccionado</value>
   </data>
@@ -429,6 +435,15 @@
   <data name="mensajeExp22" xml:space="preserve">
     <value>Se produjo un problema con el servidor. Intente nuevamente más tarde.</value>
   </data>
+  <data name="mensajeExp23" xml:space="preserve">
+    <value>La sala no es pública o no existe.</value>
+  </data>
+  <data name="mensajeExp24" xml:space="preserve">
+    <value>Verifique el código de la sala.</value>
+  </data>
+  <data name="mensajeExp25" xml:space="preserve">
+    <value>No se encuentra archivo para enviar correo.</value>
+  </data>
   <data name="mensajeExp34" xml:space="preserve">
     <value>La sala ya está llena, no puede ingresar</value>
   </data>
@@ -456,6 +471,21 @@
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Excepción 54060</value>
   </data>
+  <data name="mensajeExpuslion" xml:space="preserve">
+    <value>Se ha iniciado la expulsión del jugador: </value>
+  </data>
+  <data name="mensajeHaSalidoDeSala" xml:space="preserve">
+    <value>Has salido de la sala y esta ha sido eliminada.</value>
+  </data>
+  <data name="mensajeHaSidoExpulsado" xml:space="preserve">
+    <value>Ha sido expulsado de la sala</value>
+  </data>
+  <data name="mensajeMiniPartidaTiempoAgotado" xml:space="preserve">
+    <value>Ha tardado mucho para elegir para quien utilizará la carta</value>
+  </data>
+  <data name="mensajeNoJugadoresParaExpulsar" xml:space="preserve">
+    <value>No hay jugadores disponibles para expulsar.</value>
+  </data>
   <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
     <value>¡Partida creada con éxito!</value>
   </data>
@@ -464,6 +494,12 @@
   </data>
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>Mensaje de falla para el registro</value>
+  </data>
+  <data name="mensajeSalaPartida" xml:space="preserve">
+    <value>La sala ya no está activa. Regresando al menú principal.</value>
+  </data>
+  <data name="mensajeSeleccionJugador" xml:space="preserve">
+    <value>Debe seleccionar un jugador para continuar.</value>
   </data>
   <data name="mensajeSolcitudEnviadaExito" xml:space="preserve">
     <value>Tu solicitud de amistad se ha enviado exitosamente</value>
@@ -483,6 +519,9 @@
   <data name="miniBtnEmpezar" xml:space="preserve">
     <value>Empezar</value>
   </data>
+  <data name="miniHisotriaInstruccionCodigo" xml:space="preserve">
+    <value>Codigo</value>
+  </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Sala mini-historia</value>
   </data>
@@ -497,6 +536,18 @@
   </data>
   <data name="miniJugadores" xml:space="preserve">
     <value>Jugadores</value>
+  </data>
+  <data name="palabraFamilia" xml:space="preserve">
+    <value>Familia</value>
+  </data>
+  <data name="palabraGanador" xml:space="preserve">
+    <value>Ganador</value>
+  </data>
+  <data name="palabraJugador" xml:space="preserve">
+    <value>Jugador</value>
+  </data>
+  <data name="palabraVidaTotal" xml:space="preserve">
+    <value>Vida total</value>
   </data>
   <data name="partidaBtnDescartar" xml:space="preserve">
     <value>Descartar</value>
@@ -518,6 +569,24 @@
   </data>
   <data name="partidaBtnUsar" xml:space="preserve">
     <value>Usar</value>
+  </data>
+  <data name="partidaFinPartida" xml:space="preserve">
+    <value>Fin de la partida</value>
+  </data>
+  <data name="partidaFinSinGanador" xml:space="preserve">
+    <value>La partida terminó sin ganador</value>
+  </data>
+  <data name="partidaInstruccionSeleccionarPersonajeObjetivo" xml:space="preserve">
+    <value>Seleccione personaje objetivo</value>
+  </data>
+  <data name="partidaInstruccionSeleccionarUsuario" xml:space="preserve">
+    <value>Seleccione usuario objetivo</value>
+  </data>
+  <data name="partidaIntruccionSeleciconaPersonajeFamilia" xml:space="preserve">
+    <value>Selecciona un personaje de tu familia:</value>
+  </data>
+  <data name="partidaIntruccionSeleciconaPersonajeFamiliaMuerte" xml:space="preserve">
+    <value>Selecciona un personaje de tu familia para aplicar la carta de muerte:</value>
   </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Guardar cambios</value>

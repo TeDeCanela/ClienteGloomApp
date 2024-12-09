@@ -37,25 +37,43 @@ namespace ClienteGloomApp
 
         public void RellenarCamposDesdeJugador()
         {
-            InstanceContext contextoJugador = new InstanceContext(this);
-
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
-
-            ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
-
-            jugador = proxy.ObtenerJugador(identificadorUsuario);
-            if (RutasDeCartas.RutasImagenesPerfiles.TryGetValue(jugador.icono, out var rutaImagen))
+            try
             {
-                imgFotoPerfil.Source= new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
-            }
-           
+                InstanceContext contextoJugador = new InstanceContext(this);
 
-            lblNombreUsuarioRegistrado.Content = jugador.nombreUsuario;
-            txtNombre.Text = jugador.nombre;
-            txtApellidos.Text = jugador.apellidos;
-            txtCorreo.Text = jugador.correo;
-            pwdContrasena.Password = jugador.contraseña;
-            
+                ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+
+                ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
+
+                jugador = proxy.ObtenerJugador(identificadorUsuario);
+                if (RutasDeCartas.RutasImagenesPerfiles.TryGetValue(jugador.icono, out var rutaImagen))
+                {
+                    imgFotoPerfil.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
+                }
+
+
+                lblNombreUsuarioRegistrado.Content = jugador.nombreUsuario;
+                txtNombre.Text = jugador.nombre;
+                txtApellidos.Text = jugador.apellidos;
+                txtCorreo.Text = jugador.correo;
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
         }
         private void btnCambiarDatos_Click(object sender, RoutedEventArgs e)
         {
@@ -71,7 +89,7 @@ namespace ClienteGloomApp
             jugador.nombre = validar.VerificarNombreYApellidos(txtNombre.Text);
             jugador.apellidos = validar.VerificarNombreYApellidos(txtApellidos.Text);
             jugador.correo = validar.VerificarCorreo(txtCorreo.Text);
-            jugador.contraseña = pwdContrasena.Password;//validar.VerificarContrasena(pwdContrasena.Password);
+            jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
             jugador.tipo = "Jugador";
             jugador.icono = iconoSeleccionado;
 
@@ -89,7 +107,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
 
         }
@@ -174,6 +209,13 @@ namespace ClienteGloomApp
                     botonesDeContendero.BorderBrush = null;
                 }
             }
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 }

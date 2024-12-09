@@ -42,29 +42,25 @@ namespace ClienteGloomApp
 
             ServicioGloom.Sala sala = new ServicioGloom.Sala();
 
-
-
-
-            sala.nombreSala = validar.VerificarNombrePartida(txtNombreSala.Text);
+                try
+                {
+                sala.nombreSala = validar.VerificarNombrePartida(txtNombreSala.Text);
                 sala.tipoSala = tipoSalaSeleccionada;
                 sala.tipoPartida = tipoPartidaSeleccionada;
                 sala.noJugadores = numeroJugadoresSeleccionado;
                 sala.idAdministrador = identificadorUsuario;
                 sala.ganador = "Sin ganador";
                 sala.fecha = ObtenerFecha();
-
-                try
-                {
-                    if (tipoSalaSeleccionada == "Mini historia" && tipoPartidaSeleccionada == "Pública")
+                if (tipoSalaSeleccionada == "Mini historia" && tipoPartidaSeleccionada == "Pública")
                     {
-                        MessageBox.Show(Properties.Resources.mensajeTipoPartidaNoPermitida, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show(Properties.Resources.mensajeTipoPartidaNoPermitida, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {
                         int resultadoOperacion = proxy.CrearPartida(sala);
                         if (resultadoOperacion == 1)
                         {
-                            MessageBox.Show(Properties.Resources.mensajePartidaCreadaExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show(Properties.Resources.mensajePartidaCreadaExitosa, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                             if (tipoSalaSeleccionada == "Mini historia")
                             {
                                 CambiarASalaMiniJuego();
@@ -82,9 +78,26 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
                 {
-                    MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                    MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
                 }
-            
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
 
 
@@ -101,37 +114,100 @@ namespace ClienteGloomApp
 
         void CambiarASalaNormal()
         {
-            string codigoSalaNormal = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
+            try
+            {
+                string codigoSalaNormal = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
+                InstanceContext contexto = new InstanceContext(this);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
 
-            InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
+                var salaNormal = proxy.BuscarSalaExistente(txtNombreSala.Text, codigoSalaNormal);
 
-            var salaNormal = proxy.BuscarSalaExistente(codigoSalaNormal, codigoSalaNormal);
 
-            
-            SalaNormal sala = new SalaNormal(identificadorUsuario, salaNormal);
-            sala.Show();
-            this.Close();
+                SalaNormal sala = new SalaNormal(identificadorUsuario, salaNormal);
+                sala.Show();
+                this.Close();
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
 
         void CambiarASalaMiniJuego()
         {
-            string codigoSalaMini = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
+            try
+            {
+                string codigoSalaMini = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
 
-            InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
+                InstanceContext contexto = new InstanceContext(this);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
 
-            var salaMini = proxy.BuscarSalaExistente(codigoSalaMini, codigoSalaMini);
-            SalaMiniJuego sala = new SalaMiniJuego(identificadorUsuario, salaMini);
-            sala.Show();
-            this.Close();
+                var salaMini = proxy.BuscarSalaExistente(txtNombreSala.Text, codigoSalaMini);
+                SalaMiniJuego sala = new SalaMiniJuego(identificadorUsuario, salaMini);
+                sala.Show();
+                this.Close();
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
 
         private string ObtenerCodigoDeSala(string usuarioAdminsitrador, string nombreSala)
         {
-            InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
-            string codigo = proxy.ObtenerCodigoSala(usuarioAdminsitrador, nombreSala);
+            string codigo = "";
+            try
+            {
+                InstanceContext contexto = new InstanceContext(this);
+                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
+                codigo = proxy.ObtenerCodigoSala(usuarioAdminsitrador, nombreSala);
+                
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
             return codigo;
         }
 
@@ -214,6 +290,13 @@ namespace ClienteGloomApp
         void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
         {
             throw new NotImplementedException();
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
 
     }

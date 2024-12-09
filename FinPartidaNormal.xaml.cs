@@ -30,44 +30,64 @@ namespace ClienteGloomApp
             jugadorPropietario = nombreUsuario;
             identificadorSala = idSala;
 
-            lblJugador1.Content = $"Ganador: {ganador}";
+            lblJugador1.Content = Properties.Resources.palabraGanador + ": " + ganador;
             AsignarJugadores();
         }
 
 
         private void AsignarJugadores()
         {
-            InstanceContext contextoTableroJuego = new InstanceContext(this);
-            ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTableroJuego);
-
-            var resumenFamilias = proxy.ObtenerResumenFamiliasPorSala(identificadorSala);
-            var rutaImagenesPorFamilia = new Dictionary<string, string>
-    {
-        { "Ores", "Imagenes/EscudoOres.jpg" },
-        { "Corbat", "Imagenes/EscudoCorbat.jpg" },
-        { "Garlo", "Imagenes/EscudoGarlo.jpg" },
-        { "Ramfez", "Imagenes/EscudoRamfez.jpg" }
-    };
-
-            var labels = new[] { lblJugador1, lblJugador2, lblJugador3, lblJugador4 };
-            var images = new[] { imgFamilia1, imgFamilia2, imgFamilia3, imgFamilia4 };
-
-            int index = 0;
-            foreach (var jugador in resumenFamilias)
+            try
             {
-                if (index >= labels.Length) break;
+                InstanceContext contextoTableroJuego = new InstanceContext(this);
+                ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTableroJuego);
 
-                string nombreJugador = jugador.Key;
-                string familia = jugador.Value.Item1; 
-                int vidaTotal = jugador.Value.Item2; 
-
-                labels[index].Content = $"Jugador: {nombreJugador}, Familia: {familia}, Vida Total: {vidaTotal}";
-                if (rutaImagenesPorFamilia.TryGetValue(familia, out var rutaImagen))
+                var resumenFamilias = proxy.ObtenerResumenFamiliasPorSala(identificadorSala);
+                var rutaImagenesPorFamilia = new Dictionary<string, string>
                 {
-                    images[index].Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
-                }
+                    { "Ores", "Imagenes/EscudoOres.jpg" },
+                    { "Corbat", "Imagenes/EscudoCorbat.jpg" },
+                    { "Garlo", "Imagenes/EscudoGarlo.jpg" },
+                    { "Ramfez", "Imagenes/EscudoRamfez.jpg" }
+                };
 
-                index++;
+                var labels = new[] { lblJugador1, lblJugador2, lblJugador3, lblJugador4 };
+                var images = new[] { imgFamilia1, imgFamilia2, imgFamilia3, imgFamilia4 };
+
+                int index = 0;
+                foreach (var jugador in resumenFamilias)
+                {
+                    if (index >= labels.Length) break;
+
+                    string nombreJugador = jugador.Key;
+                    string familia = jugador.Value.Item1;
+                    int vidaTotal = jugador.Value.Item2;
+
+                    labels[index].Content = Properties.Resources.palabraJugador + ": " + nombreJugador + ", " + Properties.Resources.palabraFamilia +": "+ familia + ", " + Properties.Resources.palabraVidaTotal +": " + vidaTotal;
+                    if (rutaImagenesPorFamilia.TryGetValue(familia, out var rutaImagen))
+                    {
+                        images[index].Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
+                    }
+
+                    index++;
+                }
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -130,6 +150,13 @@ namespace ClienteGloomApp
         void IServicioJuegoTableroCallback.ActualizarJugadorMuerto(string jugadorMuerto)
         {
             throw new NotImplementedException();
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 }

@@ -139,11 +139,11 @@ Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
         <StackPanel x:Name="panSeleccionObjetivos" Visibility="Collapsed" Background="LightGray" Margin="10" VerticalAlignment="Top">
             <Label x:Name="lblSeleccionUsuario" FontWeight="Bold" Margin="5" />
             <StackPanel x:Name="panUsuariosObjetivo" Orientation="Vertical" Margin="10">
-                <!-- Botones dinámicos de usuarios se agregarán aquí -->
+ 
             </StackPanel>
             <Label x:Name="lblSeleccionPersonaje" FontWeight="Bold" Margin="5" />
             <StackPanel x:Name="panPersonajesObjetivo" Orientation="Vertical" Margin="10">
-                <!-- Botones dinámicos de personajes se agregarán aquí -->
+            
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
                 <Button x:Name="btnConfirmarSeleccion" Content="Confirmar" Width="80" Margin="5" Click="BtnConfirmarSeleccion_Click" />
@@ -163,14 +163,13 @@ Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Visible">
                 <Button x:Name="btnCancelarExpulsion" Content="Cancelar" Width="80" Margin="5" Click="BtnCancelarExpulsion_Click"/>
             </StackPanel>
         </StackPanel>
+        <Rectangle x:Name="decCartaBonusFinal" HorizontalAlignment="Left" Height="136" Margin="838,291,0,0"
+Stroke="Black" VerticalAlignment="Top" Width="134" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
-        <!--<StackPanel x:Name="panUsuariosBonus" Visibility="Visible" Orientation="Vertical" Margin="10">
-             Los botones de los jugadores serán añadidos dinámicamente 
-        </StackPanel>
-        <Button x:Name="btnJugador2"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
-        <Button x:Name="btnJugador3"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
-        <Button x:Name="btnJugador4"  Content="" Width="118" Margin="10" Height="38" Visibility="Collapsed" BorderBrush="{x:Null}" Click="CambiarJugador_Click"/>
-        -->
 
     </Grid>
 </Window>

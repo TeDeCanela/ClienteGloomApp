@@ -22,7 +22,6 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class Inicio : Window
     {
-        //private String identificadorUsuario;
         private String tipoJugador;
 
         public Inicio(String nombreDelUsuario)
@@ -43,9 +42,9 @@ namespace ClienteGloomApp
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            /*PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
+            PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnVerPersonajes_Click(object sender, RoutedEventArgs e)
@@ -57,9 +56,9 @@ namespace ClienteGloomApp
 
         private void btnListaDeAmigos_Click(object sender, RoutedEventArgs e)
         {
-            /*ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
+            ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
@@ -91,7 +90,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoCrearPartida= new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
                 var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
                 ValidarSalaActiva(resultadoSala.ganador);
@@ -106,12 +105,29 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
 
             }catch (InvalidOperationException ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
-            } 
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
         }
 
         private void ValidarSalaActiva(string ganador)
@@ -158,6 +174,13 @@ namespace ClienteGloomApp
         {
             BusquedaPartida ventanBusqueda = new BusquedaPartida(lblNombreUsuario.Content.ToString());
             ventanBusqueda.Show();
+            this.Close();
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
             this.Close();
         }
     }

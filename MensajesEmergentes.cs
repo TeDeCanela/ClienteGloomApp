@@ -60,5 +60,14 @@ namespace ClienteGloomApp
 
             MessageBox.Show(mensaje, "Msg", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        public static void MostrarMensajeAdvertencia(string codigoError, string mensajeError)
+        {
+            string mensaje = mensajesErrores.TryGetValue(codigoError, out string valor)
+            ? valor
+            : mensajeError;
+
+            MessageBox.Show(mensaje, "Msg", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }

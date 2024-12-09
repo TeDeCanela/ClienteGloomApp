@@ -55,10 +55,9 @@
             <Button.Background>
                 <ImageBrush ImageSource="/Imagenes/flecha.png"/>
             </Button.Background>
-        </Button> 
+        </Button>
         <Label x:Name="lblNombreUsuarioRegistrado" Content="" HorizontalAlignment="Left" Margin="940,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-    
-        </Grid>
+    </Grid>
 </Window>
 
 

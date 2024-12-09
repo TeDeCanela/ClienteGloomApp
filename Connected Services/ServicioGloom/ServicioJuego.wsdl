@@ -110,12 +110,12 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
+      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJugador_AgregarJugador_InputMessage">
@@ -180,6 +180,9 @@
   </wsdl:message>
   <wsdl:message name="IJugador_EliminarJugadorInvitado_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q7:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IJugador_CerrarSesionJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesionJugador" />
   </wsdl:message>
   <wsdl:message name="IAmigos_EnviarSolcitudAmistad_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarSolcitudAmistad" />
@@ -375,6 +378,12 @@
   </wsdl:message>
   <wsdl:message name="ISala_ObtenerFamiliasSeleccionadasPorSala_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliasSeleccionadasPorSalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISala_CambiarEstadoParaPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarEstadoParaPartida" />
+  </wsdl:message>
+  <wsdl:message name="ISala_CambiarEstadoParaPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarEstadoParaPartidaResponse" />
   </wsdl:message>
   <wsdl:message name="ISala_EmpezarJuego_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EmpezarJuego" />
@@ -676,6 +685,9 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IJugador/EliminarJugadorInvitadoResponse" message="tns:IJugador_EliminarJugadorInvitado_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IJugador/EliminarJugadorInvitadoManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IJugador_EliminarJugadorInvitado_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CerrarSesionJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugador/CerrarSesionJugador" message="tns:IJugador_CerrarSesionJugador_InputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IAmigos">
     <wsdl:operation name="EnviarSolcitudAmistad">
@@ -800,6 +812,10 @@
     <wsdl:operation name="ObtenerFamiliasSeleccionadasPorSala">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSala" message="tns:ISala_ObtenerFamiliasSeleccionadasPorSala_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSalaResponse" message="tns:ISala_ObtenerFamiliasSeleccionadasPorSala_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarEstadoParaPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/CambiarEstadoParaPartida" message="tns:ISala_CambiarEstadoParaPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/CambiarEstadoParaPartidaResponse" message="tns:ISala_CambiarEstadoParaPartida_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EmpezarJuego">
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/EmpezarJuego" message="tns:ISala_EmpezarJuego_OutputCallbackMessage" />
@@ -1101,6 +1117,12 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="CerrarSesionJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugador/CerrarSesionJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IAmigos" type="tns:IAmigos">
     <wsp:PolicyReference URI="#NetTcpBinding_IAmigos_policy" />
@@ -1381,6 +1403,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerFamiliasSeleccionadasPorSala">
       <soap12:operation soapAction="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarEstadoParaPartida">
+      <soap12:operation soapAction="http://tempuri.org/ISala/CambiarEstadoParaPartida" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1847,57 +1878,57 @@
   </wsdl:binding>
   <wsdl:service name="ServicioJuego">
     <wsdl:port name="NetTcpBinding_IJugador" binding="tns:NetTcpBinding_IJugador">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioJugador" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJugador" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioJugador</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJugador</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAmigos" binding="tns:NetTcpBinding_IAmigos">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioAmigos" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioAmigos" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioAmigos</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioAmigos</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ISala" binding="tns:NetTcpBinding_ISala">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioSala" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioSala" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioSala</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioSala</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioJuegoTablero" binding="tns:NetTcpBinding_IServicioJuegoTablero">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioJuegoTablero" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJuegoTablero" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioJuegoTablero</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJuegoTablero</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioCarta" binding="tns:NetTcpBinding_IServicioCarta">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioCarta" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCarta" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioCarta</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCarta</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioHistorialPartida" binding="tns:NetTcpBinding_IServicioHistorialPartida">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioHistorialPartida" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioHistorialPartida" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioHistorialPartida</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioHistorialPartida</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ICreacionPartida" binding="tns:NetTcpBinding_ICreacionPartida">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioCreacionPartida" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCreacionPartida" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioCreacionPartida</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCreacionPartida</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IChat" binding="tns:NetTcpBinding_IChat">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioChat" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioChat" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioChat</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioChat</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IInvitacion" binding="tns:NetTcpBinding_IInvitacion">
-      <soap12:address location="net.tcp://localhost:8090/ServicioGloom/ServicioInvitacion" />
+      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioInvitacion" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8090/ServicioGloom/ServicioInvitacion</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioInvitacion</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>
