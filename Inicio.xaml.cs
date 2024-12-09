@@ -43,9 +43,9 @@ namespace ClienteGloomApp
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
         {
-            /*PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
+            PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnVerPersonajes_Click(object sender, RoutedEventArgs e)
@@ -57,9 +57,9 @@ namespace ClienteGloomApp
 
         private void btnListaDeAmigos_Click(object sender, RoutedEventArgs e)
         {
-            /*ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
+            ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)

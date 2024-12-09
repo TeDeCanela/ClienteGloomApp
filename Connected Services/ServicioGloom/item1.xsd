@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="ValueTupleOfstringint">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="ValueTupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
-          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
-        </GenericType>
-        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
-      </xs:appinfo>
-    </xs:annotation>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BibliotecaClases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Jugador">
     <xs:sequence>
-      <xs:element name="Item1" nillable="true" type="xs:string" />
-      <xs:element name="Item2" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="icono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ValueTupleOfstringint" nillable="true" type="tns:ValueTupleOfstringint" />
+  <xs:element name="Jugador" nillable="true" type="tns:Jugador" />
+  <xs:complexType name="ManejadorExcepciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManejadorExcepciones" nillable="true" type="tns:ManejadorExcepciones" />
+  <xs:complexType name="ArrayOfJugador">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Jugador" nillable="true" type="tns:Jugador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJugador" nillable="true" type="tns:ArrayOfJugador" />
+  <xs:complexType name="Amistad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="jugadorAmigo" nillable="true" type="tns:Jugador" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="tns:Jugador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Amistad" nillable="true" type="tns:Amistad" />
+  <xs:complexType name="ArrayOfAmistad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Amistad" nillable="true" type="tns:Amistad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAmistad" nillable="true" type="tns:ArrayOfAmistad" />
+  <xs:complexType name="Sala">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ganador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idAdministrador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noJugadores" type="xs:int" />
+      <xs:element minOccurs="0" name="noJugadoresActuales" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreSala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoPartida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoSala" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sala" nillable="true" type="tns:Sala" />
+  <xs:complexType name="ArrayOfSala">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sala" nillable="true" type="tns:Sala" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSala" nillable="true" type="tns:ArrayOfSala" />
 </xs:schema>

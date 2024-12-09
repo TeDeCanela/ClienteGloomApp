@@ -74,8 +74,8 @@ namespace ClienteGloomApp
 
         private void PonerImagenCarta(string nombreUsuario)
         {
-            InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+            //InstanceContext contextoCarta = new InstanceContext(this);
+            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(new InstanceContext(this));
 
             mazoDeJugador = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
 
@@ -234,12 +234,14 @@ namespace ClienteGloomApp
 
         private void BtnCartaBonus_Click(object sender, RoutedEventArgs e)
         {
-            panCartaBonus.Visibility = Visibility.Visible;
-            InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
-            Carta carta = proxy.ObtenerCartasBonus();
-            cartaBonusSeleciconada = carta;
-            string identificador = carta.identificador;
+            //panCartaBonus.Visibility = Visibility.Visible;
+            //InstanceContext contextoCarta = new InstanceContext(this);
+            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(new InstanceContext(this));
+            try
+            {
+                Carta carta = proxy.ObtenerCartasBonus();
+                cartaBonusSeleccionada = carta;
+                string identificador = carta.identificador;
 
             if (RutasDeCartas.RutasImagenesCartaBonus.TryGetValue(identificador, out var rutaImagen))
             {
@@ -251,10 +253,11 @@ namespace ClienteGloomApp
 
         private void PonerInformacionCartaBonus(string tipo)
         {
-            try
-            {
-                InstanceContext contexto = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contexto);
+            //InstanceContext contextoTablero = new InstanceContext(this);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(new InstanceContext(this));
+            var familiasPorJugador = proxy.ObtenerFamiliaPorJugador(lblNumeroSala.Content.ToString()); // Obtener las familias por jugador
+            int botonIndex = 0;
+            var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
 
                 var jugadoresEnSala = proxy.ObtenerJugadoresConectados(lblNumeroSala.Content.ToString());
 

@@ -123,7 +123,7 @@ namespace ClienteGloomApp
             try { 
 
             InstanceContext contextoAmistad = new InstanceContext(this);
-            ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contextoAmistad);
+            ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
             ServicioGloom.Amistad solicitud = new ServicioGloom.Amistad();
 
             var jugadorUsuario = new ServicioGloom.Jugador
@@ -158,7 +158,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoAmistad = new InstanceContext(this);
-                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contextoAmistad);
+                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
                
                     var solicitudes = proxy.ObtenerSolicitudesDeAmistadPorJugador(lblNombreUsuarioRegistrado.Content.ToString());
 
@@ -282,7 +282,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoAmistad = new InstanceContext(this);
-                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contextoAmistad);
+                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(new InstanceContext(this));
 
                 var solicitudes = proxy.ObtenerListaAmigos(lblNombreUsuarioRegistrado.Content.ToString());
 

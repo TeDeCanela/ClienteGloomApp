@@ -37,7 +37,7 @@ namespace ClienteGloomApp
         private void AsignarJugadores()
         {
             InstanceContext contextoPartida= new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoPartida);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
             var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes(identificadorSala);
 
             var rutaImagenesPorPersonaje = new Dictionary<string, string>

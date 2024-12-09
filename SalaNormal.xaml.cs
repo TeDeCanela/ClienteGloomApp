@@ -122,6 +122,7 @@ namespace ClienteGloomApp
 
                     proxy.ValidarFamiliaSeleccionada(salaNormal.noJugadores, salaNormal.idSala);
                     proxy.EmpezarPartida(salaNormal.idSala);
+                    
 
                 }
                 btnEmpezar.BorderBrush = Brushes.Green;

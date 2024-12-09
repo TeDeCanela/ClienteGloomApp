@@ -164,6 +164,9 @@ namespace ClienteGloomApp.ServicioGloom {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string codigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mensajeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -173,6 +176,19 @@ namespace ClienteGloomApp.ServicioGloom {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.codigoField, value) != true)) {
+                    this.codigoField = value;
+                    this.RaisePropertyChanged("codigo");
+                }
             }
         }
         
@@ -672,6 +688,12 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/EliminarJugadorInvitado", ReplyAction="http://tempuri.org/IJugador/EliminarJugadorInvitadoResponse")]
         System.Threading.Tasks.Task<bool> EliminarJugadorInvitadoAsync(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IJugador/CerrarSesionJugador")]
+        void CerrarSesionJugador(string nombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IJugador/CerrarSesionJugador")]
+        System.Threading.Tasks.Task CerrarSesionJugadorAsync(string nombreJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -755,6 +777,14 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<bool> EliminarJugadorInvitadoAsync(string nombreUsuario) {
             return base.Channel.EliminarJugadorInvitadoAsync(nombreUsuario);
+        }
+        
+        public void CerrarSesionJugador(string nombreJugador) {
+            base.Channel.CerrarSesionJugador(nombreJugador);
+        }
+        
+        public System.Threading.Tasks.Task CerrarSesionJugadorAsync(string nombreJugador) {
+            return base.Channel.CerrarSesionJugadorAsync(nombreJugador);
         }
     }
     
@@ -1053,6 +1083,12 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSala", ReplyAction="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSalaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string[]>> ObtenerFamiliasSeleccionadasPorSalaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CambiarEstadoParaPartida", ReplyAction="http://tempuri.org/ISala/CambiarEstadoParaPartidaResponse")]
+        void CambiarEstadoParaPartida(string numeroSala, string ganador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CambiarEstadoParaPartida", ReplyAction="http://tempuri.org/ISala/CambiarEstadoParaPartidaResponse")]
+        System.Threading.Tasks.Task CambiarEstadoParaPartidaAsync(string numeroSala, string ganador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1231,6 +1267,62 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task SalirDeSalaAsync(string idSala, string idUsuario) {
             return base.Channel.SalirDeSalaAsync(idSala, idUsuario);
+        }
+        
+        public void UnirseASalaPrivadaMiniHistoria(string idUsuario, string idSala, string codigoAcceso) {
+            base.Channel.UnirseASalaPrivadaMiniHistoria(idUsuario, idSala, codigoAcceso);
+        }
+        
+        public System.Threading.Tasks.Task UnirseASalaPrivadaMiniHistoriaAsync(string idUsuario, string idSala, string codigoAcceso) {
+            return base.Channel.UnirseASalaPrivadaMiniHistoriaAsync(idUsuario, idSala, codigoAcceso);
+        }
+        
+        public string ObtenerCodigoSala(string idAdminsitrador, string nombreSala) {
+            return base.Channel.ObtenerCodigoSala(idAdminsitrador, nombreSala);
+        }
+        
+        public System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala) {
+            return base.Channel.ObtenerCodigoSalaAsync(idAdminsitrador, nombreSala);
+        }
+        
+        public string[] ObtenerFamiliaSeleccionada(string idSala) {
+            return base.Channel.ObtenerFamiliaSeleccionada(idSala);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ObtenerFamiliaSeleccionadaAsync(string idSala) {
+            return base.Channel.ObtenerFamiliaSeleccionadaAsync(idSala);
+        }
+        
+        public void SeleccionarFamilia(string nombreUsuario, string nombreFamilia, string salaId) {
+            base.Channel.SeleccionarFamilia(nombreUsuario, nombreFamilia, salaId);
+        }
+        
+        public System.Threading.Tasks.Task SeleccionarFamiliaAsync(string nombreUsuario, string nombreFamilia, string salaId) {
+            return base.Channel.SeleccionarFamiliaAsync(nombreUsuario, nombreFamilia, salaId);
+        }
+        
+        public void ValidarFamiliaSeleccionada(int cantidadJugadores, string idSala) {
+            base.Channel.ValidarFamiliaSeleccionada(cantidadJugadores, idSala);
+        }
+        
+        public System.Threading.Tasks.Task ValidarFamiliaSeleccionadaAsync(int cantidadJugadores, string idSala) {
+            return base.Channel.ValidarFamiliaSeleccionadaAsync(cantidadJugadores, idSala);
+        }
+        
+        public System.Collections.Generic.Dictionary<string, string[]> ObtenerFamiliasSeleccionadasPorSala() {
+            return base.Channel.ObtenerFamiliasSeleccionadasPorSala();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string[]>> ObtenerFamiliasSeleccionadasPorSalaAsync() {
+            return base.Channel.ObtenerFamiliasSeleccionadasPorSalaAsync();
+        }
+        
+        public void CambiarEstadoParaPartida(string numeroSala, string ganador) {
+            base.Channel.CambiarEstadoParaPartida(numeroSala, ganador);
+        }
+        
+        public System.Threading.Tasks.Task CambiarEstadoParaPartidaAsync(string numeroSala, string ganador) {
+            return base.Channel.CambiarEstadoParaPartidaAsync(numeroSala, ganador);
         }
     }
     

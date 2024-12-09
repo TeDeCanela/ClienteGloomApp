@@ -110,11 +110,10 @@ namespace ClienteGloomApp
         void CambiarASalaNormal()
         {
             string codigoSalaNormal = ObtenerCodigoDeSala(identificadorUsuario, txtNombreSala.Text);
-
             InstanceContext contexto = new InstanceContext(this);
             ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
 
-            var salaNormal = proxy.BuscarSalaExistente(codigoSalaNormal, codigoSalaNormal);
+            var salaNormal = proxy.BuscarSalaExistente(txtNombreSala.Text, codigoSalaNormal);
 
             
             SalaNormal sala = new SalaNormal(identificadorUsuario, salaNormal);
@@ -129,7 +128,7 @@ namespace ClienteGloomApp
             InstanceContext contexto = new InstanceContext(this);
             ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contexto);
 
-            var salaMini = proxy.BuscarSalaExistente(codigoSalaMini, codigoSalaMini);
+            var salaMini = proxy.BuscarSalaExistente(txtNombreSala.Text, codigoSalaMini);
             SalaMiniJuego sala = new SalaMiniJuego(identificadorUsuario, salaMini);
             sala.Show();
             this.Close();

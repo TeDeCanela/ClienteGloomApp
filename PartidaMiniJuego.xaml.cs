@@ -97,7 +97,7 @@ namespace ClienteGloomApp
         private void AsignarJugadores()
         {
             InstanceContext contextoTablero = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoTablero);
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
             var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes(lblNumeroSala.Content.ToString());
 
             var rutaImagenesPorPersonaje = new Dictionary<string, string>
@@ -156,7 +156,7 @@ namespace ClienteGloomApp
         private void PonerImagenCarta(string nombreUsuario)
         {
             InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient();
             mazoDeJugador = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
 
             Dictionary<int, Button> botonesCartas = new Dictionary<int, Button>
@@ -221,7 +221,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoCarta = new InstanceContext(this);
-                ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
+                ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient();
                 proxy.AgregarCartaAMazoJugador(jugadorPropietario);
                 PonerImagenCarta(jugadorPropietario);
                 DeshabilitaCampos();
@@ -298,7 +298,7 @@ namespace ClienteGloomApp
             InstanceContext contextoTablero = new InstanceContext(this);
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTablero);
             InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxyCarta = new ServicioGloom.ServicioCartaClient(contextoCarta);
+            ServicioGloom.ServicioCartaClient proxyCarta = new ServicioGloom.ServicioCartaClient();
             if (tipo.Equals("modificador"))
             {
                 SeleciconarJugadorParaModificar();  

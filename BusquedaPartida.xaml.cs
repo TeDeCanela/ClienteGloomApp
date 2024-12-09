@@ -141,7 +141,7 @@ namespace ClienteGloomApp
         {
             if (esExitoso)
             {
-                MessageBox.Show("Te has unido a la sala correctamente.");
+                //MessageBox.Show("Te has unido a la sala correctamente.");
             }
             else
             {
