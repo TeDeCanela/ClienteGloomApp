@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,7 @@ namespace ClienteGloomApp
         }
         private void CargarListaAmigos(string usuario)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contexto = new InstanceContext(this);
@@ -48,32 +50,38 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
-        private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)
+        private void BtnInvitarCorreo_Click(object sender, RoutedEventArgs e)
         {
             EnviarCorreoInvitado();
         }
         private string ObtenerCorreoAmigo(string nombreUsuarioAmigo)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             string correo = "";
             try
             {
@@ -84,19 +92,23 @@ namespace ClienteGloomApp
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
             return correo;
@@ -104,6 +116,7 @@ namespace ClienteGloomApp
 
         private void EnviarCorreoInvitado()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 bool resultadoEnvioInvitacion = invitacion.EnviarInvitacion(txtCorreo.Text, codigoSala, identificadorUsuario);
@@ -118,41 +131,73 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
-        private void lstListaAmigos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LstListaAmigos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             string usuarioAmigoSeleccionado = (string)lstListaAmigos.SelectedItem;
             if (string.IsNullOrEmpty(usuarioAmigoSeleccionado))
             {
                 MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            correoAmigo = ObtenerCorreoAmigo(usuarioAmigoSeleccionado);
+            try
+            {
+                correoAmigo = ObtenerCorreoAmigo(usuarioAmigoSeleccionado);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
-        private void btnInvitar_Click(object sender, RoutedEventArgs e)
+        private void BtnInvitar_Click(object sender, RoutedEventArgs e)
         {
             EnviarCorreoAmigo(correoAmigo);
         }
         private void EnviarCorreoAmigo(String correoAmigo)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 bool resultadoEnvioInvitacion = invitacion.EnviarInvitacion(correoAmigo, codigoSala, identificadorUsuario);
@@ -167,23 +212,28 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }

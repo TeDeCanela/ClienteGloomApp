@@ -44,13 +44,13 @@
             </StackPanel>
         </GroupBox>
 
-        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="44,17,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.5,0.5" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1427,17,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.521,0.499" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="-179.553"/>
-                    <TranslateTransform X="0.001" Y="0"/>
+                    <TranslateTransform X="-3.106" Y="0.127"/>
                 </TransformGroup>
             </Button.RenderTransform>
             <Button.Background>

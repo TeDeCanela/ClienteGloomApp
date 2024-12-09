@@ -10,7 +10,7 @@
     <Grid>
 
         <Image Source="Imagenes/SalaFondo.jpg" Width="1573" Height="1073" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.522,0.508" Margin="0,-86,0,0" Opacity=".7"/>
-        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -40,29 +40,29 @@
         <Label x:Name="lblInstruccionFamilia" Content="{x:Static p:Resources.miniHistoriaInstruccionFamiliar}" HorizontalAlignment="Left" Margin="1051,291,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
         <GroupBox x:Name="grupoBotones" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="689,406,0,0" BorderThickness="0" Width="577">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="136,0,0,0">
-                <Button x:Name="btnTucani" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnTucani_Click" Margin="5">
+                <Button x:Name="btnTucani" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="BtnTucani_Click" Margin="5">
                     <Button.Background>
                         <ImageBrush ImageSource="/ImagenesFamilia/Tucani.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnLusiel" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnLusiel_Click" Margin="5">
+                <Button x:Name="btnLusiel" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="BtnLusiel_Click" Margin="5">
                     <Button.Background>
                         <ImageBrush ImageSource="/ImagenesFamilia/Lusiel.jpg"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnAngelus" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnAngelus_Click" Margin="5">
+                <Button x:Name="btnAngelus" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="BtnAngelus_Click" Margin="5">
                     <Button.Background>
                         <ImageBrush ImageSource="/ImagenesFamilia/Angelus.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnLuan" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="btnLuan_Click">
+                <Button x:Name="btnLuan" Content="" Height="90" Width="90" BorderBrush="{x:Null}" Click="BtnLuan_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/ImagenesFamilia/Luan.jpg"/>
                     </Button.Background>
                 </Button>
             </StackPanel>
         </GroupBox>
-        <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.miniBtnEmpezar}" HorizontalAlignment="Left" Margin="1320,693,0,0" VerticalAlignment="Top" FontSize="20" Height="57" Width="152" Click="btnEmpezar_Click"/>
+        <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.miniBtnEmpezar}" HorizontalAlignment="Left" Margin="1320,693,0,0" VerticalAlignment="Top" FontSize="20" Height="57" Width="152" Click="BtnEmpezar_Click"/>
 
     </Grid>
 </Window>

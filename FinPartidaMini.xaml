@@ -34,7 +34,7 @@
             </StackPanel>
         </GroupBox>
         <Label x:Name="lblDialogoGanador" HorizontalAlignment="Left" Margin="375,699,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="Black" RenderTransformOrigin="0.259,0.393" FontFamily="Vivaldi"/>
-        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

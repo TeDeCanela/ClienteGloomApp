@@ -354,9 +354,6 @@
   <data name="mensajeCorreoEnviadoFallido" xml:space="preserve">
     <value>La invitación por correo no pudo ser enviada, inténtelo de nuevo más tarde</value>
   </data>
-  <data name="mensajeExp" xml:space="preserve">
-    <value />
-  </data>
   <data name="mensajeExp01" xml:space="preserve">
     <value>Usuario registrado</value>
   </data>
@@ -444,6 +441,30 @@
   <data name="mensajeExp25" xml:space="preserve">
     <value>No se encuentra archivo para enviar correo.</value>
   </data>
+  <data name="mensajeExp26" xml:space="preserve">
+    <value>No se tiene acceso al archivo para enviar correo.</value>
+  </data>
+  <data name="mensajeExp27" xml:space="preserve">
+    <value>Formato inválido de correo.</value>
+  </data>
+  <data name="mensajeExp28" xml:space="preserve">
+    <value>No se pudo enviar el correo.</value>
+  </data>
+  <data name="mensajeExp29" xml:space="preserve">
+    <value>Problema al enviar correo.</value>
+  </data>
+  <data name="mensajeExp30" xml:space="preserve">
+    <value>Operación de envió de correo no válida.</value>
+  </data>
+  <data name="mensajeExp31" xml:space="preserve">
+    <value>No ha seleccionado una familia</value>
+  </data>
+  <data name="mensajeExp32" xml:space="preserve">
+    <value>No todos los jugadores han seleccionado una familia</value>
+  </data>
+  <data name="mensajeExp33" xml:space="preserve">
+    <value>No puede dar clic al botón "Listo" si no ha seleccionado una familia</value>
+  </data>
   <data name="mensajeExp34" xml:space="preserve">
     <value>La sala ya está llena, no puede ingresar</value>
   </data>
@@ -465,11 +486,116 @@
   <data name="mensajeExp40" xml:space="preserve">
     <value>Debe seleccionar un jugador para aplicar el castigo</value>
   </data>
+  <data name="mensajeExp41" xml:space="preserve">
+    <value>Error con la base de datos</value>
+  </data>
+  <data name="mensajeExp42" xml:space="preserve">
+    <value>No se ha encontrado el correo del amigo</value>
+  </data>
+  <data name="mensajeExp43" xml:space="preserve">
+    <value>La partida ya se acabó</value>
+  </data>
+  <data name="mensajeExp44" xml:space="preserve">
+    <value>Si deseas matar a alguien o a tu personaje, necesita tener mínimo -400 de vida</value>
+  </data>
+  <data name="mensajeExp45" xml:space="preserve">
+    <value>No se puede automatar así mismo</value>
+  </data>
+  <data name="mensajeExp46" xml:space="preserve">
+    <value>Ya ha iniciado sesión anteriormente, cerre la sesión de ese dispositivo si desea continuar aquí</value>
+  </data>
+  <data name="mensajeExp47" xml:space="preserve">
+    <value>El número de jugadores conectados no coincide con el número de jugadores esperados.</value>
+  </data>
+  <data name="mensajeExp48" xml:space="preserve">
+    <value>Faltan jugadores por seleccionar una familia.</value>
+  </data>
+  <data name="mensajeExp49" xml:space="preserve">
+    <value>No hay familias seleccionadas para esta sala.</value>
+  </data>
+  <data name="mensajeExp50" xml:space="preserve">
+    <value>No hay información de la sala.</value>
+  </data>
+  <data name="mensajeExp51" xml:space="preserve">
+    <value>El jugador objetivo no tiene personajes asociados</value>
+  </data>
+  <data name="mensajeExp52" xml:space="preserve">
+    <value>El familiar objetivo no existe</value>
+  </data>
   <data name="mensajeExp53" xml:space="preserve">
     <value>Excpeción 53</value>
   </data>
+  <data name="mensajeExp54" xml:space="preserve">
+    <value>El familiar objetivo no pertenece a la familia del jugador.</value>
+  </data>
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Excepción 54060</value>
+  </data>
+  <data name="mensajeExp55" xml:space="preserve">
+    <value>Sala no encontrada.</value>
+  </data>
+  <data name="mensajeExp56" xml:space="preserve">
+    <value>El nombre debe ser entre 4 y 255 caracteres, sin espacios ni caracteres especiales.</value>
+  </data>
+  <data name="mensajeExp57" xml:space="preserve">
+    <value>El jugador no está registrado</value>
+  </data>
+  <data name="mensajeExp58" xml:space="preserve">
+    <value>Verifique su conexión al internet o espera que se reestablezca la señal</value>
+  </data>
+  <data name="mensajeExp59" xml:space="preserve">
+    <value>Hubo un problema con el servidor, lo sentimos, tiene que volver a iniciar su sesión y esperar a que se reestablezca.</value>
+  </data>
+  <data name="mensajeExp60" xml:space="preserve">
+    <value>Hubo un problema con el servidor, por favor, espere a que se reestablezca la señal</value>
+  </data>
+  <data name="mensajeExp61" xml:space="preserve">
+    <value>No se encontraron salas activas.</value>
+  </data>
+  <data name="mensajeExp62" xml:space="preserve">
+    <value>Por favor, selecciona una sala.</value>
+  </data>
+  <data name="mensajeExp63" xml:space="preserve">
+    <value>Te has unido a la sala pública correctamente.</value>
+  </data>
+  <data name="mensajeExp64" xml:space="preserve">
+    <value>Código de acceso no proporcionado.</value>
+  </data>
+  <data name="mensajeExp65" xml:space="preserve">
+    <value>Te has unido a la sala privada correctamente.</value>
+  </data>
+  <data name="mensajeExp66" xml:space="preserve">
+    <value>Te has unido a la sala correctamente.</value>
+  </data>
+  <data name="mensajeExp67" xml:space="preserve">
+    <value>No se pudo unir a la sala. Verifica el código de acceso.</value>
+  </data>
+  <data name="mensajeExp68" xml:space="preserve">
+    <value>No puedes enviar un mensaje vacío.</value>
+  </data>
+  <data name="mensajeExp69" xml:space="preserve">
+    <value>Ha tardado mucho para elegir para quien utilizará la carta</value>
+  </data>
+  <data name="mensajeExp70" xml:space="preserve">
+    <value>Debes seleccionar una carta antes de usarla.</value>
+  </data>
+  <data name="mensajeExp71" xml:space="preserve">
+    <value>Selecciona un usuario y personaje objetivo antes de continuar.</value>
+  </data>
+  <data name="mensajeExp72" xml:space="preserve">
+    <value>Selecciona un personaje objetivo antes de continuar.</value>
+  </data>
+  <data name="mensajeExp73" xml:space="preserve">
+    <value>Debes seleccionar un usuario y un personaje objetivo para continuar.</value>
+  </data>
+  <data name="mensajeExp74" xml:space="preserve">
+    <value>No hay jugadores conectados en la sala.</value>
+  </data>
+  <data name="mensajeExp75" xml:space="preserve">
+    <value>No se encontraron personajes para el usuario seleccionado.</value>
+  </data>
+  <data name="mensajeExp76" xml:space="preserve">
+    <value>Debes seleccionar un personaje objetivo para continuar.</value>
   </data>
   <data name="mensajeExpuslion" xml:space="preserve">
     <value>Se ha iniciado la expulsión del jugador: </value>

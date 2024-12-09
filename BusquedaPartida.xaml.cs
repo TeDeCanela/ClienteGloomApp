@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,44 +8,51 @@ using System.Windows;
 
 namespace ClienteGloomApp
 {
-    public partial class BusquedaPartida : Window, ISalaCallback
+    public partial class BusquedaPartida : Window, IServicioBusquedaPartidaCallback
     {
         
-        private SalaClient servicio;
+        private ServicioBusquedaPartidaClient servicio;
         private string identificadorUsuario;
         private Sala salaSeleccionada;
+        
 
         public ObservableCollection<Sala> salasActivas { get; set; }
 
         public BusquedaPartida(string nombreUsuario)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
+               
                 InitializeComponent();
                 identificadorUsuario = nombreUsuario;
                 salasActivas = new ObservableCollection<Sala>();
                 tblSalas.ItemsSource = salasActivas;
 
                 InstanceContext context = new InstanceContext(this);
-                servicio = new SalaClient(context);
+                servicio = new ServicioBusquedaPartidaClient(context);
 
                 CargarSalasActivas();
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
 
@@ -52,6 +60,7 @@ namespace ClienteGloomApp
 
         private void CargarSalasActivas()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 var salasDesdeServicio = servicio.ObtenerSalasActivas();
@@ -70,29 +79,35 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
         private void BtnUnirseAPartida_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             salaSeleccionada = (Sala)tblSalas.SelectedItem;
             if (salaSeleccionada == null)
             {
@@ -106,7 +121,7 @@ namespace ClienteGloomApp
                 if (salaSeleccionada.tipoPartida == "Pública" && salaSeleccionada.tipoSala == "Normal")
                 {
                     servicio.UnirseASalaPublicaNormalAsync(idSala, identificadorUsuario);
-                    MessageBox.Show("63");
+                    MessageBox.Show(Properties.Resources.mensajeExp63);
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
                 else if (salaSeleccionada.tipoPartida == "Privada")
@@ -116,34 +131,40 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
         private void BtnConfirmarCodigo_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             string codigoAcceso = txtCodigoAcceso.Text;
 
             if (string.IsNullOrEmpty(codigoAcceso))
             {
-                MessageBox.Show("64", Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Properties.Resources.mensajeExp64, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -153,36 +174,41 @@ namespace ClienteGloomApp
                 if (salaSeleccionada.tipoSala == "Normal")
                 {
                     servicio.UnirseASalaPrivadaNormalAsync(identificadorUsuario, idSala, codigoAcceso);
-                    MessageBox.Show("65");
+                    MessageBox.Show(Properties.Resources.mensajeExp65);
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
                 else if (salaSeleccionada.tipoSala == "Mini historia")
                 {
                     servicio.UnirseASalaPrivadaMiniHistoriaAsync(identificadorUsuario, idSala, codigoAcceso);
-                    MessageBox.Show("65");
+                    MessageBox.Show(Properties.Resources.mensajeExp65);
                     AbrirVentanaSalaMiniHistoria(identificadorUsuario, salaSeleccionada);
                 }
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -200,50 +226,19 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-        public void ActualizarSalasActivas(List<Sala> salasActualizadas)
-        {
-            this.salasActivas.Clear();
-            foreach (var sala in salasActualizadas)
-            {
-                this.salasActivas.Add(sala);
-            }
-        }
-
         public void ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
         {
             if (esExitoso)
             {
-                MessageBox.Show("66");
+                MessageBox.Show(Properties.Resources.mensajeExp66);
             }
             else
             {
-                MessageBox.Show("67");
+                MessageBox.Show(Properties.Resources.mensajeExp67);
             }
         }
 
-        void ISalaCallback.EmpezarJuego()
-        {
-            throw new NotImplementedException();
-        }
-
-        void ISalaCallback.ActualizarNumeroJugadores()
-        {
-            throw new NotImplementedException();
-        }
-
-        void ISalaCallback.ActualizarImagenPersonaje(string personaje, string personajeAnterior)
-        {
-            throw new NotImplementedException();
-        }
-
-        void ISalaCallback.ActualizarSalasActivas(Sala[] salasActualizadas)
-        {
-            this.salasActivas.Clear();
-            foreach (var sala in salasActualizadas)
-            {
-                this.salasActivas.Add(sala);
-            }
-        }
+        
 
         private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
@@ -254,22 +249,21 @@ namespace ClienteGloomApp
 
         
 
-        void ISalaCallback.SacarDeSalaATodosJugadores()
-        {
-            throw new NotImplementedException();
-        }
-
-
-        void ISalaCallback.ActualizarSeleccionFamilia(string nombreUsuario, string nombreFamilia)
-        {
-            throw new NotImplementedException();
-        }
 
         private void DirigirJugadorInicioDeSesion()
         {
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
+        }
+
+        void IServicioBusquedaPartidaCallback.ActualizarSalasActivas(Sala[] salasActivas)
+        {
+            this.salasActivas.Clear();
+            foreach (var sala in salasActivas)
+            {
+                this.salasActivas.Add(sala);
+            }
         }
     }
 }

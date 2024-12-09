@@ -21,7 +21,7 @@
         <Label x:Name="lblNombreUsuario" Content="{x:Static p:Resources.globalNombreUsuario}" HorizontalAlignment="Left" Margin="950,231,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="24"/>
         <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="950,345,0,0" VerticalAlignment="Top" Width="205" Height="42" Foreground="White" FontSize="24"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="950,392,0,0" VerticalAlignment="Top" Width="490" Height="36"/>
-        <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.inicioSesionBtnIniciarSesion}" HorizontalAlignment="Left" Margin="1292,521,0,0" VerticalAlignment="Top" Width="148" Height="55" Click="btnIniciarSesion_Click" FontSize="24" BorderBrush="#FFA49A9A" Background="#FF94A08B">
+        <Button x:Name="btnIniciarSesion" Content="{x:Static p:Resources.inicioSesionBtnIniciarSesion}" HorizontalAlignment="Left" Margin="1292,521,0,0" VerticalAlignment="Top" Width="148" Height="55" Click="BtnIniciarSesion_Click" FontSize="24" BorderBrush="#FFA49A9A" Background="#FF94A08B">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -34,7 +34,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnJugarComoInvitado" Content="{x:Static p:Resources.inicioSesionBtnJugarComoInvitado}" HorizontalAlignment="Left" Margin="956,702,0,0" VerticalAlignment="Top" Width="239" Height="55" Click="btnIniciarComoInvitado_Click" FontSize="24">
+        <Button x:Name="btnJugarComoInvitado" Content="{x:Static p:Resources.inicioSesionBtnJugarComoInvitado}" HorizontalAlignment="Left" Margin="956,702,0,0" VerticalAlignment="Top" Width="239" Height="55" Click="BtnIniciarComoInvitado_Click" FontSize="24">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -47,7 +47,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnRegistrarse" Content="{x:Static p:Resources.inicioSesionBtnRegistrarse}" HorizontalAlignment="Left" Margin="1258,702,0,0" VerticalAlignment="Top" Width="182" Height="55" Click="btnRegistrar_Click" FontSize="24">
+        <Button x:Name="btnRegistrarse" Content="{x:Static p:Resources.inicioSesionBtnRegistrarse}" HorizontalAlignment="Left" Margin="1258,0,0,27" VerticalAlignment="Bottom" Width="182" Height="55" Click="BtnRegistrar_Click" FontSize="24">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -61,12 +61,12 @@
             </Button.Template>
         </Button>
         <Label x:Name="lblGloom" Content="Gloom" HorizontalAlignment="Left" Margin="1070,54,0,0" VerticalAlignment="Top" Width="250" Height="109" Foreground="White" FontSize="72" FontFamily="Sitka Small"/>
-        <Button x:Name="btnCambiarIidomaEspañol" Content="" HorizontalAlignment="Left" Margin="1349,10,0,0" VerticalAlignment="Top" Click="btnCambiarIdiomaEspañol_Click" Width="45" Height="29">
+        <Button x:Name="btnCambiarIidomaEspañol" Content="" HorizontalAlignment="Left" Margin="1349,10,0,0" VerticalAlignment="Top" Click="BtnCambiarIdiomaEspañol_Click" Width="45" Height="29">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/BanderaMexico.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCambiarIdiomaIngles" Content="" HorizontalAlignment="Left" Margin="1417,10,0,0" VerticalAlignment="Top" Height="29" Width="45" Click="btnCambiarIdiomaIngles_Click">
+        <Button x:Name="btnCambiarIdiomaIngles" Content="" HorizontalAlignment="Left" Margin="1417,10,0,0" VerticalAlignment="Top" Height="29" Width="45" Click="BtnCambiarIdiomaIngles_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/BanderaEU.png"/>
             </Button.Background>

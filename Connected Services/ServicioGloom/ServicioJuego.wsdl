@@ -4,7 +4,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -16,7 +16,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -28,7 +28,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -40,7 +40,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -52,7 +52,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -64,7 +64,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -76,7 +76,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -88,7 +88,7 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -100,7 +100,43 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
-          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IServicioBusquedaPartida_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IServicioSalaMiniHistoria_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IServicioSalaNormal_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="1200000" />
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
@@ -110,12 +146,12 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
-      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
-      <xsd:import schemaLocation="http://192.168.1.249:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://192.168.137.1:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.137.1:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases" />
+      <xsd:import schemaLocation="http://192.168.137.1:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.137.1:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.137.1:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BlbibliotecaClases" />
+      <xsd:import schemaLocation="http://192.168.137.1:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IJugador_AgregarJugador_InputMessage">
@@ -265,15 +301,6 @@
   <wsdl:message name="ISala_ObtenerJugadoresConectados_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerJugadoresConectadosResponse" />
   </wsdl:message>
-  <wsdl:message name="ISala_SeleccionarPersonaje_InputMessage">
-    <wsdl:part name="parameters" element="tns:SeleccionarPersonaje" />
-  </wsdl:message>
-  <wsdl:message name="ISala_SeleccionarPersonaje_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SeleccionarPersonajeResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISala_SeleccionarPersonaje_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q16:ManejadorExcepciones" />
-  </wsdl:message>
   <wsdl:message name="ISala_ValidarPersonajesSeleccionados_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidarPersonajesSeleccionados" />
   </wsdl:message>
@@ -281,7 +308,7 @@
     <wsdl:part name="parameters" element="tns:ValidarPersonajesSeleccionadosResponse" />
   </wsdl:message>
   <wsdl:message name="ISala_ValidarPersonajesSeleccionados_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q17:ManejadorExcepciones" />
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q16:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ISala_SacarDeSala_InputMessage">
     <wsdl:part name="parameters" element="tns:SacarDeSala" />
@@ -310,12 +337,6 @@
   <wsdl:message name="ISala_SacarATodosLosJugadoresDeSala_InputMessage">
     <wsdl:part name="parameters" element="tns:SacarATodosLosJugadoresDeSala" />
   </wsdl:message>
-  <wsdl:message name="ISala_ObtenerSalasActivas_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerSalasActivas" />
-  </wsdl:message>
-  <wsdl:message name="ISala_ObtenerSalasActivas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerSalasActivasResponse" />
-  </wsdl:message>
   <wsdl:message name="ISala_ObtenerSalasActivasConEstado_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerSalasActivasConEstado" />
   </wsdl:message>
@@ -323,31 +344,13 @@
     <wsdl:part name="parameters" element="tns:ObtenerSalasActivasConEstadoResponse" />
   </wsdl:message>
   <wsdl:message name="ISala_ObtenerSalasActivasConEstado_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q18:ManejadorExcepciones" />
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q17:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ISala_SalirDeSala_InputMessage">
     <wsdl:part name="parameters" element="tns:SalirDeSala" />
   </wsdl:message>
   <wsdl:message name="ISala_SalirDeSala_OutputMessage">
     <wsdl:part name="parameters" element="tns:SalirDeSalaResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISala_UnirseASalaPublicaNormal_InputMessage">
-    <wsdl:part name="parameters" element="tns:UnirseASalaPublicaNormal" />
-  </wsdl:message>
-  <wsdl:message name="ISala_UnirseASalaPublicaNormal_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UnirseASalaPublicaNormalResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISala_UnirseASalaPrivadaNormal_InputMessage">
-    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaNormal" />
-  </wsdl:message>
-  <wsdl:message name="ISala_UnirseASalaPrivadaNormal_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaNormalResponse" />
-  </wsdl:message>
-  <wsdl:message name="ISala_UnirseASalaPrivadaMiniHistoria_InputMessage">
-    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaMiniHistoria" />
-  </wsdl:message>
-  <wsdl:message name="ISala_UnirseASalaPrivadaMiniHistoria_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaMiniHistoriaResponse" />
   </wsdl:message>
   <wsdl:message name="ISala_ObtenerCodigoSala_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerCodigoSala" />
@@ -391,20 +394,8 @@
   <wsdl:message name="ISala_ActualizarNumeroJugadores_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarNumeroJugadores" />
   </wsdl:message>
-  <wsdl:message name="ISala_ActualizarImagenPersonaje_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarImagenPersonaje" />
-  </wsdl:message>
   <wsdl:message name="ISala_SacarDeSalaATodosJugadores_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:SacarDeSalaATodosJugadores" />
-  </wsdl:message>
-  <wsdl:message name="ISala_ActualizarSalasActivas_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarSalasActivas" />
-  </wsdl:message>
-  <wsdl:message name="ISala_ResultadoUnirseASala_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ResultadoUnirseASala" />
-  </wsdl:message>
-  <wsdl:message name="ISala_ActualizarSeleccionFamilia_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarSeleccionFamilia" />
   </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_ObtenerCartasSobrantes_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerCartasSobrantes" />
@@ -554,7 +545,7 @@
     <wsdl:part name="parameters" element="tns:ObtenerDatosHistorialResponse" />
   </wsdl:message>
   <wsdl:message name="IServicioHistorialPartida_ObtenerDatosHistorial_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q19:ManejadorExcepciones" />
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q18:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="IServicioHistorialPartida_ObtenrParticipantesDeJuego_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenrParticipantesDeJuego" />
@@ -563,7 +554,7 @@
     <wsdl:part name="parameters" element="tns:ObtenrParticipantesDeJuegoResponse" />
   </wsdl:message>
   <wsdl:message name="IServicioHistorialPartida_ObtenrParticipantesDeJuego_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q20:ManejadorExcepciones" />
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q19:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerUsuariosYPersonajes_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerUsuariosYPersonajes" />
@@ -578,7 +569,7 @@
     <wsdl:part name="parameters" element="tns:BuscarSalaExistenteResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_BuscarSalaExistente_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q21:ManejadorExcepciones" />
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q20:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarCantidadJugadoresEnSala_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidarCantidadJugadoresEnSala" />
@@ -587,7 +578,7 @@
     <wsdl:part name="parameters" element="tns:ValidarCantidadJugadoresEnSalaResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarCantidadJugadoresEnSala_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q22:ManejadorExcepciones" />
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q21:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarPartidaNoIniciada_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidarPartidaNoIniciada" />
@@ -596,7 +587,7 @@
     <wsdl:part name="parameters" element="tns:ValidarPartidaNoIniciadaResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ValidarPartidaNoIniciada_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q23:ManejadorExcepciones" />
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q22:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliaPorJugador" />
@@ -605,7 +596,7 @@
     <wsdl:part name="parameters" element="tns:ObtenerFamiliaPorJugadorResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliaPorJugador_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q24:ManejadorExcepciones" />
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q23:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliaYPersonajesPorUsuario" />
@@ -614,7 +605,7 @@
     <wsdl:part name="parameters" element="tns:ObtenerFamiliaYPersonajesPorUsuarioResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliaYPersonajesPorUsuario_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q25:ManejadorExcepciones" />
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q24:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliasYPersonajes_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliasYPersonajes" />
@@ -623,7 +614,7 @@
     <wsdl:part name="parameters" element="tns:ObtenerFamiliasYPersonajesResponse" />
   </wsdl:message>
   <wsdl:message name="ICreacionPartida_ObtenerFamiliasYPersonajes_ManejadorExcepcionesFault_FaultMessage">
-    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q26:ManejadorExcepciones" />
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q25:ManejadorExcepciones" />
   </wsdl:message>
   <wsdl:message name="IChat_EnviarMensaje_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarMensaje" />
@@ -648,6 +639,66 @@
   </wsdl:message>
   <wsdl:message name="IInvitacion_EnviarInvitacion_OutputMessage">
     <wsdl:part name="parameters" element="tns:EnviarInvitacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_ObtenerSalasActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSalasActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_ObtenerSalasActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSalasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_UnirseASalaPublicaNormal_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASalaPublicaNormal" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_UnirseASalaPublicaNormal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASalaPublicaNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_UnirseASalaPrivadaNormal_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaNormal" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_UnirseASalaPrivadaNormal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_UnirseASalaPrivadaMiniHistoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaMiniHistoria" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_UnirseASalaPrivadaMiniHistoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASalaPrivadaMiniHistoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_ActualizarSalasActivas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSalasActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioBusquedaPartida_ResultadoUnirseASala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ResultadoUnirseASala" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_SeleccionarPersonaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarPersonaje" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_SeleccionarPersonaje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeleccionarPersonajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_SeleccionarPersonaje_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q26:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_ConectarConSalaMiniPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConectarConSalaMiniPartida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_ConectarConSalaMiniPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConectarConSalaMiniPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_ConectarConSalaMiniPartida_ManejadorExcepcionesFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q27:ManejadorExcepciones" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaMiniHistoria_ActualizarImagenPersonaje_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarImagenPersonaje" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaNormal_ConectarConSalaNormal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConectarConSalaNormal" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaNormal_ConectarConSalaNormal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConectarConSalaNormalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSalaNormal_ActualizarSeleccionFamilia_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSeleccionFamilia" />
   </wsdl:message>
   <wsdl:portType name="IJugador">
     <wsdl:operation name="AgregarJugador">
@@ -739,11 +790,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerJugadoresConectados" message="tns:ISala_ObtenerJugadoresConectados_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerJugadoresConectadosResponse" message="tns:ISala_ObtenerJugadoresConectados_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SeleccionarPersonaje">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/SeleccionarPersonaje" message="tns:ISala_SeleccionarPersonaje_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/SeleccionarPersonajeResponse" message="tns:ISala_SeleccionarPersonaje_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/ISala/SeleccionarPersonajeManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_SeleccionarPersonaje_ManejadorExcepcionesFault_FaultMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ValidarPersonajesSeleccionados">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ValidarPersonajesSeleccionados" message="tns:ISala_ValidarPersonajesSeleccionados_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ValidarPersonajesSeleccionadosResponse" message="tns:ISala_ValidarPersonajesSeleccionados_OutputMessage" />
@@ -768,10 +814,6 @@
     <wsdl:operation name="SacarATodosLosJugadoresDeSala">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/SacarATodosLosJugadoresDeSala" message="tns:ISala_SacarATodosLosJugadoresDeSala_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ObtenerSalasActivas">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivas" message="tns:ISala_ObtenerSalasActivas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasResponse" message="tns:ISala_ObtenerSalasActivas_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ObtenerSalasActivasConEstado">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstado" message="tns:ISala_ObtenerSalasActivasConEstado_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstadoResponse" message="tns:ISala_ObtenerSalasActivasConEstado_OutputMessage" />
@@ -780,18 +822,6 @@
     <wsdl:operation name="SalirDeSala">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/SalirDeSala" message="tns:ISala_SalirDeSala_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/SalirDeSalaResponse" message="tns:ISala_SalirDeSala_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UnirseASalaPublicaNormal">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/UnirseASalaPublicaNormal" message="tns:ISala_UnirseASalaPublicaNormal_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/UnirseASalaPublicaNormalResponse" message="tns:ISala_UnirseASalaPublicaNormal_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UnirseASalaPrivadaNormal">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/UnirseASalaPrivadaNormal" message="tns:ISala_UnirseASalaPrivadaNormal_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/UnirseASalaPrivadaNormalResponse" message="tns:ISala_UnirseASalaPrivadaNormal_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UnirseASalaPrivadaMiniHistoria">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/UnirseASalaPrivadaMiniHistoria" message="tns:ISala_UnirseASalaPrivadaMiniHistoria_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/UnirseASalaPrivadaMiniHistoriaResponse" message="tns:ISala_UnirseASalaPrivadaMiniHistoria_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerCodigoSala">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerCodigoSala" message="tns:ISala_ObtenerCodigoSala_InputMessage" />
@@ -823,20 +853,8 @@
     <wsdl:operation name="ActualizarNumeroJugadores">
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ActualizarNumeroJugadores" message="tns:ISala_ActualizarNumeroJugadores_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ActualizarImagenPersonaje">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ActualizarImagenPersonaje" message="tns:ISala_ActualizarImagenPersonaje_OutputCallbackMessage" />
-    </wsdl:operation>
     <wsdl:operation name="SacarDeSalaATodosJugadores">
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/SacarDeSalaATodosJugadores" message="tns:ISala_SacarDeSalaATodosJugadores_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ActualizarSalasActivas">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ActualizarSalasActivas" message="tns:ISala_ActualizarSalasActivas_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ResultadoUnirseASala">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ResultadoUnirseASala" message="tns:ISala_ResultadoUnirseASala_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ActualizarSeleccionFamilia">
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/ActualizarSeleccionFamilia" message="tns:ISala_ActualizarSeleccionFamilia_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IServicioJuegoTablero">
@@ -1028,6 +1046,54 @@
     <wsdl:operation name="EnviarInvitacion">
       <wsdl:input wsaw:Action="http://tempuri.org/IInvitacion/EnviarInvitacion" message="tns:IInvitacion_EnviarInvitacion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IInvitacion/EnviarInvitacionResponse" message="tns:IInvitacion_EnviarInvitacion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IServicioBusquedaPartida">
+    <wsdl:operation name="ObtenerSalasActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivas" message="tns:IServicioBusquedaPartida_ObtenerSalasActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivasResponse" message="tns:IServicioBusquedaPartida_ObtenerSalasActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASalaPublicaNormal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPublicaNormal" message="tns:IServicioBusquedaPartida_UnirseASalaPublicaNormal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPublicaNormalResponse" message="tns:IServicioBusquedaPartida_UnirseASalaPublicaNormal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASalaPrivadaNormal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPrivadaNormal" message="tns:IServicioBusquedaPartida_UnirseASalaPrivadaNormal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPrivadaNormalResponse" message="tns:IServicioBusquedaPartida_UnirseASalaPrivadaNormal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASalaPrivadaMiniHistoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPrivadaMiniHistoria" message="tns:IServicioBusquedaPartida_UnirseASalaPrivadaMiniHistoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPrivadaMiniHistoriaResponse" message="tns:IServicioBusquedaPartida_UnirseASalaPrivadaMiniHistoria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSalasActivas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/ActualizarSalasActivas" message="tns:IServicioBusquedaPartida_ActualizarSalasActivas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResultadoUnirseASala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioBusquedaPartida/ResultadoUnirseASala" message="tns:IServicioBusquedaPartida_ResultadoUnirseASala_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IServicioSalaMiniHistoria">
+    <wsdl:operation name="SeleccionarPersonaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/SeleccionarPersonaje" message="tns:IServicioSalaMiniHistoria_SeleccionarPersonaje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/SeleccionarPersonajeResponse" message="tns:IServicioSalaMiniHistoria_SeleccionarPersonaje_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/SeleccionarPersonajeManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IServicioSalaMiniHistoria_SeleccionarPersonaje_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConectarConSalaMiniPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/ConectarConSalaMiniPartida" message="tns:IServicioSalaMiniHistoria_ConectarConSalaMiniPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/ConectarConSalaMiniPartidaResponse" message="tns:IServicioSalaMiniHistoria_ConectarConSalaMiniPartida_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/ConectarConSalaMiniPartidaManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:IServicioSalaMiniHistoria_ConectarConSalaMiniPartida_ManejadorExcepcionesFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarImagenPersonaje">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSalaMiniHistoria/ActualizarImagenPersonaje" message="tns:IServicioSalaMiniHistoria_ActualizarImagenPersonaje_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IServicioSalaNormal">
+    <wsdl:operation name="ConectarConSalaNormal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormal" message="tns:IServicioSalaNormal_ConectarConSalaNormal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormalResponse" message="tns:IServicioSalaNormal_ConectarConSalaNormal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSeleccionFamilia">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSalaNormal/ActualizarSeleccionFamilia" message="tns:IServicioSalaNormal_ActualizarSeleccionFamilia_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IJugador" type="tns:IJugador">
@@ -1242,18 +1308,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SeleccionarPersonaje">
-      <soap12:operation soapAction="http://tempuri.org/ISala/SeleccionarPersonaje" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="ManejadorExcepcionesFault">
-        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
     <wsdl:operation name="ValidarPersonajesSeleccionados">
       <soap12:operation soapAction="http://tempuri.org/ISala/ValidarPersonajesSeleccionados" style="document" />
       <wsdl:input>
@@ -1308,15 +1362,6 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerSalasActivas">
-      <soap12:operation soapAction="http://tempuri.org/ISala/ObtenerSalasActivas" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ObtenerSalasActivasConEstado">
       <soap12:operation soapAction="http://tempuri.org/ISala/ObtenerSalasActivasConEstado" style="document" />
       <wsdl:input>
@@ -1331,33 +1376,6 @@
     </wsdl:operation>
     <wsdl:operation name="SalirDeSala">
       <soap12:operation soapAction="http://tempuri.org/ISala/SalirDeSala" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UnirseASalaPublicaNormal">
-      <soap12:operation soapAction="http://tempuri.org/ISala/UnirseASalaPublicaNormal" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UnirseASalaPrivadaNormal">
-      <soap12:operation soapAction="http://tempuri.org/ISala/UnirseASalaPrivadaNormal" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UnirseASalaPrivadaMiniHistoria">
-      <soap12:operation soapAction="http://tempuri.org/ISala/UnirseASalaPrivadaMiniHistoria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1431,32 +1449,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ActualizarImagenPersonaje">
-      <soap12:operation soapAction="http://tempuri.org/ISala/ActualizarImagenPersonaje" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SacarDeSalaATodosJugadores">
       <soap12:operation soapAction="http://tempuri.org/ISala/SacarDeSalaATodosJugadores" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActualizarSalasActivas">
-      <soap12:operation soapAction="http://tempuri.org/ISala/ActualizarSalasActivas" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ResultadoUnirseASala">
-      <soap12:operation soapAction="http://tempuri.org/ISala/ResultadoUnirseASala" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActualizarSeleccionFamilia">
-      <soap12:operation soapAction="http://tempuri.org/ISala/ActualizarSeleccionFamilia" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -1876,59 +1870,182 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IServicioBusquedaPartida" type="tns:IServicioBusquedaPartida">
+    <wsp:PolicyReference URI="#NetTcpBinding_IServicioBusquedaPartida_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ObtenerSalasActivas">
+      <soap12:operation soapAction="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASalaPublicaNormal">
+      <soap12:operation soapAction="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPublicaNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASalaPrivadaNormal">
+      <soap12:operation soapAction="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPrivadaNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASalaPrivadaMiniHistoria">
+      <soap12:operation soapAction="http://tempuri.org/IServicioBusquedaPartida/UnirseASalaPrivadaMiniHistoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSalasActivas">
+      <soap12:operation soapAction="http://tempuri.org/IServicioBusquedaPartida/ActualizarSalasActivas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResultadoUnirseASala">
+      <soap12:operation soapAction="http://tempuri.org/IServicioBusquedaPartida/ResultadoUnirseASala" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IServicioSalaMiniHistoria" type="tns:IServicioSalaMiniHistoria">
+    <wsp:PolicyReference URI="#NetTcpBinding_IServicioSalaMiniHistoria_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SeleccionarPersonaje">
+      <soap12:operation soapAction="http://tempuri.org/IServicioSalaMiniHistoria/SeleccionarPersonaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConectarConSalaMiniPartida">
+      <soap12:operation soapAction="http://tempuri.org/IServicioSalaMiniHistoria/ConectarConSalaMiniPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ManejadorExcepcionesFault">
+        <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarImagenPersonaje">
+      <soap12:operation soapAction="http://tempuri.org/IServicioSalaMiniHistoria/ActualizarImagenPersonaje" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IServicioSalaNormal" type="tns:IServicioSalaNormal">
+    <wsp:PolicyReference URI="#NetTcpBinding_IServicioSalaNormal_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ConectarConSalaNormal">
+      <soap12:operation soapAction="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSeleccionFamilia">
+      <soap12:operation soapAction="http://tempuri.org/IServicioSalaNormal/ActualizarSeleccionFamilia" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ServicioJuego">
     <wsdl:port name="NetTcpBinding_IJugador" binding="tns:NetTcpBinding_IJugador">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJugador" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioJugador" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJugador</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioJugador</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAmigos" binding="tns:NetTcpBinding_IAmigos">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioAmigos" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioAmigos" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioAmigos</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioAmigos</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ISala" binding="tns:NetTcpBinding_ISala">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioSala" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioSala" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioSala</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioSala</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioJuegoTablero" binding="tns:NetTcpBinding_IServicioJuegoTablero">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJuegoTablero" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioJuegoTablero" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioJuegoTablero</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioJuegoTablero</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioCarta" binding="tns:NetTcpBinding_IServicioCarta">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCarta" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioCarta" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCarta</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioCarta</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IServicioHistorialPartida" binding="tns:NetTcpBinding_IServicioHistorialPartida">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioHistorialPartida" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioHistorialPartida" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioHistorialPartida</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioHistorialPartida</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ICreacionPartida" binding="tns:NetTcpBinding_ICreacionPartida">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCreacionPartida" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioCreacionPartida" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioCreacionPartida</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioCreacionPartida</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IChat" binding="tns:NetTcpBinding_IChat">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioChat" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioChat" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioChat</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioChat</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IInvitacion" binding="tns:NetTcpBinding_IInvitacion">
-      <soap12:address location="net.tcp://192.168.1.249:8090/ServicioGloom/ServicioInvitacion" />
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioInvitacion" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.249:8090/ServicioGloom/ServicioInvitacion</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioInvitacion</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IServicioBusquedaPartida" binding="tns:NetTcpBinding_IServicioBusquedaPartida">
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioBusquedaPartida" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioBusquedaPartida</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IServicioSalaMiniHistoria" binding="tns:NetTcpBinding_IServicioSalaMiniHistoria">
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioSalaMiniHistoria" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioSalaMiniHistoria</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IServicioSalaNormal" binding="tns:NetTcpBinding_IServicioSalaNormal">
+      <soap12:address location="net.tcp://192.168.137.1:8090/ServicioGloom/ServicioSalaNormal" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.137.1:8090/ServicioGloom/ServicioSalaNormal</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

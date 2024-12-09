@@ -456,6 +456,21 @@
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Unable to open the database, please contact a system administrator and try again later.</value>
   </data>
+  <data name="mensajeExpuslion" xml:space="preserve">
+    <value>The player's expulsion has been initiated:</value>
+  </data>
+  <data name="mensajeHaSalidoDeSala" xml:space="preserve">
+    <value>You have left the room and it has been deleted.</value>
+  </data>
+  <data name="mensajeHaSidoExpulsado" xml:space="preserve">
+    <value>He has been expelled from the room</value>
+  </data>
+  <data name="mensajeMiniPartidaTiempoAgotado" xml:space="preserve">
+    <value>It took a long time to choose who to use the letter for.</value>
+  </data>
+  <data name="mensajeNoJugadoresParaExpulsar" xml:space="preserve">
+    <value>There are no players available to be ejected.</value>
+  </data>
   <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
     <value>Game created successfully!</value>
   </data>
@@ -464,6 +479,12 @@
   </data>
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>An error occurred while registering, please try again</value>
+  </data>
+  <data name="mensajeSalaPartida" xml:space="preserve">
+    <value>The room is no longer active. Returning to the main menu.</value>
+  </data>
+  <data name="mensajeSeleccionJugador" xml:space="preserve">
+    <value>You must select a player to continue.</value>
   </data>
   <data name="mensajeSolcitudEnviadaExito" xml:space="preserve">
     <value>Your friend request has been sent successfully.</value>
@@ -501,6 +522,18 @@
   <data name="miniJugadores" xml:space="preserve">
     <value>Players</value>
   </data>
+  <data name="palabraFamilia" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="palabraGanador" xml:space="preserve">
+    <value>Winner</value>
+  </data>
+  <data name="palabraJugador" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="palabraVidaTotal" xml:space="preserve">
+    <value>Total life</value>
+  </data>
   <data name="partidaBtnDescartar" xml:space="preserve">
     <value>Discard</value>
   </data>
@@ -521,6 +554,24 @@
   </data>
   <data name="partidaBtnUsar" xml:space="preserve">
     <value>Use</value>
+  </data>
+  <data name="partidaFinPartida" xml:space="preserve">
+    <value>End of the game</value>
+  </data>
+  <data name="partidaFinSinGanador" xml:space="preserve">
+    <value>The game ended without a winner.</value>
+  </data>
+  <data name="partidaInstruccionSeleccionarPersonajeObjetivo" xml:space="preserve">
+    <value>Select target character</value>
+  </data>
+  <data name="partidaInstruccionSeleccionarUsuario" xml:space="preserve">
+    <value>Select target user</value>
+  </data>
+  <data name="partidaIntruccionSeleciconaPersonajeFamilia" xml:space="preserve">
+    <value>Select a character from your family:</value>
+  </data>
+  <data name="partidaIntruccionSeleciconaPersonajeFamiliaMuerte" xml:space="preserve">
+    <value>Select a character from your family to apply the death card:</value>
   </data>
   <data name="perfilBtnCambiarDatos" xml:space="preserve">
     <value>Save changes</value>
@@ -602,5 +653,146 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
+  </data>
+  <data name="mensajeExp13" xml:space="preserve">
+    <value>Invalid Username: The username must follow these rules: it can contain letters, numbers, underscores (_), and spaces; it must not start or end with a space; it cannot have consecutive spaces; it must not be 'Sin ganador'; and it cannot start with 'Invitado#' followed by numbers.</value>
+  </data>
+  <data name="mensajeExp23" xml:space="preserve">
+    <value>The room is not public or does not exist. Please check the details and try again.</value>
+  </data>
+  <data name="mensajeExp24" xml:space="preserve">
+    <value>The room code is invalid. Please verify it and try again.</value>
+  </data>
+  <data name="mensajeExp25" xml:space="preserve">
+    <value>The required file for sending the email was not found. Please try again.</value>
+  </data>
+  <data name="mensajeExp26" xml:space="preserve">
+    <value>You do not have access to the required file to send the email.</value>
+  </data>
+  <data name="mensajeExp27" xml:space="preserve">
+    <value>Invalid Email: The email address must follow these rules: it must have between 4 and 64 characters before the '@' symbol; it can contain letters, numbers, periods (.), underscores (_), and hyphens (-); it must not start or end with a period (.) or hyphen (-); it must include a valid domain after the '@' symbol, with at least two characters in each level of the domain and a maximum of 13 characters in the extension.</value>
+  </data>
+  <data name="mensajeExp28" xml:space="preserve">
+    <value>The email could not be sent. Please check the details and try again.</value>
+  </data>
+  <data name="mensajeExp29" xml:space="preserve">
+    <value>There was an issue sending the email. Please try again later.</value>
+  </data>
+  <data name="mensajeExp30" xml:space="preserve">
+    <value>The email sending operation is not valid at this time.</value>
+  </data>
+  <data name="mensajeExp31" xml:space="preserve">
+    <value>You must select a family before proceeding.</value>
+  </data>
+  <data name="mensajeExp32" xml:space="preserve">
+    <value>Not all players have selected a family. Please wait for them to do so.</value>
+  </data>
+  <data name="mensajeExp33" xml:space="preserve">
+    <value>You cannot mark yourself as 'Ready' without selecting a family first.</value>
+  </data>
+  <data name="mensajeExp41" xml:space="preserve">
+    <value>This action could not be completed due to a database error. Please try again later.</value>
+  </data>
+  <data name="mensajeExp42" xml:space="preserve">
+    <value>The friend's email was not found. Please check the information and try again.</value>
+  </data>
+  <data name="mensajeExp43" xml:space="preserve">
+    <value>The game has already ended. You cannot proceed.</value>
+  </data>
+  <data name="mensajeExp44" xml:space="preserve">
+    <value>To kill someone or your character, they must have at least -400 self-esteem points.</value>
+  </data>
+  <data name="mensajeExp45" xml:space="preserve">
+    <value>You cannot kill your own character.</value>
+  </data>
+  <data name="mensajeExp46" xml:space="preserve">
+    <value>You are already logged in on another device. Log out from that device to continue here.</value>
+  </data>
+  <data name="mensajeExp47" xml:space="preserve">
+    <value>The number of connected players does not match the expected count. Please verify and try again.</value>
+  </data>
+  <data name="mensajeExp48" xml:space="preserve">
+    <value>Some players have not selected a family yet. Please wait for them.</value>
+  </data>
+  <data name="mensajeExp49" xml:space="preserve">
+    <value>No families have been selected for this room.</value>
+  </data>
+  <data name="mensajeExp50" xml:space="preserve">
+    <value>No room information was found. Please check and try again.</value>
+  </data>
+  <data name="mensajeExp51" xml:space="preserve">
+    <value>The target player does not have associated characters. Please select another target.</value>
+  </data>
+  <data name="mensajeExp52" xml:space="preserve">
+    <value>The target character does not exist. Please check and try again.</value>
+  </data>
+  <data name="mensajeExp54" xml:space="preserve">
+    <value>The target character does not belong to the player's family. Please select another character.</value>
+  </data>
+  <data name="mensajeExp55" xml:space="preserve">
+    <value>Room not found. Please check and try again.</value>
+  </data>
+  <data name="mensajeExp56" xml:space="preserve">
+    <value>The name must be between 4 and 255 characters, without spaces or special characters.</value>
+  </data>
+  <data name="mensajeExp57" xml:space="preserve">
+    <value>The player is not registered in the system.</value>
+  </data>
+  <data name="mensajeExp58" xml:space="preserve">
+    <value>Check your Internet connection or wait for it to be restored.</value>
+  </data>
+  <data name="mensajeExp59" xml:space="preserve">
+    <value>There was a server issue. Please restart your session and wait for it to be restored.</value>
+  </data>
+  <data name="mensajeExp60" xml:space="preserve">
+    <value>There was a server issue. Please wait for the connection to be restored.</value>
+  </data>
+  <data name="mensajeExp61" xml:space="preserve">
+    <value>No active rooms were found.</value>
+  </data>
+  <data name="mensajeExp62" xml:space="preserve">
+    <value>You must select a room before proceeding.</value>
+  </data>
+  <data name="mensajeExp63" xml:space="preserve">
+    <value>You have successfully joined the public room.</value>
+  </data>
+  <data name="mensajeExp64" xml:space="preserve">
+    <value>No access code was provided. Please try again.</value>
+  </data>
+  <data name="mensajeExp65" xml:space="preserve">
+    <value>You have successfully joined the private room.</value>
+  </data>
+  <data name="mensajeExp66" xml:space="preserve">
+    <value>You have successfully joined the room.</value>
+  </data>
+  <data name="mensajeExp67" xml:space="preserve">
+    <value>Unable to join the room. Please check the access code.</value>
+  </data>
+  <data name="mensajeExp68" xml:space="preserve">
+    <value>You cannot send an empty message.</value>
+  </data>
+  <data name="mensajeExp69" xml:space="preserve">
+    <value>You took too long to choose whom to use the card for.</value>
+  </data>
+  <data name="mensajeExp70" xml:space="preserve">
+    <value>You must select a card before using it.</value>
+  </data>
+  <data name="mensajeExp71" xml:space="preserve">
+    <value>You must select a target user and character before proceeding.</value>
+  </data>
+  <data name="mensajeExp72" xml:space="preserve">
+    <value>You must select a target character before proceeding.</value>
+  </data>
+  <data name="mensajeExp73" xml:space="preserve">
+    <value>You must select a target user and character to proceed.</value>
+  </data>
+  <data name="mensajeExp74" xml:space="preserve">
+    <value>There are no players connected to the room.</value>
+  </data>
+  <data name="mensajeExp75" xml:space="preserve">
+    <value>No characters were found for the selected user.</value>
+  </data>
+  <data name="mensajeExp76" xml:space="preserve">
+    <value>You must select a target character to proceed.</value>
   </data>
 </root>
