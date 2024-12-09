@@ -1212,6 +1212,24 @@ namespace ClienteGloomApp.ServicioGloom {
         public System.Threading.Tasks.Task UnirseASalaPrivadaNormalAsync(string idUsuario, string idSala, string codigoAcceso) {
             return base.Channel.UnirseASalaPrivadaNormalAsync(idUsuario, idSala, codigoAcceso);
         }
+<<<<<<< Updated upstream
+=======
+        
+        public void UnirseASalaPublicaNormal(string idSala, string idUsuario) {
+            base.Channel.UnirseASalaPublicaNormal(idSala, idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task UnirseASalaPublicaNormalAsync(string idSala, string idUsuario) {
+            return base.Channel.UnirseASalaPublicaNormalAsync(idSala, idUsuario);
+        }
+        
+        public void UnirseASalaPrivadaNormal(string idUsuario, string idSala, string codigoAcceso) {
+            base.Channel.UnirseASalaPrivadaNormal(idUsuario, idSala, codigoAcceso);
+        }
+        
+        public System.Threading.Tasks.Task UnirseASalaPrivadaNormalAsync(string idUsuario, string idSala, string codigoAcceso) {
+            return base.Channel.UnirseASalaPrivadaNormalAsync(idUsuario, idSala, codigoAcceso);
+        }
         
         public void UnirseASalaPrivadaMiniHistoria(string idUsuario, string idSala, string codigoAcceso) {
             base.Channel.UnirseASalaPrivadaMiniHistoria(idUsuario, idSala, codigoAcceso);
@@ -1931,8 +1949,18 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.ObtenerFamiliasYPersonajesAsync(numeroSala);
         }
     }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+
+        internal Sala BuscarSalaExistente(string text, string codigoSalaNormal)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void ValidarCantidadJugadoresEnSala(string idSala, int noJugadores)
+        {
+            throw new NotImplementedException();
+        }
+
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.IChat", CallbackContract=typeof(ClienteGloomApp.ServicioGloom.IChatCallback))]
     public interface IChat {
         
@@ -2062,3 +2090,4 @@ namespace ClienteGloomApp.ServicioGloom {
         }
     }
 }
+    }
