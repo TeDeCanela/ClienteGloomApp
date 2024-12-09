@@ -379,6 +379,12 @@
   <wsdl:message name="ISala_ObtenerFamiliasSeleccionadasPorSala_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliasSeleccionadasPorSalaResponse" />
   </wsdl:message>
+  <wsdl:message name="ISala_CambiarEstadoParaPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarEstadoParaPartida" />
+  </wsdl:message>
+  <wsdl:message name="ISala_CambiarEstadoParaPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarEstadoParaPartidaResponse" />
+  </wsdl:message>
   <wsdl:message name="ISala_EmpezarJuego_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EmpezarJuego" />
   </wsdl:message>
@@ -806,6 +812,10 @@
     <wsdl:operation name="ObtenerFamiliasSeleccionadasPorSala">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSala" message="tns:ISala_ObtenerFamiliasSeleccionadasPorSala_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSalaResponse" message="tns:ISala_ObtenerFamiliasSeleccionadasPorSala_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarEstadoParaPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISala/CambiarEstadoParaPartida" message="tns:ISala_CambiarEstadoParaPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISala/CambiarEstadoParaPartidaResponse" message="tns:ISala_CambiarEstadoParaPartida_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EmpezarJuego">
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/EmpezarJuego" message="tns:ISala_EmpezarJuego_OutputCallbackMessage" />
@@ -1393,6 +1403,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerFamiliasSeleccionadasPorSala">
       <soap12:operation soapAction="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarEstadoParaPartida">
+      <soap12:operation soapAction="http://tempuri.org/ISala/CambiarEstadoParaPartida" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

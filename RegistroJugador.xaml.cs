@@ -32,7 +32,7 @@ namespace ClienteGloomApp
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             InstanceContext contextoJugador = new InstanceContext(this);
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
@@ -50,7 +50,7 @@ namespace ClienteGloomApp
 
                 if (resulatdoIperacion == 1)
                 {
-                    MessageBox.Show(Properties.Resources.mensajeRegistroJugadorExito, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.mensajeRegistroJugadorExito, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                     LimpiarCampos();
                 }
             }
@@ -62,7 +62,24 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
-            
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
         private void LimpiarCampos()
         {
@@ -161,6 +178,13 @@ namespace ClienteGloomApp
         }
 
         private void btnFlecha_Click(object sender, RoutedEventArgs e)
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        private void DirigirJugadorInicioDeSesion()
         {
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();

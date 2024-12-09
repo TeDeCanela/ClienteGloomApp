@@ -50,6 +50,23 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
         }
         private void btnInvitarCorreo_Click(object sender, RoutedEventArgs e)
         {
@@ -57,9 +74,31 @@ namespace ClienteGloomApp
         }
         private string ObtenerCorreoAmigo(string nombreUsuarioAmigo)
         {
-            InstanceContext contexto = new InstanceContext(this);
-            ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contexto);
-            string correo = proxy.ObtenerCorreoAmigo(nombreUsuarioAmigo);
+            string correo = "";
+            try
+            {
+                InstanceContext contexto = new InstanceContext(this);
+                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient(contexto);
+                correo = proxy.ObtenerCorreoAmigo(nombreUsuarioAmigo);
+                
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
             return correo;
         }
 
@@ -70,16 +109,33 @@ namespace ClienteGloomApp
                 bool resultadoEnvioInvitacion = invitacion.EnviarInvitacion(txtCorreo.Text, codigoSala, identificadorUsuario);
                 if (resultadoEnvioInvitacion)
                 {
-                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoExitoso, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoExitoso, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
         private void lstListaAmigos_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -87,7 +143,7 @@ namespace ClienteGloomApp
             string usuarioAmigoSeleccionado = (string)lstListaAmigos.SelectedItem;
             if (string.IsNullOrEmpty(usuarioAmigoSeleccionado))
             {
-                MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
             }
             correoAmigo = ObtenerCorreoAmigo(usuarioAmigoSeleccionado);
         }
@@ -102,17 +158,41 @@ namespace ClienteGloomApp
                 bool resultadoEnvioInvitacion = invitacion.EnviarInvitacion(correoAmigo, codigoSala, identificadorUsuario);
                 if (resultadoEnvioInvitacion)
                 {
-                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoExitoso, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoExitoso, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.mensajeCorreoEnviadoFallido, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 }

@@ -473,6 +473,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CambiarEstadoParaPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeroSala" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ganador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarEstadoParaPartidaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="EmpezarJuego">
     <xs:complexType>
       <xs:sequence />

@@ -22,7 +22,6 @@ namespace ClienteGloomApp
     /// </summary>
     public partial class Inicio : Window
     {
-        //private String identificadorUsuario;
         private String tipoJugador;
 
         public Inicio(String nombreDelUsuario)
@@ -91,7 +90,7 @@ namespace ClienteGloomApp
             try
             {
                 InstanceContext contextoCrearPartida= new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
                 var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
                 ValidarSalaActiva(resultadoSala.ganador);
@@ -111,7 +110,24 @@ namespace ClienteGloomApp
             }catch (InvalidOperationException ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
-            } 
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
         }
 
         private void ValidarSalaActiva(string ganador)
@@ -158,6 +174,13 @@ namespace ClienteGloomApp
         {
             BusquedaPartida ventanBusqueda = new BusquedaPartida(lblNombreUsuario.Content.ToString());
             ventanBusqueda.Show();
+            this.Close();
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
             this.Close();
         }
     }

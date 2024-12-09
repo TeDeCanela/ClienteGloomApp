@@ -772,6 +772,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        public static string mensajeExp {
+            get {
+                return ResourceManager.GetString("mensajeExp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario registrado.
         /// </summary>
         public static string mensajeExp01 {
@@ -907,6 +916,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de usuario incorrecto.
+        /// </summary>
+        public static string mensajeExp13 {
+            get {
+                return ResourceManager.GetString("mensajeExp13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Este personaje ya está seleccionado.
         /// </summary>
         public static string mensajeExp14 {
@@ -997,6 +1015,33 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La sala no es pública o no existe..
+        /// </summary>
+        public static string mensajeExp23 {
+            get {
+                return ResourceManager.GetString("mensajeExp23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Verifique el código de la sala..
+        /// </summary>
+        public static string mensajeExp24 {
+            get {
+                return ResourceManager.GetString("mensajeExp24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se encuentra archivo para enviar correo..
+        /// </summary>
+        public static string mensajeExp25 {
+            get {
+                return ResourceManager.GetString("mensajeExp25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a La sala ya está llena, no puede ingresar.
         /// </summary>
         public static string mensajeExp34 {
@@ -1078,6 +1123,51 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Se ha iniciado la expulsión del jugador: .
+        /// </summary>
+        public static string mensajeExpuslion {
+            get {
+                return ResourceManager.GetString("mensajeExpuslion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Has salido de la sala y esta ha sido eliminada..
+        /// </summary>
+        public static string mensajeHaSalidoDeSala {
+            get {
+                return ResourceManager.GetString("mensajeHaSalidoDeSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ha sido expulsado de la sala.
+        /// </summary>
+        public static string mensajeHaSidoExpulsado {
+            get {
+                return ResourceManager.GetString("mensajeHaSidoExpulsado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ha tardado mucho para elegir para quien utilizará la carta.
+        /// </summary>
+        public static string mensajeMiniPartidaTiempoAgotado {
+            get {
+                return ResourceManager.GetString("mensajeMiniPartidaTiempoAgotado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No hay jugadores disponibles para expulsar..
+        /// </summary>
+        public static string mensajeNoJugadoresParaExpulsar {
+            get {
+                return ResourceManager.GetString("mensajeNoJugadoresParaExpulsar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¡Partida creada con éxito!.
         /// </summary>
         public static string mensajePartidaCreadaExitosa {
@@ -1101,6 +1191,24 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeRegistroJugadorFallido {
             get {
                 return ResourceManager.GetString("mensajeRegistroJugadorFallido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La sala ya no está activa. Regresando al menú principal..
+        /// </summary>
+        public static string mensajeSalaPartida {
+            get {
+                return ResourceManager.GetString("mensajeSalaPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe seleccionar un jugador para continuar..
+        /// </summary>
+        public static string mensajeSeleccionJugador {
+            get {
+                return ResourceManager.GetString("mensajeSeleccionJugador", resourceCulture);
             }
         }
         
@@ -1213,6 +1321,42 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Familia.
+        /// </summary>
+        public static string palabraFamilia {
+            get {
+                return ResourceManager.GetString("palabraFamilia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ganador.
+        /// </summary>
+        public static string palabraGanador {
+            get {
+                return ResourceManager.GetString("palabraGanador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugador.
+        /// </summary>
+        public static string palabraJugador {
+            get {
+                return ResourceManager.GetString("palabraJugador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Vida total.
+        /// </summary>
+        public static string palabraVidaTotal {
+            get {
+                return ResourceManager.GetString("palabraVidaTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descartar.
         /// </summary>
         public static string partidaBtnDescartar {
@@ -1272,6 +1416,60 @@ namespace ClienteGloomApp.Properties {
         public static string partidaBtnUsar {
             get {
                 return ResourceManager.GetString("partidaBtnUsar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fin de la partida.
+        /// </summary>
+        public static string partidaFinPartida {
+            get {
+                return ResourceManager.GetString("partidaFinPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La partida terminó sin ganador.
+        /// </summary>
+        public static string partidaFinSinGanador {
+            get {
+                return ResourceManager.GetString("partidaFinSinGanador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccione personaje objetivo.
+        /// </summary>
+        public static string partidaInstruccionSeleccionarPersonajeObjetivo {
+            get {
+                return ResourceManager.GetString("partidaInstruccionSeleccionarPersonajeObjetivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccione usuario objetivo.
+        /// </summary>
+        public static string partidaInstruccionSeleccionarUsuario {
+            get {
+                return ResourceManager.GetString("partidaInstruccionSeleccionarUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecciona un personaje de tu familia:.
+        /// </summary>
+        public static string partidaIntruccionSeleciconaPersonajeFamilia {
+            get {
+                return ResourceManager.GetString("partidaIntruccionSeleciconaPersonajeFamilia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecciona un personaje de tu familia para aplicar la carta de muerte:.
+        /// </summary>
+        public static string partidaIntruccionSeleciconaPersonajeFamiliaMuerte {
+            get {
+                return ResourceManager.GetString("partidaIntruccionSeleciconaPersonajeFamiliaMuerte", resourceCulture);
             }
         }
         

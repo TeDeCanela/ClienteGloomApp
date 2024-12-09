@@ -35,7 +35,7 @@ namespace ClienteGloomApp
 
         private string usuarioObjetivoSeleccionado;
         private string personajeObjetivoSeleccionado;
-
+      
         public PartidaNormal(String nombreUsaurio, Sala sala)
         {
             InitializeComponent();
@@ -70,17 +70,35 @@ namespace ClienteGloomApp
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
 
             }
-
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
         }
-
+        
         private void PonerImagenCarta(string nombreUsuario)
         {
-            InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient();
+            try
+            {
+                InstanceContext contextoCarta = new InstanceContext(this);
+                ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
 
-            mazoDeJugador = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
+                mazoDeJugador = proxy.ObtenerMazoJugador(nombreUsuario).ToList();
 
-            Dictionary<int, Button> botonesCartas = new Dictionary<int, Button>
+                Dictionary<int, Button> botonesCartas = new Dictionary<int, Button>
             {
                 { 0, btnCarta1 },
                 { 1, btnCarta2 },
@@ -91,24 +109,42 @@ namespace ClienteGloomApp
                 { 6, btnCarta7 }
             };
 
-            for (int i = 0; i < botonesCartas.Count; i++)
-            {
-                if (i < mazoDeJugador.Count)
+                for (int i = 0; i < botonesCartas.Count; i++)
                 {
-                    var carta = mazoDeJugador[i];
-                    string identificador = carta.identificador;
-                    botonesCartas[i].Tag = i;
-                    botonesCartas[i].Visibility = Visibility.Visible;
-
-                    if (RutasDeCartas.RutasImagenesPorIdentificador.TryGetValue(identificador, out var rutaImagen))
+                    if (i < mazoDeJugador.Count)
                     {
-                        botonesCartas[i].Background = new ImageBrush(new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute)));
+                        var carta = mazoDeJugador[i];
+                        string identificador = carta.identificador;
+                        botonesCartas[i].Tag = i;
+                        botonesCartas[i].Visibility = Visibility.Visible;
+
+                        if (RutasDeCartas.RutasImagenesPorIdentificador.TryGetValue(identificador, out var rutaImagen))
+                        {
+                            botonesCartas[i].Background = new ImageBrush(new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute)));
+                        }
+                    }
+                    else
+                    {
+                        botonesCartas[i].Visibility = Visibility.Collapsed;
                     }
                 }
-                else
-                {
-                    botonesCartas[i].Visibility = Visibility.Collapsed;
-                }
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -139,7 +175,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MessageBox.Show($"Error al asignar el primer turno: {ex.Detail.mensaje}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
 
         }
@@ -192,7 +245,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -203,7 +273,7 @@ namespace ClienteGloomApp
 
             if (string.IsNullOrEmpty(cartaSeleccionada.identificador))
             {
-                MensajesEmergentes.MostrarMensaje("Debes seleccionar una carta antes de usarla.", "Advertencia");
+                MensajesEmergentes.MostrarMensaje("70", "Debes seleccionar una carta antes de usarla.");
                 return;
             }
 
@@ -228,7 +298,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
 
         }
@@ -237,7 +324,7 @@ namespace ClienteGloomApp
         {
             panCartaBonus.Visibility = Visibility.Visible;
             InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient();
+            ServicioGloom.ServicioCartaClient proxy = new ServicioGloom.ServicioCartaClient(contextoCarta);
             try
             {
                 Carta carta = proxy.ObtenerCartasBonus();
@@ -252,59 +339,95 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
 
         }
 
         private void PonerInformacionCartaBonus(string tipo)
         {
-            InstanceContext contextoTablero = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
-            var familiasPorJugador = proxy.ObtenerFamiliaPorJugador(lblNumeroSala.Content.ToString()); // Obtener las familias por jugador
-            int botonIndex = 0;
-            var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
-
-            switch (tipo)
+            try
             {
-                case "saltarJugador":
-                    lblCarta.Content = Properties.Resources.cartaSaltarJugador;
-                    // Iterar sobre los jugadores y asignar los botones
-                    foreach (var jugador in familiasPorJugador.Keys)
-                    {
-                        if (jugador != identificadorUsuario && botonIndex < botonesJugadores.Count)
+                InstanceContext contextoTablero = new InstanceContext(this);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoTablero);
+                var familiasPorJugador = proxy.ObtenerFamiliaPorJugador(lblNumeroSala.Content.ToString());
+                int botonIndex = 0;
+                var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
+
+                switch (tipo)
+                {
+                    case "saltarJugador":
+                        lblCarta.Content = Properties.Resources.cartaSaltarJugador;
+                        foreach (var jugador in familiasPorJugador.Keys)
                         {
-                            botonesJugadores[botonIndex].Content = jugador;  // Mostrar nombre del jugador
-                            botonesJugadores[botonIndex].Visibility = Visibility.Visible;
-                            botonIndex++;
+                            if (jugador != identificadorUsuario && botonIndex < botonesJugadores.Count)
+                            {
+                                botonesJugadores[botonIndex].Content = jugador;
+                                botonesJugadores[botonIndex].Visibility = Visibility.Visible;
+                                botonIndex++;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case "robar2Cartas":
-                    lblCarta.Content = Properties.Resources.cartaRobarCarta2;
-                    break;
+                    case "robar2Cartas":
+                        lblCarta.Content = Properties.Resources.cartaRobarCarta2;
+                        break;
 
-                case "robar1Cartas":
-                    lblCarta.Content = Properties.Resources.cartaRobarCarta1;
-                    break;
+                    case "robar1Cartas":
+                        lblCarta.Content = Properties.Resources.cartaRobarCarta1;
+                        break;
 
-                case "QuitarCarta":
-                    lblCarta.Content = Properties.Resources.cartaQuitarCarta;
-                    foreach (var jugador in familiasPorJugador.Keys)
-                    {
-                        if (jugador != identificadorUsuario && botonIndex < botonesJugadores.Count)
+                    case "QuitarCarta":
+                        lblCarta.Content = Properties.Resources.cartaQuitarCarta;
+                        foreach (var jugador in familiasPorJugador.Keys)
                         {
-                            botonesJugadores[botonIndex].Content = jugador;  // Mostrar nombre del jugador
-                            botonesJugadores[botonIndex].Visibility = Visibility.Visible;
-                            botonIndex++;
+                            if (jugador != identificadorUsuario && botonIndex < botonesJugadores.Count)
+                            {
+                                botonesJugadores[botonIndex].Content = jugador;
+                                botonesJugadores[botonIndex].Visibility = Visibility.Visible;
+                                botonIndex++;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case "PerderTurno":
-                    lblCarta.Content = Properties.Resources.cartaPerderTurno;
-                    break;
+                    case "PerderTurno":
+                        lblCarta.Content = Properties.Resources.cartaPerderTurno;
+                        break;
+                }
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -340,7 +463,7 @@ namespace ClienteGloomApp
             InstanceContext contextoTablero = new InstanceContext(this);
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTablero);
             InstanceContext contextoCarta = new InstanceContext(this);
-            ServicioGloom.ServicioCartaClient proxyCarta = new ServicioGloom.ServicioCartaClient();
+            ServicioGloom.ServicioCartaClient proxyCarta = new ServicioGloom.ServicioCartaClient(contextoCarta);
             try
             {
                 switch (cartaBonusSeleccionada.tipo)
@@ -379,7 +502,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -425,7 +565,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -433,7 +590,6 @@ namespace ClienteGloomApp
         private void SeleccionarPersonajeObjetivo(string personaje)
         {
             personajeObjetivoSeleccionado = personaje;
-            Console.WriteLine($"Personaje objetivo seleccionado: {personajeObjetivoSeleccionado}");
         }
 
 
@@ -448,7 +604,7 @@ namespace ClienteGloomApp
                 {
                     if (string.IsNullOrEmpty(usuarioObjetivoSeleccionado) || string.IsNullOrEmpty(personajeObjetivoSeleccionado))
                     {
-                        MensajesEmergentes.MostrarMensaje("Selecciona un usuario y personaje objetivo antes de continuar.", "Advertencia");
+                        MensajesEmergentes.MostrarMensaje("71", "Selecciona un usuario y personaje objetivo antes de continuar.");
                         return;
                     }
                     proxy.AplicarModificadorPositivo(cartaSeleccionada, usuarioObjetivoSeleccionado, personajeObjetivoSeleccionado);
@@ -457,7 +613,7 @@ namespace ClienteGloomApp
                 {
                     if (string.IsNullOrEmpty(personajeObjetivoSeleccionado))
                     {
-                        MensajesEmergentes.MostrarMensaje("Selecciona un personaje objetivo antes de continuar.", "Advertencia");
+                        MensajesEmergentes.MostrarMensaje("72", "Selecciona un personaje objetivo antes de continuar.");
                         return;
                     }
                     proxy.AplicarModificadorNegativo(cartaSeleccionada, identificadorUsuario, personajeObjetivoSeleccionado);
@@ -467,7 +623,7 @@ namespace ClienteGloomApp
             {
                 if (string.IsNullOrEmpty(personajeObjetivoSeleccionado))
                 {
-                    MensajesEmergentes.MostrarMensaje("Selecciona un personaje objetivo antes de continuar.", "Advertencia");
+                    MensajesEmergentes.MostrarMensaje("73", "Selecciona un personaje objetivo antes de continuar.");
                     return;
                 }
 
@@ -478,7 +634,24 @@ namespace ClienteGloomApp
                 }
                 catch (FaultException<ManejadorExcepciones> ex)
                 {
-                    MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                    MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                }
+                catch (EndpointNotFoundException ex)
+                {
+                    MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                }
+                catch (TimeoutException ex)
+                {
+                    MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                    DirigirJugadorInicioDeSesion();
+                }
+                catch (CommunicationException ex)
+                {
+                    MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MensajesEmergentes.MostrarMensaje("60", ex.Message);
                 }
             }
         }
@@ -496,7 +669,7 @@ namespace ClienteGloomApp
 
                 if (jugadoresEnSala == null || !jugadoresEnSala.Any())
                 {
-                    MensajesEmergentes.MostrarMensaje("No hay jugadores conectados en la sala.", "Advertencia");
+                    MensajesEmergentes.MostrarMensaje("74", "No hay jugadores conectados en la sala.");
                     return;
                 }
 
@@ -508,8 +681,8 @@ namespace ClienteGloomApp
                 {
                     if (cartaSeleccionada.valor > 0)
                     {
-                        lblSeleccionUsuario.Content = "Selecciona el usuario objetivo:";
-                        lblSeleccionPersonaje.Content = "Selecciona el personaje objetivo del usuario seleccionado:";
+                        lblSeleccionUsuario.Content = Properties.Resources.partidaInstruccionSeleccionarUsuario;
+                        lblSeleccionPersonaje.Content = Properties.Resources.partidaInstruccionSeleccionarPersonajeObjetivo;
 
                         foreach (var usuario in jugadoresEnSala.Where(j => j != identificadorUsuario))
                         {
@@ -530,7 +703,7 @@ namespace ClienteGloomApp
                     }
                     else
                     {
-                        lblSeleccionUsuario.Content = "Selecciona un personaje de tu familia:";
+                        lblSeleccionUsuario.Content = Properties.Resources.partidaIntruccionSeleciconaPersonajeFamilia;
                         lblSeleccionPersonaje.Content = string.Empty;
 
                         MostrarPersonajesUsuarioSeleccionado(identificadorUsuario);
@@ -538,7 +711,7 @@ namespace ClienteGloomApp
                 }
                 else if (cartaSeleccionada.tipo.Equals("muerte"))
                 {
-                    lblSeleccionUsuario.Content = "Selecciona un personaje de tu familia para aplicar la carta de muerte:";
+                    lblSeleccionUsuario.Content = Properties.Resources.partidaIntruccionSeleciconaPersonajeFamiliaMuerte;
                     lblSeleccionPersonaje.Content = string.Empty;
                     MostrarPersonajesUsuarioSeleccionado(identificadorUsuario);
                 }
@@ -547,6 +720,23 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
             finally
             {
@@ -564,12 +754,12 @@ namespace ClienteGloomApp
                 panPersonajesObjetivo.Children.Clear();
 
                 InstanceContext contextoTableroJuego = new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxyPartida = new ServicioGloom.CreacionPartidaClient();
+                ServicioGloom.CreacionPartidaClient proxyPartida = new ServicioGloom.CreacionPartidaClient(contextoTableroJuego);
                 var personajes = proxyPartida.ObtenerFamiliaYPersonajesPorUsuario(salaNormal.idSala);
 
                 if (personajes == null || !personajes.ContainsKey(usuario))
                 {
-                    MensajesEmergentes.MostrarMensaje($"No se encontraron personajes para el usuario seleccionado.", "Advertencia");
+                    MensajesEmergentes.MostrarMensaje("75", "No se encontraron personajes para el usuario seleccionado.");
                     return;
                 }
 
@@ -591,7 +781,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -602,13 +809,13 @@ namespace ClienteGloomApp
         {
             if (string.IsNullOrEmpty(personajeObjetivoSeleccionado))
             {
-                MensajesEmergentes.MostrarMensaje("Debes seleccionar un personaje objetivo para continuar.", "Advertencia");
+                MensajesEmergentes.MostrarMensaje("76", "Debes seleccionar un personaje objetivo para continuar.");
                 return;
             }
 
             if (cartaSeleccionada.tipo.Equals("modificador") && cartaSeleccionada.valor > 0 && string.IsNullOrEmpty(usuarioObjetivoSeleccionado))
             {
-                MensajesEmergentes.MostrarMensaje("Debes seleccionar un usuario y un personaje objetivo para continuar.", "Advertencia");
+                MensajesEmergentes.MostrarMensaje("77", "Debes seleccionar un usuario y un personaje objetivo para continuar.");
                 return;
             }
 
@@ -632,7 +839,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -672,7 +896,7 @@ namespace ClienteGloomApp
                 }
                 else
                 {
-                    MessageBox.Show("La sala ya no está activa. Regresando al menú principal.", "Turno no válido", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Properties.Resources.mensajeSalaPartida, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                     Inicio ventanaInicio = new Inicio(lblJugador1.Content.ToString());
                     ventanaInicio.Show();
                     this.Close();
@@ -680,7 +904,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -689,7 +930,7 @@ namespace ClienteGloomApp
         {
 
             InstanceContext contextoTablero = new InstanceContext(this);
-            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
+            ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoTablero);
 
             try
             {
@@ -767,7 +1008,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -791,21 +1049,38 @@ namespace ClienteGloomApp
             try
             {
                 var jugadores = proxy.ObtenerJugadoresConectados(lblNumeroSala.Content.ToString())
-                                     .Where(j => j != lblJugador1.Content.ToString()) // Excluir al solicitante
+                                     .Where(j => j != lblJugador1.Content.ToString())
                                      .ToList();
 
                 if (jugadores.Count == 0)
                 {
-                    MessageBox.Show("No hay jugadores disponibles para expulsar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(Properties.Resources.mensajeNoJugadoresParaExpulsar, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
                 lbxJugadoresParaExpulsion.ItemsSource = jugadores;
-                panExpulsion.Visibility = Visibility.Visible; // Mostrar el panel de expulsión
+                panExpulsion.Visibility = Visibility.Visible;
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -814,7 +1089,7 @@ namespace ClienteGloomApp
         {
             if (lbxJugadoresParaExpulsion.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar un jugador para continuar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Properties.Resources.mensajeSeleccionJugador, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -827,13 +1102,30 @@ namespace ClienteGloomApp
 
                 proxy.SolicitarExpulsion(lblJugador1.Content.ToString(), jugadorSeleccionado, lblNumeroSala.Content.ToString());
 
-                MessageBox.Show($"Se ha solicitado la expulsión de {jugadorSeleccionado}.", "Expulsión iniciada", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Properties.Resources.mensajeExpuslion + jugadorSeleccionado, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
 
                 panExpulsion.Visibility = Visibility.Collapsed;
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
             finally
             {
@@ -867,7 +1159,24 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -967,7 +1276,7 @@ namespace ClienteGloomApp
         public void ActualizarImagenMazoCartaBonus()
         {
             btnCartaBonus.Visibility = Visibility.Collapsed;
-            //decCartaBonusFinal.Visibility = Visibility.Visible;
+            decCartaBonusFinal.Visibility = Visibility.Visible;
         }
 
         public void ActualizarMazoJugador()
@@ -981,8 +1290,8 @@ namespace ClienteGloomApp
 
             Application.Current.Dispatcher.Invoke(() =>
             {
-                string mensaje = jugador.Equals("Sin ganador") ? "La partida terminó sin un ganador." : $"El ganador de la partida es {jugador}.";
-                MessageBox.Show(mensaje, "Fin de la partida", MessageBoxButton.OK, MessageBoxImage.Information);
+                string mensaje = jugador.Equals("Sin ganador") ? Properties.Resources.partidaFinSinGanador : Properties.Resources.finPartidaFelicitacionLeyenda +" "+ jugador;
+                MessageBox.Show(mensaje, Properties.Resources.partidaFinPartida, MessageBoxButton.OK, MessageBoxImage.Information);
 
                 FinPartidaNormal ventanaFin = new FinPartidaNormal(identificadorUsuario, jugador, lblNumeroSala.Content.ToString());
                 ventanaFin.Show();
@@ -996,7 +1305,7 @@ namespace ClienteGloomApp
             Application.Current.Dispatcher.Invoke(() =>
             {
                 ActualizarInterfazExpulsion(jugadorPropuesto);
-                MessageBox.Show($"{jugadorPropuesto} ha sido expulsado de la sala.", "Expulsión", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(jugadorPropuesto + " " + Properties.Resources.mensajeHaSidoExpulsado, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
             });
         }
 
@@ -1005,7 +1314,7 @@ namespace ClienteGloomApp
             Application.Current.Dispatcher.Invoke(() =>
             {
 
-                MessageBox.Show(jugadorObjetivo, "Has sido expulsado", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(jugadorObjetivo, Properties.Resources.mensajeHaSidoExpulsado, MessageBoxButton.OK, MessageBoxImage.Warning);
 
                 Inicio ventanaInicio = new Inicio(lblJugador1.Content.ToString()); 
                 ventanaInicio.Show();
@@ -1040,6 +1349,13 @@ namespace ClienteGloomApp
                 }
             }
 
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
 
         void IServicioJuegoTableroCallback.ActualizarJugadorMuerto(string jugadorMuerto)

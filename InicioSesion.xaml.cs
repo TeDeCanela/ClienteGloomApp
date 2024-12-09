@@ -27,6 +27,10 @@ namespace ClienteGloomApp
             InitializeComponent();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
             this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            App app = (App)Application.Current;
+            app.cambiarIdioma("esp");
+
+            actualizarElementos();
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -54,15 +58,16 @@ namespace ClienteGloomApp
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            InstanceContext contexJugador = new InstanceContext(this);
-
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
-
-            ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
+            
             try
             {
-                jugador.nombreUsuario = txtBoxNombre.Text;//validar.VerificarNombreUsuario(txtBoxNombre.Text);
-                jugador.contraseña = passwordBox.Password;//validar.VerificarContrasena(passwordBox.Password);
+                InstanceContext contexJugador = new InstanceContext(this);
+
+                ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+
+                ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
+                jugador.nombreUsuario = validar.VerificarNombreUsuario(txtBoxNombre.Text);
+                jugador.contraseña = validar.VerificarContrasena(passwordBox.Password);
                 int resultado = proxy.AutenticarJugador(jugador);
                 if (resultado == 1)
                 {
@@ -78,6 +83,23 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
@@ -110,6 +132,30 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
+        }
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
         }
     }
 }

@@ -11,8 +11,8 @@
 namespace ClienteGloomApp.ServicioGloom {
     using System.Runtime.Serialization;
     using System;
-    using System.ServiceModel;
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
@@ -704,7 +704,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class JugadorClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IJugador>, ClienteGloomApp.ServicioGloom.IJugador {
         
-        public JugadorClient() {
+        public JugadorClient(System.ServiceModel.InstanceContext contextoJugador) {
         }
         
         public JugadorClient(string endpointConfigurationName) : 
@@ -722,11 +722,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public JugadorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public JugadorClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public int AgregarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
             return base.Channel.AgregarJugador(jugador);
         }
@@ -848,7 +844,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AmigosClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IAmigos>, ClienteGloomApp.ServicioGloom.IAmigos {
         
-        public AmigosClient() {
+        public AmigosClient(System.ServiceModel.InstanceContext contexto) {
         }
         
         public AmigosClient(string endpointConfigurationName) : 
@@ -866,11 +862,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public AmigosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public AmigosClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public int EnviarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
             return base.Channel.EnviarSolcitudAmistad(solicitud);
         }
@@ -1060,6 +1052,12 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSala", ReplyAction="http://tempuri.org/ISala/ObtenerFamiliasSeleccionadasPorSalaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string[]>> ObtenerFamiliasSeleccionadasPorSalaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CambiarEstadoParaPartida", ReplyAction="http://tempuri.org/ISala/CambiarEstadoParaPartidaResponse")]
+        void CambiarEstadoParaPartida(string numeroSala, string ganador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CambiarEstadoParaPartida", ReplyAction="http://tempuri.org/ISala/CambiarEstadoParaPartidaResponse")]
+        System.Threading.Tasks.Task CambiarEstadoParaPartidaAsync(string numeroSala, string ganador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1289,6 +1287,14 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string[]>> ObtenerFamiliasSeleccionadasPorSalaAsync() {
             return base.Channel.ObtenerFamiliasSeleccionadasPorSalaAsync();
+        }
+        
+        public void CambiarEstadoParaPartida(string numeroSala, string ganador) {
+            base.Channel.CambiarEstadoParaPartida(numeroSala, ganador);
+        }
+        
+        public System.Threading.Tasks.Task CambiarEstadoParaPartidaAsync(string numeroSala, string ganador) {
+            return base.Channel.CambiarEstadoParaPartidaAsync(numeroSala, ganador);
         }
     }
     
@@ -1675,7 +1681,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServicioCartaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IServicioCarta>, ClienteGloomApp.ServicioGloom.IServicioCarta {
         
-        public ServicioCartaClient() {
+        public ServicioCartaClient(System.ServiceModel.InstanceContext contextoCarta) {
         }
         
         public ServicioCartaClient(string endpointConfigurationName) : 
@@ -1693,11 +1699,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public ServicioCartaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public ServicioCartaClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public ClienteGloomApp.ServicioGloom.Carta[] ObtenerMazoJugador(string nombreJugador) {
             return base.Channel.ObtenerMazoJugador(nombreJugador);
         }
@@ -1776,17 +1778,13 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServicioHistorialPartidaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.IServicioHistorialPartida>, ClienteGloomApp.ServicioGloom.IServicioHistorialPartida {
         
-        public ServicioHistorialPartidaClient() {
+        public ServicioHistorialPartidaClient(System.ServiceModel.InstanceContext contextoHistorial) {
         }
         
         public ServicioHistorialPartidaClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
-
-        public ServicioHistorialPartidaClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public ServicioHistorialPartidaClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
@@ -1882,7 +1880,7 @@ namespace ClienteGloomApp.ServicioGloom {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class CreacionPartidaClient : System.ServiceModel.ClientBase<ClienteGloomApp.ServicioGloom.ICreacionPartida>, ClienteGloomApp.ServicioGloom.ICreacionPartida {
         
-        public CreacionPartidaClient(System.ServiceModel.InstanceContext contexto) {
+        public CreacionPartidaClient(System.ServiceModel.InstanceContext contextoCrearPartida) {
         }
         
         public CreacionPartidaClient(string endpointConfigurationName) : 
@@ -1900,11 +1898,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public CreacionPartidaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public CreacionPartidaClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerUsuariosYPersonajes(string numeroSala) {
             return base.Channel.ObtenerUsuariosYPersonajes(numeroSala);
         }

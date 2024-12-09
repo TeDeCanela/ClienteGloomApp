@@ -165,6 +165,9 @@
   <data name="escribirMensajeInstrucción" xml:space="preserve">
     <value>Escribir mensaje</value>
   </data>
+  <data name="finMiniComentarioGanador" xml:space="preserve">
+    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
+  </data>
   <data name="finMiniInstruccionGanador" xml:space="preserve">
     <value>La voz del destino ha hablado y yo he respondido, he ganado
 </value>
@@ -481,6 +484,9 @@
   <data name="miniBtnEmpezar" xml:space="preserve">
     <value>Empezar</value>
   </data>
+  <data name="miniHisotriaInstruccionCodigo" xml:space="preserve">
+    <value>Code</value>
+  </data>
   <data name="miniHistoriaEncabezado" xml:space="preserve">
     <value>Sala mini-historia</value>
   </data>
@@ -597,8 +603,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
-  </data>
-  <data name="finMiniComentarioGanador" xml:space="preserve">
-    <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
   </data>
 </root>
