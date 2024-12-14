@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,57 +41,92 @@ namespace ClienteGloomApp
             throw new NotImplementedException();
         }
 
-        private void btnPerfil_Click(object sender, RoutedEventArgs e)
+        private void BtnPerfil_Click(object sender, RoutedEventArgs e)
         {
             PerfilJugador nuevaVentana = new PerfilJugador(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
             this.Close();
         }
 
-        private void btnVerPersonajes_Click(object sender, RoutedEventArgs e)
+        private void BtnVerPersonajes_Click(object sender, RoutedEventArgs e)
         {
             HistoriaPersonajes nuevaVentana = new HistoriaPersonajes(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
             this.Close();
         }
 
-        private void btnListaDeAmigos_Click(object sender, RoutedEventArgs e)
+        private void BtnListaDeAmigos_Click(object sender, RoutedEventArgs e)
         {
             ListaAmigos nuevaVentana = new ListaAmigos(lblNombreUsuario.Content.ToString());
             nuevaVentana.Show();
             this.Close();
         }
 
-        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
-            InicioSesion nuevaVentana = new InicioSesion();
-            nuevaVentana.Show();
-            this.Close();
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            try
+            {
+                InstanceContext contextoJugador = new InstanceContext(this);
+                ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+                proxy.CerrarSesionJugador(lblNombreUsuario.Content.ToString());
+                InicioSesion nuevaVentana = new InicioSesion();
+                nuevaVentana.Show();
+                this.Close();
+            }
+            catch (InvalidOperationException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensajeAdvertencia(ex.Message, ex.Message);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
 
-        private void btnHistorialDePartidas_Click(object sender, RoutedEventArgs e)
+        private void BtnHistorialDePartidas_Click(object sender, RoutedEventArgs e)
         {
             HistorialPartidas nuevavenatana = new HistorialPartidas(lblNombreUsuario.Content.ToString());
             nuevavenatana.Show();
             this.Close();
         }
 
-        private void btnMiniHistoria_Click(object sender, RoutedEventArgs e)
+        private void BtnMiniHistoria_Click(object sender, RoutedEventArgs e)
         {
             panelMiniEntrada .Visibility = Visibility.Visible;
         }
 
-        private void btnFlechaPanelAmigos_Click(object sender, RoutedEventArgs e)
+        private void BtnFlechaPanelAmigos_Click(object sender, RoutedEventArgs e)
         {
             panelMiniEntrada.Visibility = Visibility.Collapsed;
         }
 
-        private void btnEntrarPartidaMiniHistoria_Click(object sender, RoutedEventArgs e)
+        private void BtnEntrarPartidaMiniHistoria_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoCrearPartida= new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoCrearPartida);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
                 ServicioGloom.Sala sala = new ServicioGloom.Sala();
                 var resultadoSala = proxy.BuscarSalaExistente(txtIdSala.Text, txtCodigo.Text);
                 ValidarSalaActiva(resultadoSala.ganador);
@@ -105,27 +141,34 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
 
-            }catch (InvalidOperationException ex)
+            }
+            catch (InvalidOperationException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensajeAdvertencia(ex.Message, ex.Message);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
@@ -163,14 +206,14 @@ namespace ClienteGloomApp
             }
         }
 
-        private void btnCrearPartida_Click(object sender, RoutedEventArgs e)
+        private void BtnCrearPartida_Click(object sender, RoutedEventArgs e)
         {
             CrearPartida ventanaCrearPartida = new CrearPartida(lblNombreUsuario.Content.ToString());
             ventanaCrearPartida.Show();
             this.Close();
         }
 
-        private void btnBuscarPartida_Click(object sender, RoutedEventArgs e)
+        private void BtnBuscarPartida_Click(object sender, RoutedEventArgs e)
         {
             BusquedaPartida ventanBusqueda = new BusquedaPartida(lblNombreUsuario.Content.ToString());
             ventanBusqueda.Show();

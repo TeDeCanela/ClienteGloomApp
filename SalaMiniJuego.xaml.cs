@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para SalaMiniJuego.xaml
     /// </summary>
-    public partial class SalaMiniJuego : Window, ISalaCallback
+    public partial class SalaMiniJuego : Window, IServicioSalaMiniHistoriaCallback, ISalaCallback
     {
         
         ServicioGloom.Sala salaRegistrada = new ServicioGloom.Sala();
@@ -29,17 +30,18 @@ namespace ClienteGloomApp
 
         public SalaMiniJuego(String nombreUsuario, Sala sala)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
-            lblInstruccion.Content = Properties.Resources.miniHistoriaNumeroSala + " :" + sala.idSala;
+            lblInstruccion.Content = Properties.Resources.crearPartidaNombreSala + " :" + sala.idSala;
             lblInstruccionCodigo.Content = Properties.Resources.miniHisotriaInstruccionCodigo + " :" + sala.codigo;
             numeroDeSala = sala.idSala;
             btnEmpezar.BorderBrush = Brushes.Red;
             btnEmpezar.BorderThickness = new Thickness(4);
             try
             {
-                ConectarConSala();
+                ConectarConSala(); ConectarConSalaMiniJuego();
                 ActualizarNumeroJugadores();
                 PonerPersonajesUsados();
                 if (!ValidarAdministrador())
@@ -50,30 +52,33 @@ namespace ClienteGloomApp
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
             }
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
-
-
-
         }
-        private void btnFlecha_Click(object sender, RoutedEventArgs e)
+        private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoSala = new InstanceContext(this);
@@ -93,24 +98,29 @@ namespace ClienteGloomApp
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
         }
 
         private void ConectarConSala()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoSala = new InstanceContext(this);
@@ -120,24 +130,64 @@ namespace ClienteGloomApp
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
 
         }
+
+
+        private void ConectarConSalaMiniJuego()
+        {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            try
+            {
+                InstanceContext contextoSala = new InstanceContext(this);
+                ServicioGloom.ServicioSalaMiniHistoriaClient proxy = new ServicioGloom.ServicioSalaMiniHistoriaClient(contextoSala);
+                proxy.ConectarConSalaMiniPartida(numeroDeSala, lblNombreUsuarioRegistrado.Content.ToString());
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+        }
+
+
         private void ActualizarJugadores()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoSala = new InstanceContext(this);
@@ -152,19 +202,23 @@ namespace ClienteGloomApp
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
         }
 
@@ -177,28 +231,29 @@ namespace ClienteGloomApp
             
         }
 
-        private void btnTucani_Click(object sender, RoutedEventArgs e)
+        private void BtnTucani_Click(object sender, RoutedEventArgs e)
         {
             IngresarSeleccionPersonaje("Tucani");
         }
 
-        private void btnLusiel_Click(object sender, RoutedEventArgs e)
+        private void BtnLusiel_Click(object sender, RoutedEventArgs e)
         {
             IngresarSeleccionPersonaje("Lusiel");
         }
 
-        private void btnAngelus_Click(object sender, RoutedEventArgs e)
+        private void BtnAngelus_Click(object sender, RoutedEventArgs e)
         {
             IngresarSeleccionPersonaje("Angelus");
         }
 
-        private void btnLuan_Click(object sender, RoutedEventArgs e)
+        private void BtnLuan_Click(object sender, RoutedEventArgs e)
         {
             IngresarSeleccionPersonaje("Luan");
         }
 
-        private void btnEmpezar_Click(object sender, RoutedEventArgs e)
+        private void BtnEmpezar_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 ValidarSeleccionPersonaje();
@@ -220,29 +275,34 @@ namespace ClienteGloomApp
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show(Properties.Resources.mensajeExp19, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
+                administradorLogger.RegistroError(ex);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
             }
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
-
         }
 
         private bool ValidarAdministrador()
@@ -260,6 +320,7 @@ namespace ClienteGloomApp
 
         public void ActualizarNumeroJugadores()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoSala = new InstanceContext(this);
@@ -273,24 +334,29 @@ namespace ClienteGloomApp
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
         }
        
         private void IngresarJugadorEnTablero()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoSala = new InstanceContext(this);
@@ -301,83 +367,70 @@ namespace ClienteGloomApp
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
         }
 
         private void IngresarSeleccionPersonaje(String personaje)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 persoanjeSeleciconado = true;
                 InstanceContext contextoSala = new InstanceContext(this);
-                ServicioGloom.SalaClient proxy = new ServicioGloom.SalaClient(contextoSala);
+                ServicioGloom.ServicioSalaMiniHistoriaClient proxy = new ServicioGloom.ServicioSalaMiniHistoriaClient(contextoSala);
 
                 proxy.SeleccionarPersonaje(lblNombreUsuarioRegistrado.Content.ToString(), personaje, numeroDeSala);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
             }
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             btnEmpezar.BorderBrush = Brushes.Red;
             btnEmpezar.BorderThickness = new Thickness(4);
         }
 
-        void ISalaCallback.ActualizarImagenPersonaje(string personaje, string personajeAnterior)
-        {
-            CambiarPersonajeAnterior(personajeAnterior);
-            switch (personaje)
-            {
-                case "Tucani":
-                    btnTucani.BorderBrush = Brushes.Yellow;
-                    btnTucani.BorderThickness = new Thickness(2);
-                    break;
-                case "Lusiel":
-                    btnLusiel.BorderBrush = Brushes.Fuchsia;
-                    btnLusiel.BorderThickness = new Thickness(2);
-                    break;
-                case "Angelus":
-                    btnAngelus.BorderBrush = Brushes.Purple;
-                    btnAngelus.BorderThickness = new Thickness(2);
-                    break;
-                case "Luan":
-                    btnLuan.BorderBrush = Brushes.Blue;
-                    btnLuan.BorderThickness = new Thickness(2);
-                    break;
-            }
-        }
-
         private void PonerPersonajesUsados()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoSala = new InstanceContext(this);
@@ -410,19 +463,23 @@ namespace ClienteGloomApp
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (TimeoutException ex)
             {
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
             catch (Exception ex)
             {
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
             }
         }
 
@@ -459,21 +516,6 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-        public void ActualizarSalasActivas(Sala[] salasActivas)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ResultadoUnirseASala(string idSala, string codigo, bool esExitoso)
-        {
-            throw new NotImplementedException();
-        }
-
-        void ISalaCallback.ActualizarSeleccionFamilia(string nombreFamilia, string nombreFamiliaAnterior)
-        {
-            throw new NotImplementedException();
-        }
-
         private void BtnInvitarJugadores_Click(object sender, RoutedEventArgs e)
         {
             InvitacionJugador invitacionJugador = new InvitacionJugador(lblNombreUsuarioRegistrado.Content.ToString(), salaRegistrada.idSala);
@@ -485,6 +527,30 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
+        }
+
+        void IServicioSalaMiniHistoriaCallback.ActualizarImagenPersonaje(string personaje, string personajeAnterior)
+        {
+            CambiarPersonajeAnterior(personajeAnterior);
+            switch (personaje)
+            {
+                case "Tucani":
+                    btnTucani.BorderBrush = Brushes.Yellow;
+                    btnTucani.BorderThickness = new Thickness(2);
+                    break;
+                case "Lusiel":
+                    btnLusiel.BorderBrush = Brushes.Fuchsia;
+                    btnLusiel.BorderThickness = new Thickness(2);
+                    break;
+                case "Angelus":
+                    btnAngelus.BorderBrush = Brushes.Purple;
+                    btnAngelus.BorderThickness = new Thickness(2);
+                    break;
+                case "Luan":
+                    btnLuan.BorderBrush = Brushes.Blue;
+                    btnLuan.BorderThickness = new Thickness(2);
+                    break;
+            }
         }
     }
 }

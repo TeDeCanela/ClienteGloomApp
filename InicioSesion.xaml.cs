@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ServiceModel;
 using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 
 namespace ClienteGloomApp
 {
@@ -33,14 +34,14 @@ namespace ClienteGloomApp
             actualizarElementos();
         }
 
-        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        private void BtnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             RegistroJugador nuevaVentanada = new RegistroJugador();
             nuevaVentanada.Show();
             this.Close();
         }
 
-        private void btnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
+        private void BtnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
         {
             App app = (App)Application.Current;
             app.cambiarIdioma("esp");
@@ -48,7 +49,7 @@ namespace ClienteGloomApp
             actualizarElementos();
         }
 
-        private void btnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
+        private void BtnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
         {
             App app = (App)Application.Current;
             app.cambiarIdioma("en");
@@ -56,14 +57,14 @@ namespace ClienteGloomApp
             actualizarElementos();
         }
 
-        private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
+        private void BtnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contexJugador = new InstanceContext(this);
 
-                ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+                ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
                 ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
                 jugador.nombreUsuario = validar.VerificarNombreUsuario(txtBoxNombre.Text);
@@ -78,27 +79,33 @@ namespace ClienteGloomApp
             }
             catch (ArgumentException ex)
             {
-                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensajeAdvertencia(ex.Message, ex.Message);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
@@ -114,11 +121,12 @@ namespace ClienteGloomApp
 
         }
 
-        private void btnIniciarComoInvitado_Click(object sender, RoutedEventArgs e)
+        private void BtnIniciarComoInvitado_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             InstanceContext contexJugador = new InstanceContext(this);
 
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contexJugador);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
 
             try
             {
@@ -130,23 +138,28 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
 

@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,11 +37,12 @@ namespace ClienteGloomApp
 
         private void AsignarJugadores()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
 
                 InstanceContext contextoPartida = new InstanceContext(this);
-                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient(contextoPartida);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
                 var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes(identificadorSala);
 
                 var rutaImagenesPorPersonaje = new Dictionary<string, string>
@@ -84,24 +86,28 @@ namespace ClienteGloomApp
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
-        private void btnFlecha_Click(object sender, RoutedEventArgs e)
+        private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
              Inicio nuevaVentana = new Inicio(jugadorPropietario);
              nuevaVentana.Show();

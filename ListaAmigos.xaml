@@ -13,15 +13,15 @@
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
         <Image Source="Imagenes/maderaOscura.jpg" Width="2775" Height="1082" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,-10,0,0" RenderTransformOrigin="0.522,0.508" Grid.RowSpan="2"/>
-        <TextBox x:Name="txtBuscador" HorizontalAlignment="Left" Margin="580,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="385" FontSize="22" Height="49" TextChanged="txtBuscador_TextChanged"/>
+        <TextBox x:Name="txtBuscador" HorizontalAlignment="Left" Margin="580,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="385" FontSize="22" Height="49" TextChanged="TxtBuscador_TextChanged"/>
         <Label Content="Buscar &#xD;&#xA;jugador" HorizontalAlignment="Left" Margin="456,43,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFF6F4F4"/>
         <DataGrid x:Name="dgResultados" Margin="582,181,582,0" AutoGenerateColumns="false" CanUserAddRows="False" ItemsSource="{Binding}" IsReadOnly="True" CanUserDeleteRows="False" FontSize="24" Background="#80FFFFFF">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding nombreUsuario}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnVerSolicitudes" Content="{x:Static p:Resources.listaAmigosbtnVerSolicitud}" HorizontalAlignment="Left" Margin="2,677,0,0" VerticalAlignment="Top" Background="White" FontWeight="Bold" FontSize="22" Height="51" Width="300" Click="btnVerSolicitudes_Click" RenderTransformOrigin="0.489,-0.514" Grid.RowSpan="2"/>
-        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+        <Button x:Name="btnVerSolicitudes" Content="{x:Static p:Resources.listaAmigosbtnVerSolicitud}" HorizontalAlignment="Left" Margin="2,677,0,0" VerticalAlignment="Top" Background="White" FontWeight="Bold" FontSize="22" Height="51" Width="300" Click="BtnVerSolicitudes_Click" RenderTransformOrigin="0.489,-0.514" Grid.RowSpan="2"/>
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -39,7 +39,7 @@
                 <ImageBrush ImageSource="/Imagenes/lupa-de-busqueda.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnAñadirAmigo" Content="" HorizontalAlignment="Left" Margin="996,10,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="42" Width="50" Click="btnAñadirAmigo_Click" Grid.Row="1">
+        <Button x:Name="btnAñadirAmigo" Content="" HorizontalAlignment="Left" Margin="996,10,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="42" Width="50" Click="BtnAñadirAmigo_Click" Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="/Imagenes/anadir-amigo.png"/>
             </Button.Background>
@@ -47,7 +47,7 @@
         <Label x:Name="lblNombreUsuarioRegistrado" Content="" HorizontalAlignment="Left" Margin="34,10,0,0" VerticalAlignment="Top"/>
         <StackPanel Grid.RowSpan="2"/>
         <StackPanel x:Name="panelSolicitudes" Visibility="Collapsed" Background="#40000000" Width="300" Height="615" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,59,0,0">
-            <Button x:Name="btnFlechaPanelSolicitudes" Content="" Height="51" Width="53" RenderTransformOrigin="0.5,0.5" Click="btnFlechaPanel_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right">
+            <Button x:Name="btnFlechaPanelSolicitudes" Content="" Height="51" Width="53" RenderTransformOrigin="0.5,0.5" Click="BtnFlechaPanel_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -66,7 +66,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                <Button x:Name="btnRechazarSolicitud" Content="" Height="36" Width="38" RenderTransformOrigin="0.5,0.5" Click="btnRechazarSolicitud_Click" BorderBrush="{x:Null}" Margin="0,0,100,0">
+                <Button x:Name="btnRechazarSolicitud" Content="" Height="36" Width="38" RenderTransformOrigin="0.5,0.5" Click="BtnRechazarSolicitud_Click" BorderBrush="{x:Null}" Margin="0,0,100,0">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1" ScaleY="-1"/>
@@ -79,7 +79,7 @@
                         <ImageBrush ImageSource="/Imagenes/usuario-invalido.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnAceptarSolicitud" Content="" Height="57" Width="60" RenderTransformOrigin="0.5,0.5" Click="btnAceptarSolicitud_Click" BorderBrush="{x:Null}">
+                <Button x:Name="btnAceptarSolicitud" Content="" Height="57" Width="60" RenderTransformOrigin="0.5,0.5" Click="BtnAceptarSolicitud_Click" BorderBrush="{x:Null}">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="-1" ScaleY="-1"/>
@@ -94,9 +94,9 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="btnMisAmigos" Content="{x:Static p:Resources.listaAmigosBtnMisAmigos}" HorizontalAlignment="Left" Margin="1240,6,0,0" VerticalAlignment="Top" Background="White" FontWeight="Bold" FontSize="22" Height="51" Width="300" Click="btnMostrarMisAmigos_Click" RenderTransformOrigin="0.489,-0.514" Grid.Row="1"/>
+        <Button x:Name="btnMisAmigos" Content="{x:Static p:Resources.listaAmigosBtnMisAmigos}" HorizontalAlignment="Left" Margin="1240,6,0,0" VerticalAlignment="Top" Background="White" FontWeight="Bold" FontSize="22" Height="51" Width="300" Click="BtnMostrarMisAmigos_Click" RenderTransformOrigin="0.489,-0.514" Grid.Row="1"/>
         <StackPanel x:Name="panelAmigos" Visibility="Collapsed" Background="#40000000" Width="300" Height="578" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1240,96,0,0">
-            <Button x:Name="btnFlechaPanelAmigos" Content="" Height="51" Width="53" RenderTransformOrigin="0.5,0.5" Click="btnFlechaPanelAmigos_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right">
+            <Button x:Name="btnFlechaPanelAmigos" Content="" Height="51" Width="53" RenderTransformOrigin="0.5,0.5" Click="BtnFlechaPanelAmigos_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -114,7 +114,7 @@
                     <DataGridTextColumn Binding="{Binding nombreUsuario}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="btneliminarAmigo" Content="" Height="36" Width="38" RenderTransformOrigin="0.725,-0.451" Click="btnEliminarAmigos_Click" BorderBrush="{x:Null}">
+            <Button x:Name="btneliminarAmigo" Content="" Height="36" Width="38" RenderTransformOrigin="0.725,-0.451" Click="BtnEliminarAmigos_Click" BorderBrush="{x:Null}">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1" ScaleY="-1"/>

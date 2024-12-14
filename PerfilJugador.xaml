@@ -15,7 +15,7 @@
         <Label x:Name="lblNombreUsuarioRegistrado" HorizontalAlignment="Left" Margin="128,121,0,0"  VerticalAlignment="Top" Width="326" Height="29" />
         <TextBox x:Name="txtApellidos" HorizontalAlignment="Left" Margin="167,614,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="29"/>
 
-        <Button x:Name="btnCambiarDatos" Content="{x:Static p:Resources.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1203,689,0,0" VerticalAlignment="Top" Width="203" Height="59" Click="btnCambiarDatos_Click" FontWeight="Bold" FontSize="24" Foreground="White" Background="#FF574C42">
+        <Button x:Name="btnCambiarDatos" Content="{x:Static p:Resources.perfilBtnCambiarDatos}" HorizontalAlignment="Left" Margin="1203,689,0,0" VerticalAlignment="Top" Width="203" Height="59" Click="BtnCambiarDatos_Click" FontWeight="Bold" FontSize="24" Foreground="White" Background="#FF574C42">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" 
@@ -30,7 +30,7 @@
         </Button>
         <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="624,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="28"/>
         <PasswordBox x:Name="pwdContrasena" HorizontalAlignment="Left" Margin="624,614,0,0" VerticalAlignment="Top" Width="326" Height="29"/>
-        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1361,15,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.5,0.5" Click="btnFlecha_Click" BorderBrush="{x:Null}">
+        <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1361,15,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.5,0.5" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -45,42 +45,42 @@
         </Button>
         <GroupBox x:Name="grupoBotones" HorizontalAlignment="Left" Margin="1112,147,0,229" BorderThickness="0">
             <UniformGrid x:Name="panelbotones" Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-                <Button x:Name="btnPerfilCalavera" Content="" Height="63" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCalavera_Click">
+                <Button x:Name="btnPerfilCalavera" Content="" Height="63" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilCalavera_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilCalavera.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilCorazon" Content="" Height="61" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCorazon_Click">
+                <Button x:Name="btnPerfilCorazon" Content="" Height="61" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilCorazon_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilCorazon.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilDiamante" Content="" Height="70" Width="70" BorderBrush="{x:Null}" Click="btnPerfilDiamante_Click">
+                <Button x:Name="btnPerfilDiamante" Content="" Height="70" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilDiamante_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilDiamante.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilCastillo" Content="" Height="70" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCastillo_Click">
+                <Button x:Name="btnPerfilCastillo" Content="" Height="70" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilCastillo_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilCastillo.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilCorona" Content="" Height="65" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCorona_Click">
+                <Button x:Name="btnPerfilCorona" Content="" Height="65" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilCorona_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilCorona.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilCastillo2" Content="" Height="63" Width="70" BorderBrush="{x:Null}" Click="btnPerfilCastillo2_Click">
+                <Button x:Name="btnPerfilCastillo2" Content="" Height="63" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilCastillo2_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilCastillo2.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilUnicornio" Content="" Height="68" Width="70" BorderBrush="{x:Null}" Click="btnPerfilUnicornio_Click">
+                <Button x:Name="btnPerfilUnicornio" Content="" Height="68" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilUnicornio_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilUnicornio.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilVela" Content="" Height="64" Width="70" BorderBrush="{x:Null}" Click="btnPerfilVela_Click" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="btnPerfilVela" Content="" Height="64" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilVela_Click" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -93,12 +93,12 @@
                         <ImageBrush ImageSource="/Imagenes/PerfilVela.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilEspada" Content="" Height="58" Width="70" BorderBrush="{x:Null}" Click="btnPerfilEspada_Click">
+                <Button x:Name="btnPerfilEspada" Content="" Height="58" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilEspada_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilEspada.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnPerfilEscudo" Content="" Height="58" Width="70" BorderBrush="{x:Null}" Click="btnPerfilEscudo_Click">
+                <Button x:Name="btnPerfilEscudo" Content="" Height="58" Width="70" BorderBrush="{x:Null}" Click="BtnPerfilEscudo_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="/Imagenes/PerfilEscudo.png"/>
                     </Button.Background>

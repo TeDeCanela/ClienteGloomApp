@@ -25,89 +25,89 @@ namespace ClienteGloomApp
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
         }
 
-        private void btnMerit_Click(object sender, RoutedEventArgs e)
+        private void BtnMerit_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaMerit;
         }
 
-        private void btnNeferu_Click(object sender, RoutedEventArgs e)
+        private void BtnNeferu_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaNeferu;
         }
 
-        private void btnSeti_Click(object sender, RoutedEventArgs e)
+        private void BtnSeti_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaSeti;
         }
 
-        private void btnSobek_Click(object sender, RoutedEventArgs e)
+        private void BtnSobek_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaSobek;
         }
 
-        private void btnTucani_Click(object sender, RoutedEventArgs e)
+        private void BtnTucani_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaTucani;
         }
 
-        private void btnLusiel_Click(object sender, RoutedEventArgs e)
+        private void BtnLusiel_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaLusiel;
         }
 
-        private void btnAngelus_Click(object sender, RoutedEventArgs e)
+        private void BtnAngelus_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaAngelus;
         }
 
-        private void btnLuan_Click(object sender, RoutedEventArgs e)
+        private void BtnLuan_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaLuan;
         }
 
-        private void btnGaia_Click(object sender, RoutedEventArgs e)
+        private void BtnGaia_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaGaia;
         }
 
-        private void btnArialyn_Click(object sender, RoutedEventArgs e)
+        private void BtnArialyn_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaArialyn;
         }
 
-        private void btnAris_Click(object sender, RoutedEventArgs e)
+        private void BtnAris_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaAris;
         }
 
-        private void btnAbelith_Click(object sender, RoutedEventArgs e)
+        private void BtnAbelith_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaAbelith;
         }
 
-        private void btnDidorian_Click(object sender, RoutedEventArgs e)
+        private void BtnDidorian_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaDidorian;
         }
 
-        private void btnZael_Click(object sender, RoutedEventArgs e)
+        private void BtnZael_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaZael;
         }
 
-        private void btnPablian_Click(object sender, RoutedEventArgs e)
+        private void BtnPablian_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaPablian;
         }
 
-        private void btnLorenzeo_Click(object sender, RoutedEventArgs e)
+        private void BtnLorenzeo_Click(object sender, RoutedEventArgs e)
         {
             txtHistoria.Text = Properties.Resources.historiaLorenzeo;
         }
 
-        private void btnFlecha_Click(object sender, RoutedEventArgs e)
+        private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
-            InicioSesion nuevaVentana = new InicioSesion();
+            Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
             this.Close();
         }

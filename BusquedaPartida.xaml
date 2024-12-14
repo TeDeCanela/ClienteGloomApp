@@ -35,18 +35,11 @@
                   BorderThickness="1"
                   GridLinesVisibility="All"
                   HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Height="400" Margin="0,0,0,100"
-                  FontSize="22">
+                  FontSize="22"
+                  IsReadOnly="True">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nombre de la Sala" Binding="{Binding nombreSala}" Width="*" />
-                <DataGridTextColumn Header="Jugadores Activos / Máximos" Width="*">
-                    <DataGridTextColumn.Binding>
-                        <MultiBinding StringFormat="{}{1}/{0}">
-                            <Binding Path="noJugadoresActuales" />
-                            <Binding Path="noJugadores" />
-                        </MultiBinding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
                 <DataGridTextColumn Header="Tipo de Partida" Binding="{Binding tipoPartida}" Width="*" />
                 <DataGridTextColumn Header="Tipo de Sala" Binding="{Binding tipoSala}" Width="*" />
             </DataGrid.Columns>

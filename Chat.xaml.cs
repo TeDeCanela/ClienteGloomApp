@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Linq;
 using System.ServiceModel;
@@ -35,6 +36,7 @@ namespace ClienteGloomApp
 
         private Chat(string nombreUsuario)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             InitializeComponent();
             identificadorUsuario = nombreUsuario;
 
@@ -63,19 +65,23 @@ namespace ClienteGloomApp
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
@@ -85,6 +91,7 @@ namespace ClienteGloomApp
         /// </summary>
         private void BtnEnviar_Click(object sender, RoutedEventArgs e)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 if (!string.IsNullOrWhiteSpace(txtMensaje.Text))
@@ -95,32 +102,38 @@ namespace ClienteGloomApp
                 }
                 else
                 {
-                    MessageBox.Show("68", Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(Properties.Resources.mensajeExp68, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             catch (ArgumentException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
@@ -130,6 +143,7 @@ namespace ClienteGloomApp
         /// </summary>
         public void EnviarMensajeCliente(ServicioGloom.Chat mensajesChat)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 lstChat.Dispatcher.Invoke(() =>
@@ -145,6 +159,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }
@@ -154,7 +169,7 @@ namespace ClienteGloomApp
         /// </summary>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 if (proxyChat != null)
@@ -164,6 +179,7 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
             }
         }

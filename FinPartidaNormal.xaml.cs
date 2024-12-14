@@ -1,4 +1,5 @@
 ﻿using ClienteGloomApp.ServicioGloom;
+using ServicioGlomm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace ClienteGloomApp
     /// <summary>
     /// Lógica de interacción para FinPartidaNormal.xaml
     /// </summary>
-    public partial class FinPartidaNormal : Window, IServicioJuegoTableroCallback
+    public partial class FinPartidaNormal : Window
     {
         private string jugadorPropietario;
         private string identificadorSala;
@@ -32,15 +33,17 @@ namespace ClienteGloomApp
 
             lblJugador1.Content = Properties.Resources.palabraGanador + ": " + ganador;
             AsignarJugadores();
+            //lblDialogoGanador.Content = Properties.Resources.finPartidaFelicitacionLeyenda + "(" + ganador + "): ";
         }
 
 
         private void AsignarJugadores()
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
                 InstanceContext contextoTableroJuego = new InstanceContext(this);
-                ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTableroJuego);
+                ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
 
                 var resumenFamilias = proxy.ObtenerResumenFamiliasPorSala(identificadorSala);
                 var rutaImagenesPorFamilia = new Dictionary<string, string>
@@ -55,7 +58,7 @@ namespace ClienteGloomApp
                 var images = new[] { imgFamilia1, imgFamilia2, imgFamilia3, imgFamilia4 };
 
                 int index = 0;
-                foreach (var jugador in resumenFamilias)
+                foreach (var jugador in resumenFamilias.OrderBy(j => j.Value.Item2))
                 {
                     if (index >= labels.Length) break;
 
@@ -74,69 +77,27 @@ namespace ClienteGloomApp
             }
             catch (EndpointNotFoundException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
             }
             catch (TimeoutException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("59", ex.Message);
                 DirigirJugadorInicioDeSesion();
             }
             catch (CommunicationException ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
             }
             catch (Exception ex)
             {
+                administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("60", ex.Message);
             }
         }
 
-        void IServicioJuegoTableroCallback.EnviarGanador(string jugador)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IServicioJuegoTableroCallback.EnviarTurno(string nombreDelUsuarioEnTurno)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        void IServicioJuegoTableroCallback.NotificarVotacionExpulsion(string jugadorPropuesto)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IServicioJuegoTableroCallback.RecibirExpulsion(string jugadorObjetivo)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        void IServicioJuegoTableroCallback.ActualizarImagenMazoCartaBonus()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IServicioJuegoTableroCallback.ActualizarImagenMazoCartaSobrante()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IServicioJuegoTableroCallback.ActualizarInterfazExpulsion(string jugadorExpulsado)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IServicioJuegoTableroCallback.ActualizarMazoJugador()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IServicioJuegoTableroCallback.ActualizarTurno(string nombreDelUsuarioEnTurno)
-        {
-            throw new NotImplementedException();
-        }
 
         private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
@@ -147,10 +108,6 @@ namespace ClienteGloomApp
             
         }
 
-        void IServicioJuegoTableroCallback.ActualizarJugadorMuerto(string jugadorMuerto)
-        {
-            throw new NotImplementedException();
-        }
 
         private void DirigirJugadorInicioDeSesion()
         {
