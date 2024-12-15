@@ -415,7 +415,7 @@ namespace ClienteGloomApp
                         var listaJJugadores = proxyTablero.ObtenerJugadoresVivos(lblNumeroSala.Content.ToString());
                         foreach (var usuario in listaJJugadores)
                         {
-                            if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
+                            if (usuario != identificadorUsuario && botonIndex < botonesJugadores.Count)
                             {
                                 botonesJugadores[botonIndex].Content = usuario;
                                 botonesJugadores[botonIndex].Visibility = Visibility.Visible;
@@ -437,7 +437,7 @@ namespace ClienteGloomApp
                         var listaJJugadoresQuitarCarta = proxyTablero.ObtenerJugadoresVivos(lblNumeroSala.Content.ToString());
                         foreach (var usuario in listaJJugadoresQuitarCarta)
                         {
-                            if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
+                            if (usuario != identificadorUsuario && botonIndex < botonesJugadores.Count)
                             {
                                 botonesJugadores[botonIndex].Content = usuario;
                                 botonesJugadores[botonIndex].Visibility = Visibility.Visible;
