@@ -90,11 +90,12 @@ namespace ClienteGloomApp
                 ServicioGloom.Amistad solicitud = new ServicioGloom.Amistad();
                 var jugadorUsuario = new ServicioGloom.Jugador
                 {
-                    nombreUsuario = ObtenerCeldaSeleccionada(),
+                    nombreUsuario = lblNombreUsuarioRegistrado.Content?.ToString(),
                 };
                 var jugadorAmigo = new ServicioGloom.Jugador
                 {
-                    nombreUsuario = lblNombreUsuarioRegistrado.Content?.ToString(),
+                    nombreUsuario = ObtenerCeldaSeleccionada(),
+                    
                     
                 };
 
@@ -189,6 +190,8 @@ namespace ClienteGloomApp
             solicitud.estado = "Aceptado";
 
             int resultado = proxy.ValidarSolcitudAmistad(solicitud);
+
+                RegistrarJugador(lblNombreUsuarioRegistrado.Content?.ToString(), ObtenerCeldaSeleccionadaSolicitudes());
                 LlenarTablaSolcitudes();
                 proxy.Close();
             }
@@ -233,16 +236,21 @@ namespace ClienteGloomApp
             {
                 InstanceContext contextoAmistad = new InstanceContext(this);
                 ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
-               
-                    var solicitudes = proxy.ObtenerSolicitudesDeAmistadPorJugador(lblNombreUsuarioRegistrado.Content.ToString());
 
-                    if (solicitudes != null)
-                    {
-                        var jugadores = solicitudes.Select(j => new Jugador { nombreUsuario = j.nombreUsuario.nombreUsuario}).ToList();
+                var solicitudes = proxy.ObtenerSolicitudesDeAmistadPorJugador(lblNombreUsuarioRegistrado.Content.ToString());
 
-                        dgSolicitudes.ItemsSource = jugadores;
-                    }
-               
+                if (solicitudes != null)
+                {
+                    // Filtrar para excluir al jugador presente
+                    var jugadores = solicitudes
+                        .Where(j => j.nombreUsuario.nombreUsuario != lblNombreUsuarioRegistrado.Content.ToString()) // Excluir al jugador presente
+                        .Select(j => new Jugador { nombreUsuario = j.nombreUsuario.nombreUsuario }) // Crear nuevos objetos Jugador
+                        .ToList();
+
+                    // Asignar la lista filtrada a la fuente de datos de la tabla
+                    dgSolicitudes.ItemsSource = jugadores;
+                }
+
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -433,7 +441,7 @@ namespace ClienteGloomApp
 
                 if (solicitudes != null)
                 {
-                    var jugadores = solicitudes.Select(j => new Jugador { nombreUsuario = j.nombreUsuario.nombreUsuario }).ToList();
+                    var jugadores = solicitudes.Select(j => new Jugador { nombreUsuario = j.jugadorAmigo.nombreUsuario }).ToList();
 
                     dgAmigos.ItemsSource = jugadores;
                 }
@@ -471,6 +479,59 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
+        }
+
+        public void RegistrarJugador(string jugadorUsuarioActual, string nombreUsuarioAmigo)
+        {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            try
+            {
+                InstanceContext contextoAmistad = new InstanceContext(this);
+                ServicioGloom.AmigosClient proxy = new ServicioGloom.AmigosClient();
+                ServicioGloom.Amistad solicitud = new ServicioGloom.Amistad();
+
+                var jugadorUsuario = new ServicioGloom.Jugador
+                {
+                    nombreUsuario = jugadorUsuarioActual,
+                };
+                var jugadorAmigo = new ServicioGloom.Jugador
+                {
+                    nombreUsuario = nombreUsuarioAmigo,
+
+                };
+                solicitud.jugadorAmigo = jugadorAmigo;
+                solicitud.nombreUsuario = jugadorUsuario;
+                solicitud.estado = "Aceptado";
+
+                int resultado = proxy.EnviarSolcitudAmistad(solicitud);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+            }
+            catch (TimeoutException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+
         }
     }
 }

@@ -122,15 +122,13 @@ namespace ClienteGloomApp
             try
             {
 
-                Console.WriteLine($"El id de la sala seleccionada es: {salaSeleccionada.tipoSala}");
-                Console.WriteLine($"El id de la sala seleccionada es: {salaSeleccionada.tipoPartida}");
                 if (salaSeleccionada.tipoPartida.Trim() == "Pública" && salaSeleccionada.tipoSala == "Normal")
                 {
                     servicio.UnirseASalaPublicaNormal(idSala, identificadorUsuario);
                     MessageBox.Show(Properties.Resources.mensajeExp63);
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
-                else if (salaSeleccionada.tipoPartida == "Privada")
+                else if (salaSeleccionada.tipoPartida.Trim() == "Privada")
                 {
                     panelCodigoAcceso.Visibility = Visibility.Visible;
                 }
@@ -183,12 +181,7 @@ namespace ClienteGloomApp
                     MessageBox.Show(Properties.Resources.mensajeExp65);
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
-                else if (salaSeleccionada.tipoSala == "Mini historia")
-                {
-                    servicio.UnirseASalaPrivadaMiniHistoria(identificadorUsuario, idSala, codigoAcceso);
-                    MessageBox.Show(Properties.Resources.mensajeExp65);
-                    AbrirVentanaSalaMiniHistoria(identificadorUsuario, salaSeleccionada);
-                }
+                
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {

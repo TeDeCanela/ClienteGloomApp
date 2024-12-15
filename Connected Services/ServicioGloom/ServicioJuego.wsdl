@@ -337,12 +337,6 @@
   <wsdl:message name="ISala_ObtenerSalasActivasConEstado_ManejadorExcepcionesFault_FaultMessage">
     <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/BibliotecaClases" name="detail" element="q16:ManejadorExcepciones" />
   </wsdl:message>
-  <wsdl:message name="ISala_SalirDeSala_InputMessage">
-    <wsdl:part name="parameters" element="tns:SalirDeSala" />
-  </wsdl:message>
-  <wsdl:message name="ISala_SalirDeSala_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SalirDeSalaResponse" />
-  </wsdl:message>
   <wsdl:message name="ISala_ObtenerFamiliaSeleccionada_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFamiliaSeleccionada" />
   </wsdl:message>
@@ -466,6 +460,12 @@
   <wsdl:message name="IServicioJuegoTablero_ObtenerJugadoresPartida_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerJugadoresPartidaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_RegistrarVotoExpulsion_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarVotoExpulsion" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_RegistrarVotoExpulsion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarVotoExpulsionResponse" />
+  </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_EnviarTurno_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EnviarTurno" />
   </wsdl:message>
@@ -484,6 +484,9 @@
   <wsdl:message name="IServicioJuegoTablero_EnviarGanador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EnviarGanador" />
   </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_ActualizarJugadorMuerto_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugadorMuerto" />
+  </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_NotificarVotacionExpulsion_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarVotacionExpulsion" />
   </wsdl:message>
@@ -492,6 +495,9 @@
   </wsdl:message>
   <wsdl:message name="IServicioJuegoTablero_ActualizarInterfazExpulsion_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarInterfazExpulsion" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegoTablero_NotificarResultadoVotacion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarResultadoVotacion" />
   </wsdl:message>
   <wsdl:message name="IServicioCarta_ObtenerMazoJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerMazoJugador" />
@@ -817,10 +823,6 @@
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstadoResponse" message="tns:ISala_ObtenerSalasActivasConEstado_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstadoManejadorExcepcionesFault" name="ManejadorExcepcionesFault" message="tns:ISala_ObtenerSalasActivasConEstado_ManejadorExcepcionesFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SalirDeSala">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISala/SalirDeSala" message="tns:ISala_SalirDeSala_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISala/SalirDeSalaResponse" message="tns:ISala_SalirDeSala_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ObtenerFamiliaSeleccionada">
       <wsdl:input wsaw:Action="http://tempuri.org/ISala/ObtenerFamiliaSeleccionada" message="tns:ISala_ObtenerFamiliaSeleccionada_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISala/ObtenerFamiliaSeleccionadaResponse" message="tns:ISala_ObtenerFamiliaSeleccionada_OutputMessage" />
@@ -918,6 +920,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartida" message="tns:IServicioJuegoTablero_ObtenerJugadoresPartida_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartidaResponse" message="tns:IServicioJuegoTablero_ObtenerJugadoresPartida_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RegistrarVotoExpulsion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsion" message="tns:IServicioJuegoTablero_RegistrarVotoExpulsion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsionResponse" message="tns:IServicioJuegoTablero_RegistrarVotoExpulsion_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EnviarTurno">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/EnviarTurno" message="tns:IServicioJuegoTablero_EnviarTurno_OutputCallbackMessage" />
     </wsdl:operation>
@@ -936,6 +942,9 @@
     <wsdl:operation name="EnviarGanador">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/EnviarGanador" message="tns:IServicioJuegoTablero_EnviarGanador_OutputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ActualizarJugadorMuerto">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/ActualizarJugadorMuerto" message="tns:IServicioJuegoTablero_ActualizarJugadorMuerto_OutputCallbackMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarVotacionExpulsion">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/NotificarVotacionExpulsion" message="tns:IServicioJuegoTablero_NotificarVotacionExpulsion_OutputCallbackMessage" />
     </wsdl:operation>
@@ -944,6 +953,9 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarInterfazExpulsion">
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/ActualizarInterfazExpulsion" message="tns:IServicioJuegoTablero_ActualizarInterfazExpulsion_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarResultadoVotacion">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegoTablero/NotificarResultadoVotacion" message="tns:IServicioJuegoTablero_NotificarResultadoVotacion_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IServicioCarta">
@@ -1366,15 +1378,6 @@
         <soap12:fault use="literal" name="ManejadorExcepcionesFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="SalirDeSala">
-      <soap12:operation soapAction="http://tempuri.org/ISala/SalirDeSala" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ObtenerFamiliaSeleccionada">
       <soap12:operation soapAction="http://tempuri.org/ISala/ObtenerFamiliaSeleccionada" style="document" />
       <wsdl:input>
@@ -1583,6 +1586,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegistrarVotoExpulsion">
+      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EnviarTurno">
       <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/EnviarTurno" style="document" />
       <wsdl:output>
@@ -1619,6 +1631,12 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ActualizarJugadorMuerto">
+      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/ActualizarJugadorMuerto" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NotificarVotacionExpulsion">
       <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/NotificarVotacionExpulsion" style="document" />
       <wsdl:output>
@@ -1633,6 +1651,12 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarInterfazExpulsion">
       <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/ActualizarInterfazExpulsion" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarResultadoVotacion">
+      <soap12:operation soapAction="http://tempuri.org/IServicioJuegoTablero/NotificarResultadoVotacion" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

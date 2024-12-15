@@ -258,6 +258,7 @@ namespace ClienteGloomApp
 
                 ActualizarTurnoLlamar();
                 DeshabilitaCampos();
+                panCarta.Visibility = Visibility.Collapsed;
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -300,6 +301,7 @@ namespace ClienteGloomApp
 
 
             MostrarSeleccionObjetivos(cartaSeleccionada);
+            panCarta.Visibility = Visibility.Collapsed;
         }
 
 
@@ -398,9 +400,11 @@ namespace ClienteGloomApp
             AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
-                InstanceContext contextoTablero = new InstanceContext(this);
+                InstanceContext contextoPartida = new InstanceContext(this);
                 ServicioGloom.CreacionPartidaClient proxy = new ServicioGloom.CreacionPartidaClient();
-                var familiasPorJugador = proxy.ObtenerFamiliaPorJugador(lblNumeroSala.Content.ToString());
+                var personajesPorUsuario = proxy.ObtenerUsuariosYPersonajes(lblNumeroSala.Content.ToString());
+                InstanceContext contextoTablero = new InstanceContext(this);
+                ServicioGloom.ServicioJuegoTableroClient proxyTablero = new ServicioGloom.ServicioJuegoTableroClient(contextoTablero);
                 int botonIndex = 0;
                 var botonesJugadores = new List<Button> { btnJugador2, btnJugador3, btnJugador4 };
 
@@ -408,11 +412,12 @@ namespace ClienteGloomApp
                 {
                     case "saltarJugador":
                         lblCarta.Content = Properties.Resources.cartaSaltarJugador;
-                        foreach (var jugador in familiasPorJugador.Keys)
+                        var listaJJugadores = proxyTablero.ObtenerJugadoresVivos(lblNumeroSala.Content.ToString());
+                        foreach (var usuario in listaJJugadores)
                         {
-                            if (jugador != identificadorUsuario && botonIndex < botonesJugadores.Count)
+                            if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
                             {
-                                botonesJugadores[botonIndex].Content = jugador;
+                                botonesJugadores[botonIndex].Content = usuario;
                                 botonesJugadores[botonIndex].Visibility = Visibility.Visible;
                                 botonIndex++;
                             }
@@ -429,11 +434,12 @@ namespace ClienteGloomApp
 
                     case "QuitarCarta":
                         lblCarta.Content = Properties.Resources.cartaQuitarCarta;
-                        foreach (var jugador in familiasPorJugador.Keys)
+                        var listaJJugadoresQuitarCarta = proxyTablero.ObtenerJugadoresVivos(lblNumeroSala.Content.ToString());
+                        foreach (var usuario in listaJJugadoresQuitarCarta)
                         {
-                            if (jugador != identificadorUsuario && botonIndex < botonesJugadores.Count)
+                            if (usuario != jugadorPropietario && botonIndex < botonesJugadores.Count)
                             {
-                                botonesJugadores[botonIndex].Content = jugador;
+                                botonesJugadores[botonIndex].Content = usuario;
                                 botonesJugadores[botonIndex].Visibility = Visibility.Visible;
                                 botonIndex++;
                             }
@@ -444,6 +450,11 @@ namespace ClienteGloomApp
                         lblCarta.Content = Properties.Resources.cartaPerderTurno;
                         break;
                 }
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
             }
             catch (EndpointNotFoundException ex)
             {
@@ -1108,8 +1119,8 @@ namespace ClienteGloomApp
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
-            
-            Chat ventanaChat = Chat.ObtenerInstancia(lblJugador1.Content.ToString());
+
+            Chat ventanaChat = new Chat(lblJugador1.Content.ToString());
             ventanaChat.Show();
             ventanaChat.Focus();
 
@@ -1289,16 +1300,7 @@ namespace ClienteGloomApp
 
 
 
-        public void NotificarResultadoExpulsion(string jugadorExpulsado, bool expulsado)
-        {
-            if (expulsado)
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    ActualizarInterfazExpulsion(jugadorExpulsado);
-                });
-            }
-        }
+        
 
 
 
@@ -1322,7 +1324,7 @@ namespace ClienteGloomApp
 
         public void ActualizarImagenMazoCartaSobrante()
         {
-            //VerificarFinDePartida();
+
             btnMazoCartas.Visibility = Visibility.Collapsed;
         }
 
@@ -1355,10 +1357,22 @@ namespace ClienteGloomApp
 
         public void NotificarVotacionExpulsion(string jugadorPropuesto)
         {
+
             Application.Current.Dispatcher.Invoke(() =>
             {
-                ActualizarInterfazExpulsion(jugadorPropuesto);
-                MessageBox.Show(jugadorPropuesto + " " + Properties.Resources.mensajeHaSidoExpulsado, Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
+                
+                bool votoAFavor = MessageBox.Show(
+                    string.Format(Properties.Resources.mensajePreguntaExpulsionDeJugador, jugadorPropuesto),
+                    Properties.Resources.mensajeTituloVotacionExpulsion, 
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question
+                )== MessageBoxResult.Yes;
+
+
+                InstanceContext contexto = new InstanceContext(this);
+                ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contexto);
+
+                proxy.RegistrarVotoExpulsion(lblJugador1.Content.ToString(), jugadorPropuesto, votoAFavor);
             });
         }
 
@@ -1375,10 +1389,12 @@ namespace ClienteGloomApp
             });
         }
 
+       
+
         public void ActualizarInterfazExpulsion(string jugadorExpulsado)
         {
-            var labels = new[] { lblJugador1, lblJugador2, lblJugador3, lblJugador4 };
-            var images = new[]
+            var etiquetas = new[] { lblJugador1, lblJugador2, lblJugador3, lblJugador4 };
+            var imagenes = new[]
             {
         new[] { imgPersonaje1, imgPersonaje2, imgPersonaje3, imgPersonaje4 },
         new[] { imgPersonaje5, imgPersonaje6, imgPersonaje7, imgPersonaje8 },
@@ -1386,23 +1402,26 @@ namespace ClienteGloomApp
         new[] { imgPersonaje13, imgPersonaje14, imgPersonaje15, imgPersonaje16 }
     };
 
-            for (int i = 0; i < labels.Length; i++)
+            for (int i = 0; i < etiquetas.Length; i++)
             {
-                if (labels[i].Content.ToString() == jugadorExpulsado)
+                if (etiquetas[i]?.Content != null && etiquetas[i].Content.ToString() == jugadorExpulsado)
                 {
+                    etiquetas[i].Content = string.Empty;
 
-                    labels[i].Content = string.Empty;
-
-                    foreach (var img in images[i])
+                    foreach (var imagen in imagenes[i])
                     {
-                        img.Source = null;
-                        img.Tag = null;
+                        if (imagen != null)
+                        {
+                            imagen.Source = null;
+                            imagen.Tag = null;
+                        }
                     }
+
                     break;
                 }
             }
-
         }
+
 
         private void DirigirJugadorInicioDeSesion()
         {
@@ -1411,5 +1430,19 @@ namespace ClienteGloomApp
             this.Close();
         }
 
+        public void ActualizarJugadorMuerto(string jugadorMuerto)
+        {
+            Inicio nuevaVentana = new Inicio(identificadorUsuario);
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        public void NotificarResultadoVotacion(string mensaje)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(mensaje, Properties.Resources.mensajeResultadoVotacion, MessageBoxButton.OK, MessageBoxImage.Information);
+            });
+        }
     }
 }

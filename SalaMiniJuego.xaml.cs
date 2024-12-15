@@ -34,7 +34,7 @@ namespace ClienteGloomApp
             InitializeComponent();
             lblNombreUsuarioRegistrado.Content = nombreUsuario;
             salaRegistrada = sala;
-            lblInstruccion.Content = Properties.Resources.crearPartidaNombreSala + " :" + sala.idSala;
+            lblInstruccion.Content = Properties.Resources.crearPartidaNombreSala + " :" + sala.nombreSala;
             lblInstruccionCodigo.Content = Properties.Resources.miniHisotriaInstruccionCodigo + " :" + sala.codigo;
             numeroDeSala = sala.idSala;
             btnEmpezar.BorderBrush = Brushes.Red;

@@ -691,6 +691,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Si desea cambiar la contraseña escribala en el siguiente recuadro.
+        /// </summary>
+        public static string instruccionContraseña {
+            get {
+                return ResourceManager.GetString("instruccionContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Seleccionar foto.
         /// </summary>
         public static string instruccionSeleccionarFoto {
@@ -1501,6 +1510,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aun no se encuentran listos todos los jugadores de la sala para empezar..
+        /// </summary>
+        public static string mensajeExp77 {
+            get {
+                return ResourceManager.GetString("mensajeExp77", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Se ha iniciado la expulsión del jugador: .
         /// </summary>
         public static string mensajeExpuslion {
@@ -1555,6 +1573,15 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¿Deseas expulsar al jugador {0}?.
+        /// </summary>
+        public static string mensajePreguntaExpulsionDeJugador {
+            get {
+                return ResourceManager.GetString("mensajePreguntaExpulsionDeJugador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Mensaje de Exito para el Registro.
         /// </summary>
         public static string mensajeRegistroJugadorExito {
@@ -1569,6 +1596,15 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeRegistroJugadorFallido {
             get {
                 return ResourceManager.GetString("mensajeRegistroJugadorFallido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resultado de la votación.
+        /// </summary>
+        public static string mensajeResultadoVotacion {
+            get {
+                return ResourceManager.GetString("mensajeResultadoVotacion", resourceCulture);
             }
         }
         
@@ -1632,6 +1668,15 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeTituloInformacion {
             get {
                 return ResourceManager.GetString("mensajeTituloInformacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Votación de expulsión.
+        /// </summary>
+        public static string mensajeTituloVotacionExpulsion {
+            get {
+                return ResourceManager.GetString("mensajeTituloVotacionExpulsion", resourceCulture);
             }
         }
         

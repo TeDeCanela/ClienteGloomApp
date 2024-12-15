@@ -124,16 +124,17 @@ namespace ClienteGloomApp
 
         public string VerificarMensajeChat(string mensaje)
         {
-            string mensajeRegex = @"^(?! )(?!.[\\!\\#\\$%\\&'\\(\\)\\\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
+            string mensajeRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\\\+\\-\\.,\\/\\:\\;<\\=\\>\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ¿? ]{4,255}(?<! )$"
+;
 
             if (string.IsNullOrWhiteSpace(mensaje))
             {
-                throw new ArgumentException("57");
+                throw new ArgumentException("56");
             }
 
             if (!Regex.IsMatch(mensaje, mensajeRegex))
             {
-                throw new ArgumentException("57");
+                throw new ArgumentException("56");
             }
 
             return mensaje;

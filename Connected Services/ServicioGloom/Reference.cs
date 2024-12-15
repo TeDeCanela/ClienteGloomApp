@@ -11,8 +11,8 @@
 namespace ClienteGloomApp.ServicioGloom {
     using System.Runtime.Serialization;
     using System;
-    using System.ServiceModel;
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
@@ -722,11 +722,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public JugadorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public JugadorClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public int AgregarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
             return base.Channel.AgregarJugador(jugador);
         }
@@ -866,11 +862,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public AmigosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public AmigosClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public int EnviarSolcitudAmistad(ClienteGloomApp.ServicioGloom.Amistad solicitud) {
             return base.Channel.EnviarSolcitudAmistad(solicitud);
         }
@@ -931,13 +923,6 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/AgregarParticipantesAPartida", ReplyAction="http://tempuri.org/ISala/AgregarParticipantesAPartidaResponse")]
         System.Threading.Tasks.Task<int> AgregarParticipantesAPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CrearPartida", ReplyAction="http://tempuri.org/ISala/CrearPartidaResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/CrearPartidaManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
-        int CrearPartida(ClienteGloomApp.ServicioGloom.Sala sala);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/CrearPartida", ReplyAction="http://tempuri.org/ISala/CrearPartidaResponse")]
-        System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala);
-        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISala/ConectarConSala")]
         void ConectarConSala(string numeroSala, string nombreUsuario);
         
@@ -993,18 +978,6 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerSalasActivasConEstado", ReplyAction="http://tempuri.org/ISala/ObtenerSalasActivasConEstadoResponse")]
         System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala[]> ObtenerSalasActivasConEstadoAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/SalirDeSala", ReplyAction="http://tempuri.org/ISala/SalirDeSalaResponse")]
-        void SalirDeSala(string idSala, string idUsuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/SalirDeSala", ReplyAction="http://tempuri.org/ISala/SalirDeSalaResponse")]
-        System.Threading.Tasks.Task SalirDeSalaAsync(string idSala, string idUsuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerCodigoSala", ReplyAction="http://tempuri.org/ISala/ObtenerCodigoSalaResponse")]
-        string ObtenerCodigoSala(string idAdminsitrador, string nombreSala);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerCodigoSala", ReplyAction="http://tempuri.org/ISala/ObtenerCodigoSalaResponse")]
-        System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/ObtenerFamiliaSeleccionada", ReplyAction="http://tempuri.org/ISala/ObtenerFamiliaSeleccionadaResponse")]
         string[] ObtenerFamiliaSeleccionada(string idSala);
@@ -1086,14 +1059,6 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.AgregarParticipantesAPartidaAsync(sala);
         }
         
-        public int CrearPartida(ClienteGloomApp.ServicioGloom.Sala sala) {
-            return base.Channel.CrearPartida(sala);
-        }
-        
-        public System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala) {
-            return base.Channel.CrearPartidaAsync(sala);
-        }
-        
         public void ConectarConSala(string numeroSala, string nombreUsuario) {
             base.Channel.ConectarConSala(numeroSala, nombreUsuario);
         }
@@ -1164,64 +1129,6 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala[]> ObtenerSalasActivasConEstadoAsync() {
             return base.Channel.ObtenerSalasActivasConEstadoAsync();
-        }
-        
-        public void SalirDeSala(string idSala, string idUsuario) {
-            base.Channel.SalirDeSala(idSala, idUsuario);
-        }
-        
-        public System.Threading.Tasks.Task SalirDeSalaAsync(string idSala, string idUsuario) {
-            return base.Channel.SalirDeSalaAsync(idSala, idUsuario);
-        }
-        
-        public void UnirseASalaPublicaNormal(string idSala, string idUsuario) {
-            base.Channel.UnirseASalaPublicaNormal(idSala, idUsuario);
-        }
-        
-        public System.Threading.Tasks.Task UnirseASalaPublicaNormalAsync(string idSala, string idUsuario) {
-            return base.Channel.UnirseASalaPublicaNormalAsync(idSala, idUsuario);
-        }
-        
-        public void UnirseASalaPrivadaNormal(string idUsuario, string idSala, string codigoAcceso) {
-            base.Channel.UnirseASalaPrivadaNormal(idUsuario, idSala, codigoAcceso);
-        }
-        
-        public System.Threading.Tasks.Task UnirseASalaPrivadaNormalAsync(string idUsuario, string idSala, string codigoAcceso) {
-            return base.Channel.UnirseASalaPrivadaNormalAsync(idUsuario, idSala, codigoAcceso);
-        }
-<<<<<<< Updated upstream
-=======
-        
-        public void UnirseASalaPublicaNormal(string idSala, string idUsuario) {
-            base.Channel.UnirseASalaPublicaNormal(idSala, idUsuario);
-        }
-        
-        public System.Threading.Tasks.Task UnirseASalaPublicaNormalAsync(string idSala, string idUsuario) {
-            return base.Channel.UnirseASalaPublicaNormalAsync(idSala, idUsuario);
-        }
-        
-        public void UnirseASalaPrivadaNormal(string idUsuario, string idSala, string codigoAcceso) {
-            base.Channel.UnirseASalaPrivadaNormal(idUsuario, idSala, codigoAcceso);
-        }
-        
-        public System.Threading.Tasks.Task UnirseASalaPrivadaNormalAsync(string idUsuario, string idSala, string codigoAcceso) {
-            return base.Channel.UnirseASalaPrivadaNormalAsync(idUsuario, idSala, codigoAcceso);
-        }
-        
-        public void UnirseASalaPrivadaMiniHistoria(string idUsuario, string idSala, string codigoAcceso) {
-            base.Channel.UnirseASalaPrivadaMiniHistoria(idUsuario, idSala, codigoAcceso);
-        }
-        
-        public System.Threading.Tasks.Task UnirseASalaPrivadaMiniHistoriaAsync(string idUsuario, string idSala, string codigoAcceso) {
-            return base.Channel.UnirseASalaPrivadaMiniHistoriaAsync(idUsuario, idSala, codigoAcceso);
-        }
-        
-        public string ObtenerCodigoSala(string idAdminsitrador, string nombreSala) {
-            return base.Channel.ObtenerCodigoSala(idAdminsitrador, nombreSala);
-        }
-        
-        public System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala) {
-            return base.Channel.ObtenerCodigoSalaAsync(idAdminsitrador, nombreSala);
         }
         
         public string[] ObtenerFamiliaSeleccionada(string idSala) {
@@ -1371,17 +1278,23 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/IncrementarTurnos")]
         System.Threading.Tasks.Task IncrementarTurnosAsync(string numeroSala);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerResumenFamiliasPorSalaResponse")]
-        System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerResumenFamiliasPorSalaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/BorrarEstructurasPorSala", ReplyAction="http://tempuri.org/IServicioJuegoTablero/BorrarEstructurasPorSalaResponse")]
         void BorrarEstructurasPorSala(string numeroSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/BorrarEstructurasPorSala", ReplyAction="http://tempuri.org/IServicioJuegoTablero/BorrarEstructurasPorSalaResponse")]
         System.Threading.Tasks.Task BorrarEstructurasPorSalaAsync(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartida", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartidaResponse")]
+        string[] ObtenerJugadoresPartida(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartida", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartidaResponse")]
+        System.Threading.Tasks.Task<string[]> ObtenerJugadoresPartidaAsync(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsion", ReplyAction="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsionResponse")]
+        void RegistrarVotoExpulsion(string votante, string jugadorObjetivo, bool votoAFavor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsion", ReplyAction="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsionResponse")]
+        System.Threading.Tasks.Task RegistrarVotoExpulsionAsync(string votante, string jugadorObjetivo, bool votoAFavor);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1416,6 +1329,9 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/ActualizarInterfazExpulsion")]
         void ActualizarInterfazExpulsion(string jugadorExpulsado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/NotificarResultadoVotacion")]
+        void NotificarResultadoVotacion(string mensaje);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1582,20 +1498,28 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.IncrementarTurnosAsync(numeroSala);
         }
         
-        public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala) {
-            return base.Channel.ObtenerResumenFamiliasPorSala(numeroSala);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala) {
-            return base.Channel.ObtenerResumenFamiliasPorSalaAsync(numeroSala);
-        }
-        
         public void BorrarEstructurasPorSala(string numeroSala) {
             base.Channel.BorrarEstructurasPorSala(numeroSala);
         }
         
         public System.Threading.Tasks.Task BorrarEstructurasPorSalaAsync(string numeroSala) {
             return base.Channel.BorrarEstructurasPorSalaAsync(numeroSala);
+        }
+        
+        public string[] ObtenerJugadoresPartida(string numeroSala) {
+            return base.Channel.ObtenerJugadoresPartida(numeroSala);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ObtenerJugadoresPartidaAsync(string numeroSala) {
+            return base.Channel.ObtenerJugadoresPartidaAsync(numeroSala);
+        }
+        
+        public void RegistrarVotoExpulsion(string votante, string jugadorObjetivo, bool votoAFavor) {
+            base.Channel.RegistrarVotoExpulsion(votante, jugadorObjetivo, votoAFavor);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarVotoExpulsionAsync(string votante, string jugadorObjetivo, bool votoAFavor) {
+            return base.Channel.RegistrarVotoExpulsionAsync(votante, jugadorObjetivo, votoAFavor);
         }
     }
     
@@ -1634,10 +1558,10 @@ namespace ClienteGloomApp.ServicioGloom {
         System.Threading.Tasks.Task QuitarCartaDeMazoJugadorExternoAsync(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioCarta/ObtenerMazoRestante", ReplyAction="http://tempuri.org/IServicioCarta/ObtenerMazoRestanteResponse")]
-        ClienteGloomApp.ServicioGloom.Carta[] ObtenerMazoRestante();
+        bool ObtenerMazoRestante();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioCarta/ObtenerMazoRestante", ReplyAction="http://tempuri.org/IServicioCarta/ObtenerMazoRestanteResponse")]
-        System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Carta[]> ObtenerMazoRestanteAsync();
+        System.Threading.Tasks.Task<bool> ObtenerMazoRestanteAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1666,11 +1590,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public ServicioCartaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public ServicioCartaClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public ClienteGloomApp.ServicioGloom.Carta[] ObtenerMazoJugador(string nombreJugador) {
             return base.Channel.ObtenerMazoJugador(nombreJugador);
         }
@@ -1711,11 +1631,11 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.QuitarCartaDeMazoJugadorExternoAsync(nombreUsuario);
         }
         
-        public ClienteGloomApp.ServicioGloom.Carta[] ObtenerMazoRestante() {
+        public bool ObtenerMazoRestante() {
             return base.Channel.ObtenerMazoRestante();
         }
         
-        public System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Carta[]> ObtenerMazoRestanteAsync() {
+        public System.Threading.Tasks.Task<bool> ObtenerMazoRestanteAsync() {
             return base.Channel.ObtenerMazoRestanteAsync();
         }
     }
@@ -1755,11 +1675,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public ServicioHistorialPartidaClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
-
-        public ServicioHistorialPartidaClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public ServicioHistorialPartidaClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
@@ -1845,6 +1761,25 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerFamiliasYPersonajes", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerFamiliasYPersonajesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>[]>> ObtenerFamiliasYPersonajesAsync(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/CrearPartida", ReplyAction="http://tempuri.org/ICreacionPartida/CrearPartidaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ICreacionPartida/CrearPartidaManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int CrearPartida(ClienteGloomApp.ServicioGloom.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/CrearPartida", ReplyAction="http://tempuri.org/ICreacionPartida/CrearPartidaResponse")]
+        System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSalaResponse")]
+        System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSalaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerCodigoSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerCodigoSalaResponse")]
+        string ObtenerCodigoSala(string idAdminsitrador, string nombreSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerCodigoSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerCodigoSalaResponse")]
+        System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1873,11 +1808,7 @@ namespace ClienteGloomApp.ServicioGloom {
         public CreacionPartidaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
-
-        public CreacionPartidaClient(InstanceContext callbackInstance) : base(callbackInstance)
-        {
-        }
-
+        
         public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerUsuariosYPersonajes(string numeroSala) {
             return base.Channel.ObtenerUsuariosYPersonajes(numeroSala);
         }
@@ -1933,19 +1864,33 @@ namespace ClienteGloomApp.ServicioGloom {
         public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>[]>> ObtenerFamiliasYPersonajesAsync(string numeroSala) {
             return base.Channel.ObtenerFamiliasYPersonajesAsync(numeroSala);
         }
+        
+        public int CrearPartida(ClienteGloomApp.ServicioGloom.Sala sala) {
+            return base.Channel.CrearPartida(sala);
+        }
+        
+        public System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala) {
+            return base.Channel.CrearPartidaAsync(sala);
+        }
+        
+        public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala) {
+            return base.Channel.ObtenerResumenFamiliasPorSala(numeroSala);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala) {
+            return base.Channel.ObtenerResumenFamiliasPorSalaAsync(numeroSala);
+        }
+        
+        public string ObtenerCodigoSala(string idAdminsitrador, string nombreSala) {
+            return base.Channel.ObtenerCodigoSala(idAdminsitrador, nombreSala);
+        }
+        
+        public System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala) {
+            return base.Channel.ObtenerCodigoSalaAsync(idAdminsitrador, nombreSala);
+        }
     }
-
-        internal Sala BuscarSalaExistente(string text, string codigoSalaNormal)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void ValidarCantidadJugadoresEnSala(string idSala, int noJugadores)
-        {
-            throw new NotImplementedException();
-        }
-
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.IChat", CallbackContract=typeof(ClienteGloomApp.ServicioGloom.IChatCallback))]
     public interface IChat {
         
@@ -2305,4 +2250,3 @@ namespace ClienteGloomApp.ServicioGloom {
         }
     }
 }
-    }

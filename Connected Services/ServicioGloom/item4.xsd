@@ -311,19 +311,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SalirDeSala">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="idUsuario" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SalirDeSalaResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="ObtenerFamiliaSeleccionada">
     <xs:complexType>
       <xs:sequence>
@@ -606,6 +593,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistrarVotoExpulsion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="votante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="jugadorObjetivo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="votoAFavor" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarVotoExpulsionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="EnviarTurno">
     <xs:complexType>
       <xs:sequence>
@@ -642,6 +643,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarJugadorMuerto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugadorMuerto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarVotacionExpulsion">
     <xs:complexType>
       <xs:sequence>
@@ -660,6 +668,13 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="jugadorExpulsado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarResultadoVotacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -9,6 +9,7 @@
             <ImageBrush ImageSource="/Imagenes/SalaFondo.jpg" Stretch="Fill" Opacity="1" />
         </Grid.Background>
 
+        <Label x:Name="lblInstruccionCodigo" Content="{x:Static p:Resources.miniHistoriaNumeroSala}" HorizontalAlignment="Left" Margin="39,107,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.431,-0.026"/>
         <Button x:Name="btnFlecha" Content="" HorizontalAlignment="Left" Margin="1464,13,0,0" VerticalAlignment="Top" Height="70" Width="74" RenderTransformOrigin="0.384,0.466" Click="BtnFlecha_Click" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>

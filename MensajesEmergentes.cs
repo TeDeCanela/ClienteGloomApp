@@ -91,6 +91,7 @@ namespace ClienteGloomApp
         { "74", Properties.Resources.mensajeExp74},
         { "75", Properties.Resources.mensajeExp75},
         { "76", Properties.Resources.mensajeExp76},
+        { "77", Properties.Resources.mensajeExp77},
         { "4060", Properties.Resources.mensajeExp54060},
         { "10054", Properties.Resources.mensajeExp10054},
         { "10060", Properties.Resources.mensajeExp10060},

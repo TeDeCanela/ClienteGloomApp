@@ -85,28 +85,19 @@ namespace ClienteGloomApp
         {
             AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
 
-            InstanceContext contextoJugador = new InstanceContext(this);
-
-            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
-
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
             try
             {
 
-            jugador.nombreUsuario = lblNombreUsuarioRegistrado.Content.ToString();
-            jugador.nombre = validar.VerificarNombreYApellidos(txtNombre.Text);
-            jugador.apellidos = validar.VerificarNombreYApellidos(txtApellidos.Text);
-            jugador.correo = validar.VerificarCorreo(txtCorreo.Text);
-            jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
-            jugador.tipo = "Jugador";
-            jugador.icono = iconoSeleccionado;
+                jugador.nombreUsuario = lblNombreUsuarioRegistrado.Content.ToString();
+                jugador.nombre = validar.VerificarNombreYApellidos(txtNombre.Text);
+                jugador.apellidos = validar.VerificarNombreYApellidos(txtApellidos.Text);
+                jugador.correo = validar.VerificarCorreo(txtCorreo.Text);
+                jugador.tipo = "Jugador";
+                jugador.icono = iconoSeleccionado;
 
-            
-                int resulatdoIperacion = proxy.ActualizarJugador(jugador);
-                if (resulatdoIperacion == 1)
-                {
-                    MessageBox.Show(Properties.Resources.mensajeActualizacionExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                ValidarTipoDeCambio(jugador);
+
             }
             catch (ArgumentException ex)
             {
@@ -142,7 +133,7 @@ namespace ClienteGloomApp
 
         }
 
-       private void BtnFlecha_Click(object sender, RoutedEventArgs e)
+        private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
             Inicio nuevaVentana = new Inicio(lblNombreUsuarioRegistrado.Content.ToString());
             nuevaVentana.Show();
@@ -229,6 +220,39 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
+        }
+
+        private void ValidarTipoDeCambio(Jugador jugador)
+        {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            InstanceContext contextoJugador = new InstanceContext(this);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            try
+            {
+                if (string.IsNullOrEmpty(pwdContrasena.Password))
+                {
+                    jugador.contraseña = "sin contraseña nueva";
+                    proxy.ActualizarJugadorSinContrasena(jugador);
+                    MessageBox.Show(Properties.Resources.mensajeActualizacionExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
+                    proxy.ActualizarJugador(jugador);
+                    MessageBox.Show(Properties.Resources.mensajeActualizacionExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                MensajesEmergentes.MostrarMensajeAdvertencia(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
+
         }
     }
 }

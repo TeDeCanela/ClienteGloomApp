@@ -327,6 +327,9 @@
   <data name="inicioSesionBtnRegistrarse" xml:space="preserve">
     <value>Registrarse</value>
   </data>
+  <data name="instruccionContraseña" xml:space="preserve">
+    <value>Si desea cambiar la contraseña escribala en el siguiente recuadro</value>
+  </data>
   <data name="instruccionSeleccionarFoto" xml:space="preserve">
     <value>Seleccionar foto</value>
   </data>
@@ -597,6 +600,9 @@
   <data name="mensajeExp76" xml:space="preserve">
     <value>Debes seleccionar un personaje objetivo para continuar.</value>
   </data>
+  <data name="mensajeExp77" xml:space="preserve">
+    <value>Aun no se encuentran listos todos los jugadores de la sala para empezar.</value>
+  </data>
   <data name="mensajeExpuslion" xml:space="preserve">
     <value>Se ha iniciado la expulsión del jugador: </value>
   </data>
@@ -615,11 +621,17 @@
   <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
     <value>¡Partida creada con éxito!</value>
   </data>
+  <data name="mensajePreguntaExpulsionDeJugador" xml:space="preserve">
+    <value>¿Deseas expulsar al jugador {0}?</value>
+  </data>
   <data name="mensajeRegistroJugadorExito" xml:space="preserve">
     <value>Mensaje de Exito para el Registro</value>
   </data>
   <data name="mensajeRegistroJugadorFallido" xml:space="preserve">
     <value>Mensaje de falla para el registro</value>
+  </data>
+  <data name="mensajeResultadoVotacion" xml:space="preserve">
+    <value>Resultado de la votación</value>
   </data>
   <data name="mensajeSalaPartida" xml:space="preserve">
     <value>La sala ya no está activa. Regresando al menú principal.</value>
@@ -641,6 +653,9 @@
   </data>
   <data name="mensajeTituloInformacion" xml:space="preserve">
     <value>Informacion</value>
+  </data>
+  <data name="mensajeTituloVotacionExpulsion" xml:space="preserve">
+    <value>Votación de expulsión</value>
   </data>
   <data name="miniBtnEmpezar" xml:space="preserve">
     <value>Empezar</value>

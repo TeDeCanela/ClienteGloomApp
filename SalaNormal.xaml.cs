@@ -36,8 +36,9 @@ namespace ClienteGloomApp
             lblnombreUsuario.Content = nombreUsuario;
             salaNormal = sala;
             numeroSala = sala.idSala;
+            lblInstruccionCodigo.Content = Properties.Resources.miniHisotriaInstruccionCodigo + " :" + sala.codigo;
 
-            if (sala.tipoPartida == "Privada")
+            if (sala.tipoPartida.Trim() == "Privada")
             {
                 btnInvitarJugadores.Visibility = Visibility.Visible;
             }

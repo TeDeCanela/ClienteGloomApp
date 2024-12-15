@@ -151,7 +151,31 @@ FontWeight="Bold" Click="BtnChat_Click">
                 <Button x:Name="btnCancelarExpulsion" Content="Cancelar" Width="80" Margin="5" Click="BtnCancelarExpulsion_Click"/>
             </StackPanel>
         </StackPanel>
-        
-        
+
+        <Rectangle x:Name="decImgJugador1" HorizontalAlignment="Left" Height="154" Width="154" Margin="720,438,0,0"
+Stroke="Black" VerticalAlignment="Top" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="decImgJugador2" HorizontalAlignment="Left" Height="154" Width="154" Margin="120,361,0,0"
+Stroke="Black" VerticalAlignment="Top" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="decImgJugador3" HorizontalAlignment="Left" Height="154" Width="154" Margin="720,10,0,0"
+Stroke="Black" VerticalAlignment="Top" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="decImgJugador4" HorizontalAlignment="Left" Height="154" Width="154" Margin="1289,364,0,0"
+Stroke="Black" VerticalAlignment="Top" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#80808080"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
     </Grid>
 </Window>

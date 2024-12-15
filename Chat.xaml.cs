@@ -18,23 +18,8 @@ namespace ClienteGloomApp
         private ChatClient proxyChat;
         ValidacionCampos validar = new ValidacionCampos();
 
-        private static Chat instanciaUnica;
 
-        public static Chat ObtenerInstancia(string nombreUsuario)
-        {
-            if (instanciaUnica == null || !instanciaUnica.IsVisible)
-            {
-                instanciaUnica = new Chat(nombreUsuario);
-            }
-            else
-            {
-                instanciaUnica.Focus(); 
-            }
-            
-            return instanciaUnica;
-        }
-
-        private Chat(string nombreUsuario)
+        public Chat(string nombreUsuario)
         {
             AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             InitializeComponent();
@@ -164,25 +149,6 @@ namespace ClienteGloomApp
             }
         }
 
-        /// <summary>
-        /// Manejo del cierre de la ventana
-        /// </summary>
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
-            try
-            {
-                if (proxyChat != null)
-                {
-                    proxyChat.Close();
-                }
-            }
-            catch (FaultException<ManejadorExcepciones> ex)
-            {
-                administradorLogger.RegistroError(ex);
-                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
-            }
-        }
 
         private void DirigirJugadorInicioDeSesion()
         {
