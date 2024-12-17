@@ -61,7 +61,77 @@ namespace ClienteGloomApp
                 {
                     Console.WriteLine("lstChat no está inicializado.");
                 }
+<<<<<<< Updated upstream
             });
+=======
+            }
+            catch (ArgumentException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje(ex.Message, ex.Message);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Método del callback para recibir mensajes.
+        /// </summary>
+        public void EnviarMensajeCliente(ServicioGloom.Chat mensajesChat)
+        {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            try
+            {
+                lstChat.Dispatcher.Invoke(() =>
+                {
+                    if (lstChat.Visibility == Visibility.Visible && lstChat.IsEnabled)
+                    {
+                        lstChat.Items.Add($"{mensajesChat.nombreUsuario} : {mensajesChat.mensaje}");
+
+                        lstChat.ScrollIntoView(lstChat.Items[lstChat.Items.Count - 1]);
+                    }
+
+                });
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+            }
+        }
+
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
+>>>>>>> Stashed changes
         }
     }
 }

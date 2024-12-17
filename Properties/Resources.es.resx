@@ -427,17 +427,83 @@
   <data name="mensajeExp22" xml:space="preserve">
     <value>Se produjo un problema con el servidor. Verifique la conexión de red e intente nuevamente.</value>
   </data>
+<<<<<<< Updated upstream:Properties/Resources.esp.resx
+=======
+  <data name="mensajeExp23" xml:space="preserve">
+    <value>La sala no es pública o no existe. Verifique los detalles e inténtelo nuevamente.</value>
+  </data>
+  <data name="mensajeExp24" xml:space="preserve">
+    <value>El código de la sala no es válido. Verifíquelo e inténtelo nuevamente.</value>
+  </data>
+  <data name="mensajeExp25" xml:space="preserve">
+    <value>No se encontró el archivo necesario para enviar el correo. Intente nuevamente.</value>
+  </data>
+  <data name="mensajeExp26" xml:space="preserve">
+    <value>No tiene acceso al archivo necesario para enviar el correo.</value>
+  </data>
+  <data name="mensajeExp27" xml:space="preserve">
+    <value>Por favor, introduce un correo válido.
+El correo puede contener:
+
+-Letras (mayúsculas y minúsculas).
+-Números.
+-Puntos (.).
+-Guiones bajos (_).
+-Guiones (-) en el dominio.
+-Debe incluir un @ y al menos un punto (.) en el dominio.
+Ejemplo: usuario123@dominio.com </value>
+  </data>
+  <data name="mensajeExp28" xml:space="preserve">
+    <value>No se pudo enviar el correo. Verifique los detalles e inténtelo nuevamente.</value>
+  </data>
+  <data name="mensajeExp29" xml:space="preserve">
+    <value>Hubo un problema al enviar el correo. Intente nuevamente más tarde.</value>
+  </data>
+  <data name="mensajeExp30" xml:space="preserve">
+    <value>La operación de envío de correo no es válida en este momento.</value>
+  </data>
+  <data name="mensajeExp31" xml:space="preserve">
+    <value>Debe seleccionar una familia antes de continuar.</value>
+  </data>
+  <data name="mensajeExp32" xml:space="preserve">
+    <value>No todos los jugadores han seleccionado una familia. Espere a que lo hagan.</value>
+  </data>
+  <data name="mensajeExp33" xml:space="preserve">
+    <value>No puede marcarse como 'Listo' sin seleccionar una familia primero.</value>
+  </data>
+>>>>>>> Stashed changes:Properties/Resources.es.resx
   <data name="mensajeExp34" xml:space="preserve">
     <value>En este momento, la sala está completa. Por favor, intenta más tarde.</value>
   </data>
   <data name="mensajeExp35" xml:space="preserve">
-    <value>No se permiten números ni caracteres especiales en el nombre y apellido.</value>
+    <value>Por favor, introduce un nombre válido.
+El nombre puede contener:
+
+-Solo letras (sin números ni caracteres especiales).
+-Espacios (pero no espacios consecutivos).
+-No debe comenzar ni terminar con un espacio.
+-Longitud: de 4 a 32 caracteres.</value>
   </data>
   <data name="mensajeExp36" xml:space="preserve">
-    <value>Para crear tu nombre de usuario, comienza con una letra (mayúscula o minúscula) y luego puedes agregar números y guiones bajos si lo deseas.</value>
+    <value>Por favor, introduce un nombre válido.
+El nombre debe cumplir con los siguientes requisitos:
+
+-Puede contener letras, números, guiones bajos (_) y espacios.
+-No puede comenzar ni terminar con un espacio.
+-No puede tener espacios consecutivos.
+-No puede seguir el formato Invitado seguido de números (ejemplo: Invitado123).</value>
   </data>
   <data name="mensajeExp37" xml:space="preserve">
-    <value>Para tu seguridad, crea una contraseña fuerte que combine letras mayúsculas y minúsculas, números y que sea diferente a tu nombre de usuario. Evita usar palabras comunes o información personal. Un ejemplo de contraseña segura podría ser 'MiContraseña!2023'.</value>
+    <value>Por favor, introduce una contraseña válida.
+La contraseña debe cumplir con los siguientes requisitos:
+
+-Tener entre 8 y 15 caracteres.
+-Incluir al menos:
+ -Una letra mayúscula.
+ -Una letra minúscula.
+ -Un número.
+ -Un carácter especial de la lista: @$!%?&amp;.
+-No puede estar vacía o compuesta solo por espacios en blanco.</value>
   </data>
   <data name="mensajeExp38" xml:space="preserve">
     <value>Has gastado la carta en un jugador que ya no tiene cartas en su mazo</value>
@@ -454,6 +520,99 @@
   <data name="mensajeExp54060" xml:space="preserve">
     <value>No se pudo abrir la base de datos, contacte con un administrador del sistema e inténtelo más tarde.</value>
   </data>
+<<<<<<< Updated upstream:Properties/Resources.esp.resx
+=======
+  <data name="mensajeExp55" xml:space="preserve">
+    <value>No se encontró la sala. Verifique e inténtelo nuevamente.</value>
+  </data>
+  <data name="mensajeExp56" xml:space="preserve">
+    <value>El nombre debe tener entre 4 y 255 caracteres, sin espacios ni caracteres especiales.</value>
+  </data>
+  <data name="mensajeExp57" xml:space="preserve">
+    <value>El jugador no está registrado en el sistema.</value>
+  </data>
+  <data name="mensajeExp58" xml:space="preserve">
+    <value>Verifique su conexión a Internet o espere a que se restablezca.</value>
+  </data>
+  <data name="mensajeExp59" xml:space="preserve">
+    <value>Hubo un problema con el servidor. Por favor, reinicie su sesión y espere a que se restablezca.</value>
+  </data>
+  <data name="mensajeExp60" xml:space="preserve">
+    <value>Hubo un problema con el servidor. Espere a que se restablezca la conexión.</value>
+  </data>
+  <data name="mensajeExp61" xml:space="preserve">
+    <value>No se encontraron salas activas disponibles.</value>
+  </data>
+  <data name="mensajeExp62" xml:space="preserve">
+    <value>Debe seleccionar una sala antes de continuar.</value>
+  </data>
+  <data name="mensajeExp63" xml:space="preserve">
+    <value>Te has unido a la sala pública correctamente.</value>
+  </data>
+  <data name="mensajeExp64" xml:space="preserve">
+    <value>No se proporcionó el código de acceso. Inténtelo nuevamente.</value>
+  </data>
+  <data name="mensajeExp65" xml:space="preserve">
+    <value>Te has unido a la sala privada correctamente.</value>
+  </data>
+  <data name="mensajeExp66" xml:space="preserve">
+    <value>Te has unido a la sala correctamente.</value>
+  </data>
+  <data name="mensajeExp67" xml:space="preserve">
+    <value>No se pudo unir a la sala. Verifique el código de acceso.</value>
+  </data>
+  <data name="mensajeExp68" xml:space="preserve">
+    <value>No puedes enviar un mensaje vacío.</value>
+  </data>
+  <data name="mensajeExp69" xml:space="preserve">
+    <value>Tardaste demasiado en elegir para quién usarás la carta.</value>
+  </data>
+  <data name="mensajeExp70" xml:space="preserve">
+    <value>Debe seleccionar una carta antes de usarla.</value>
+  </data>
+  <data name="mensajeExp71" xml:space="preserve">
+    <value>Debe seleccionar un usuario y un personaje objetivo antes de continuar.</value>
+  </data>
+  <data name="mensajeExp72" xml:space="preserve">
+    <value>Debe seleccionar un personaje objetivo antes de continuar.</value>
+  </data>
+  <data name="mensajeExp73" xml:space="preserve">
+    <value>Debe seleccionar un usuario y un personaje objetivo para continuar.</value>
+  </data>
+  <data name="mensajeExp74" xml:space="preserve">
+    <value>No hay jugadores conectados en la sala.</value>
+  </data>
+  <data name="mensajeExp75" xml:space="preserve">
+    <value>No se encontraron personajes para el usuario seleccionado.</value>
+  </data>
+  <data name="mensajeExp76" xml:space="preserve">
+    <value>Debe seleccionar un personaje objetivo para continuar.</value>
+  </data>
+  <data name="mensajeExp77" xml:space="preserve">
+    <value>Aun no se encuentran listos todos los jugadores de la sala para empezar.</value>
+  </data>
+  <data name="mensajeExp78" xml:space="preserve">
+    <value>No se pudo cambiar el estado de la partida por un error con la base de datos, inténtelo nuevamente más tarde o contacte con el equipo técnico.</value>
+  </data>
+  <data name="mensajeExp79" xml:space="preserve">
+    <value>No se pudo guardar el ganador de la partida correctamente, si requiere saber más información hable con un administrador.</value>
+  </data>
+  <data name="mensajeExpuslion" xml:space="preserve">
+    <value>Se ha iniciado la expulsión del jugador: </value>
+  </data>
+  <data name="mensajeHaSalidoDeSala" xml:space="preserve">
+    <value>Has salido de la sala y esta ha sido eliminada.</value>
+  </data>
+  <data name="mensajeHaSidoExpulsado" xml:space="preserve">
+    <value>Ha sido expulsado de la sala</value>
+  </data>
+  <data name="mensajeMiniPartidaTiempoAgotado" xml:space="preserve">
+    <value>Ha tardado mucho para elegir para quien utilizará la carta</value>
+  </data>
+  <data name="mensajeNoJugadoresParaExpulsar" xml:space="preserve">
+    <value>No hay jugadores disponibles para expulsar.</value>
+  </data>
+>>>>>>> Stashed changes:Properties/Resources.es.resx
   <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
     <value>¡Partida creada con éxito!</value>
   </data>
@@ -554,7 +713,7 @@
     <value>Sala</value>
   </data>
   <data name="salaSeleccionarFamilia" xml:space="preserve">
-    <value>salaSeleccionarFamilia</value>
+    <value>SeleccionarFamilia</value>
   </data>
   <data name="solicitudAmistadInstruccion" xml:space="preserve">
     <value>De clic en el botón de “más” para para aceptar la solicitud</value>
@@ -598,7 +757,10 @@
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
   </data>
+<<<<<<< Updated upstream:Properties/Resources.esp.resx
   <data name="finMiniComentarioGanador" xml:space="preserve">
     <value>La voz del destino ha hablado y yo he respondido, he ganado</value>
   </data>
+=======
+>>>>>>> Stashed changes:Properties/Resources.es.resx
 </root>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< Updated upstream
 <ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="99801918-ad11-442c-8291-57ea7a20e717" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+=======
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="96d70f83-90a3-46ad-a805-b6e95c6248d6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+>>>>>>> Stashed changes
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,6 +26,7 @@
     <MetadataSource Address="http://192.168.100.28:8080" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+<<<<<<< Updated upstream
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="babec9ff-e9eb-494a-862b-21b7f88e61e9" SourceId="1" SourceUrl="http://192.168.100.28:8080/?xsd=xsd5" />
     <MetadataFile FileName="ServicioJuego.wsdl" MetadataType="Wsdl" ID="90ca2e7a-cb91-4ea0-800e-0e3cb55dc688" SourceId="1" SourceUrl="http://192.168.100.28:8080/?wsdl" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="c426e267-e5db-453f-b63a-7fcd07051c32" SourceId="1" SourceUrl="http://192.168.100.28:8080/?xsd=xsd2" />
@@ -30,6 +35,16 @@
     <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="58438575-ee18-414d-a7c1-d194ebae0a98" SourceId="1" SourceUrl="http://192.168.100.28:8080/?xsd=xsd3" />
     <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="992cbec2-6de5-439e-aa53-1d96fc053158" SourceId="1" SourceUrl="http://192.168.100.28:8080/?xsd=xsd0" />
     <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="62e9d9ef-c896-4cfb-a748-76d140bf547d" SourceId="1" SourceUrl="http://192.168.100.28:8080/?xsd=xsd4" />
+=======
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="56d1c182-868c-4371-a504-ca31f1f39c3b" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="f61b8576-f033-405a-9fb7-98bba168befc" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd4" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="d7c1bbc3-14c2-4790-9834-e53084a7901b" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd5" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="36da762c-53eb-4380-903e-e4b111c34ddc" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd2" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="ee64c9bd-e0bc-4333-b612-a11118c2bbbb" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd3" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="7bff9202-610f-4692-8849-161b0f85d97b" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="aaf9ed45-ab61-40da-831c-9fb5353627fd" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
+    <MetadataFile FileName="ServicioJuego.wsdl" MetadataType="Wsdl" ID="6cba6092-9119-49bb-83b0-2f4571e8ce08" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
+>>>>>>> Stashed changes
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

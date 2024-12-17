@@ -52,89 +52,181 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnSalaNormal" Content="{x:Static p:Resources.partidaBtnNormal}" HorizontalAlignment="Left" Margin="665,241,0,0" VerticalAlignment="Top" Width="220" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnSalaNormal_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="655,244,0,0" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.035"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+
+            <Button x:Name="btnSalaNormal" 
+            Content="{x:Static p:Resources.partidaBtnNormal}" 
+            Width="235" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold"
+            Click="BtnSalaNormal_Click" 
+            Opacity="0.8"
+            Margin="10,0"
+            >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnSalaMiniHistoria" Content="{x:Static p:Resources.partidaBtnMiniHistoria}" HorizontalAlignment="Left" Margin="935,241,0,0" VerticalAlignment="Top" Width="220" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnSalaMiniHistoria_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="btnSalaMiniHistoria" 
+            Content="{x:Static p:Resources.partidaBtnMiniHistoria}" 
+            Width="235" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold"
+            Click="BtnSalaMiniHistoria_Click" 
+            Opacity="0.8"
+            Margin="10,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnNo2" Content="2" HorizontalAlignment="Left" Margin="665,352,0,0" VerticalAlignment="Top" Width="140" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnNo2_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="656,347,0,0">
+            
+            <Button x:Name="btnNo2" 
+            Content="2" 
+            Width="150" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold" 
+            Click="BtnNo_Click" 
+            Margin="10,0" 
+            Opacity="0.8">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnNo3" Content="3" HorizontalAlignment="Left" Margin="840,352,0,0" VerticalAlignment="Top" Width="140" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnNo3_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            
+            <Button x:Name="btnNo3" 
+            Content="3" 
+            Width="150" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold" 
+            Click="BtnNo_Click" 
+            Margin="10,0" 
+            Opacity="0.8">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnNo4" Content="4" HorizontalAlignment="Left" Margin="1015,352,0,0" VerticalAlignment="Top" Width="140" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnNo4_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="btnNo4" 
+            Content="4" 
+            Width="150" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold" 
+            Click="BtnNo_Click" 
+            Margin="10,0" 
+            Opacity="0.8">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" 
+                        Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnPartidaPublica" Content="{x:Static p:Resources.partidaBtnPublica}" HorizontalAlignment="Left" Margin="665,464,0,0" VerticalAlignment="Top" Width="220" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnPartidaPublica_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="656,454,0,0">
+
+            <Button x:Name="btnPartidaPublica" 
+            Content="{x:Static p:Resources.partidaBtnPublica}" 
+            Width="235" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold" 
+            Click="BtnPartidaPublica_Click" 
+            Margin="10,0" Opacity="0.8">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnPartidaPrivada" Content="{x:Static p:Resources.partidaBtnPrivada}" HorizontalAlignment="Left" Margin="935,464,0,0" VerticalAlignment="Top" Width="220" Height="45"  Background="White" FontSize="20" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="BtnPartidaPrivada_Click" Opacity="0.8">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="btnPartidaPrivada" 
+            Content="{x:Static p:Resources.partidaBtnPrivada}" 
+            Width="235" Height="45" 
+            Background="White" FontSize="20" 
+            Foreground="Black" FontWeight="Bold" 
+            Click="BtnPartidaPrivada_Click" 
+            Margin="10,0" Opacity="0.8">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         CornerRadius="15">
-                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
     </Grid>
 </Window>

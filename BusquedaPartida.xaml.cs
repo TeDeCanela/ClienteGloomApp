@@ -26,8 +26,30 @@ namespace ClienteGloomApp
             InstanceContext context = new InstanceContext(this);
             servicio = new SalaClient(context);
 
-            CargarSalasActivas();
-        }
+                CargarSalasActivas();
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+            }
+            catch (Exception ex)
+            {
+                administradorLogger.RegistroError(ex);
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+            }
 
         private void CargarSalasActivas()
         {

@@ -135,7 +135,34 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+<<<<<<< Updated upstream
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+=======
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+>>>>>>> Stashed changes
             }
         }
 
@@ -153,7 +180,34 @@ namespace ClienteGloomApp
             InstanceContext contextoSala = new InstanceContext(this);
             ServicioGloom.SalaClient proxySala = new ServicioGloom.SalaClient(contextoSala);
 
+<<<<<<< Updated upstream
             proxySala.IngresarJugadorAJuego(lblnombreUsuario.Content.ToString(), salaNormal.idSala, salaNormal.noJugadores);
+=======
+                proxySala.IngresarJugadorAJuego(lblnombreUsuario.Content.ToString(), salaNormal.idSala, salaNormal.noJugadores);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+>>>>>>> Stashed changes
         }
 
         private void BtnInvitarJugadores_Click(object sender, RoutedEventArgs e)
@@ -176,7 +230,34 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+<<<<<<< Updated upstream
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+=======
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+>>>>>>> Stashed changes
             }
 
             btnEmpezar.BorderBrush = Brushes.Red;
@@ -199,10 +280,32 @@ namespace ClienteGloomApp
             }
             else
             {
+<<<<<<< Updated upstream
                 proxy.SacarDeSala(salaNormal.idSala, lblnombreUsuario.Content.ToString());
                 Inicio regresoInicio = new Inicio(lblnombreUsuario.Content.ToString());
                 regresoInicio.Show();
                 this.Close();
+=======
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+>>>>>>> Stashed changes
             }
 
         }
@@ -312,8 +415,33 @@ namespace ClienteGloomApp
                         break;
                 }
             }
+<<<<<<< Updated upstream
 
 
+=======
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+>>>>>>> Stashed changes
         }
         void IServicioJuegoTableroCallback.EnviarTurno(string nombreDelUsusarioEnTurno)
         {

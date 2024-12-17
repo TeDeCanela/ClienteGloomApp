@@ -36,36 +36,62 @@
             </Button.Template>
         </Button>
         <Label x:Name="lblJugadores" Content="" HorizontalAlignment="Left" Margin="56,237,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
-        <Label x:Name="lblSeleccionarFamilia" Content="{x:Static p:Resources.salaSeleccionarFamilia}" HorizontalAlignment="Left" Margin="855,78,0,0" VerticalAlignment="Top" Width="265" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
-        <Label x:Name="lblOres" Content="Ores" HorizontalAlignment="Left" Margin="650,133,0,0" VerticalAlignment="Top" Width="70" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
-        <Label x:Name="lblCorbat" Content="Corbat" HorizontalAlignment="Left" Margin="739,136,0,0" VerticalAlignment="Top" Width="96" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
-        <Label x:Name="lblGarlo" Content="Garlo" HorizontalAlignment="Left" Margin="846,136,0,0" VerticalAlignment="Top" Width="96" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
-        <Label x:Name="lblRamfez" Content="Ramfez" HorizontalAlignment="Left" Margin="937,136,0,0" VerticalAlignment="Top" Width="95" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
-        <StackPanel Margin="552,214,569,451">
-            <StackPanel Orientation="Horizontal" Width="610">
-                <Button x:Name="btnOres" Height="80" Width="90" BorderBrush="{x:Null}" Margin="00,0" Click="BtnOres_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="Imagenes/EscudoOres.jpg"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="btnCorbat" Height="80" Width="90" BorderBrush="{x:Null}" Margin="05,0" Click="BtnCorbat_Click" >
-                    <Button.Background>
-                        <ImageBrush ImageSource="Imagenes/EscudoCorbat.jpg"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="btnGarlo" Height="80" Width="90" BorderBrush="{x:Null}" Margin="05,0" Click="BtnGarlo_Click"  >
-                    <Button.Background>
-                        <ImageBrush ImageSource="Imagenes/EscudoGarlo.jpg"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="btnRamfez" Height="80" Width="90" BorderBrush="{x:Null}" Margin="05,0" Click="BtnRamfez_Click" >
-                    <Button.Background>
-                        <ImageBrush ImageSource="Imagenes/EscudoRamfez.jpg"/>
-                    </Button.Background>
-                </Button>
-            </StackPanel>
-        </StackPanel>
-        <TextBox x:Name="txtDescripcionFamilia" Margin="630,392,465,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="157" IsReadOnly="True"/>
+        <Label x:Name="lblSeleccionarFamilia" Content="{x:Static p:Resources.salaSeleccionarFamilia}" HorizontalAlignment="Left" Margin="630,125,0,0" VerticalAlignment="Top" Width="265" Height="42" Foreground="White" FontSize="24" RenderTransformOrigin="0.065,0.739"/>
+        <Grid Margin="630,227,491,400">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                
+                <ColumnDefinition Width="90"/>
+                
+                <ColumnDefinition Width="90"/>
+                
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblOres" Content="Ores" Grid.Row="0" Grid.Column="0" 
+           HorizontalAlignment="Center" VerticalAlignment="Center"
+           Foreground="White" FontSize="24"/>
+            <Label x:Name="lblCorbat" Content="Corbat" Grid.Row="0" Grid.Column="1" 
+           HorizontalAlignment="Center" VerticalAlignment="Center"
+           Foreground="White" FontSize="24"/>
+            <Label x:Name="lblGarlo" Content="Garlo" Grid.Row="0" Grid.Column="2" 
+           HorizontalAlignment="Center" VerticalAlignment="Center"
+           Foreground="White" FontSize="24"/>
+            <Label x:Name="lblRamfez" Content="Ramfez" Grid.Row="0" Grid.Column="3" 
+           HorizontalAlignment="Center" VerticalAlignment="Center"
+           Foreground="White" FontSize="24"/>
+
+            <Button x:Name="btnOres" Grid.Row="1" Grid.Column="0" Height="80" Width="90" 
+            BorderBrush="{x:Null}" Click="BtnOres_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Imagenes/EscudoOres.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnCorbat" Grid.Row="1" Grid.Column="1" Height="80" Width="90" 
+            BorderBrush="{x:Null}" Click="BtnCorbat_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Imagenes/EscudoCorbat.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnGarlo" Grid.Row="1" Grid.Column="2" Height="80" Width="90" 
+            BorderBrush="{x:Null}" Click="BtnGarlo_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Imagenes/EscudoGarlo.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnRamfez" Grid.Row="1" Grid.Column="3" Height="80" Width="90" 
+            BorderBrush="{x:Null}" Click="BtnRamfez_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Imagenes/EscudoRamfez.jpg"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <TextBox x:Name="txtDescripcionFamilia" Margin="630,392,465,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="125" IsReadOnly="True"/>
         <Button x:Name="btnEmpezar" Content="{x:Static p:Resources.globalEmpezar}" HorizontalAlignment="Left" Margin="1297,679,0,0" VerticalAlignment="Top" Width="212" Height="55" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold" Click="BtnEmpezar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">

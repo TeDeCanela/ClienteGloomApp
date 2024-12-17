@@ -26,8 +26,9 @@ namespace ClienteGloomApp
         public PerfilJugador(String nombreUsuario)
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
-            identificadorUsuario = nombreUsuario;   
+            lblNombreUsuarioRegistrado.Content = nombreUsuario;
+            identificadorUsuario = nombreUsuario;
+            RellenarCamposDesdeJugador();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -39,7 +40,59 @@ namespace ClienteGloomApp
         {
             InstanceContext contextoJugador = new InstanceContext(this);
 
+<<<<<<< Updated upstream
             ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient(contextoJugador);
+=======
+                ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+
+                ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
+
+                jugador = proxy.ObtenerJugador(identificadorUsuario);
+                if (RutasDeCartas.RutasImagenesPerfiles.TryGetValue(jugador.icono, out var rutaImagen))
+                {
+                    imgFotoPerfil.Source = new BitmapImage(new Uri(rutaImagen, UriKind.RelativeOrAbsolute));
+                }
+
+
+
+                txtNombre.Text = jugador.nombre;
+                txtApellidos.Text = jugador.apellidos;
+                txtCorreo.Text = jugador.correo;
+                iconoSeleccionado = jugador.icono;
+
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+                DeshabilitarCampos();
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+        }
+        private void BtnCambiarDatos_Click(object sender, RoutedEventArgs e)
+        {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+>>>>>>> Stashed changes
 
             ServicioGloom.Jugador jugador = new ServicioGloom.Jugador();
 
@@ -174,6 +227,57 @@ namespace ClienteGloomApp
                     botonesDeContendero.BorderBrush = null;
                 }
             }
+<<<<<<< Updated upstream
         }*/
+=======
+        }
+
+        private void DirigirJugadorInicioDeSesion()
+        {
+            InicioSesion nuevaVentana = new InicioSesion();
+            nuevaVentana.Show();
+            this.Close();
+        }
+
+        private void DeshabilitarCampos()
+        {
+            txtApellidos.IsEnabled = false;
+            txtCorreo.IsEnabled = false;
+            txtNombre.IsEnabled = false;
+        }
+
+        private void ValidarTipoDeCambio(Jugador jugador)
+        {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            InstanceContext contextoJugador = new InstanceContext(this);
+            ServicioGloom.JugadorClient proxy = new ServicioGloom.JugadorClient();
+            try
+            {
+                if (string.IsNullOrEmpty(pwdContrasena.Password))
+                {
+                    jugador.contraseña = "sin contraseña nueva";
+                    proxy.ActualizarJugadorSinContrasena(jugador);
+                    MessageBox.Show(Properties.Resources.mensajeActualizacionExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    jugador.contraseña = validar.VerificarContrasena(pwdContrasena.Password);
+                    proxy.ActualizarJugador(jugador);
+                    MessageBox.Show(Properties.Resources.mensajeActualizacionExitosa, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                MensajesEmergentes.MostrarMensajeAdvertencia(ex.Message, ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
+
+        }
+>>>>>>> Stashed changes
     }
 }

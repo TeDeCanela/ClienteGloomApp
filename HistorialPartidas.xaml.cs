@@ -74,7 +74,11 @@ namespace ClienteGloomApp
             InstanceContext contextoHistorial = new InstanceContext(this);
             ServicioGloom.ServicioHistorialPartidaClient proxy = new ServicioGloom.ServicioHistorialPartidaClient(contextoHistorial);
 
+<<<<<<< Updated upstream
             var historial = proxy.ObtenrParticipantesDeJuego(idSala);
+=======
+                var historial = proxy.ObtenerParticipantesDeJuego(idSala);
+>>>>>>> Stashed changes
 
                string participantes = string.Join(", ", historial);
                

@@ -456,6 +456,99 @@
   <data name="mensajeExp54060" xml:space="preserve">
     <value>Excepción 54060</value>
   </data>
+<<<<<<< Updated upstream
+=======
+  <data name="mensajeExp55" xml:space="preserve">
+    <value>Sala no encontrada.</value>
+  </data>
+  <data name="mensajeExp56" xml:space="preserve">
+    <value>El nombre debe ser entre 4 y 255 caracteres, sin espacios ni caracteres especiales.</value>
+  </data>
+  <data name="mensajeExp57" xml:space="preserve">
+    <value>El jugador no está registrado</value>
+  </data>
+  <data name="mensajeExp58" xml:space="preserve">
+    <value>Verifique su conexión al internet o espera que se reestablezca la señal</value>
+  </data>
+  <data name="mensajeExp59" xml:space="preserve">
+    <value>Hubo un problema con el servidor, lo sentimos, tiene que volver a iniciar su sesión y esperar a que se reestablezca.</value>
+  </data>
+  <data name="mensajeExp60" xml:space="preserve">
+    <value>Hubo un problema con el servidor, por favor, espere a que se reestablezca la señal</value>
+  </data>
+  <data name="mensajeExp61" xml:space="preserve">
+    <value>No se encontraron salas activas.</value>
+  </data>
+  <data name="mensajeExp62" xml:space="preserve">
+    <value>Por favor, selecciona una sala.</value>
+  </data>
+  <data name="mensajeExp63" xml:space="preserve">
+    <value>Te has unido a la sala pública correctamente.</value>
+  </data>
+  <data name="mensajeExp64" xml:space="preserve">
+    <value>Código de acceso no proporcionado.</value>
+  </data>
+  <data name="mensajeExp65" xml:space="preserve">
+    <value>Te has unido a la sala privada correctamente.</value>
+  </data>
+  <data name="mensajeExp66" xml:space="preserve">
+    <value>Te has unido a la sala correctamente.</value>
+  </data>
+  <data name="mensajeExp67" xml:space="preserve">
+    <value>No se pudo unir a la sala. Verifica el código de acceso.</value>
+  </data>
+  <data name="mensajeExp68" xml:space="preserve">
+    <value>No puedes enviar un mensaje vacío.</value>
+  </data>
+  <data name="mensajeExp69" xml:space="preserve">
+    <value>Ha tardado mucho para elegir para quien utilizará la carta</value>
+  </data>
+  <data name="mensajeExp70" xml:space="preserve">
+    <value>Debes seleccionar una carta antes de usarla.</value>
+  </data>
+  <data name="mensajeExp71" xml:space="preserve">
+    <value>Selecciona un usuario y personaje objetivo antes de continuar.</value>
+  </data>
+  <data name="mensajeExp72" xml:space="preserve">
+    <value>Selecciona un personaje objetivo antes de continuar.</value>
+  </data>
+  <data name="mensajeExp73" xml:space="preserve">
+    <value>Debes seleccionar un usuario y un personaje objetivo para continuar.</value>
+  </data>
+  <data name="mensajeExp74" xml:space="preserve">
+    <value>No hay jugadores conectados en la sala.</value>
+  </data>
+  <data name="mensajeExp75" xml:space="preserve">
+    <value>No se encontraron personajes para el usuario seleccionado.</value>
+  </data>
+  <data name="mensajeExp76" xml:space="preserve">
+    <value>Debes seleccionar un personaje objetivo para continuar.</value>
+  </data>
+  <data name="mensajeExp77" xml:space="preserve">
+    <value>Aun no se encuentran listos todos los jugadores de la sala para empezar.</value>
+  </data>
+  <data name="mensajeExp78" xml:space="preserve">
+    <value>No se pudo cambiar el estado de la partida por un error con la base de datos, inténtelo nuevamente más tarde o contacte con el equipo técnico.</value>
+  </data>
+  <data name="mensajeExp79" xml:space="preserve">
+    <value>No se pudo guardar el ganador de la partida correctamente, si requiere saber más información hable con un administrador.</value>
+  </data>
+  <data name="mensajeExpuslion" xml:space="preserve">
+    <value>Se ha iniciado la expulsión del jugador: </value>
+  </data>
+  <data name="mensajeHaSalidoDeSala" xml:space="preserve">
+    <value>Has salido de la sala y esta ha sido eliminada.</value>
+  </data>
+  <data name="mensajeHaSidoExpulsado" xml:space="preserve">
+    <value>Ha sido expulsado de la sala</value>
+  </data>
+  <data name="mensajeMiniPartidaTiempoAgotado" xml:space="preserve">
+    <value>Ha tardado mucho para elegir para quien utilizará la carta</value>
+  </data>
+  <data name="mensajeNoJugadoresParaExpulsar" xml:space="preserve">
+    <value>No hay jugadores disponibles para expulsar.</value>
+  </data>
+>>>>>>> Stashed changes
   <data name="mensajePartidaCreadaExitosa" xml:space="preserve">
     <value>¡Partida creada con éxito!</value>
   </data>

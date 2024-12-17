@@ -27,6 +27,13 @@ namespace ClienteGloomApp
             InitializeComponent();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
             this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+<<<<<<< Updated upstream
+=======
+            App app = (App)Application.Current;
+            app.cambiarIdioma("es");
+
+            actualizarElementos();
+>>>>>>> Stashed changes
         }
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -39,7 +46,7 @@ namespace ClienteGloomApp
         private void btnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
         {
             App app = (App)Application.Current;
-            app.cambiarIdioma("esp");
+            app.cambiarIdioma("es");
 
             actualizarElementos();
         }

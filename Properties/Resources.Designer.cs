@@ -1078,6 +1078,279 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
+<<<<<<< Updated upstream
+=======
+        ///   Busca una cadena traducida similar a Sala no encontrada..
+        /// </summary>
+        public static string mensajeExp55 {
+            get {
+                return ResourceManager.GetString("mensajeExp55", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El nombre debe ser entre 4 y 255 caracteres, sin espacios ni caracteres especiales..
+        /// </summary>
+        public static string mensajeExp56 {
+            get {
+                return ResourceManager.GetString("mensajeExp56", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El jugador no está registrado.
+        /// </summary>
+        public static string mensajeExp57 {
+            get {
+                return ResourceManager.GetString("mensajeExp57", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Verifique su conexión al internet o espera que se reestablezca la señal.
+        /// </summary>
+        public static string mensajeExp58 {
+            get {
+                return ResourceManager.GetString("mensajeExp58", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hubo un problema con el servidor, lo sentimos, tiene que volver a iniciar su sesión y esperar a que se reestablezca..
+        /// </summary>
+        public static string mensajeExp59 {
+            get {
+                return ResourceManager.GetString("mensajeExp59", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hubo un problema con el servidor, por favor, espere a que se reestablezca la señal.
+        /// </summary>
+        public static string mensajeExp60 {
+            get {
+                return ResourceManager.GetString("mensajeExp60", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se encontraron salas activas..
+        /// </summary>
+        public static string mensajeExp61 {
+            get {
+                return ResourceManager.GetString("mensajeExp61", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, selecciona una sala..
+        /// </summary>
+        public static string mensajeExp62 {
+            get {
+                return ResourceManager.GetString("mensajeExp62", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te has unido a la sala pública correctamente..
+        /// </summary>
+        public static string mensajeExp63 {
+            get {
+                return ResourceManager.GetString("mensajeExp63", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de acceso no proporcionado..
+        /// </summary>
+        public static string mensajeExp64 {
+            get {
+                return ResourceManager.GetString("mensajeExp64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te has unido a la sala privada correctamente..
+        /// </summary>
+        public static string mensajeExp65 {
+            get {
+                return ResourceManager.GetString("mensajeExp65", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te has unido a la sala correctamente..
+        /// </summary>
+        public static string mensajeExp66 {
+            get {
+                return ResourceManager.GetString("mensajeExp66", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo unir a la sala. Verifica el código de acceso..
+        /// </summary>
+        public static string mensajeExp67 {
+            get {
+                return ResourceManager.GetString("mensajeExp67", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No puedes enviar un mensaje vacío..
+        /// </summary>
+        public static string mensajeExp68 {
+            get {
+                return ResourceManager.GetString("mensajeExp68", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ha tardado mucho para elegir para quien utilizará la carta.
+        /// </summary>
+        public static string mensajeExp69 {
+            get {
+                return ResourceManager.GetString("mensajeExp69", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debes seleccionar una carta antes de usarla..
+        /// </summary>
+        public static string mensajeExp70 {
+            get {
+                return ResourceManager.GetString("mensajeExp70", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecciona un usuario y personaje objetivo antes de continuar..
+        /// </summary>
+        public static string mensajeExp71 {
+            get {
+                return ResourceManager.GetString("mensajeExp71", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecciona un personaje objetivo antes de continuar..
+        /// </summary>
+        public static string mensajeExp72 {
+            get {
+                return ResourceManager.GetString("mensajeExp72", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debes seleccionar un usuario y un personaje objetivo para continuar..
+        /// </summary>
+        public static string mensajeExp73 {
+            get {
+                return ResourceManager.GetString("mensajeExp73", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No hay jugadores conectados en la sala..
+        /// </summary>
+        public static string mensajeExp74 {
+            get {
+                return ResourceManager.GetString("mensajeExp74", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se encontraron personajes para el usuario seleccionado..
+        /// </summary>
+        public static string mensajeExp75 {
+            get {
+                return ResourceManager.GetString("mensajeExp75", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debes seleccionar un personaje objetivo para continuar..
+        /// </summary>
+        public static string mensajeExp76 {
+            get {
+                return ResourceManager.GetString("mensajeExp76", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aun no se encuentran listos todos los jugadores de la sala para empezar..
+        /// </summary>
+        public static string mensajeExp77 {
+            get {
+                return ResourceManager.GetString("mensajeExp77", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo cambiar el estado de la partida por un error con la base de datos, inténtelo nuevamente más tarde o contacte con el equipo técnico..
+        /// </summary>
+        public static string mensajeExp78 {
+            get {
+                return ResourceManager.GetString("mensajeExp78", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo guardar el ganador de la partida correctamente, si requiere saber más información hable con un administrador..
+        /// </summary>
+        public static string mensajeExp79 {
+            get {
+                return ResourceManager.GetString("mensajeExp79", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se ha iniciado la expulsión del jugador: .
+        /// </summary>
+        public static string mensajeExpuslion {
+            get {
+                return ResourceManager.GetString("mensajeExpuslion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Has salido de la sala y esta ha sido eliminada..
+        /// </summary>
+        public static string mensajeHaSalidoDeSala {
+            get {
+                return ResourceManager.GetString("mensajeHaSalidoDeSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ha sido expulsado de la sala.
+        /// </summary>
+        public static string mensajeHaSidoExpulsado {
+            get {
+                return ResourceManager.GetString("mensajeHaSidoExpulsado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ha tardado mucho para elegir para quien utilizará la carta.
+        /// </summary>
+        public static string mensajeMiniPartidaTiempoAgotado {
+            get {
+                return ResourceManager.GetString("mensajeMiniPartidaTiempoAgotado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No hay jugadores disponibles para expulsar..
+        /// </summary>
+        public static string mensajeNoJugadoresParaExpulsar {
+            get {
+                return ResourceManager.GetString("mensajeNoJugadoresParaExpulsar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> Stashed changes
         ///   Busca una cadena traducida similar a ¡Partida creada con éxito!.
         /// </summary>
         public static string mensajePartidaCreadaExitosa {

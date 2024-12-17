@@ -29,6 +29,8 @@ namespace ClienteGloomApp
         Carta cartaBonusSeleciconada = new Carta();
         string jugadorSeleciconadoParaCastigo = "sin jugador";
         private string identificadorUsuario;
+        private Chat ventanaChat;
+
 
         private InstanceContext contextoJugador;
         private ServicioGloom.ServicioJuegoTableroClient proxyJugador;
@@ -36,6 +38,10 @@ namespace ClienteGloomApp
         private string usuarioObjetivoSeleccionado;
         private string personajeObjetivoSeleccionado;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         public PartidaNormal(String nombreUsaurio, Sala sala)
         {
             InitializeComponent();
@@ -52,11 +58,15 @@ namespace ClienteGloomApp
 
             try
             {
+<<<<<<< Updated upstream
                 InstanceContext contextoSala = new InstanceContext(this);
                 ServicioGloom.SalaClient proxySala = new ServicioGloom.SalaClient(contextoSala);
                 int jugadoresConectados = proxySala.ObtenerJugadoresConectados(sala.idSala).Count();
 
                 proxy.IniciarPartidaPorAdministrador(identificadorUsuario, sala.idSala, jugadoresConectados);
+=======
+                proxy.IniciarPartidaPorAdministrador(identificadorUsuario, sala.idSala, sala.noJugadores);
+>>>>>>> Stashed changes
                 proxy.ConectarConTablero(identificadorUsuario, sala.idSala);
 
                 AsignarCartasPorJugador();
@@ -191,7 +201,34 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+<<<<<<< Updated upstream
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+=======
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+                
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+>>>>>>> Stashed changes
             }
         }
 
@@ -859,10 +896,19 @@ namespace ClienteGloomApp
 
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< Updated upstream
             
                 Chat ventanaChat = new Chat(lblJugador1.Content.ToString(), salaNormal.idSala);
                 ventanaChat.Show();
             
+=======
+
+            ventanaChat = new Chat(lblJugador1.Content.ToString());
+            ventanaChat.Show();
+            ventanaChat.Focus();
+
+
+>>>>>>> Stashed changes
         }
     
 
@@ -917,7 +963,34 @@ namespace ClienteGloomApp
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
+<<<<<<< Updated upstream
                 MensajesEmergentes.MostrarMensaje(ex.Detail.mensaje, ex.Detail.mensaje);
+=======
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("58", ex.Message);
+                administradorLogger.RegistroError(ex);
+
+            }
+            catch (TimeoutException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("59", ex.Message);
+                administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
+            }
+            catch (CommunicationException ex)
+            {
+                MensajesEmergentes.MostrarMensaje("16", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
+            catch (Exception ex)
+            {
+                MensajesEmergentes.MostrarMensaje("60", ex.Message);
+                administradorLogger.RegistroError(ex);
+>>>>>>> Stashed changes
             }
             finally
             {
@@ -955,6 +1028,7 @@ namespace ClienteGloomApp
             }
         }
 
+<<<<<<< Updated upstream
         private string DeterminarGanador(Dictionary<string, (string, int)[]> familiasYPersonajes)
         {
             string ganador = string.Empty;
@@ -992,6 +1066,8 @@ namespace ClienteGloomApp
         {
             throw new NotImplementedException();
         }
+=======
+>>>>>>> Stashed changes
 
         void ICreacionPartidaCallback.NotificarPartidaCreada(string mensaje)
         {
@@ -1072,12 +1148,24 @@ namespace ClienteGloomApp
 
             Application.Current.Dispatcher.Invoke(() =>
             {
+<<<<<<< Updated upstream
                 string mensaje = jugador.Equals("Sin ganador") ? "La partida terminó sin un ganador." : $"El ganador de la partida es {jugador}.";
                 MessageBox.Show(mensaje, "Fin de la partida", MessageBoxButton.OK, MessageBoxImage.Information);
+=======
+                if (ventanaChat != null && ventanaChat.IsLoaded)
+                {
+                    ventanaChat.Close();
+                    ventanaChat = null; 
+                }
+
+                string mensaje = jugador.Equals("Sin ganador") ? Properties.Resources.partidaFinSinGanador : Properties.Resources.finPartidaFelicitacionLeyenda +" "+ jugador;
+                MessageBox.Show(mensaje, Properties.Resources.partidaFinPartida, MessageBoxButton.OK, MessageBoxImage.Information);
+>>>>>>> Stashed changes
 
                 FinPartidaNormal ventanaFin = new FinPartidaNormal(identificadorUsuario, jugador, lblNumeroSala.Content.ToString());
                 ventanaFin.Show();
                 this.Close();
+
             });
 
         }

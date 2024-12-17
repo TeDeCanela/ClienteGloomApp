@@ -90,7 +90,7 @@ namespace ClienteGloomApp
 
         public string VerificarContrasena(string nombre)
         {
-            string nombreRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,15}$";
+            string nombreRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&.])[A-Za-z\d@$!%?&.]{8,15}$";
 
             if (string.IsNullOrWhiteSpace(nombre))
             {
@@ -104,5 +104,42 @@ namespace ClienteGloomApp
 
             return nombre;
         }
+<<<<<<< Updated upstream
+=======
+
+        public string VerificarNombrePartida(string nombrePartida)
+        {
+            string nombreRegex = @"^(?! )(?!.[\\!\\#\\$%\\&'\\(\\)\\\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
+
+            if (string.IsNullOrWhiteSpace(nombrePartida))
+            {
+                throw new ArgumentException("56");
+            }
+
+            if (!Regex.IsMatch(nombrePartida, nombreRegex))
+            {
+                throw new ArgumentException("56");
+            }
+
+            return nombrePartida;
+        }
+
+        public string VerificarMensajeChat(string mensaje)
+        {
+            string mensajeRegex = @"^(?! )(?!.*[\\#\\$%\\&'\\(\\)\\\\+\\-\\/\\;<\\=\\>\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ¿?!.,:]{4,255}(?<! )$";
+
+            if (string.IsNullOrWhiteSpace(mensaje))
+            {
+                throw new ArgumentException("56");
+            }
+
+            if (!Regex.IsMatch(mensaje, mensajeRegex))
+            {
+                throw new ArgumentException("56");
+            }
+
+            return mensaje;
+        }
+>>>>>>> Stashed changes
     }
 }
