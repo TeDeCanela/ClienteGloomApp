@@ -37,7 +37,7 @@ namespace ClienteGloomApp
 
         public string VerificarNombreYApellidos(string nombre)
         {
-            string nombreRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,255}(?<! )$";
+            string nombreRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\*\\+\\-\\.,\\/\\:\\;<\\=\\>\\?\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ]{4,32}(?<! )$";
 
             if (string.IsNullOrWhiteSpace(nombre))
             {
@@ -67,7 +67,7 @@ namespace ClienteGloomApp
 
         private void ValidarFormatoNombre(string nombre)
         {
-            string nombreRegex = @"^(?! )(?!.* {2})[a-zA-Z0-9_ ]+(?<! )$";
+            string nombreRegex = @"^(?! )(?!.* {2})[a-zA-Z0-9_ ]{4,32}(?<! )$";
 
             if (!Regex.IsMatch(nombre, nombreRegex))
             {
@@ -79,18 +79,18 @@ namespace ClienteGloomApp
         {
             if (nombre.Equals("Sin ganador", StringComparison.OrdinalIgnoreCase))
             {
-                throw new ArgumentException("El nombre no puede ser 'Sin ganador'.");
+                throw new ArgumentException("36");
             }
 
             if (Regex.IsMatch(nombre, @"^Invitado\d+$"))
             {
-                throw new ArgumentException("El nombre no puede comenzar con 'Invitado#'.");
+                throw new ArgumentException("36");
             }
         }
 
         public string VerificarContrasena(string nombre)
         {
-            string nombreRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,15}$";
+            string nombreRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&.])[A-Za-z\d@$!%?&.]{8,15}$";
 
             if (string.IsNullOrWhiteSpace(nombre))
             {
@@ -124,8 +124,7 @@ namespace ClienteGloomApp
 
         public string VerificarMensajeChat(string mensaje)
         {
-            string mensajeRegex = @"^(?! )(?!.*[\\!\\#\\$%\\&'\\(\\)\\\\+\\-\\.,\\/\\:\\;<\\=\\>\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!.* {2})(?!.*\d)[\p{L} ¿? ]{4,255}(?<! )$"
-;
+            string mensajeRegex = @"^(?! )(?!.[\\#\\$%\\&'\\(\\)\\\\+\\-\\/\\;<\\=\\>\\@\\[\\\\\\]\\^_`\\{\\|\\}\\~])(?!. {2})(?!.*\d)[\p{L} ¿?!.,:]{4,255}(?<! )$";
 
             if (string.IsNullOrWhiteSpace(mensaje))
             {

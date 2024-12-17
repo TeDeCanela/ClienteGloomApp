@@ -201,7 +201,7 @@ namespace ClienteGloomApp
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show(Properties.Resources.mensajeExp19, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);//cambiarlo
+                MessageBox.Show(Properties.Resources.mensajeExp19, Properties.Resources.mensajeTituloAdvertencia, MessageBoxButton.OK, MessageBoxImage.Warning);
                 administradorLogger.RegistroError(ex);
             }
             catch (FaultException<ManejadorExcepciones> ex)
@@ -213,6 +213,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -302,6 +303,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -352,6 +354,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -435,6 +438,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {

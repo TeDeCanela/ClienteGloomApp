@@ -475,10 +475,25 @@
     <value>Nombre Incorrecto</value>
   </data>
   <data name="mensajeExp36" xml:space="preserve">
-    <value>Nombre de usuario incorrecto</value>
+    <value>Por favor, introduce un nombre válido.
+El nombre debe cumplir con los siguientes requisitos:
+
+-Puede contener letras, números, guiones bajos (_) y espacios.
+-No puede comenzar ni terminar con un espacio.
+-No puede tener espacios consecutivos.
+-No puede seguir el formato Invitado seguido de números (ejemplo: Invitado123).</value>
   </data>
   <data name="mensajeExp37" xml:space="preserve">
-    <value>No cumple con el formato la contraseña</value>
+    <value>Por favor, introduce una contraseña válida.
+La contraseña debe cumplir con los siguientes requisitos:
+
+-Tener entre 8 y 15 caracteres.
+-Incluir al menos:
+ -Una letra mayúscula.
+ -Una letra minúscula.
+ -Un número.
+ -Un carácter especial de la lista: @$!%?&amp;.
+-No puede estar vacía o compuesta solo por espacios en blanco.</value>
   </data>
   <data name="mensajeExp38" xml:space="preserve">
     <value>El jugador ya no tiene cartas para quitar</value>
@@ -602,6 +617,12 @@
   </data>
   <data name="mensajeExp77" xml:space="preserve">
     <value>Aun no se encuentran listos todos los jugadores de la sala para empezar.</value>
+  </data>
+  <data name="mensajeExp78" xml:space="preserve">
+    <value>No se pudo cambiar el estado de la partida por un error con la base de datos, inténtelo nuevamente más tarde o contacte con el equipo técnico.</value>
+  </data>
+  <data name="mensajeExp79" xml:space="preserve">
+    <value>No se pudo guardar el ganador de la partida correctamente, si requiere saber más información hable con un administrador.</value>
   </data>
   <data name="mensajeExpuslion" xml:space="preserve">
     <value>Se ha iniciado la expulsión del jugador: </value>

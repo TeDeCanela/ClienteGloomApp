@@ -1132,7 +1132,13 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre de usuario incorrecto.
+        ///   Busca una cadena traducida similar a Por favor, introduce un nombre válido.
+        ///El nombre debe cumplir con los siguientes requisitos:
+        ///
+        ///-Puede contener letras, números, guiones bajos (_) y espacios.
+        ///-No puede comenzar ni terminar con un espacio.
+        ///-No puede tener espacios consecutivos.
+        ///-No puede seguir el formato Invitado seguido de números (ejemplo: Invitado123)..
         /// </summary>
         public static string mensajeExp36 {
             get {
@@ -1141,7 +1147,16 @@ namespace ClienteGloomApp.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No cumple con el formato la contraseña.
+        ///   Busca una cadena traducida similar a Por favor, introduce una contraseña válida.
+        ///La contraseña debe cumplir con los siguientes requisitos:
+        ///
+        ///-Tener entre 8 y 15 caracteres.
+        ///-Incluir al menos:
+        /// -Una letra mayúscula.
+        /// -Una letra minúscula.
+        /// -Un número.
+        /// -Un carácter especial de la lista: @$!%?&amp;.
+        ///-No puede estar vacía o compuesta solo por espacios en blanco..
         /// </summary>
         public static string mensajeExp37 {
             get {
@@ -1515,6 +1530,24 @@ namespace ClienteGloomApp.Properties {
         public static string mensajeExp77 {
             get {
                 return ResourceManager.GetString("mensajeExp77", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo cambiar el estado de la partida por un error con la base de datos, inténtelo nuevamente más tarde o contacte con el equipo técnico..
+        /// </summary>
+        public static string mensajeExp78 {
+            get {
+                return ResourceManager.GetString("mensajeExp78", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo guardar el ganador de la partida correctamente, si requiere saber más información hable con un administrador..
+        /// </summary>
+        public static string mensajeExp79 {
+            get {
+                return ResourceManager.GetString("mensajeExp79", resourceCulture);
             }
         }
         

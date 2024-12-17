@@ -27,8 +27,9 @@ namespace ClienteGloomApp
         public PerfilJugador(String nombreUsuario)
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
-            identificadorUsuario = nombreUsuario;   
+            lblNombreUsuarioRegistrado.Content = nombreUsuario;
+            identificadorUsuario = nombreUsuario;
+            RellenarCamposDesdeJugador();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -54,10 +55,18 @@ namespace ClienteGloomApp
                 }
 
 
-                lblNombreUsuarioRegistrado.Content = jugador.nombreUsuario;
+               
                 txtNombre.Text = jugador.nombre;
                 txtApellidos.Text = jugador.apellidos;
                 txtCorreo.Text = jugador.correo;
+                iconoSeleccionado = jugador.icono;
+
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+                DeshabilitarCampos();
             }
             catch (EndpointNotFoundException ex)
             {
@@ -220,6 +229,13 @@ namespace ClienteGloomApp
             InicioSesion nuevaVentana = new InicioSesion();
             nuevaVentana.Show();
             this.Close();
+        }
+
+        private void DeshabilitarCampos()
+        {
+            txtApellidos.IsEnabled = false;
+            txtCorreo.IsEnabled = false;
+            txtNombre.IsEnabled = false;
         }
 
         private void ValidarTipoDeCambio(Jugador jugador)

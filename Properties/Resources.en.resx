@@ -448,7 +448,16 @@
     <value>You do not have access to the required file to send the email.</value>
   </data>
   <data name="mensajeExp27" xml:space="preserve">
-    <value>Invalid Email: The email address must follow these rules: it must have between 4 and 64 characters before the '@' symbol; it can contain letters, numbers, periods (.), underscores (_), and hyphens (-); it must not start or end with a period (.) or hyphen (-); it must include a valid domain after the '@' symbol, with at least two characters in each level of the domain and a maximum of 13 characters in the extension.</value>
+    <value>Please enter a valid email.
+The email can contain:
+
+-Letters (uppercase and lowercase).
+-Numbers.
+-Dots (.).
+-Underscores (_).
+-Hyphens (-) in the domain.
+-Must include an @ and at least one dot (.) in the domain.
+Example: user123@domain.com</value>
   </data>
   <data name="mensajeExp28" xml:space="preserve">
     <value>The email could not be sent. Please check the details and try again.</value>
@@ -472,13 +481,34 @@
     <value>The room is full at this time. Please try again later.</value>
   </data>
   <data name="mensajeExp35" xml:space="preserve">
-    <value>Numbers and special characters are not allowed in the first and last name.</value>
+    <value>Please enter a valid name.
+The name can contain:
+
+-Letters only (no numbers or special characters).
+-Spaces (but no consecutive spaces).
+-Must not start or end with a space.
+-Length: 4 to 32 characters.</value>
   </data>
   <data name="mensajeExp36" xml:space="preserve">
-    <value>To create your username, start with a letter (uppercase or lowercase) and then you can add numbers and underscores if you wish.</value>
+    <value>Please enter a valid name.
+The name must meet the following requirements:
+
+-It can contain letters, numbers, underscores (_), and spaces.
+-It cannot start or end with a space.
+-It cannot have consecutive spaces.
+-It cannot follow the format Invitado followed by numbers (e.g., Invitado123).</value>
   </data>
   <data name="mensajeExp37" xml:space="preserve">
-    <value>For your security, create a strong password that combines uppercase and lowercase letters, numbers, and is different from your username. Avoid using common words or personal information. An example of a strong password would be 'My!Password2023'.</value>
+    <value>Please enter a valid password.
+The password must meet the following requirements:
+
+-Be between 8 and 15 characters long.
+-Include at least:
+ -One uppercase letter.
+ -One lowercase letter.
+ -One number.
+ -One special character from the following: @$!%?&amp;.
+ -Cannot be empty or consist only of whitespace.</value>
   </data>
   <data name="mensajeExp38" xml:space="preserve">
     <value>You've played the card on a player who doesn't have any cards left in their deck.</value>
@@ -599,6 +629,15 @@
   </data>
   <data name="mensajeExp76" xml:space="preserve">
     <value>You must select a target character to proceed.</value>
+  </data>
+  <data name="mensajeExp77" xml:space="preserve">
+    <value>Not all players in the room are ready to start yet.</value>
+  </data>
+  <data name="mensajeExp78" xml:space="preserve">
+    <value>The game state could not be changed due to a database error. Please try again later or contact the technical team.</value>
+  </data>
+  <data name="mensajeExp79" xml:space="preserve">
+    <value>The match winner could not be saved correctly. If you need more information, please contact an administrator.</value>
   </data>
   <data name="mensajeExpuslion" xml:space="preserve">
     <value>The player's expulsion has been initiated:</value>
@@ -806,8 +845,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Select what you want to do, vote to remove</value>
-  </data>
-  <data name="mensajeExp77" xml:space="preserve">
-    <value>Not all players in the room are ready to start yet.</value>
   </data>
 </root>

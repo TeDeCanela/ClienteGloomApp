@@ -27,11 +27,11 @@ namespace ClienteGloomApp
         {
             InitializeComponent();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("esp");
-            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            
             App app = (App)Application.Current;
-            app.cambiarIdioma("esp");
-
-            actualizarElementos();
+            app.cambiarIdioma("es");
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            ActualizarElementos();
         }
 
         private void BtnRegistrar_Click(object sender, RoutedEventArgs e)
@@ -44,9 +44,9 @@ namespace ClienteGloomApp
         private void BtnCambiarIdiomaEspañol_Click(object sender, RoutedEventArgs e)
         {
             App app = (App)Application.Current;
-            app.cambiarIdioma("esp");
+            app.cambiarIdioma("es");
 
-            actualizarElementos();
+            ActualizarElementos();
         }
 
         private void BtnCambiarIdiomaIngles_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace ClienteGloomApp
             App app = (App)Application.Current;
             app.cambiarIdioma("en");
 
-            actualizarElementos();
+            ActualizarElementos();
         }
 
         private void BtnIniciarSesion_Click(object sender, RoutedEventArgs e)
@@ -110,7 +110,7 @@ namespace ClienteGloomApp
             }
         }
 
-        private void actualizarElementos()
+        private void ActualizarElementos()
         {
             lblNombreUsuario.Content = Properties.Resources.globalNombreUsuario;
             lblContraseña.Content = Properties.Resources.globalContraseña;

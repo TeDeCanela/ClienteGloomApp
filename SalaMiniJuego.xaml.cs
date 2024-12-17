@@ -368,6 +368,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {

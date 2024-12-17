@@ -243,43 +243,84 @@ namespace ClienteGloomApp
             this.Close();
         }
 
- 
+
 
         private void BtnSalaNormal_Click(object sender, RoutedEventArgs e)
         {
+
             tipoSalaSeleccionada = "Normal";
+
+            btnSalaNormal.BorderBrush = Brushes.Purple;
+            btnSalaNormal.BorderThickness = new Thickness(3);
+
+
+            btnSalaMiniHistoria.BorderBrush = Brushes.Transparent;
+            btnSalaMiniHistoria.BorderThickness = new Thickness(0);
+
         }
 
         private void BtnSalaMiniHistoria_Click(object sender, RoutedEventArgs e)
         {
             tipoSalaSeleccionada = "Mini historia";
+
+            btnSalaMiniHistoria.BorderBrush = Brushes.Aqua;
+            btnSalaMiniHistoria.BorderThickness = new Thickness(3);
+
+            btnSalaNormal.BorderBrush = Brushes.Transparent;
+            btnSalaNormal.BorderThickness = new Thickness(0);
         }
 
-        private void BtnNo2_Click(object sender, RoutedEventArgs e)
+        private void BtnNo_Click(object sender, RoutedEventArgs e)
         {
-            numeroJugadoresSeleccionado = 2;
+            ReestablecerBordeBotones();
+
+            if (sender is Button botonSeleccionado)
+            {
+                botonSeleccionado.BorderBrush = Brushes.Orange;
+                botonSeleccionado.BorderThickness = new Thickness(3);
+
+                if (int.TryParse(botonSeleccionado.Content.ToString(), out int numero))
+                {
+                    numeroJugadoresSeleccionado = numero;
+                }
+
+
+            }
         }
 
-        private void BtnNo3_Click(object sender, RoutedEventArgs e)
+        private void ReestablecerBordeBotones()
         {
-            numeroJugadoresSeleccionado = 3;
-        }
+            btnNo2.BorderBrush = Brushes.Transparent;
+            btnNo2.BorderThickness = new Thickness(0);
 
-        private void BtnNo4_Click(object sender, RoutedEventArgs e)
-        {
-            numeroJugadoresSeleccionado = 4;
+            btnNo3.BorderBrush = Brushes.Transparent;
+            btnNo3.BorderThickness = new Thickness(0);
+
+            btnNo4.BorderBrush = Brushes.Transparent;
+            btnNo4.BorderThickness = new Thickness(0);
         }
 
         private void BtnPartidaPublica_Click(object sender, RoutedEventArgs e)
         {
             tipoPartidaSeleccionada = "Pública";
+
+            btnPartidaPublica.BorderBrush = Brushes.GreenYellow;
+            btnPartidaPublica.BorderThickness = new Thickness(3);
+
+            btnPartidaPrivada.BorderBrush = Brushes.Transparent;
+            btnPartidaPrivada.BorderThickness = new Thickness(0);
         }
 
         private void BtnPartidaPrivada_Click(object sender, RoutedEventArgs e)
         {
             tipoPartidaSeleccionada = "Privada";
-        }
 
+            btnPartidaPrivada.BorderBrush = Brushes.HotPink;
+            btnPartidaPrivada.BorderThickness = new Thickness(3);
+
+            btnPartidaPublica.BorderBrush = Brushes.Transparent;
+            btnPartidaPublica.BorderThickness = new Thickness(0);
+        }
         private void DirigirJugadorInicioDeSesion()
         {
             InicioSesion nuevaVentana = new InicioSesion();

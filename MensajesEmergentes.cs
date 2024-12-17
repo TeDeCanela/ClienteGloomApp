@@ -9,12 +9,10 @@ namespace ClienteGloomApp
 {
     public static class MensajesEmergentes
     {
-        private static readonly Dictionary<string, string> mensajesErrores;
-
-        static MensajesEmergentes()
+        private static Dictionary<string, string> ObtenerMensajesErrores()
         {
-            mensajesErrores = new Dictionary<string, string>
-    {
+            return new Dictionary<string, string>
+        {
         { "1", Properties.Resources.mensajeExp01},
         { "2", Properties.Resources.mensajeExp02},
         { "3", Properties.Resources.mensajeExp03},
@@ -92,6 +90,8 @@ namespace ClienteGloomApp
         { "75", Properties.Resources.mensajeExp75},
         { "76", Properties.Resources.mensajeExp76},
         { "77", Properties.Resources.mensajeExp77},
+        { "78", Properties.Resources.mensajeExp78},
+        { "79", Properties.Resources.mensajeExp79},
         { "4060", Properties.Resources.mensajeExp54060},
         { "10054", Properties.Resources.mensajeExp10054},
         { "10060", Properties.Resources.mensajeExp10060},
@@ -102,20 +102,24 @@ namespace ClienteGloomApp
 
         public static void MostrarMensaje(string codigoError, string mensajeError)
         {
-            string mensaje = mensajesErrores.TryGetValue(codigoError, out string valor)
-            ? valor
-            : mensajeError;
+            var mensajesErrores = ObtenerMensajesErrores();
 
-            MessageBox.Show(mensaje, "Msg", MessageBoxButton.OK, MessageBoxImage.Error);
+            string mensaje = mensajesErrores.TryGetValue(codigoError, out string valor)
+                ? valor
+                : mensajeError;
+
+            MessageBox.Show(mensaje, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         public static void MostrarMensajeAdvertencia(string codigoError, string mensajeError)
         {
-            string mensaje = mensajesErrores.TryGetValue(codigoError, out string valor)
-            ? valor
-            : mensajeError;
+            var mensajesErrores = ObtenerMensajesErrores();
 
-            MessageBox.Show(mensaje, "Msg", MessageBoxButton.OK, MessageBoxImage.Warning);
+            string mensaje = mensajesErrores.TryGetValue(codigoError, out string valor)
+                ? valor
+                : mensajeError;
+
+            MessageBox.Show(mensaje, "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 }

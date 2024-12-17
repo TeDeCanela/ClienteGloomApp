@@ -653,6 +653,14 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugador", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorResponse")]
         System.Threading.Tasks.Task<int> ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugadorSinContrasena", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorSinContrasenaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/ActualizarJugadorSinContrasenaManejadorExcepcionesFau" +
+            "lt", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        int ActualizarJugadorSinContrasena(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/ActualizarJugadorSinContrasena", ReplyAction="http://tempuri.org/IJugador/ActualizarJugadorSinContrasenaResponse")]
+        System.Threading.Tasks.Task<int> ActualizarJugadorSinContrasenaAsync(ClienteGloomApp.ServicioGloom.Jugador jugador);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJugador/AutenticarJugador", ReplyAction="http://tempuri.org/IJugador/AutenticarJugadorResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IJugador/AutenticarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         int AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador);
@@ -737,6 +745,14 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<int> ActualizarJugadorAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
             return base.Channel.ActualizarJugadorAsync(jugador);
+        }
+        
+        public int ActualizarJugadorSinContrasena(ClienteGloomApp.ServicioGloom.Jugador jugador) {
+            return base.Channel.ActualizarJugadorSinContrasena(jugador);
+        }
+        
+        public System.Threading.Tasks.Task<int> ActualizarJugadorSinContrasenaAsync(ClienteGloomApp.ServicioGloom.Jugador jugador) {
+            return base.Channel.ActualizarJugadorSinContrasenaAsync(jugador);
         }
         
         public int AutenticarJugador(ClienteGloomApp.ServicioGloom.Jugador jugador) {
@@ -949,6 +965,7 @@ namespace ClienteGloomApp.ServicioGloom {
         System.Threading.Tasks.Task SacarDeSalaAsync(string numeroSala, string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/EmpezarPartida", ReplyAction="http://tempuri.org/ISala/EmpezarPartidaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/EmpezarPartidaManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void EmpezarPartida(string idSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/EmpezarPartida", ReplyAction="http://tempuri.org/ISala/EmpezarPartidaResponse")]
@@ -986,6 +1003,7 @@ namespace ClienteGloomApp.ServicioGloom {
         System.Threading.Tasks.Task<string[]> ObtenerFamiliaSeleccionadaAsync(string idSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/SeleccionarFamilia", ReplyAction="http://tempuri.org/ISala/SeleccionarFamiliaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/ISala/SeleccionarFamiliaManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void SeleccionarFamilia(string nombreUsuario, string nombreFamilia, string salaId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISala/SeleccionarFamilia", ReplyAction="http://tempuri.org/ISala/SeleccionarFamiliaResponse")]
@@ -1183,6 +1201,8 @@ namespace ClienteGloomApp.ServicioGloom {
         System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Carta[]> ObtenerCartasSobrantesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/IniciarPartidaPorAdministrador", ReplyAction="http://tempuri.org/IServicioJuegoTablero/IniciarPartidaPorAdministradorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/IniciarPartidaPorAdministradorManejadorE" +
+            "xcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void IniciarPartidaPorAdministrador(string nombreAdministrador, string numeroSala, int numeroJugadores);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/IniciarPartidaPorAdministrador", ReplyAction="http://tempuri.org/IServicioJuegoTablero/IniciarPartidaPorAdministradorResponse")]
@@ -1195,6 +1215,7 @@ namespace ClienteGloomApp.ServicioGloom {
         System.Threading.Tasks.Task EliminarJugadorDeJuegoAsync(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/CambiarTurno", ReplyAction="http://tempuri.org/IServicioJuegoTablero/CambiarTurnoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/CambiarTurnoManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void CambiarTurno(string numeroSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/CambiarTurno", ReplyAction="http://tempuri.org/IServicioJuegoTablero/CambiarTurnoResponse")]
@@ -1230,28 +1251,35 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AgregarCastigo")]
         System.Threading.Tasks.Task AgregarCastigoAsync(string nombreJugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/MatarJugador")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/MatarJugador", ReplyAction="http://tempuri.org/IServicioJuegoTablero/MatarJugadorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/MatarJugadorManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void MatarJugador(string numeroSala, string jugadorAMatar, string jugadorPropietario);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/MatarJugador")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/MatarJugador", ReplyAction="http://tempuri.org/IServicioJuegoTablero/MatarJugadorResponse")]
         System.Threading.Tasks.Task MatarJugadorAsync(string numeroSala, string jugadorAMatar, string jugadorPropietario);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivo")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivo", ReplyAction="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivoManejadorExcep" +
+            "cionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void AplicarModificadorPositivo(ClienteGloomApp.ServicioGloom.Carta carta, string usuarioObjetivo, string personajeObjetivo);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivo")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivo", ReplyAction="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorPositivoResponse")]
         System.Threading.Tasks.Task AplicarModificadorPositivoAsync(ClienteGloomApp.ServicioGloom.Carta carta, string usuarioObjetivo, string personajeObjetivo);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativo")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativo", ReplyAction="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativoManejadorExcep" +
+            "cionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void AplicarModificadorNegativo(ClienteGloomApp.ServicioGloom.Carta carta, string nombreUsuario, string personajeObjetivo);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativo")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativo", ReplyAction="http://tempuri.org/IServicioJuegoTablero/AplicarModificadorNegativoResponse")]
         System.Threading.Tasks.Task AplicarModificadorNegativoAsync(ClienteGloomApp.ServicioGloom.Carta carta, string nombreUsuario, string personajeObjetivo);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerte")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerte", ReplyAction="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerteResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerteManejadorExcepcionesFa" +
+            "ult", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void AplicarCartaMuerte(string numeroSala, string nombreUsuario, string personajeObjetivo);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerte")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerte", ReplyAction="http://tempuri.org/IServicioJuegoTablero/AplicarCartaMuerteResponse")]
         System.Threading.Tasks.Task AplicarCartaMuerteAsync(string numeroSala, string nombreUsuario, string personajeObjetivo);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/SolicitarExpulsion")]
@@ -1260,23 +1288,13 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/SolicitarExpulsion")]
         System.Threading.Tasks.Task SolicitarExpulsionAsync(string solicitante, string jugadorObjetivo, string numeroSala);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormal")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormal", ReplyAction="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormalResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormalManejadorExcepcione" +
+            "sFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void TerminarPartidaNormal(string numeroSala);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormal")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormal", ReplyAction="http://tempuri.org/IServicioJuegoTablero/TerminarPartidaNormalResponse")]
         System.Threading.Tasks.Task TerminarPartidaNormalAsync(string numeroSala);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/EsSalaActiva", ReplyAction="http://tempuri.org/IServicioJuegoTablero/EsSalaActivaResponse")]
-        bool EsSalaActiva(string numeroSala);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/EsSalaActiva", ReplyAction="http://tempuri.org/IServicioJuegoTablero/EsSalaActivaResponse")]
-        System.Threading.Tasks.Task<bool> EsSalaActivaAsync(string numeroSala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/IncrementarTurnos")]
-        void IncrementarTurnos(string numeroSala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioJuegoTablero/IncrementarTurnos")]
-        System.Threading.Tasks.Task IncrementarTurnosAsync(string numeroSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/BorrarEstructurasPorSala", ReplyAction="http://tempuri.org/IServicioJuegoTablero/BorrarEstructurasPorSalaResponse")]
         void BorrarEstructurasPorSala(string numeroSala);
@@ -1289,6 +1307,12 @@ namespace ClienteGloomApp.ServicioGloom {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartida", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresPartidaResponse")]
         System.Threading.Tasks.Task<string[]> ObtenerJugadoresPartidaAsync(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresVivos", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresVivosResponse")]
+        string[] ObtenerJugadoresVivos(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresVivos", ReplyAction="http://tempuri.org/IServicioJuegoTablero/ObtenerJugadoresVivosResponse")]
+        System.Threading.Tasks.Task<string[]> ObtenerJugadoresVivosAsync(string numeroSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsion", ReplyAction="http://tempuri.org/IServicioJuegoTablero/RegistrarVotoExpulsionResponse")]
         void RegistrarVotoExpulsion(string votante, string jugadorObjetivo, bool votoAFavor);
@@ -1482,22 +1506,6 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.TerminarPartidaNormalAsync(numeroSala);
         }
         
-        public bool EsSalaActiva(string numeroSala) {
-            return base.Channel.EsSalaActiva(numeroSala);
-        }
-        
-        public System.Threading.Tasks.Task<bool> EsSalaActivaAsync(string numeroSala) {
-            return base.Channel.EsSalaActivaAsync(numeroSala);
-        }
-        
-        public void IncrementarTurnos(string numeroSala) {
-            base.Channel.IncrementarTurnos(numeroSala);
-        }
-        
-        public System.Threading.Tasks.Task IncrementarTurnosAsync(string numeroSala) {
-            return base.Channel.IncrementarTurnosAsync(numeroSala);
-        }
-        
         public void BorrarEstructurasPorSala(string numeroSala) {
             base.Channel.BorrarEstructurasPorSala(numeroSala);
         }
@@ -1512,6 +1520,14 @@ namespace ClienteGloomApp.ServicioGloom {
         
         public System.Threading.Tasks.Task<string[]> ObtenerJugadoresPartidaAsync(string numeroSala) {
             return base.Channel.ObtenerJugadoresPartidaAsync(numeroSala);
+        }
+        
+        public string[] ObtenerJugadoresVivos(string numeroSala) {
+            return base.Channel.ObtenerJugadoresVivos(numeroSala);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ObtenerJugadoresVivosAsync(string numeroSala) {
+            return base.Channel.ObtenerJugadoresVivosAsync(numeroSala);
         }
         
         public void RegistrarVotoExpulsion(string votante, string jugadorObjetivo, bool votoAFavor) {
@@ -1533,10 +1549,12 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioCarta/ObtenerMazoJugador", ReplyAction="http://tempuri.org/IServicioCarta/ObtenerMazoJugadorResponse")]
         System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Carta[]> ObtenerMazoJugadorAsync(string nombreJugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugador")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugador", ReplyAction="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugadorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugadorManejadorExcepcionesFau" +
+            "lt", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void AgregarCartaAMazoJugador(string nombreUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugador")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugador", ReplyAction="http://tempuri.org/IServicioCarta/AgregarCartaAMazoJugadorResponse")]
         System.Threading.Tasks.Task AgregarCartaAMazoJugadorAsync(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServicioCarta/QuitarCartaDeMazoJugador")]
@@ -1652,13 +1670,13 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioHistorialPartida/ObtenerDatosHistorial", ReplyAction="http://tempuri.org/IServicioHistorialPartida/ObtenerDatosHistorialResponse")]
         System.Threading.Tasks.Task<ClienteGloomApp.ServicioGloom.Sala[]> ObtenerDatosHistorialAsync(string nombreUsuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioHistorialPartida/ObtenrParticipantesDeJuego", ReplyAction="http://tempuri.org/IServicioHistorialPartida/ObtenrParticipantesDeJuegoResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioHistorialPartida/ObtenrParticipantesDeJuegoManejadorE" +
-            "xcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
-        string[] ObtenrParticipantesDeJuego(string identificadorSala);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioHistorialPartida/ObtenerParticipantesDeJuego", ReplyAction="http://tempuri.org/IServicioHistorialPartida/ObtenerParticipantesDeJuegoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioHistorialPartida/ObtenerParticipantesDeJuegoManejador" +
+            "ExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
+        string[] ObtenerParticipantesDeJuego(string identificadorSala);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioHistorialPartida/ObtenrParticipantesDeJuego", ReplyAction="http://tempuri.org/IServicioHistorialPartida/ObtenrParticipantesDeJuegoResponse")]
-        System.Threading.Tasks.Task<string[]> ObtenrParticipantesDeJuegoAsync(string identificadorSala);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioHistorialPartida/ObtenerParticipantesDeJuego", ReplyAction="http://tempuri.org/IServicioHistorialPartida/ObtenerParticipantesDeJuegoResponse")]
+        System.Threading.Tasks.Task<string[]> ObtenerParticipantesDeJuegoAsync(string identificadorSala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1696,12 +1714,12 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.ObtenerDatosHistorialAsync(nombreUsuario);
         }
         
-        public string[] ObtenrParticipantesDeJuego(string identificadorSala) {
-            return base.Channel.ObtenrParticipantesDeJuego(identificadorSala);
+        public string[] ObtenerParticipantesDeJuego(string identificadorSala) {
+            return base.Channel.ObtenerParticipantesDeJuego(identificadorSala);
         }
         
-        public System.Threading.Tasks.Task<string[]> ObtenrParticipantesDeJuegoAsync(string identificadorSala) {
-            return base.Channel.ObtenrParticipantesDeJuegoAsync(identificadorSala);
+        public System.Threading.Tasks.Task<string[]> ObtenerParticipantesDeJuegoAsync(string identificadorSala) {
+            return base.Channel.ObtenerParticipantesDeJuegoAsync(identificadorSala);
         }
     }
     
@@ -1769,17 +1787,17 @@ namespace ClienteGloomApp.ServicioGloom {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/CrearPartida", ReplyAction="http://tempuri.org/ICreacionPartida/CrearPartidaResponse")]
         System.Threading.Tasks.Task<int> CrearPartidaAsync(ClienteGloomApp.ServicioGloom.Sala sala);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSalaResponse")]
-        System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSalaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerCodigoSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerCodigoSalaResponse")]
         string ObtenerCodigoSala(string idAdminsitrador, string nombreSala);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerCodigoSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerCodigoSalaResponse")]
         System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSalaResponse")]
+        System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSala", ReplyAction="http://tempuri.org/ICreacionPartida/ObtenerResumenFamiliasPorSalaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1873,14 +1891,6 @@ namespace ClienteGloomApp.ServicioGloom {
             return base.Channel.CrearPartidaAsync(sala);
         }
         
-        public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala) {
-            return base.Channel.ObtenerResumenFamiliasPorSala(numeroSala);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala) {
-            return base.Channel.ObtenerResumenFamiliasPorSalaAsync(numeroSala);
-        }
-        
         public string ObtenerCodigoSala(string idAdminsitrador, string nombreSala) {
             return base.Channel.ObtenerCodigoSala(idAdminsitrador, nombreSala);
         }
@@ -1888,16 +1898,25 @@ namespace ClienteGloomApp.ServicioGloom {
         public System.Threading.Tasks.Task<string> ObtenerCodigoSalaAsync(string idAdminsitrador, string nombreSala) {
             return base.Channel.ObtenerCodigoSalaAsync(idAdminsitrador, nombreSala);
         }
+        
+        public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>> ObtenerResumenFamiliasPorSala(string numeroSala) {
+            return base.Channel.ObtenerResumenFamiliasPorSala(numeroSala);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, System.ValueTuple<string, int>>> ObtenerResumenFamiliasPorSalaAsync(string numeroSala) {
+            return base.Channel.ObtenerResumenFamiliasPorSalaAsync(numeroSala);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioGloom.IChat", CallbackContract=typeof(ClienteGloomApp.ServicioGloom.IChatCallback))]
     public interface IChat {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChat/EnviarMensaje")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/EnviarMensaje", ReplyAction="http://tempuri.org/IChat/EnviarMensajeResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IChat/EnviarMensajeManejadorExcepcionesFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void EnviarMensaje(string nombreUsuario, string mensaje);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChat/EnviarMensaje")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/EnviarMensaje", ReplyAction="http://tempuri.org/IChat/EnviarMensajeResponse")]
         System.Threading.Tasks.Task EnviarMensajeAsync(string nombreUsuario, string mensaje);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChat/ObtenerHistorialMensajes", ReplyAction="http://tempuri.org/IChat/ObtenerHistorialMensajesResponse")]
@@ -2025,6 +2044,8 @@ namespace ClienteGloomApp.ServicioGloom {
     public interface IServicioBusquedaPartida {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivas", ReplyAction="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivasResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivasManejadorExcepcion" +
+            "esFault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         ClienteGloomApp.ServicioGloom.Sala[] ObtenerSalasActivas();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivas", ReplyAction="http://tempuri.org/IServicioBusquedaPartida/ObtenerSalasActivasResponse")]
@@ -2200,6 +2221,8 @@ namespace ClienteGloomApp.ServicioGloom {
     public interface IServicioSalaNormal {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormal", ReplyAction="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormalResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClienteGloomApp.ServicioGloom.ManejadorExcepciones), Action="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormalManejadorExcepcionesF" +
+            "ault", Name="ManejadorExcepciones", Namespace="http://schemas.datacontract.org/2004/07/BibliotecaClases")]
         void ConectarConSalaNormal(string numeroSala, string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormal", ReplyAction="http://tempuri.org/IServicioSalaNormal/ConectarConSalaNormalResponse")]

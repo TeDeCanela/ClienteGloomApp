@@ -30,13 +30,16 @@ namespace ClienteGloomApp
         Carta cartaBonusSeleccionada = new Carta();
         string jugadorSeleciconadoParaCastigo = "sin jugador";
         private string identificadorUsuario;
+        private Chat ventanaChat;
+
 
         private InstanceContext contextoJugador;
         private ServicioGloom.ServicioJuegoTableroClient proxyJugador;
 
         private string usuarioObjetivoSeleccionado;
         private string personajeObjetivoSeleccionado;
-      
+
+
         public PartidaNormal(String nombreUsaurio, Sala sala)
         {
             AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
@@ -55,8 +58,6 @@ namespace ClienteGloomApp
 
             try
             {
-                
-
                 proxy.IniciarPartidaPorAdministrador(identificadorUsuario, sala.idSala, sala.noJugadores);
                 proxy.ConectarConTablero(identificadorUsuario, sala.idSala);
 
@@ -92,7 +93,7 @@ namespace ClienteGloomApp
                 administradorLogger.RegistroError(ex);
             }
         }
-        
+
         private void PonerImagenCarta(string nombreUsuario)
         {
             AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
@@ -138,6 +139,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -269,6 +271,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -376,6 +379,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -486,7 +490,7 @@ namespace ClienteGloomApp
             DeshabilitaCampos();
             cartaBonusSeleccionada = new Carta { identificador = string.Empty, valor = 0, tipo = "vacío" };
             ActualizarTurnoLlamar();
-            jugadorSeleciconadoParaCastigo   = "";
+            jugadorSeleciconadoParaCastigo = "";
             btnJugador2.BorderThickness = new Thickness(0);
             btnJugador3.BorderThickness = new Thickness(0);
             btnJugador4.BorderThickness = new Thickness(0);
@@ -513,8 +517,9 @@ namespace ClienteGloomApp
             ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTablero);
             InstanceContext contextoCarta = new InstanceContext(this);
             ServicioGloom.ServicioCartaClient proxyCarta = new ServicioGloom.ServicioCartaClient();
-            
-            try{
+
+            try
+            {
                 switch (cartaBonusSeleccionada.tipo)
                 {
                     case "saltarJugador":
@@ -628,6 +633,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -698,6 +704,7 @@ namespace ClienteGloomApp
                 {
                     MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
                     administradorLogger.RegistroError(ex);
+                    DirigirJugadorInicioDeSesion();
                 }
                 catch (EndpointNotFoundException ex)
                 {
@@ -794,6 +801,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -862,6 +870,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -921,11 +930,13 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
                 administradorLogger.RegistroError(ex);
+                DirigirJugadorInicioDeSesion();
             }
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -976,8 +987,8 @@ namespace ClienteGloomApp
             try
             {
 
-                    proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
-                    
+                proxyJugador.CambiarTurno(lblNumeroSala.Content.ToString());
+
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -1120,9 +1131,10 @@ namespace ClienteGloomApp
         private void BtnChat_Click(object sender, RoutedEventArgs e)
         {
 
-            Chat ventanaChat = new Chat(lblJugador1.Content.ToString());
+            ventanaChat = new Chat(lblJugador1.Content.ToString());
             ventanaChat.Show();
             ventanaChat.Focus();
+
 
         }
 
@@ -1149,6 +1161,11 @@ namespace ClienteGloomApp
                 lbxJugadoresParaExpulsion.ItemsSource = jugadores;
                 panExpulsion.Visibility = Visibility.Visible;
             }
+            catch (System.Net.Sockets.SocketException ex)
+            {
+                //MensajesEmergentes.MostrarMensaje("Nuevaaaaa", ex.Message);
+                administradorLogger.RegistroError(ex);
+            }
             catch (FaultException<ManejadorExcepciones> ex)
             {
                 MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
@@ -1158,6 +1175,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -1176,7 +1194,6 @@ namespace ClienteGloomApp
                 administradorLogger.RegistroError(ex);
             }
         }
-
 
         private void BtnConfirmarExpulsion_Click(object sender, RoutedEventArgs e)
         {
@@ -1209,6 +1226,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+
             }
             catch (TimeoutException ex)
             {
@@ -1259,6 +1277,7 @@ namespace ClienteGloomApp
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
                 administradorLogger.RegistroError(ex);
+                //DirigirJugadorInicioDeSesion();
             }
             catch (TimeoutException ex)
             {
@@ -1296,12 +1315,6 @@ namespace ClienteGloomApp
 
             return ganador;
         }
-
-
-
-
-        
-
 
 
         public void EnviarTurno(string nombreDelUsuarioEnTurno)
@@ -1345,12 +1358,19 @@ namespace ClienteGloomApp
 
             Application.Current.Dispatcher.Invoke(() =>
             {
-                string mensaje = jugador.Equals("Sin ganador") ? Properties.Resources.partidaFinSinGanador : Properties.Resources.finPartidaFelicitacionLeyenda +" "+ jugador;
+                if (ventanaChat != null && ventanaChat.IsLoaded)
+                {
+                    ventanaChat.Close();
+                    ventanaChat = null;
+                }
+
+                string mensaje = jugador.Equals("Sin ganador") ? Properties.Resources.partidaFinSinGanador : Properties.Resources.finPartidaFelicitacionLeyenda + " " + jugador;
                 MessageBox.Show(mensaje, Properties.Resources.partidaFinPartida, MessageBoxButton.OK, MessageBoxImage.Information);
 
                 FinPartidaNormal ventanaFin = new FinPartidaNormal(identificadorUsuario, jugador, lblNumeroSala.Content.ToString());
                 ventanaFin.Show();
                 this.Close();
+
             });
 
         }
@@ -1360,13 +1380,13 @@ namespace ClienteGloomApp
 
             Application.Current.Dispatcher.Invoke(() =>
             {
-                
+
                 bool votoAFavor = MessageBox.Show(
                     string.Format(Properties.Resources.mensajePreguntaExpulsionDeJugador, jugadorPropuesto),
-                    Properties.Resources.mensajeTituloVotacionExpulsion, 
+                    Properties.Resources.mensajeTituloVotacionExpulsion,
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Question
-                )== MessageBoxResult.Yes;
+                ) == MessageBoxResult.Yes;
 
 
                 InstanceContext contexto = new InstanceContext(this);
@@ -1383,13 +1403,11 @@ namespace ClienteGloomApp
 
                 MessageBox.Show(Properties.Resources.mensajeHaSidoExpulsado, jugadorObjetivo, MessageBoxButton.OK, MessageBoxImage.Warning);
 
-                Inicio ventanaInicio = new Inicio(lblJugador1.Content.ToString()); 
+                Inicio ventanaInicio = new Inicio(lblJugador1.Content.ToString());
                 ventanaInicio.Show();
                 this.Close();
             });
         }
-
-       
 
         public void ActualizarInterfazExpulsion(string jugadorExpulsado)
         {
@@ -1421,8 +1439,6 @@ namespace ClienteGloomApp
                 }
             }
         }
-
-
         private void DirigirJugadorInicioDeSesion()
         {
             InicioSesion nuevaVentana = new InicioSesion();

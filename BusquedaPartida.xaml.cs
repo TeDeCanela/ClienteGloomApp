@@ -10,11 +10,11 @@ namespace ClienteGloomApp
 {
     public partial class BusquedaPartida : Window, IServicioBusquedaPartidaCallback
     {
-        
+
         private ServicioBusquedaPartidaClient servicio;
         private string identificadorUsuario;
         private Sala salaSeleccionada;
-        
+
 
         public ObservableCollection<Sala> salasActivas { get; set; }
 
@@ -23,7 +23,7 @@ namespace ClienteGloomApp
             AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
             try
             {
-               
+
                 InitializeComponent();
                 identificadorUsuario = nombreUsuario;
                 salasActivas = new ObservableCollection<Sala>();
@@ -68,7 +68,7 @@ namespace ClienteGloomApp
 
                 if (salasDesdeServicio == null || salasDesdeServicio.Length == 0)
                 {
-                    MessageBox.Show("60", Properties.Resources.mensajeTituloInformacion , MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("60", Properties.Resources.mensajeTituloInformacion, MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
@@ -153,7 +153,7 @@ namespace ClienteGloomApp
             {
                 administradorLogger.RegistroError(ex);
                 MensajesEmergentes.MostrarMensaje("16", ex.Message);
-               }
+            }
             catch (Exception ex)
             {
                 administradorLogger.RegistroError(ex);
@@ -181,7 +181,7 @@ namespace ClienteGloomApp
                     MessageBox.Show(Properties.Resources.mensajeExp65);
                     AbrirVentanaSalaNormal(idSala, identificadorUsuario, salaSeleccionada);
                 }
-                
+
             }
             catch (FaultException<ManejadorExcepciones> ex)
             {
@@ -237,7 +237,7 @@ namespace ClienteGloomApp
             }
         }
 
-        
+
 
         private void BtnFlecha_Click(object sender, RoutedEventArgs e)
         {
@@ -246,7 +246,7 @@ namespace ClienteGloomApp
             this.Close();
         }
 
-        
+
 
 
         private void DirigirJugadorInicioDeSesion()

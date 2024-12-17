@@ -27,6 +27,7 @@ namespace ClienteGloomApp
 
         public Inicio(String nombreDelUsuario)
         {
+
             InitializeComponent();
             this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             lblNombreUsuario.Content = nombreDelUsuario;

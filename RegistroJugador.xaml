@@ -18,7 +18,7 @@
         <Label x:Name="lblCorreo" Content="{x:Static p:Resources.globalCorreo}" HorizontalAlignment="Left" Margin="950,361,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
 
         <PasswordBox x:Name="pwdContrasena" HorizontalAlignment="Left" Height="38" Margin="950,479,0,0" VerticalAlignment="Top" Width="490"/>
-        <Label x:Name="lblContraseña" Content="{x:Static p:Resources.instruccionContraseña}" HorizontalAlignment="Left" Margin="950,442,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
+        <Label x:Name="lblContraseña" Content="{x:Static p:Resources.globalContraseña}" HorizontalAlignment="Left" Margin="950,442,0,0" VerticalAlignment="Top" Width="139" Height="42" Foreground="White" FontSize="24"/>
 
         <Label x:Name="lblregistroInstrucciónIcono" Content="{x:Static p:Resources.registroInstruccionIcono}" HorizontalAlignment="Left" Margin="597,114,0,0" VerticalAlignment="Top" Width="328" Height="50" Foreground="White" FontSize="24"/>
         <Button x:Name="btnRegistrar" Content="{x:Static p:Resources.registrarseBtnRegistrar}" HorizontalAlignment="Left" Margin="1328,581,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="BtnRegistrar_Click" Background="#FFC9BE9D" FontSize="20" Foreground="#FF1F3027" FontWeight="Bold">

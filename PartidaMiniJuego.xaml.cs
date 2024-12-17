@@ -541,6 +541,18 @@ namespace ClienteGloomApp
 
         public void EnviarGanador(string jugador)
         {
+            AdministradorLogger administradorLogger = new AdministradorLogger(this.GetType());
+            try
+            {
+                InstanceContext contextoTablero = new InstanceContext(this);
+                ServicioGloom.ServicioJuegoTableroClient proxy = new ServicioGloom.ServicioJuegoTableroClient(contextoTablero);
+                proxy.BorrarEstructurasPorSala(lblNumeroSala.Content.ToString());
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
             FinPartidaMini nuevaVentana = new FinPartidaMini(jugadorPropietario, jugador, lblNumeroSala.Content.ToString());
             nuevaVentana.Show();
             this.Close();
@@ -798,6 +810,11 @@ namespace ClienteGloomApp
                     MessageBox.Show(Properties.Resources.mensajeMiniPartidaTiempoAgotado);
                 }
             }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
+            }
             catch (EndpointNotFoundException ex)
             {
                 MensajesEmergentes.MostrarMensaje("58", ex.Message);
@@ -845,6 +862,11 @@ namespace ClienteGloomApp
                     ResetearBordes();
                     MessageBox.Show(Properties.Resources.mensajeMiniPartidaTiempoAgotado);
                 }
+            }
+            catch (FaultException<ManejadorExcepciones> ex)
+            {
+                MensajesEmergentes.MostrarMensaje(ex.Detail.codigo, ex.Detail.mensaje);
+                administradorLogger.RegistroError(ex);
             }
             catch (EndpointNotFoundException ex)
             {

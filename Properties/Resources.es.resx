@@ -449,7 +449,16 @@
     <value>No tiene acceso al archivo necesario para enviar el correo.</value>
   </data>
   <data name="mensajeExp27" xml:space="preserve">
-    <value>Correo electrónico incorrecto: El correo electrónico debe cumplir las siguientes reglas: debe tener entre 4 y 64 caracteres antes del símbolo '@'; puede contener letras, números, puntos (.), guiones bajos (_) y guiones (-); no debe comenzar ni terminar con un punto (.) o guión (-); debe incluir un dominio válido después del símbolo '@', con al menos dos caracteres en cada nivel del dominio y un máximo de 13 caracteres en la extensión.</value>
+    <value>Por favor, introduce un correo válido.
+El correo puede contener:
+
+-Letras (mayúsculas y minúsculas).
+-Números.
+-Puntos (.).
+-Guiones bajos (_).
+-Guiones (-) en el dominio.
+-Debe incluir un @ y al menos un punto (.) en el dominio.
+Ejemplo: usuario123@dominio.com</value>
   </data>
   <data name="mensajeExp28" xml:space="preserve">
     <value>No se pudo enviar el correo. Verifique los detalles e inténtelo nuevamente.</value>
@@ -473,13 +482,34 @@
     <value>En este momento, la sala está completa. Por favor, intenta más tarde.</value>
   </data>
   <data name="mensajeExp35" xml:space="preserve">
-    <value>No se permiten números ni caracteres especiales en el nombre y apellido.</value>
+    <value>Por favor, introduce un nombre válido.
+El nombre puede contener:
+
+-Solo letras (sin números ni caracteres especiales).
+-Espacios (pero no espacios consecutivos).
+-No debe comenzar ni terminar con un espacio.
+-Longitud: de 4 a 32 caracteres.</value>
   </data>
   <data name="mensajeExp36" xml:space="preserve">
-    <value>Para crear tu nombre de usuario, comienza con una letra (mayúscula o minúscula) y luego puedes agregar números y guiones bajos si lo deseas.</value>
+    <value>Por favor, introduce un nombre válido.
+El nombre debe cumplir con los siguientes requisitos:
+
+-Puede contener letras, números, guiones bajos (_) y espacios.
+-No puede comenzar ni terminar con un espacio.
+-No puede tener espacios consecutivos.
+-No puede seguir el formato Invitado seguido de números (ejemplo: Invitado123).</value>
   </data>
   <data name="mensajeExp37" xml:space="preserve">
-    <value>Para tu seguridad, crea una contraseña fuerte que combine letras mayúsculas y minúsculas, números y que sea diferente a tu nombre de usuario. Evita usar palabras comunes o información personal. Un ejemplo de contraseña segura podría ser 'MiContraseña!2023'.</value>
+    <value>Por favor, introduce una contraseña válida.
+La contraseña debe cumplir con los siguientes requisitos:
+
+-Tener entre 8 y 15 caracteres.
+-Incluir al menos:
+ -Una letra mayúscula.
+ -Una letra minúscula.
+ -Un número.
+ -Un carácter especial de la lista: @$!%?&amp;.
+-No puede estar vacía o compuesta solo por espacios en blanco.</value>
   </data>
   <data name="mensajeExp38" xml:space="preserve">
     <value>Has gastado la carta en un jugador que ya no tiene cartas en su mazo</value>
@@ -600,6 +630,15 @@
   </data>
   <data name="mensajeExp76" xml:space="preserve">
     <value>Debe seleccionar un personaje objetivo para continuar.</value>
+  </data>
+  <data name="mensajeExp77" xml:space="preserve">
+    <value>Aun no se encuentran listos todos los jugadores de la sala para empezar.</value>
+  </data>
+  <data name="mensajeExp78" xml:space="preserve">
+    <value>No se pudo cambiar el estado de la partida por un error con la base de datos, inténtelo nuevamente más tarde o contacte con el equipo técnico.</value>
+  </data>
+  <data name="mensajeExp79" xml:space="preserve">
+    <value>No se pudo guardar el ganador de la partida correctamente, si requiere saber más información hable con un administrador.</value>
   </data>
   <data name="mensajeExpuslion" xml:space="preserve">
     <value>Se ha iniciado la expulsión del jugador: </value>
@@ -807,8 +846,5 @@
   </data>
   <data name="votacionInstruccion" xml:space="preserve">
     <value>Seleccione que desea hacer, vote para sacar a</value>
-  </data>
-  <data name="mensajeExp77" xml:space="preserve">
-    <value>Aun no se encuentran listos todos los jugadores de la sala para empezar.</value>
   </data>
 </root>
